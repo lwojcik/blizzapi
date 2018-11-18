@@ -4,7 +4,7 @@ const constants = {
   REGIONS: {
     1: 'us',
     2: 'eu',
-    3: 'kr',
+    3: ['kr', 'tw'],
     5: 'cn',
   },
   LOCALES: {
@@ -42,7 +42,7 @@ const constants = {
     3: 'https://kr.api.blizzard.com',
     5: 'https://api.blizzard.com.cn',
   },
-  REALMS: {
+  SC2_REALMS: {
     1: [1, 2],
     2: [1, 2],
     3: [1, 2],

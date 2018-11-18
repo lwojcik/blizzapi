@@ -3,6 +3,7 @@ const constants = require('./constants');
 // todo: error handling
 
 // - regionality
+// - validators
 // - servers
 
 const getAllRegions = () => constants.REGIONS;
@@ -17,7 +18,15 @@ const getRegionIdByName = (regionName) => {
 
 const validateLocale = (locale) => {
   // validate locale via regex
-}
+};
+
+const validateRegionName = (regionName) => {
+  // validate region name
+};
+
+const validateRegionId = (regionId) => {
+  // validate region id
+};
 
 const getDefaultLocaleForRegion = regionId => constants.DEFAULT_LOCALES[regionId];
 
@@ -29,7 +38,7 @@ const checkIfLocaleIsAvailableForRegion = (locale, regionId) => {
   // checkIfLocaleIsAvailableForRegion
 };
 
-const getAvailableRealmsForRegion = regionId => constants.REALMS[regionId];
+const getAvailableRealmsForRegion = regionId => constants.SC2_REALMS[regionId];
 
 module.exports = {
   getAllRegions,
