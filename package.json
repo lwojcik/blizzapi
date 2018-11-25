@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest",
     "build": "tsc",
+    "watch": "tsc -w",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json"
   },
