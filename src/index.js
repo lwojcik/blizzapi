@@ -1,7 +1,7 @@
 const fetch = require('cross-fetch');
 
-const constants = require('./constants');
-const helpers =require('./helpers');
+const constants = require('./constants/constants');
+const helpers = require('./helpers/helpers');
 
 const query = async (url) => {
   try {
@@ -15,8 +15,8 @@ const query = async (url) => {
 // convert region id to region code
 
 const getRegionCodeById = (regionId) => {
-  if (API_REGIONS.includes(regionId)) {
-    return API_REGIONS[regionId];
+  if (constants.API_REGIONS.includes(regionId)) {
+    return constants.API_REGIONS[regionId];
   }
   throw new Error(`${regionId} is not a valid region id.`);
 };
@@ -25,7 +25,7 @@ const getRegionCodeById = (regionId) => {
 
 const getRegionLocalesById = (regionId) => { // eslint-disable-line
   const regionCode = getRegionCodeById(regionId);
-  return API_LOCALES[regionCode];
+  return constants.API_LOCALES[regionCode];
 };
 
 // verifying if locale is available in given region
@@ -49,9 +49,9 @@ const constructApiUrl = (regionId, endpoint, locale, useChinaGateway) => { // es
     const regionCode = getRegionCodeById(regionId);
 
     if (useChinaGateway) {
-      apiUrl = `https://${API_SERVER_CHINA}${endpoint}?locale=${locale}`;
+      apiUrl = `https://${constants.API_SERVER_CHINA}${endpoint}?locale=${locale}`;
     } else {
-      apiUrl = `https://${regionCode}${API_SERVER}${endpoint}?locale=${locale}`;
+      apiUrl = `https://${regionCode}${constants.API_SERVER}${endpoint}?locale=${locale}`;
     }
     return apiUrl;
   }
@@ -70,9 +70,9 @@ class BattleNetAPI {
     };
   }
 
-  getData(regionId, apiPath) {
-    return 
-  }
+  // getData(regionId, apiPath) {
+  //   return 
+  // }
 
   // fetchAccessToken(clientID, clientSecret) {
 

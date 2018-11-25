@@ -1,6 +1,6 @@
 // Via https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
 
-const constants = {
+const CONSTANTS = {
   REGIONS: {
     1: 'us',
     2: 'eu',
@@ -68,4 +68,4 @@ const constants = {
   },
 };
 
-module.exports = constants;
+module.exports = CONSTANTS;

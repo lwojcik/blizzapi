@@ -4,7 +4,7 @@
   "description": "Wrapper for Blizzard Battle.net API",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Łukasz Wójcik",
   "license": "MIT",
@@ -16,6 +16,7 @@
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-node": "7.0.1",
-    "eslint-plugin-promise": "4.0.1"
+    "eslint-plugin-promise": "4.0.1",
+    "jest": "23.6.0"
   }
 }
