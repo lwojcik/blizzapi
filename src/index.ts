@@ -1,5 +1,5 @@
 // export { BattleNetAPI } from 'lib/api';
-export { BattleNetHelpers } from 'lib/helpers';
+export * from 'lib/helpers/index';
 
 // import * as helpers from './helpers/helpers';
 

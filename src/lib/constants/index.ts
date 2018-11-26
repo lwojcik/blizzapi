@@ -6,6 +6,10 @@ import defaultLocales from './defaultLocales';
 
 // TODO: complete this
 
+// interface CONSTANT<Value> {
+//   [regionId: string]: Value;
+// }
+
 export default class CONSTANTS {
   public static readonly REGIONS = regions;
   public static readonly LOCALES = locales;

@@ -28,16 +28,17 @@ export function getAllRegionIds(): number[] {
 export function getAllRegionNames(): string[] {
   const regionNames = Object.values(constants.REGIONS);
   const flattenedRegionNames = ([] as (string|string[])[]).concat(...regionNames);
-  const regionNamesAsStrings = flattenedRegionNames.map((regionName:any) => regionName.toString());
+  const regionNamesAsStrings = <string[]>flattenedRegionNames.map((regionName:any) => regionName.toString());
   return regionNamesAsStrings;
 }
 
 /**
- * Returns region name represented by given region id
+ * Returns region name(s) represented by given region id
  *
- * @return {string} Region name represented as two-letter code (e.g. "us" for Americas)
+ * @return Region name represented as two-letter code (e.g. "us" for Americas) or an array of regions
+ * if more than one is specified for a given region id
  */
-export function getRegionNameById(regionId: number): string {
+export function getRegionNameById(regionId: number): (string|string[]) {
   const regionIds = Object.keys(constants.REGIONS);
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = regionIds.includes(regionIdAsString);
@@ -46,7 +47,7 @@ export function getRegionNameById(regionId: number): string {
     throw new RangeError(`${regionIdAsString} is not a valid parameter for getRegionNameById`);
   }
 
-  return <string>constants.REGIONS[regionIdAsString];
+  return constants.REGIONS[regionIdAsString];
 };
 
 // // todo: error handling

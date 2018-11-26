@@ -1,10 +1,8 @@
 // Via https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
 
-// interface CONSTANT<Value> {
-//   [regionId: string]: Value;
-// }
+import constant from '../interfaces/constant';
 
-const regions = {
+const regions:constant<string|string[]> = {
   1: 'us',
   2: 'eu',
   3: ['kr', 'tw'],
