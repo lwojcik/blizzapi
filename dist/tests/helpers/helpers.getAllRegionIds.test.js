@@ -1,8 +1,12 @@
 "use strict";
-var helpers = require('../helpers');
-var constants = require('../../constants/constants');
-var REGIONS = constants.REGIONS;
-var getAllRegionIds = helpers.getAllRegionIds;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var helpers_1 = __importDefault(require("../helpers"));
+var constants_1 = __importDefault(require("../../constants/constants"));
+var REGIONS = constants_1.default.REGIONS;
+var getAllRegionIds = helpers_1.default.getAllRegionIds;
 describe('getAllRegionIds()', function () {
     test('should be defined', function () {
         expect(getAllRegionIds).toBeDefined();

@@ -1,6 +1,10 @@
 "use strict";
-var CONSTANTS = require('../constants');
-var SC2_REALMS = CONSTANTS.SC2_REALMS;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var constants_1 = __importDefault(require("../constants"));
+var SC2_REALMS = constants_1.default.SC2_REALMS;
 describe('SC2_REALMS', function () {
     test('should be defined', function () {
         expect(SC2_REALMS).toBeDefined();

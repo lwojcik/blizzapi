@@ -1,6 +1,10 @@
 "use strict";
-var CONSTANTS = require('../constants');
-var OAUTH_AUTHORIZE_SERVERS = CONSTANTS.OAUTH_AUTHORIZE_SERVERS;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var constants_1 = __importDefault(require("../constants"));
+var OAUTH_AUTHORIZE_SERVERS = constants_1.default.OAUTH_AUTHORIZE_SERVERS;
 describe('OAUTH_AUTHORIZE_SERVERS', function () {
     test('should be defined', function () {
         expect(OAUTH_AUTHORIZE_SERVERS).toBeDefined();

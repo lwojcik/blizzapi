@@ -1,8 +1,12 @@
 "use strict";
-var helpers = require('../helpers');
-var constants = require('../../constants/constants');
-var REGIONS = constants.REGIONS;
-var getAllRegionNames = helpers.getAllRegionNames;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var helpers_1 = __importDefault(require("../helpers"));
+var constants_1 = __importDefault(require("../../constants/constants"));
+var REGIONS = constants_1.default.REGIONS;
+var getAllRegionNames = helpers_1.default.getAllRegionNames;
 describe('getAllRegionNames()', function () {
     test('should be defined', function () {
         expect(getAllRegionNames).toBeDefined();
@@ -15,12 +19,9 @@ describe('getAllRegionNames()', function () {
         expect(getAllRegionNames().constructor === Array).toBe(true);
     });
     test('number of returned elements should match length of constants.REGIONS values after flattening', function () {
-        var flattenedRegionsLength = [].concat.apply([], Object.values(REGIONS)).length;
+        var _a;
+        var flattenedRegionsLength = (_a = []).concat.apply(_a, Object.values(REGIONS)).length;
         expect(getAllRegionNames().length).toEqual(flattenedRegionsLength);
-    });
-    test('returned array elements should be integers', function () {
-        var isString = function (element) { return typeof element === 'string'; };
-        expect(getAllRegionNames().every(isString)).toBe(true);
     });
 });
 //# sourceMappingURL=helpers.getAllRegionNames.test.js.map

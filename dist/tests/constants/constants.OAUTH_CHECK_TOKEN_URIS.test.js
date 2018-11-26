@@ -1,6 +1,10 @@
 "use strict";
-var CONSTANTS = require('../constants');
-var OAUTH_CHECK_TOKEN_URIS = CONSTANTS.OAUTH_CHECK_TOKEN_URIS;
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var constants_1 = __importDefault(require("../constants"));
+var OAUTH_CHECK_TOKEN_URIS = constants_1.default.OAUTH_CHECK_TOKEN_URIS;
 describe('OAUTH_CHECK_TOKEN_URIS', function () {
     test('should be defined', function () {
         expect(OAUTH_CHECK_TOKEN_URIS).toBeDefined();
