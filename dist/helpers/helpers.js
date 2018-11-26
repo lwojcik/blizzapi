@@ -10,8 +10,9 @@ var getAllRegionIds = function () {
     return regionKeysAsIntegers;
 };
 var getAllRegionNames = function () {
+    var _a;
     var regionNames = Object.values(constants_1.default.REGIONS);
-    var flattenedRegionNames = [].concat(regionNames);
+    var flattenedRegionNames = (_a = []).concat.apply(_a, regionNames);
     var regionNamesAsStrings = flattenedRegionNames.map(function (regionName) { return regionName.toString(); });
     return regionNamesAsStrings;
 };

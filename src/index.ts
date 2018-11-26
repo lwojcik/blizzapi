@@ -1,21 +1,24 @@
-import * as helpers from './helpers/helpers';
+// export { BattleNetAPI } from 'lib/api';
+export { BattleNetHelpers } from 'lib/helpers';
 
-// main class
+// import * as helpers from './helpers/helpers';
 
-// class BattleNetAPI {
-//   constructor(clientID, clientSecret, options) {
-//     this.clientID = clientID;
-//     this.clientSecret = clientSecret;
-//     this.options = options || {
-//       locale: 'en_US',
-//       useChinaGateway: false,
-//     };
-//   }
-// }
+// // main class
 
-const battleNetHelpers = helpers;
+// // class BattleNetAPI {
+// //   constructor(clientID, clientSecret, options) {
+// //     this.clientID = clientID;
+// //     this.clientSecret = clientSecret;
+// //     this.options = options || {
+// //       locale: 'en_US',
+// //       useChinaGateway: false,
+// //     };
+// //   }
+// // }
 
-export {
-  // BattleNetAPI,
-  battleNetHelpers,
-};
+// const battleNetHelpers = helpers;
+
+// export {
+//   // BattleNetAPI,
+//   battleNetHelpers,
+// };

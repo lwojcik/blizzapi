@@ -10,27 +10,10 @@ var CONSTANTS = (function () {
         5: 'cn',
     };
     CONSTANTS.LOCALES = {
-        1: [
-            'en_US',
-            'es_MX',
-            'pt_BR',
-        ],
-        2: [
-            'en_GB',
-            'es_ES',
-            'fr_FR',
-            'ru_RU',
-            'de_DE',
-            'pt_PT',
-            'it_IT',
-        ],
-        3: [
-            'ko_KR',
-            'zh_TW',
-        ],
-        5: [
-            'zh_CN',
-        ],
+        1: ['en_US', 'es_MX', 'pt_BR'],
+        2: ['en_GB', 'es_ES', 'fr_FR', 'ru_RU', 'de_DE', 'pt_PT', 'it_IT'],
+        3: ['ko_KR', 'zh_TW'],
+        5: ['zh_CN'],
     };
     CONSTANTS.DEFAULT_LOCALES = {
         1: 0,
