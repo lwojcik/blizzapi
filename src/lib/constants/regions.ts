@@ -1,12 +1,17 @@
-// Via https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
+/**
+ * List of all available API regions
+ * via https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
+ */
 
-import constant from '../interfaces/constant';
+import Constant from '../interfaces/Constant';
 
-const regions:constant<string|string[]> = {
-  1: 'us',
-  2: 'eu',
+type RegionList = string[];
+
+const regions:Constant<RegionList> = {
+  1: ['us'],
+  2: ['eu'],
   3: ['kr', 'tw'],
-  5: 'cn',
+  5: ['cn'],
 };
 
 export default regions;

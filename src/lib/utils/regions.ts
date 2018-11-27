@@ -1,5 +1,7 @@
 import constants from '../constants';
 
+// todo: write interfaces
+
 /**
   * Returns a list of all available regions
   * 

@@ -1,4 +1,4 @@
-import constants from '../constants';
+import constants from '../../lib/constants';
 
 describe('CONSTANTS object', () => {
   test('should be defined', () => {
@@ -17,8 +17,8 @@ describe('CONSTANTS object', () => {
     expect(constants.LOCALES).toBeDefined();
   });
 
-  test('should contain SERVERS property', () => {
-    expect(constants.SERVERS).toBeDefined();
+  test('should contain HOSTS property', () => {
+    expect(constants.HOSTS).toBeDefined();
   });
 
   test('should contain SC2_REALMS property', () => {

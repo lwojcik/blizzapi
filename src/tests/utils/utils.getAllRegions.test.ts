@@ -1,7 +1,7 @@
-import helpers from '../helpers';
-import constants from '../../constants/constants';
+import utils from '../../lib/utils';
+import constants from '../../lib/constants';
 
-const { getAllRegions } = helpers;
+const { getAllRegions } = utils;
 
 describe('getAllRegions()', () => {
   test('should be defined', () => {

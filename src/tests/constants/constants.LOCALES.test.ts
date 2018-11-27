@@ -1,4 +1,4 @@
-import constants from '../../constants/constants';
+import constants from '../../lib/constants';
 
 const { LOCALES } = constants;
 

@@ -1,9 +1,9 @@
-import helpers from '../helpers';
+import utils from '../../lib/utils';
 // import constants from '../../constants/constants';
 
 // const { REGIONS } = constants;
 
-const { getRegionNameById } = helpers;
+const { getRegionNameById } = utils;
 
 describe('getRegionNameById()', () => {
   test('should be defined', () => {
