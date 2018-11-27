@@ -7,4 +7,4 @@ var regionHosts = {
     5: 'https://api.blizzard.com.cn',
 };
 exports.default = regionHosts;
-//# sourceMappingURL=hosts.js.map
+//# sourceMappingURL=regionHosts.js.map

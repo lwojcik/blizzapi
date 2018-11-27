@@ -1,6 +1,6 @@
 import constants from '../../lib/constants';
 
-describe('CONSTANTS object', () => {
+describe('CONSTANTS class', () => {
   test('should be defined', () => {
     expect(constants).toBeDefined();
   });
@@ -17,8 +17,8 @@ describe('CONSTANTS object', () => {
     expect(constants.LOCALES).toBeDefined();
   });
 
-  test('should contain HOSTS property', () => {
-    expect(constants.HOSTS).toBeDefined();
+  test('should contain REGION_API_HOSTS property', () => {
+    expect(constants.REGION_API_HOSTS).toBeDefined();
   });
 
   test('should contain SC2_REALMS property', () => {

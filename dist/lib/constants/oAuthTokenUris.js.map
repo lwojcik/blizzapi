@@ -1,1 +1,1 @@
-{"version":3,"file":"oAuthTokenUris.js","sourceRoot":"","sources":["../../../src/lib/constants/oAuthTokenUris.ts"],"names":[],"mappings":";;AASA,IAAM,cAAc,GAA4B;IAC9C,CAAC,EAAE,mCAAmC;IACtC,CAAC,EAAE,mCAAmC;IACtC,CAAC,EAAE,qCAAqC;IACxC,CAAC,EAAE,0CAA0C;CAC9C,CAAC;AAEF,kBAAe,cAAc,CAAC"}
+{"version":3,"file":"oAuthTokenUris.js","sourceRoot":"","sources":["../../../src/lib/constants/oAuthTokenUris.ts"],"names":[],"mappings":";;AAQA,IAAM,cAAc,GAAsC;IACxD,CAAC,EAAE,mCAAmC;IACtC,CAAC,EAAE,mCAAmC;IACtC,CAAC,EAAE,qCAAqC;IACxC,CAAC,EAAE,0CAA0C;CAC9C,CAAC;AAEF,kBAAe,cAAc,CAAC"}

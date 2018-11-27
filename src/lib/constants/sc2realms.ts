@@ -3,11 +3,10 @@
  * via https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
  */
 
-import Constant from '../interfaces/Constant';
+import RegionIdProperties from '../interfaces/RegionIdProperties';
+import { Sc2RealmList } from '../types/constants';
 
-type Sc2RealmList = number[];
-
-const sc2realms:Constant<Sc2RealmList> = {
+const sc2realms:RegionIdProperties<Sc2RealmList> = {
   1: [1, 2],
   2: [1, 2],
   3: [1, 2],

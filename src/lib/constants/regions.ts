@@ -3,11 +3,11 @@
  * via https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
  */
 
-import Constant from '../interfaces/Constant';
+import RegionIdProperties from '../interfaces/RegionIdProperties';
 
-type RegionList = string[];
+import { RegionNameList } from '../types/constants';
 
-const regions:Constant<RegionList> = {
+const regions:RegionIdProperties<RegionNameList> = {
   1: ['us'],
   2: ['eu'],
   3: ['kr', 'tw'],
