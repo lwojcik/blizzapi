@@ -2,7 +2,7 @@
   "name": "blizzard-battlenet-api",
   "version": "0.0.1",
   "description": "Wrapper for Blizzard Battle.net API",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "build": "tsc",
