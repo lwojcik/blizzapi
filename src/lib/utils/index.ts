@@ -15,8 +15,7 @@ export default class BattleNetUtils {
     return regions.getAllRegionIds();
   }
 
-  public static getRegionNameById(regionId:number):string|string[] {
+  public static getRegionNameById(regionId: number): string | string[] {
     return regions.getRegionNameById(regionId);
   }
-
 }

@@ -32,5 +32,4 @@ function getRegionNameById(regionId) {
     return constants_1.default.REGIONS[regionIdAsString];
 }
 exports.getRegionNameById = getRegionNameById;
-;
 //# sourceMappingURL=regions.js.map

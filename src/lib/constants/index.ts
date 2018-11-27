@@ -1,28 +1,28 @@
 /**
  * Class exposing configuration constants as stated in Blizzard API docs
- * 
+ *
  * Via:
- * 
+ *
  * https://develop.battle.net/documentation/guides/using-oauth
  * https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
  */
 
-import regions from './regions';
-import locales from './locales';
-import defaultLocales from './defaultLocales';
-import regionApiHosts from './regionApiHosts';
-import sc2realms from './sc2realms';
-import oAuthAuthorizeUris from './oAuthAuthorizeUris';
-import oAuthTokenUris from './oAuthTokenUris';
-import oAuthCheckTokenUris from './oAuthCheckTokenUris';
+import regions from './localization/regions';
+import locales from './localization/locales';
+import defaultLocales from './localization/defaultLocales';
+import hosts from './api/hosts';
+import sc2realms from './localization/sc2realms';
+import authorizeUris from './oauth/authorizeUris';
+import tokenUris from './oauth/tokenUris';
+import checkTokenUris from './oauth/checkTokenUris';
 
 export default class CONSTANTS {
   public static readonly REGIONS = regions;
   public static readonly LOCALES = locales;
   public static readonly DEFAULT_LOCALES = defaultLocales;
-  public static readonly REGION_API_HOSTS = regionApiHosts;
+  public static readonly REGION_API_HOSTS = hosts;
   public static readonly SC2_REALMS = sc2realms;
-  public static readonly OAUTH_AUTHORIZE_URIS = oAuthAuthorizeUris;
-  public static readonly OAUTH_TOKEN_URIS = oAuthTokenUris;
-  public static readonly OAUTH_CHECK_TOKEN_URIS = oAuthCheckTokenUris;
+  public static readonly OAUTH_AUTHORIZE_URIS = authorizeUris;
+  public static readonly OAUTH_TOKEN_URIS = tokenUris;
+  public static readonly OAUTH_CHECK_TOKEN_URIS = checkTokenUris;
 }

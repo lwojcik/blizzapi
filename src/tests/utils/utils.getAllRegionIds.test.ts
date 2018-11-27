@@ -23,7 +23,7 @@ describe('getAllRegionIds()', () => {
   });
 
   test('returned array elements should be integers', () => {
-    const isInteger = (element:any):boolean => typeof element === 'number';
+    const isInteger = (element: any): boolean => typeof element === 'number';
     expect(getAllRegionIds().every(isInteger)).toBe(true);
   });
 });

@@ -3,17 +3,17 @@ import constants from '../constants';
 // todo: write interfaces
 
 /**
-  * Returns a list of all available regions
-  * 
-  * @return List of all available regions indexed by region id.
-  */
+ * Returns a list of all available regions
+ *
+ * @return List of all available regions indexed by region id.
+ */
 export function getAllRegions(): object {
   return constants.REGIONS;
 }
 
 /**
  * Returns a list of all available region ids
- * 
+ *
  * @return List of all available regions as flat array of numbers.
  */
 export function getAllRegionIds(): number[] {
@@ -29,8 +29,8 @@ export function getAllRegionIds(): number[] {
  */
 export function getAllRegionNames(): string[] {
   const regionNames = Object.values(constants.REGIONS);
-  const flattenedRegionNames = ([] as (string|string[])[]).concat(...regionNames);
-  const regionNamesAsStrings = <string[]>flattenedRegionNames.map((regionName:any) => regionName.toString());
+  const flattenedRegionNames = ([] as (string | string[])[]).concat(...regionNames);
+  const regionNamesAsStrings = <string[]>flattenedRegionNames.map((regionName: any) => regionName.toString());
   return regionNamesAsStrings;
 }
 
@@ -40,7 +40,7 @@ export function getAllRegionNames(): string[] {
  * @return Region name represented as two-letter code (e.g. "us" for Americas) or an array of regions
  * if more than one is specified for a given region id
  */
-export function getRegionNameById(regionId: number): (string|string[]) {
+export function getRegionNameById(regionId: number): string | string[] {
   const regionIds = Object.keys(constants.REGIONS);
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = regionIds.includes(regionIdAsString);
@@ -50,7 +50,7 @@ export function getRegionNameById(regionId: number): (string|string[]) {
   }
 
   return constants.REGIONS[regionIdAsString];
-};
+}
 
 // // todo: error handling
 
