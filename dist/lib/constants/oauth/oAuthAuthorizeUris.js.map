@@ -1,0 +1,1 @@
+{"version":3,"file":"oAuthAuthorizeUris.js","sourceRoot":"","sources":["../../../../src/lib/constants/oauth/oAuthAuthorizeUris.ts"],"names":[],"mappings":";;AAQA,IAAM,kBAAkB,GAA0C;IAChE,CAAC,EAAE,uCAAuC;IAC1C,CAAC,EAAE,uCAAuC;IAC1C,CAAC,EAAE,yCAAyC;IAC5C,CAAC,EAAE,8CAA8C;CAClD,CAAC;AAEF,kBAAe,kBAAkB,CAAC"}
