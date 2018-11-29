@@ -1,1 +1,0 @@
-{"version":3,"file":"tokenUris.js","sourceRoot":"","sources":["../../../../src/lib/constants/oauth/tokenUris.ts"],"names":[],"mappings":";;AAQA,IAAM,cAAc,GAAkC;IACpD,CAAC,EAAE,mCAAmC;IACtC,CAAC,EAAE,mCAAmC;IACtC,CAAC,EAAE,qCAAqC;IACxC,CAAC,EAAE,0CAA0C;CAC9C,CAAC;AAEF,kBAAe,cAAc,CAAC"}
