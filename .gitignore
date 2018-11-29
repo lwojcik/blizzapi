@@ -51,5 +51,4 @@ db/
 __TESTDATA__
 
 # Build
-
 dist/
