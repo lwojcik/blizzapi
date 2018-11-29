@@ -15,39 +15,79 @@ describe('REGIONS', () => {
     expect(REGIONS[1]).toBeDefined();
   });
 
-  test('property "1" should be equal to "us"', () => {
-    expect(REGIONS[1]).toEqual('us');
-  });
-
   test('should contain property "2"', () => {
     expect(REGIONS[2]).toBeDefined();
   });
 
-  test('property "2" should be equal to "eu"', () => {
-    expect(REGIONS[2]).toEqual('eu');
-  });
-
   test('should contain property "3"', () => {
-    expect(REGIONS[2]).toBeDefined();
-  });
-
-  test('property "3" should be of type "Array"', () => {
-    expect(Array.isArray(REGIONS[3])).toBe(true);
-  });
-
-  test('index 0 of property "3" should be equal to "kr"', () => {
-    expect(REGIONS[3][0]).toEqual('kr');
-  });
-
-  test('index 1 of property "3" should be equal to "tw"', () => {
-    expect(REGIONS[3][1]).toEqual('tw');
+    expect(REGIONS[3]).toBeDefined();
   });
 
   test('should contain property "5"', () => {
     expect(REGIONS[5]).toBeDefined();
   });
 
-  test('property "5" should be equal to "cn"', () => {
-    expect(REGIONS[5]).toEqual('cn');
+  describe('Property 1', () => {
+    test('value should be an array', () => {
+      expect(typeof REGIONS[1]).toBeTruthy();
+      expect(REGIONS[1].constructor === Array).toBe(true);
+    });
+
+    test('value array should contain 1 element', () => {
+      expect(REGIONS[1].length).toEqual(1);
+    });
+
+    test('index 0 of value array should be equal to "us"', () => {
+      expect(REGIONS[1][0]).toEqual('us');
+    });
+  });
+
+  describe('Property 2', () => {
+    test('value should be an array', () => {
+      expect(typeof REGIONS[2]).toBeTruthy();
+      expect(REGIONS[2].constructor === Array).toBe(true);
+    });
+
+    test('value array should contain 1 element', () => {
+      expect(REGIONS[2].length).toEqual(1);
+    });
+
+    test('index 0 of value array should be equal to "eu"', () => {
+      expect(REGIONS[2][0]).toEqual('eu');
+    });
+  });
+
+  describe('Property 3', () => {
+    test('value should be an array', () => {
+      expect(typeof REGIONS[3]).toBeTruthy();
+      expect(REGIONS[3].constructor === Array).toBe(true);
+    });
+
+    test('value array should contain 2 elements', () => {
+      expect(REGIONS[3].length).toEqual(2);
+    });
+
+    test('index 0 of value array should be equal to "kr"', () => {
+      expect(REGIONS[3][0]).toEqual('kr');
+    });
+
+    test('index 1 of value array should be equal to "tw"', () => {
+      expect(REGIONS[3][1]).toEqual('tw');
+    });
+  });
+
+  describe('Property 5', () => {
+    test('value should be an array', () => {
+      expect(typeof REGIONS[5]).toBeTruthy();
+      expect(REGIONS[5].constructor === Array).toBe(true);
+    });
+
+    test('value array should contain 1 element', () => {
+      expect(REGIONS[5].length).toEqual(1);
+    });
+
+    test('index 0 of value array should be equal to "cn"', () => {
+      expect(REGIONS[5][0]).toEqual('cn');
+    });
   });
 });

@@ -1,7 +1,7 @@
-import utils from '../../lib/utils';
+import { BattleNetUtils } from '../../lib/utils';
 import constants from '../../lib/constants';
 
-const { getAllRegions } = utils;
+const { getAllRegions } = BattleNetUtils;
 
 describe('getAllRegions()', () => {
   test('should be defined', () => {

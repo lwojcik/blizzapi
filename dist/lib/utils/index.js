@@ -7,23 +7,24 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var regions = __importStar(require("./regions"));
-var BattleNetUtils = (function () {
-    function BattleNetUtils() {
-    }
-    BattleNetUtils.getAllRegions = function () {
+var regions = __importStar(require("./localization/regions"));
+var BattleNetUtils;
+(function (BattleNetUtils) {
+    function getAllRegions() {
         return regions.getAllRegions();
-    };
-    BattleNetUtils.getAllRegionNames = function () {
+    }
+    BattleNetUtils.getAllRegions = getAllRegions;
+    function getAllRegionNames() {
         return regions.getAllRegionNames();
-    };
-    BattleNetUtils.getAllRegionIds = function () {
+    }
+    BattleNetUtils.getAllRegionNames = getAllRegionNames;
+    function getAllRegionIds() {
         return regions.getAllRegionIds();
-    };
-    BattleNetUtils.getRegionNameById = function (regionId) {
+    }
+    BattleNetUtils.getAllRegionIds = getAllRegionIds;
+    function getRegionNameById(regionId) {
         return regions.getRegionNameById(regionId);
-    };
-    return BattleNetUtils;
-}());
-exports.default = BattleNetUtils;
+    }
+    BattleNetUtils.getRegionNameById = getRegionNameById;
+})(BattleNetUtils = exports.BattleNetUtils || (exports.BattleNetUtils = {}));
 //# sourceMappingURL=index.js.map

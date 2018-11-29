@@ -3,9 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var utils_1 = __importDefault(require("../../lib/utils"));
+var utils_1 = require("../../lib/utils");
 var constants_1 = __importDefault(require("../../lib/constants"));
-var getAllRegions = utils_1.default.getAllRegions;
+var getAllRegions = utils_1.BattleNetUtils.getAllRegions;
 describe('getAllRegions()', function () {
     test('should be defined', function () {
         expect(getAllRegions).toBeDefined();

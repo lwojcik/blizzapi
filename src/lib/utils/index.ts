@@ -1,21 +1,21 @@
-import * as regions from './regions';
+import * as regions from './localization/regions';
 
 // todo: interfaces
 
-export default class BattleNetUtils {
-  public static getAllRegions() {
+export module BattleNetUtils {
+  export function getAllRegions() {
     return regions.getAllRegions();
   }
 
-  public static getAllRegionNames() {
+  export function getAllRegionNames() {
     return regions.getAllRegionNames();
   }
 
-  public static getAllRegionIds() {
+  export function getAllRegionIds() {
     return regions.getAllRegionIds();
   }
 
-  public static getRegionNameById(regionId: number): string | string[] {
+  export function getRegionNameById(regionId: number): string | string[] {
     return regions.getRegionNameById(regionId);
   }
 }
