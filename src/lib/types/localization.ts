@@ -2,7 +2,7 @@ import { Uri } from './common';
 
 export type RegionId = number;
 export type RegionIdKey = string;
-export type RegionIdAsIntOrString = RegionId | RegionIdKey;
+export type RegionIdAsNumberOrString = RegionId | RegionIdKey;
 export type RegionIdArray = RegionId[];
 export type RegionName = string;
 export type RegionNameArray = RegionName[];

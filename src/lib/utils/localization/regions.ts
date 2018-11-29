@@ -1,7 +1,11 @@
 import constants from '../../constants';
 
-// import IRegionIdProperties from '../../interfaces/IRegionIdProperties';
-import { RegionIdAsIntOrString, RegionIdArray, RegionName, RegionNameArray } from '../../types';
+import {
+  RegionIdAsNumberOrString,
+  RegionIdArray,
+  RegionName,
+  RegionNameArray
+} from '../../types';
 
 /**
  * Returns a list of all available regions
@@ -42,7 +46,7 @@ export function getAllRegionNames(): RegionNameArray {
  * @return Region name represented as two-letter code (e.g. "us" for Americas) or an array of regions
  * if more than one is specified for a given region id
  */
-export function getRegionNameById(regionId: RegionIdAsIntOrString) {
+export function getRegionNameById(regionId: RegionIdAsNumberOrString) {
   const regionIds = Object.keys(constants.REGIONS);
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = regionIds.includes(regionIdAsString);
@@ -54,6 +58,20 @@ export function getRegionNameById(regionId: RegionIdAsIntOrString) {
   return constants.REGIONS[regionIdAsString];
 }
 
+/**
+ * Validates region id provided as number or string
+ *
+ * @param regionId Region id as integer or string
+ * @return true for valid region id. false for invalid region id
+ */
+export function validateRegionId(regionId: RegionIdAsNumberOrString) {
+  return Boolean(getRegionNameById(regionId));
+}
+
+// export function getRegionIdByName(regionName: RegionName) {
+  
+// }
+
 // // todo: error handling
 
 // // - regionality
@@ -63,8 +81,6 @@ export function getRegionNameById(regionId: RegionIdAsIntOrString) {
 // // const getAllRegions = () => constants.REGIONS;
 
 // // const getAllRegionLocales = () => constants.LOCALES;
-
-// // const getRegionNameById = regionId => constants.REGIONS[regionId];
 
 // // const getRegionIdByName = (regionName) => {
 // //   // get region id by name

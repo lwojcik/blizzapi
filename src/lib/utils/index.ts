@@ -1,6 +1,6 @@
 import * as regions from './localization/regions';
 
-import { RegionIdAsIntOrString, RegionNameArray } from '../types/localization';
+import { RegionIdAsNumberOrString, RegionNameArray } from '../types/localization';
 
 export namespace BattleNetUtils {
   export function getAllRegions() {
@@ -15,7 +15,11 @@ export namespace BattleNetUtils {
     return regions.getAllRegionIds();
   }
 
-  export function getRegionNameById(regionId: RegionIdAsIntOrString): RegionNameArray {
+  export function getRegionNameById(regionId: RegionIdAsNumberOrString): RegionNameArray {
     return regions.getRegionNameById(regionId);
+  }
+
+  export function validateRegionId(regionId: RegionIdAsNumberOrString): Boolean {
+    return regions.validateRegionId(regionId);
   }
 }
