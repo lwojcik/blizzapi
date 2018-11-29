@@ -10,10 +10,10 @@
  * based on https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
  */
 
-import RegionIdProperties from '../../interfaces/RegionIdProperties';
-import { DefaultLocaleIndex } from '../../types/constants';
+import IRegionIdProperties from '../../interfaces/IRegionIdProperties';
+import { DefaultLocaleIndex } from '../../types';
 
-const defaultLocales: RegionIdProperties<DefaultLocaleIndex> = {
+const defaultLocales: IRegionIdProperties<DefaultLocaleIndex> = {
   1: 0,
   2: 0,
   3: 0,

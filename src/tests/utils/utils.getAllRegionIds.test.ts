@@ -19,7 +19,7 @@ describe('getAllRegionIds()', () => {
   });
 
   test('number of returned elements should match constants.REGIONS length', () => {
-    expect(getAllRegionIds().length).toEqual(Object.keys(REGIONS).length);
+    expect(getAllRegionIds().length).toStrictEqual(Object.keys(REGIONS).length);
   });
 
   test('returned array elements should be integers', () => {

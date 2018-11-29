@@ -3,10 +3,10 @@
  * via https://develop.battle.net/documentation/guides/using-oauth
  */
 
-import RegionIdProperties from '../../interfaces/RegionIdProperties';
-import { AuthorizeUri } from '../../types/constants/oauth';
+import IRegionIdProperties from '../../interfaces/IRegionIdProperties';
+import { AuthorizeUri } from '../../types';
 
-const oAuthAuthorizeUris: RegionIdProperties<AuthorizeUri> = {
+const oAuthAuthorizeUris: IRegionIdProperties<AuthorizeUri> = {
   1: 'https://us.battle.net/oauth/authorize',
   2: 'https://eu.battle.net/oauth/authorize',
   3: 'https://apac.battle.net/oauth/authorize',

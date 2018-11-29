@@ -21,7 +21,7 @@ describe('getAllRegionNames()', () => {
 
   test('number of returned elements should match length of constants.REGIONS values after flattening', () => {
     const flattenedRegionsLength = <number>([] as string[]).concat(...Object.values(REGIONS)).length;
-    expect(getAllRegionNames().length).toEqual(flattenedRegionsLength);
+    expect(getAllRegionNames().length).toStrictEqual(flattenedRegionsLength);
   });
 
   // test('returned array elements should be integers', () => {

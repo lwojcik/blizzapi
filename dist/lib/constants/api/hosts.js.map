@@ -1,1 +1,1 @@
-{"version":3,"file":"hosts.js","sourceRoot":"","sources":["../../../../src/lib/constants/api/hosts.ts"],"names":[],"mappings":";;AAQA,IAAM,KAAK,GAAgC;IACzC,CAAC,EAAE,6BAA6B;IAChC,CAAC,EAAE,6BAA6B;IAChC,CAAC,EAAE,6BAA6B;IAChC,CAAC,EAAE,6BAA6B;CACjC,CAAC;AAEF,kBAAe,KAAK,CAAC"}
+{"version":3,"file":"hosts.js","sourceRoot":"","sources":["../../../../src/lib/constants/api/hosts.ts"],"names":[],"mappings":";;AAQA,IAAM,KAAK,GAAiC;IAC1C,CAAC,EAAE,6BAA6B;IAChC,CAAC,EAAE,6BAA6B;IAChC,CAAC,EAAE,6BAA6B;IAChC,CAAC,EAAE,6BAA6B;CACjC,CAAC;AAEF,kBAAe,KAAK,CAAC"}

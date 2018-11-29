@@ -1,7 +1,7 @@
 import constants from '../../constants';
 
-// import RegionIdProperties from '../../interfaces/RegionIdProperties';
-// import { RegionNameList } from '../../types/constants';
+// import IRegionIdProperties from '../../interfaces/IRegionIdProperties';
+import { RegionIdAsIntOrString, RegionIdArray, RegionName, RegionNameArray } from '../../types';
 
 /**
  * Returns a list of all available regions
@@ -17,7 +17,7 @@ export function getAllRegions() {
  *
  * @return List of all available regions as flat array of numbers.
  */
-export function getAllRegionIds() {
+export function getAllRegionIds(): RegionIdArray {
   const regionKeys = Object.keys(constants.REGIONS);
   const regionKeysAsIntegers = regionKeys.map(regionKey => parseInt(regionKey, 10));
   return regionKeysAsIntegers;
@@ -28,9 +28,9 @@ export function getAllRegionIds() {
  *
  * @return {Array} List of all available regions as flat array of strings.
  */
-export function getAllRegionNames() {
+export function getAllRegionNames(): RegionNameArray {
   const regionNames = Object.values(constants.REGIONS);
-  const flattenedRegionNames = ([] as (string | string[])[]).concat(...regionNames);
+  const flattenedRegionNames = ([] as (RegionName | RegionNameArray)[]).concat(...regionNames);
   const regionNamesAsStrings = flattenedRegionNames.map((regionName: any) => regionName.toString());
   return regionNamesAsStrings;
 }
@@ -38,10 +38,11 @@ export function getAllRegionNames() {
 /**
  * Returns region name(s) represented by given region id
  *
+ * @param regionId Region id as integer or string
  * @return Region name represented as two-letter code (e.g. "us" for Americas) or an array of regions
  * if more than one is specified for a given region id
  */
-export function getRegionNameById(regionId: number) {
+export function getRegionNameById(regionId: RegionIdAsIntOrString) {
   const regionIds = Object.keys(constants.REGIONS);
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = regionIds.includes(regionIdAsString);

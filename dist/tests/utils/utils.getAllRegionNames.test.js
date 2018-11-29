@@ -21,7 +21,7 @@ describe('getAllRegionNames()', function () {
     test('number of returned elements should match length of constants.REGIONS values after flattening', function () {
         var _a;
         var flattenedRegionsLength = (_a = []).concat.apply(_a, Object.values(REGIONS)).length;
-        expect(getAllRegionNames().length).toEqual(flattenedRegionsLength);
+        expect(getAllRegionNames().length).toStrictEqual(flattenedRegionsLength);
     });
 });
 //# sourceMappingURL=utils.getAllRegionNames.test.js.map

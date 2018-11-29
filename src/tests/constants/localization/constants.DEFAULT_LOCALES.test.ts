@@ -8,7 +8,7 @@ describe('DEFAULT_LOCALES', () => {
   });
 
   test('should contain 4 elements', () => {
-    expect(Object.keys(DEFAULT_LOCALES).length).toEqual(4);
+    expect(Object.keys(DEFAULT_LOCALES).length).toStrictEqual(4);
   });
 
   test('should contain property "1"', () => {
@@ -16,7 +16,7 @@ describe('DEFAULT_LOCALES', () => {
   });
 
   test('property "1" should be equal to 0', () => {
-    expect(DEFAULT_LOCALES[1]).toEqual(0);
+    expect(DEFAULT_LOCALES[1]).toStrictEqual(0);
   });
 
   test('should contain property "2"', () => {
@@ -24,7 +24,7 @@ describe('DEFAULT_LOCALES', () => {
   });
 
   test('property "2" should be equal to 0', () => {
-    expect(DEFAULT_LOCALES[2]).toEqual(0);
+    expect(DEFAULT_LOCALES[2]).toStrictEqual(0);
   });
 
   test('should contain property "3"', () => {
@@ -32,7 +32,7 @@ describe('DEFAULT_LOCALES', () => {
   });
 
   test('property "3" should be equal to 0', () => {
-    expect(DEFAULT_LOCALES[3]).toEqual(0);
+    expect(DEFAULT_LOCALES[3]).toStrictEqual(0);
   });
 
   test('should contain property "5"', () => {
@@ -40,6 +40,6 @@ describe('DEFAULT_LOCALES', () => {
   });
 
   test('property "5" should be equal to 0', () => {
-    expect(DEFAULT_LOCALES[5]).toEqual(0);
+    expect(DEFAULT_LOCALES[5]).toStrictEqual(0);
   });
 });

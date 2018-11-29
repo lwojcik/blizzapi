@@ -8,7 +8,7 @@ describe('SC2_REALMS', () => {
   });
 
   test('should contain 4 elements', () => {
-    expect(Object.keys(SC2_REALMS).length).toEqual(4);
+    expect(Object.keys(SC2_REALMS).length).toStrictEqual(4);
   });
 
   test('should contain property "1"', () => {
@@ -20,15 +20,15 @@ describe('SC2_REALMS', () => {
   });
 
   test('property "1" should contain 2 elements', () => {
-    expect(Object.keys(SC2_REALMS[1]).length).toEqual(2);
+    expect(Object.keys(SC2_REALMS[1]).length).toStrictEqual(2);
   });
 
   test('index 0 of property "1" should be equal to 1', () => {
-    expect(SC2_REALMS[1][0]).toEqual(1);
+    expect(SC2_REALMS[1][0]).toStrictEqual(1);
   });
 
   test('index 1 of property "1" should be equal to 2', () => {
-    expect(SC2_REALMS[1][1]).toEqual(2);
+    expect(SC2_REALMS[1][1]).toStrictEqual(2);
   });
 
   test('should contain property "2"', () => {
@@ -40,15 +40,15 @@ describe('SC2_REALMS', () => {
   });
 
   test('property "1" should contain 2 elements', () => {
-    expect(Object.keys(SC2_REALMS[1]).length).toEqual(2);
+    expect(Object.keys(SC2_REALMS[1]).length).toStrictEqual(2);
   });
 
   test('index 0 of property "2" should be equal to 1', () => {
-    expect(SC2_REALMS[1][0]).toEqual(1);
+    expect(SC2_REALMS[1][0]).toStrictEqual(1);
   });
 
   test('index 1 of property "2" should be equal to 2', () => {
-    expect(SC2_REALMS[1][1]).toEqual(2);
+    expect(SC2_REALMS[1][1]).toStrictEqual(2);
   });
 
   test('should contain property "3"', () => {
@@ -60,15 +60,15 @@ describe('SC2_REALMS', () => {
   });
 
   test('property "3" should contain 2 elements', () => {
-    expect(Object.keys(SC2_REALMS[3]).length).toEqual(2);
+    expect(Object.keys(SC2_REALMS[3]).length).toStrictEqual(2);
   });
 
   test('index 0 of property "3" should be equal to 1', () => {
-    expect(SC2_REALMS[3][0]).toEqual(1);
+    expect(SC2_REALMS[3][0]).toStrictEqual(1);
   });
 
   test('index 1 of property "3" should be equal to 2', () => {
-    expect(SC2_REALMS[3][1]).toEqual(2);
+    expect(SC2_REALMS[3][1]).toStrictEqual(2);
   });
 
   test('should contain property "5"', () => {
@@ -80,10 +80,10 @@ describe('SC2_REALMS', () => {
   });
 
   test('property "5" should contain 1 element', () => {
-    expect(Object.keys(SC2_REALMS[5]).length).toEqual(1);
+    expect(Object.keys(SC2_REALMS[5]).length).toStrictEqual(1);
   });
 
   test('index 0 of property "5" should be equal to 1', () => {
-    expect(SC2_REALMS[5][0]).toEqual(1);
+    expect(SC2_REALMS[5][0]).toStrictEqual(1);
   });
 });

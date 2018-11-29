@@ -8,7 +8,7 @@ describe('REGIONS', () => {
   });
 
   test('should contain 4 elements', () => {
-    expect(Object.keys(REGIONS).length).toEqual(4);
+    expect(Object.keys(REGIONS).length).toStrictEqual(4);
   });
 
   test('should contain property "1"', () => {
@@ -34,11 +34,11 @@ describe('REGIONS', () => {
     });
 
     test('value array should contain 1 element', () => {
-      expect(REGIONS[1].length).toEqual(1);
+      expect(REGIONS[1].length).toStrictEqual(1);
     });
 
     test('index 0 of value array should be equal to "us"', () => {
-      expect(REGIONS[1][0]).toEqual('us');
+      expect(REGIONS[1][0]).toStrictEqual('us');
     });
   });
 
@@ -49,11 +49,11 @@ describe('REGIONS', () => {
     });
 
     test('value array should contain 1 element', () => {
-      expect(REGIONS[2].length).toEqual(1);
+      expect(REGIONS[2].length).toStrictEqual(1);
     });
 
     test('index 0 of value array should be equal to "eu"', () => {
-      expect(REGIONS[2][0]).toEqual('eu');
+      expect(REGIONS[2][0]).toStrictEqual('eu');
     });
   });
 
@@ -64,15 +64,15 @@ describe('REGIONS', () => {
     });
 
     test('value array should contain 2 elements', () => {
-      expect(REGIONS[3].length).toEqual(2);
+      expect(REGIONS[3].length).toStrictEqual(2);
     });
 
     test('index 0 of value array should be equal to "kr"', () => {
-      expect(REGIONS[3][0]).toEqual('kr');
+      expect(REGIONS[3][0]).toStrictEqual('kr');
     });
 
     test('index 1 of value array should be equal to "tw"', () => {
-      expect(REGIONS[3][1]).toEqual('tw');
+      expect(REGIONS[3][1]).toStrictEqual('tw');
     });
   });
 
@@ -83,11 +83,11 @@ describe('REGIONS', () => {
     });
 
     test('value array should contain 1 element', () => {
-      expect(REGIONS[5].length).toEqual(1);
+      expect(REGIONS[5].length).toStrictEqual(1);
     });
 
     test('index 0 of value array should be equal to "cn"', () => {
-      expect(REGIONS[5][0]).toEqual('cn');
+      expect(REGIONS[5][0]).toStrictEqual('cn');
     });
   });
 });

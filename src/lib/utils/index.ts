@@ -1,8 +1,8 @@
 import * as regions from './localization/regions';
 
-// todo: interfaces
+import { RegionIdAsIntOrString, RegionNameArray } from '../types/localization';
 
-export module BattleNetUtils {
+export namespace BattleNetUtils {
   export function getAllRegions() {
     return regions.getAllRegions();
   }
@@ -15,7 +15,7 @@ export module BattleNetUtils {
     return regions.getAllRegionIds();
   }
 
-  export function getRegionNameById(regionId: number): string | string[] {
+  export function getRegionNameById(regionId: RegionIdAsIntOrString): RegionNameArray {
     return regions.getRegionNameById(regionId);
   }
 }

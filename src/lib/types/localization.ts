@@ -1,0 +1,14 @@
+import { Uri } from './common';
+
+export type RegionId = number;
+export type RegionIdKey = string;
+export type RegionIdAsIntOrString = RegionId | RegionIdKey;
+export type RegionIdArray = RegionId[];
+export type RegionName = string;
+export type RegionNameArray = RegionName[];
+export type Locale = string;
+export type LocaleList = Locale[];
+export type DefaultLocaleIndex = number;
+export type RegionApiHostUri = Uri;
+export type Sc2Realm = number;
+export type Sc2RealmList = Sc2Realm[];

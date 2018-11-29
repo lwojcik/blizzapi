@@ -19,7 +19,7 @@ describe('getAllRegionIds()', function () {
         expect(getAllRegionIds().constructor === Array).toBe(true);
     });
     test('number of returned elements should match constants.REGIONS length', function () {
-        expect(getAllRegionIds().length).toEqual(Object.keys(REGIONS).length);
+        expect(getAllRegionIds().length).toStrictEqual(Object.keys(REGIONS).length);
     });
     test('returned array elements should be integers', function () {
         var isInteger = function (element) { return typeof element === 'number'; };
