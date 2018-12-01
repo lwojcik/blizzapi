@@ -2,7 +2,7 @@
  * List of default locales for each region
  *
  * This is not imposed by Blizzard. It is in fact possible to fetch data without specific locale,
- * in which case returned data constains information in all available languages.
+ * in which case returned data contains information in all available languages.
  *
  * I use this list to provide reasonable defaults for request functions
  * while still permitting to fetch data without specified locale.
