@@ -1,11 +1,6 @@
 import constants from '../../constants';
 
-import {
-  RegionIdAsNumberOrString,
-  RegionIdArray,
-  RegionName,
-  RegionNameArray
-} from '../../types';
+import { RegionIdAsNumberOrString, RegionIdArray, RegionName, RegionNameArray } from '../../types';
 
 /**
  * Returns a list of all available regions
@@ -52,7 +47,7 @@ export function getRegionNameById(regionId: RegionIdAsNumberOrString) {
   const isRegionIdValid = regionIds.includes(regionIdAsString);
 
   if (!isRegionIdValid) {
-    throw new RangeError(`${regionIdAsString} is not a valid parameter for getRegionNameById`);
+    throw new RangeError(`${regionIdAsString} is not a valid parameter for getRegionNameById()`);
   }
 
   return constants.REGIONS[regionIdAsString];
@@ -68,9 +63,35 @@ export function validateRegionId(regionId: RegionIdAsNumberOrString) {
   return Boolean(getRegionNameById(regionId));
 }
 
-// export function getRegionIdByName(regionName: RegionName) {
-  
-// }
+/**
+ * Returns region id for given region name
+ *
+ * @param regionName Region id as integer or string
+ * @return Region id as number
+ */
+export function getRegionIdByName(regionName: RegionName) {
+  const regionNameLowercase = regionName.toLowerCase();
+  const regions = constants.REGIONS;
+  const regionKeys = Object.keys(regions);
+  const regionIdArray = regionKeys.filter(key => regions[key].includes(regionNameLowercase));
+  const regionId = Number(regionIdArray[0]) || false;
+
+  if (!regionId) {
+    throw new RangeError(`"${regionName}" is not a valid parameter for getRegionIdByName()`);
+  }
+
+  return regionId;
+}
+
+/**
+ * Validates region name provided as string
+ *
+ * @param regionId Region name
+ * @return true for valid region name. false for invalid region name
+ */
+export function validateRegionName(regionName: RegionName) {
+  return Boolean(getRegionIdByName(regionName));
+}
 
 // // todo: error handling
 

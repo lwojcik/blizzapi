@@ -1,6 +1,14 @@
 import { BattleNetUtils } from '../../lib/utils';
 
-const { getAllRegions, getAllRegionIds, getRegionNameById } = BattleNetUtils;
+const {
+  getAllRegions,
+  getAllRegionIds,
+  getAllRegionNames,
+  getRegionNameById,
+  validateRegionId,
+  getRegionIdByName,
+  validateRegionName,
+} = BattleNetUtils;
 
 describe('BattleNetUtils', () => {
   test('should be defined', () => {
@@ -25,9 +33,9 @@ describe('BattleNetUtils', () => {
   });
 
   test('should expose method getAllRegionNames()', () => {
-    expect(getAllRegionIds).toBeDefined();
-    expect(getAllRegionIds).toBeTruthy();
-    expect(typeof getAllRegionIds).toBe('function');
+    expect(getAllRegionNames).toBeDefined();
+    expect(getAllRegionNames).toBeTruthy();
+    expect(typeof getAllRegionNames).toBe('function');
   });
 
   test('should expose method getRegionNameById()', () => {
@@ -37,8 +45,20 @@ describe('BattleNetUtils', () => {
   });
 
   test('should expose method validateRegionId()', () => {
-    expect(getRegionNameById).toBeDefined();
-    expect(getRegionNameById).toBeTruthy();
-    expect(typeof getRegionNameById).toBe('function');
+    expect(validateRegionId).toBeDefined();
+    expect(validateRegionId).toBeTruthy();
+    expect(typeof validateRegionId).toBe('function');
+  });
+
+  test('should expose method getRegionIdByName()', () => {
+    expect(getRegionIdByName).toBeDefined();
+    expect(getRegionIdByName).toBeTruthy();
+    expect(typeof getRegionIdByName).toBe('function');
+  });
+
+  test('should expose method validateRegionName()', () => {
+    expect(validateRegionName).toBeDefined();
+    expect(validateRegionName).toBeTruthy();
+    expect(typeof validateRegionName).toBe('function');
   });
 });

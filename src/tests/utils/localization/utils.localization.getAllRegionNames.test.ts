@@ -23,9 +23,4 @@ describe('getAllRegionNames()', () => {
     const flattenedRegionsLength = <number>([] as string[]).concat(...Object.values(REGIONS)).length;
     expect(getAllRegionNames().length).toStrictEqual(flattenedRegionsLength);
   });
-
-  // test('returned array elements should be integers', () => {
-  //   const isString = element => typeof element === 'string';
-  //   expect(getAllRegionNames().every(isString)).toBe(true);
-  // });
 });
