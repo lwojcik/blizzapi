@@ -60,7 +60,11 @@ export function getRegionNameById(regionId: RegionIdAsNumberOrString) {
  * @return true for valid region id. false for invalid region id
  */
 export function validateRegionId(regionId: RegionIdAsNumberOrString) {
-  return Boolean(getRegionNameById(regionId));
+  try {
+    return Boolean(getRegionNameById(regionId));
+  } catch(error) {
+    return false;
+  }
 }
 
 /**
@@ -90,5 +94,9 @@ export function getRegionIdByName(regionName: RegionName) {
  * @return true for valid region name. false for invalid region name
  */
 export function validateRegionName(regionName: RegionName) {
-  return Boolean(getRegionIdByName(regionName));
+  try {
+    return Boolean(getRegionIdByName(regionName));
+  } catch (error) {
+    return false;
+  }
 }
