@@ -35,4 +35,10 @@ describe('BattleNetUtils', () => {
     expect(getRegionNameById).toBeTruthy();
     expect(typeof getRegionNameById).toBe('function');
   });
+
+  test('should expose method validateRegionId()', () => {
+    expect(getRegionNameById).toBeDefined();
+    expect(getRegionNameById).toBeTruthy();
+    expect(typeof getRegionNameById).toBe('function');
+  });
 });

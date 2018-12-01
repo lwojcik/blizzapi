@@ -19,7 +19,7 @@ export namespace BattleNetUtils {
     return regions.getRegionNameById(regionId);
   }
 
-  export function validateRegionId(regionId: RegionIdAsNumberOrString): Boolean {
+  export function validateRegionId(regionId: RegionIdAsNumberOrString) {
     return regions.validateRegionId(regionId);
   }
 }
