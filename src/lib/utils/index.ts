@@ -1,33 +1,43 @@
-import * as regions from './localization/regions';
+import * as localization from './localization';
 
 import { RegionId, RegionName, RegionIdAsNumberOrString, RegionNameArray } from '../types/localization';
 
 export namespace BattleNetUtils {
+
+  /** Regions */
+
   export function getAllRegions() {
-    return regions.getAllRegions();
+    return localization.Regions.getAllRegions();
   }
 
   export function getAllRegionNames() {
-    return regions.getAllRegionNames();
+    return localization.Regions.getAllRegionNames();
   }
 
   export function getAllRegionIds() {
-    return regions.getAllRegionIds();
+    return localization.Regions.getAllRegionIds();
   }
 
   export function getRegionNameById(regionId: RegionIdAsNumberOrString): RegionNameArray {
-    return regions.getRegionNameById(regionId);
+    return localization.Regions.getRegionNameById(regionId);
   }
 
   export function validateRegionId(regionId: RegionIdAsNumberOrString) {
-    return regions.validateRegionId(regionId);
+    return localization.Regions.validateRegionId(regionId);
   }
 
   export function getRegionIdByName(regionName: RegionName): RegionId {
-    return regions.getRegionIdByName(regionName);
+    return localization.Regions.getRegionIdByName(regionName);
   }
 
   export function validateRegionName(regionName: RegionName) {
-    return regions.validateRegionName(regionName);
+    return localization.Regions.validateRegionName(regionName);
   }
+
+  /** Default locales */
+
+  export function getAllDefaultLocaleIndexes() {
+    return localization.DefaultLocales.getAllDefaultLocaleIndexes();
+  }
+  
 }

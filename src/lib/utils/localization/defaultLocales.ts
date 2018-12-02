@@ -2,13 +2,25 @@ import constants from '../../constants';
 
 // import { RegionIdAsNumberOrString, RegionIdArray, RegionName, RegionNameArray } from '../../types';
 
-/**
- * Returns a list of all available default locales
- *
- * @return List of all available default locales indexed by region id.
- */
-export function getAllDefaultLocales() {
-  return constants.DEFAULT_LOCALES;
+export namespace DefaultLocales {
+  /**
+   * Returns a list of all available default locale indexes
+   *
+   * @return List of all available default locale indexes indexed by region id.
+   */
+  export function getAllDefaultLocaleIndexes() {
+    return constants.DEFAULT_LOCALES;
+  }
+
+  // /**
+  //  * Returns a list of all available default locales
+  //  *
+  //  * @return List of all available default locales indexed by region id.
+  //  */
+  // export function getAllDefaultLocales() {
+  //   const defaultLocales = constants.DEFAULT_LOCALES.map(defaultLocale => )
+  //   return constants.DEFAULT_LOCALES;
+  // }
 }
 
 // /**
