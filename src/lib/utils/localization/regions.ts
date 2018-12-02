@@ -63,7 +63,7 @@ export namespace Regions {
   export function validateRegionId(regionId: RegionIdAsNumberOrString) {
     try {
       return Boolean(getRegionNameById(regionId));
-    } catch(error) {
+    } catch (error) {
       return false;
     }
   }

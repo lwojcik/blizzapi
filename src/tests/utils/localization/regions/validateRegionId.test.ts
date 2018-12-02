@@ -1,4 +1,4 @@
-import { BattleNetUtils } from '../../../lib/utils';
+import { BattleNetUtils } from '../../../../lib/utils';
 const { validateRegionId } = BattleNetUtils;
 
 describe('validateRegionId()', () => {
