@@ -1,4 +1,4 @@
-import { Regions, Locales, DefaultLocales } from './localization';
+import { Regions, Locales, DefaultLocales, Sc2Realms } from './localization';
 
 import { RegionId, RegionName, RegionIdAsNumberOrString, RegionNameArray } from '../types/localization';
 
@@ -48,4 +48,10 @@ export namespace BattleNetUtils {
   export function getAllDefaultLocaleIndexes() {
     return DefaultLocales.getAllDefaultLocaleIndexes();
   }
+
+    /** StarCraft II realms */
+
+    export function getAllSc2Realms() {
+      return Sc2Realms.getAllSc2Realms();
+    }
 }

@@ -1,4 +1,4 @@
-import constants from '../../../lib/constants';
+import constants from '../../../../lib/constants';
 
 const { REGIONS } = constants;
 

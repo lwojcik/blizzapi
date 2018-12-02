@@ -71,7 +71,7 @@ export namespace Regions {
   /**
    * Returns region id for given region name
    *
-   * @param regionName Region id as integer or string
+   * @param regionName Region name
    * @return Region id as number
    */
   export function getRegionIdByName(regionName: RegionName) {

@@ -9,6 +9,7 @@ export type RegionNameArray = RegionName[];
 export type Locale = string;
 export type LocaleArray = Locale[];
 export type DefaultLocaleIndex = number;
+export type DefaultLocaleIndexArray = DefaultLocaleIndex[];
 export type RegionApiHostUri = Uri;
 export type Sc2Realm = number;
 export type Sc2RealmList = Sc2Realm[];

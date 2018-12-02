@@ -1,4 +1,4 @@
-import { BattleNetUtils } from '../../../../lib/utils';
+import { BattleNetUtils } from '../../../../../lib/utils';
 const { validateRegionId } = BattleNetUtils;
 
 describe('validateRegionId()', () => {
@@ -16,7 +16,7 @@ describe('validateRegionId()', () => {
     ${2}  | ${true}
     ${3}  | ${true}
     ${5}  | ${true}
-  `('returns true for region id $input as integer', ({ input, expectedResult }) => {
+  `('returns $expectedResult for region id $input as number', ({ input, expectedResult }) => {
     expect(validateRegionId(parseInt(input, 10))).toBe(expectedResult);
   });
 
@@ -39,11 +39,8 @@ describe('validateRegionId()', () => {
     ${'adasf'} | ${false}
     ${'1abc'}  | ${false}
     ${'!@#$'}  | ${false}
-    ${'><1'}   | ${false}
-  `('throws $expectedResult for $input as string', ({ input, expected }) => {
-    expect(() => {
-      validateRegionId(input.toString());
-    }).toThrow(expected);
+  `('returns $expectedResult for $input as string', ({ input, expectedResult }) => {
+    expect(validateRegionId(input.toString())).toBe(expectedResult);
   });
 
   test.each`
@@ -54,9 +51,7 @@ describe('validateRegionId()', () => {
     ${0}     | ${false}
     ${-32}   | ${false}
     ${-5}    | ${false}
-  `('throws $expectedResult for $input as number', ({ input, expected }) => {
-    expect(() => {
-      validateRegionId(parseInt(input, 10));
-    }).toThrow(expected);
+  `('returns $expected for $input as number', ({ input, expectedResult }) => {
+    expect(validateRegionId(parseInt(input, 10))).toBe(expectedResult);
   });
 });

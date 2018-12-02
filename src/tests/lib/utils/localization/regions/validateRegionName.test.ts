@@ -1,4 +1,4 @@
-import { BattleNetUtils } from '../../../../lib/utils';
+import { BattleNetUtils } from '../../../../../lib/utils';
 const { validateRegionName } = BattleNetUtils;
 
 describe('validateRegionName()', () => {
@@ -46,9 +46,7 @@ describe('validateRegionName()', () => {
     ${'1abc'}  | ${false}
     ${'!@#$'}  | ${false}
     ${'><1'}   | ${false}
-  `('throws $expectedResult for $input as string', ({ input, expected }) => {
-    expect(() => {
-      validateRegionName(input);
-    }).toThrow(expected);
+  `('returns $expectedResult for $input as string', ({ input, expectedResult }) => {
+    expect(validateRegionName(input)).toBe(expectedResult);
   });
 });

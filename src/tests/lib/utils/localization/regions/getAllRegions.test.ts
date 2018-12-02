@@ -1,5 +1,5 @@
-import { BattleNetUtils } from '../../../../lib/utils';
-import constants from '../../../../lib/constants';
+import { BattleNetUtils } from '../../../../../lib/utils';
+import constants from '../../../../../lib/constants';
 
 const { getAllRegions } = BattleNetUtils;
 

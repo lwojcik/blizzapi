@@ -2,13 +2,15 @@ import constants from '../../constants';
 
 // import { RegionIdAsNumberOrString, RegionIdArray, RegionName, RegionNameArray } from '../../types';
 
-/**
- * Returns a list of all available StarCraft II realms
- *
- * @return List of all available StarCraft II realms indexed by region id.
- */
-export function getAllSc2Realms() {
-  return constants.SC2_REALMS;
+export namespace Sc2Realms {
+  /**
+   * Returns a list of all available StarCraft II realms
+   *
+   * @return List of all available StarCraft II realms indexed by region id.
+   */
+  export function getAllSc2Realms() {
+    return constants.SC2_REALMS;
+  }
 }
 
 // /**

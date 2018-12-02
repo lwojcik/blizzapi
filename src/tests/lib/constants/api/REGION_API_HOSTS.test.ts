@@ -1,4 +1,4 @@
-import constants from '../../../lib/constants';
+import constants from '../../../../lib/constants';
 
 const { REGION_API_HOSTS } = constants;
 

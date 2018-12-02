@@ -1,4 +1,4 @@
-import { BattleNetUtils } from '../../lib/utils';
+import { BattleNetUtils } from '../../../lib/utils';
 
 const {
   getAllRegions,
@@ -8,6 +8,9 @@ const {
   validateRegionId,
   getRegionIdByName,
   validateRegionName,
+  getAllLocales,
+  getAllLocaleNames,
+  getAllDefaultLocaleIndexes,
 } = BattleNetUtils;
 
 describe('BattleNetUtils', () => {
@@ -60,5 +63,23 @@ describe('BattleNetUtils', () => {
     expect(validateRegionName).toBeDefined();
     expect(validateRegionName).toBeTruthy();
     expect(typeof validateRegionName).toBe('function');
+  });
+
+  test('should expose method getAllLocales()', () => {
+    expect(getAllLocales).toBeDefined();
+    expect(getAllLocales).toBeTruthy();
+    expect(typeof getAllLocales).toBe('function');
+  });
+
+  test('should expose method getAllLocaleNames()', () => {
+    expect(getAllLocaleNames).toBeDefined();
+    expect(getAllLocaleNames).toBeTruthy();
+    expect(typeof getAllLocaleNames).toBe('function');
+  });
+
+  test('should expose method getAllDefaultLocaleIndexes()', () => {
+    expect(getAllDefaultLocaleIndexes).toBeDefined();
+    expect(getAllDefaultLocaleIndexes).toBeTruthy();
+    expect(typeof getAllDefaultLocaleIndexes).toBe('function');
   });
 });
