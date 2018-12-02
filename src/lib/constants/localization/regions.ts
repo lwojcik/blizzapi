@@ -3,10 +3,10 @@
  * via https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
  */
 
-import IRegionIdProperties from '../../interfaces/IRegionIdProperties';
-import { RegionNameArray } from '../../types';
+import '../../interfaces';
+import '../../types';
 
-const regions: IRegionIdProperties<RegionNameArray> = {
+const regions: Interfaces.IRegionIdProperties<Types.RegionNameArray> = {
   1: ['us'],
   2: ['eu'],
   3: ['kr', 'tw'],

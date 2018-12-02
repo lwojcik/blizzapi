@@ -1,6 +1,6 @@
 {
   "name": "blizzard-battlenet-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Wrapper for Blizzard Battle.net API",
   "main": "dist/index.js",
   "scripts": {

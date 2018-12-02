@@ -1,6 +1,6 @@
 import constants from '../../constants';
 
-import { Locale, LocaleArray } from '../../types';
+import '../../types';
 
 export namespace Locales {
   /**
@@ -17,9 +17,9 @@ export namespace Locales {
  *
  * @return {Array} List of all available locales as flat array of strings.
  */
-  export function getAllLocaleNames(): LocaleArray {
+  export function getAllLocaleNames(): Types.LocaleArray {
     const locales = Object.values(constants.LOCALES);
-    const flattenedLocales = ([] as (Locale | LocaleArray)[]).concat(...locales);
+    const flattenedLocales = ([] as (Types.Locale | Types.LocaleArray)[]).concat(...locales);
     const localesAsStrings = flattenedLocales.map((locale: any) => locale.toString());
     return localesAsStrings;
   }

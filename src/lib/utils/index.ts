@@ -1,6 +1,6 @@
 import { Regions, Locales, DefaultLocales, Sc2Realms } from './localization';
 
-import { RegionId, RegionName, RegionIdAsNumberOrString, RegionNameArray } from '../types/localization';
+import '../types';
 
 export namespace BattleNetUtils {
   /** Regions */
@@ -17,19 +17,19 @@ export namespace BattleNetUtils {
     return Regions.getAllRegionIds();
   }
 
-  export function getRegionNameById(regionId: RegionIdAsNumberOrString): RegionNameArray {
+  export function getRegionNameById(regionId: Types.RegionIdAsNumberOrString) {
     return Regions.getRegionNameById(regionId);
   }
 
-  export function validateRegionId(regionId: RegionIdAsNumberOrString) {
+  export function validateRegionId(regionId: Types.RegionIdAsNumberOrString) {
     return Regions.validateRegionId(regionId);
   }
 
-  export function getRegionIdByName(regionName: RegionName): RegionId {
+  export function getRegionIdByName(regionName: Types.RegionName) {
     return Regions.getRegionIdByName(regionName);
   }
 
-  export function validateRegionName(regionName: RegionName) {
+  export function validateRegionName(regionName: Types.RegionName) {
     return Regions.validateRegionName(regionName);
   }
 
