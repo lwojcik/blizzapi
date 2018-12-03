@@ -1,6 +1,5 @@
 import constants from '../../constants';
 
-
 /**
  * Returns a list of all available default locale indexes
  *

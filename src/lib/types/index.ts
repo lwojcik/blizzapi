@@ -1,34 +1,32 @@
 // Still don't know how to avoid shipping this file in dist build
 // https://github.com/Microsoft/TypeScript/issues/10908
 
-declare module Types {
-  /** Common */
-  type Uri = string;
-  type HostUri = string;
+/** Common */
+export type Uri = string;
+export type HostUri = string;
 
-  /** Regions */
-  type RegionId = number;
-  type RegionIdKey = string;
-  type RegionIdAsNumberOrString = RegionId | RegionIdKey;
-  type RegionIdArray = RegionId[];
-  type RegionName = string;
-  type RegionNameArray = RegionName[];
+/** Regions */
+export type RegionId = number;
+export type RegionIdKey = string;
+export type RegionIdAsNumberOrString = RegionId | RegionIdKey;
+export type RegionIdArray = RegionId[];
+export type RegionName = string;
+export type RegionNameArray = RegionName[];
 
-  /** Locales */
-  type Locale = string;
-  type LocaleArray = Locale[];
+/** Locales */
+export type Locale = string;
+export type LocaleArray = Locale[];
 
-  /** Default locales */
-  type DefaultLocaleIndex = number;
-  type DefaultLocaleIndexArray = DefaultLocaleIndex[];
-  type RegionApiHostUri = Uri;
+/** Default locales */
+export type DefaultLocaleIndex = number;
+export type DefaultLocaleIndexArray = DefaultLocaleIndex[];
+export type RegionApiHostUri = Uri;
 
-  /** StarCraft II realms  */
-  type Sc2Realm = number;
-  type Sc2RealmList = Sc2Realm[];
+/** StarCraft II realms  */
+export type Sc2Realm = number;
+export type Sc2RealmList = Sc2Realm[];
 
-  /** OAuth */
-  type AuthorizeUri = Uri;
-  type TokenUri = Uri;
-  type CheckTokenUri = Uri;
-}
+/** OAuth */
+export type AuthorizeUri = Uri;
+export type TokenUri = Uri;
+export type CheckTokenUri = Uri;

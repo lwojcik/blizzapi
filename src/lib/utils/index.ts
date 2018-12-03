@@ -1,6 +1,6 @@
 import * as localization from './localization';
 
-import '../types';
+import { RegionName, RegionIdAsNumberOrString } from '../types';
 
 /** Regions */
 
@@ -16,19 +16,19 @@ export function getAllRegionIds() {
   return localization.getAllRegionIds();
 }
 
-export function getRegionNameById(regionId: Types.RegionIdAsNumberOrString) {
+export function getRegionNameById(regionId: RegionIdAsNumberOrString) {
   return localization.getRegionNameById(regionId);
 }
 
-export function validateRegionId(regionId: Types.RegionIdAsNumberOrString) {
+export function validateRegionId(regionId: RegionIdAsNumberOrString) {
   return localization.validateRegionId(regionId);
 }
 
-export function getRegionIdByName(regionName: Types.RegionName) {
+export function getRegionIdByName(regionName: RegionName) {
   return localization.getRegionIdByName(regionName);
 }
 
-export function validateRegionName(regionName: Types.RegionName) {
+export function validateRegionName(regionName: RegionName) {
   return localization.validateRegionName(regionName);
 }
 

@@ -1,6 +1,6 @@
 import constants from '../../constants';
 
-import '../../types';
+import { LocaleArray } from '../../types';
 
 /**
  * Returns a list of all available locales
@@ -12,13 +12,13 @@ export function getAllLocales() {
 }
 
 /**
- * Returns a list of all locales as
+ * Returns a list of all locale names
  *
  * @return {Array} List of all available locales as flat array of strings.
  */
-export function getAllLocaleNames(): Types.LocaleArray {
+export function getAllLocaleNames(): LocaleArray {
   const locales = Object.values(constants.LOCALES);
-  const flattenedLocales = ([] as (Types.Locale | Types.LocaleArray)[]).concat(...locales);
+  const flattenedLocales = ([] as LocaleArray[]).concat(...locales);
   const localesAsStrings = flattenedLocales.map((locale: any) => locale.toString());
   return localesAsStrings;
 }

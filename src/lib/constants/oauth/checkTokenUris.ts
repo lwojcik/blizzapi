@@ -3,10 +3,10 @@
  * via https://develop.battle.net/documentation/guides/using-oauth
  */
 
-import '../../interfaces';
-import '../../types';
+import { IRegionIdProperties } from '../../interfaces';
+import { CheckTokenUri } from '../../types';
 
-const oAuthCheckTokenUris: Interfaces.IRegionIdProperties<Types.CheckTokenUri> = {
+const oAuthCheckTokenUris: IRegionIdProperties<CheckTokenUri> = {
   1: 'https://us.battle.net/oauth/check_token?token=',
   2: 'https://eu.battle.net/oauth/check_token?token=',
   3: 'https://apac.battle.net/oauth/check_token?token=',

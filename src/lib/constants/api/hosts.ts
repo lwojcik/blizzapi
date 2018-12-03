@@ -3,10 +3,10 @@
  * via https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
  */
 
-import '../../interfaces';
-import '../../types';
+import { IRegionIdProperties } from '../../interfaces';
+import { HostUri } from '../../types';
 
-const hosts: Interfaces.IRegionIdProperties<Types.HostUri> = {
+const hosts: IRegionIdProperties<HostUri> = {
   1: 'https://us.api.blizzard.com',
   2: 'https://eu.api.blizzard.com',
   3: 'https://kr.api.blizzard.com',
