@@ -1,7 +1,7 @@
-import { BattleNetUtils } from '../../../../../lib/utils';
+import * as utils from '../../../../../lib/utils';
 import constants from '../../../../../lib/constants';
 
-const { getAllSc2Realms } = BattleNetUtils;
+const { getAllSc2Realms } = utils;
 
 describe('getAllSc2Realms()', () => {
   test('should be defined', () => {

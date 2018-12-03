@@ -1,5 +1,5 @@
-import { BattleNetUtils } from '../../../../../lib/utils';
-const { getRegionIdByName } = BattleNetUtils;
+import * as utils from '../../../../../lib/utils';
+const { getRegionIdByName } = utils;
 
 describe('getRegionIdByName()', () => {
   test('should be defined', () => {

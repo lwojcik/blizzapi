@@ -1,4 +1,4 @@
-import { BattleNetUtils } from '../../../lib/utils';
+import * as utils from '../../../lib/utils';
 
 const {
   getAllRegions,
@@ -11,16 +11,16 @@ const {
   getAllLocales,
   getAllLocaleNames,
   getAllDefaultLocaleIndexes,
-} = BattleNetUtils;
+} = utils;
 
-describe('BattleNetUtils', () => {
+describe('utils', () => {
   test('should be defined', () => {
-    expect(BattleNetUtils).toBeDefined();
+    expect(utils).toBeDefined();
   });
 
   test('should be of type "Object"', () => {
-    expect(BattleNetUtils).toBeTruthy();
-    expect(typeof BattleNetUtils).toBe('object');
+    expect(utils).toBeTruthy();
+    expect(typeof utils).toBe('object');
   });
 
   test('should expose method getAllRegions()', () => {

@@ -6,7 +6,11 @@ describe('Index', () => {
     expect(index).toBeDefined();
   });
 
-  test('should export lib module', () => {
-    expect(index).toStrictEqual(lib);
+  test('should export BattleNetUtils namespace', () => {
+    expect(index.BattleNetUtils).toBeDefined();
+  });
+
+  test('BattleNetUtils should be strictly equal to lib module', () => {
+    expect(index.BattleNetUtils).toStrictEqual(lib);
   });
 });

@@ -1,1 +1,4 @@
-export * from './lib';
+import * as BattleNetUtils from './lib';
+export {
+  BattleNetUtils,
+}

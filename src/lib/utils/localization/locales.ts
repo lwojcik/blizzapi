@@ -2,28 +2,27 @@ import constants from '../../constants';
 
 import '../../types';
 
-export namespace Locales {
-  /**
-   * Returns a list of all available locales
-   *
-   * @return List of all available regions indexed by region id.
-   */
-  export function getAllLocales() {
-    return constants.LOCALES;
-  }
+/**
+ * Returns a list of all available locales
+ *
+ * @return List of all available regions indexed by region id.
+ */
+export function getAllLocales() {
+  return constants.LOCALES;
+}
 
 /**
  * Returns a list of all locales as
  *
  * @return {Array} List of all available locales as flat array of strings.
  */
-  export function getAllLocaleNames(): Types.LocaleArray {
-    const locales = Object.values(constants.LOCALES);
-    const flattenedLocales = ([] as (Types.Locale | Types.LocaleArray)[]).concat(...locales);
-    const localesAsStrings = flattenedLocales.map((locale: any) => locale.toString());
-    return localesAsStrings;
-  }
+export function getAllLocaleNames(): Types.LocaleArray {
+  const locales = Object.values(constants.LOCALES);
+  const flattenedLocales = ([] as (Types.Locale | Types.LocaleArray)[]).concat(...locales);
+  const localesAsStrings = flattenedLocales.map((locale: any) => locale.toString());
+  return localesAsStrings;
 }
+
 // /**
 //  * Returns a list of all available region ids
 //  *

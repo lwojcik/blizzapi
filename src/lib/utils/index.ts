@@ -1,57 +1,55 @@
-import { Regions, Locales, DefaultLocales, Sc2Realms } from './localization';
+import * as localization from './localization';
 
 import '../types';
 
-export namespace BattleNetUtils {
-  /** Regions */
+/** Regions */
 
-  export function getAllRegions() {
-    return Regions.getAllRegions();
-  }
+export function getAllRegions() {
+  return localization.getAllRegions();
+}
 
-  export function getAllRegionNames() {
-    return Regions.getAllRegionNames();
-  }
+export function getAllRegionNames() {
+  return localization.getAllRegionNames();
+}
 
-  export function getAllRegionIds() {
-    return Regions.getAllRegionIds();
-  }
+export function getAllRegionIds() {
+  return localization.getAllRegionIds();
+}
 
-  export function getRegionNameById(regionId: Types.RegionIdAsNumberOrString) {
-    return Regions.getRegionNameById(regionId);
-  }
+export function getRegionNameById(regionId: Types.RegionIdAsNumberOrString) {
+  return localization.getRegionNameById(regionId);
+}
 
-  export function validateRegionId(regionId: Types.RegionIdAsNumberOrString) {
-    return Regions.validateRegionId(regionId);
-  }
+export function validateRegionId(regionId: Types.RegionIdAsNumberOrString) {
+  return localization.validateRegionId(regionId);
+}
 
-  export function getRegionIdByName(regionName: Types.RegionName) {
-    return Regions.getRegionIdByName(regionName);
-  }
+export function getRegionIdByName(regionName: Types.RegionName) {
+  return localization.getRegionIdByName(regionName);
+}
 
-  export function validateRegionName(regionName: Types.RegionName) {
-    return Regions.validateRegionName(regionName);
-  }
+export function validateRegionName(regionName: Types.RegionName) {
+  return localization.validateRegionName(regionName);
+}
 
-  /** Locales */
+/** Locales */
 
-  export function getAllLocales() {
-    return Locales.getAllLocales();
-  }
+export function getAllLocales() {
+  return localization.getAllLocales();
+}
 
-  export function getAllLocaleNames() {
-    return Locales.getAllLocaleNames();
-  }
+export function getAllLocaleNames() {
+  return localization.getAllLocaleNames();
+}
 
-  /** Default locales */
+/** Default locales */
 
-  export function getAllDefaultLocaleIndexes() {
-    return DefaultLocales.getAllDefaultLocaleIndexes();
-  }
+export function getAllDefaultLocaleIndexes() {
+  return localization.getAllDefaultLocaleIndexes();
+}
 
-    /** StarCraft II realms */
+/** StarCraft II realms */
 
-    export function getAllSc2Realms() {
-      return Sc2Realms.getAllSc2Realms();
-    }
+export function getAllSc2Realms() {
+  return localization.getAllSc2Realms();
 }

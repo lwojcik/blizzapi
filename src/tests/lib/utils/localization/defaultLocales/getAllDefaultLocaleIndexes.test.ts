@@ -1,8 +1,8 @@
-import { BattleNetUtils } from '../../../../../lib/utils';
+import * as utils from '../../../../../lib/utils';
 import constants from '../../../../../lib/constants';
 
 const { DEFAULT_LOCALES } = constants;
-const { getAllDefaultLocaleIndexes } = BattleNetUtils;
+const { getAllDefaultLocaleIndexes } = utils;
 
 describe('getAllDefaultLocales()', () => {
   test('should be defined', () => {

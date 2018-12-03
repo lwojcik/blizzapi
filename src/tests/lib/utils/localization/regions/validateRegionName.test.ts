@@ -1,5 +1,5 @@
-import { BattleNetUtils } from '../../../../../lib/utils';
-const { validateRegionName } = BattleNetUtils;
+import * as utils from '../../../../../lib/utils';
+const { validateRegionName } = utils;
 
 describe('validateRegionName()', () => {
   test('should be defined', () => {

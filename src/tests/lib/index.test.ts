@@ -1,7 +1,8 @@
 import * as lib from '../../lib';
+import * as utils from '../../lib/utils';
 
 describe('Lib module', () => {
-  test('should export BattleNetUtils', () => {
-    expect(lib.BattleNetUtils).toBeDefined();
+  test('should export lib/utils', () => {
+    expect(lib).toStrictEqual(utils);
   });
 });
