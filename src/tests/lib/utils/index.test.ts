@@ -10,6 +10,7 @@ const {
   validateRegionName,
   getAllLocales,
   getAllLocaleNames,
+  getLocalesByRegionId,
   getAllDefaultLocaleIndexes,
 } = utils;
 
@@ -75,6 +76,12 @@ describe('utils', () => {
     expect(getAllLocaleNames).toBeDefined();
     expect(getAllLocaleNames).toBeTruthy();
     expect(typeof getAllLocaleNames).toBe('function');
+  });
+
+  test('should expose method getLocalesByRegionId()', () => {
+    expect(getLocalesByRegionId).toBeDefined();
+    expect(getLocalesByRegionId).toBeTruthy();
+    expect(typeof getLocalesByRegionId).toBe('function');
   });
 
   test('should expose method getAllDefaultLocaleIndexes()', () => {

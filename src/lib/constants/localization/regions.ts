@@ -3,7 +3,7 @@
  * via https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
  */
 
-import  { IRegionIdProperties } from '../../interfaces';
+import { IRegionIdProperties } from '../../interfaces';
 import { RegionNameArray } from '../../types';
 
 const regions: IRegionIdProperties<RegionNameArray> = {

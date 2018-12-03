@@ -1,11 +1,11 @@
 import constants from '../../constants';
-
-import { LocaleArray } from '../../types';
+import { validateRegionId } from './regions';
+import { LocaleArray, RegionIdAsNumberOrString } from '../../types';
 
 /**
  * Returns a list of all available locales
  *
- * @return List of all available regions indexed by region id.
+ * @return List of all available regions indexed by region id as array of strings.
  */
 export function getAllLocales() {
   return constants.LOCALES;
@@ -14,13 +14,30 @@ export function getAllLocales() {
 /**
  * Returns a list of all locale names
  *
- * @return {Array} List of all available locales as flat array of strings.
+ * @return List of all available locales as flat array of strings.
  */
 export function getAllLocaleNames(): LocaleArray {
   const locales = Object.values(constants.LOCALES);
   const flattenedLocales = ([] as LocaleArray[]).concat(...locales);
   const localesAsStrings = flattenedLocales.map((locale: any) => locale.toString());
   return localesAsStrings;
+}
+
+/**
+ * Returns locales for given region id
+ *
+ * @param regionId Region id as integer or string
+ * @return List of locales available in a specific region as array of strings
+ */
+export function getLocalesByRegionId(regionId: RegionIdAsNumberOrString) {
+  const regionIdAsString = regionId.toString();
+  const isRegionIdValid = validateRegionId(regionIdAsString);
+
+  if (!isRegionIdValid) {
+    throw new RangeError(`${regionIdAsString} is not a valid parameter for getLocalesByRegionId()`);
+  }
+
+  return constants.LOCALES[regionIdAsString];
 }
 
 // /**

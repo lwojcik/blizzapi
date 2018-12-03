@@ -42,6 +42,10 @@ export function getAllLocaleNames() {
   return localization.getAllLocaleNames();
 }
 
+export function getLocalesByRegionId(regionId: RegionIdAsNumberOrString) {
+  return localization.getLocalesByRegionId(regionId);
+}
+
 /** Default locales */
 
 export function getAllDefaultLocaleIndexes() {
