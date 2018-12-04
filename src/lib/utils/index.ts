@@ -54,6 +54,10 @@ export function validateLocale(locale: Locale) {
   return localization.validateLocale(locale);
 }
 
+export function isLocaleValidForRegionId(locale: Locale, regionId: RegionIdAsNumberOrString) {
+  return localization.isLocaleValidForRegionId(locale, regionId);
+}
+
 /** Default locales */
 
 export function getAllDefaultLocaleIndexes() {

@@ -12,6 +12,7 @@ const {
   getAllLocaleNames,
   getLocalesByRegionId,
   checkIfLocaleLooksValid,
+  isLocaleValidForRegionId,
   validateLocale,
   getAllDefaultLocaleIndexes,
 } = utils;
@@ -86,13 +87,11 @@ describe('utils', () => {
     expect(typeof getLocalesByRegionId).toBe('function');
   });
 
-
   test('should expose method checkIfLocaleLooksValid()', () => {
     expect(checkIfLocaleLooksValid).toBeDefined();
     expect(checkIfLocaleLooksValid).toBeTruthy();
     expect(typeof checkIfLocaleLooksValid).toBe('function');
   });
-
 
   test('should expose method validateLocale()', () => {
     expect(validateLocale).toBeDefined();
@@ -104,6 +103,12 @@ describe('utils', () => {
     expect(getAllDefaultLocaleIndexes).toBeDefined();
     expect(getAllDefaultLocaleIndexes).toBeTruthy();
     expect(typeof getAllDefaultLocaleIndexes).toBe('function');
+  });
+
+  test('should expose method isLocaleValidForRegionId()', () => {
+    expect(isLocaleValidForRegionId).toBeDefined();
+    expect(isLocaleValidForRegionId).toBeTruthy();
+    expect(typeof isLocaleValidForRegionId).toBe('function');
   });
 
   test('should expose method getAllDefaultLocaleIndexes()', () => {

@@ -11,7 +11,7 @@ describe('checkIfLocaleLooksValid()', () => {
   });
 
   test.each`
-    input       | expectedResult
+    input      | expectedResult
     ${'av_CA'} | ${true}
     ${'tb_pk'} | ${true}
     ${'QQ_NN'} | ${true}
