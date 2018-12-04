@@ -1,6 +1,6 @@
 import * as localization from './localization';
 
-import { RegionName, RegionIdAsNumberOrString } from '../types';
+import { RegionName, RegionIdAsNumberOrString, Locale } from '../types';
 
 /** Regions */
 
@@ -44,6 +44,14 @@ export function getAllLocaleNames() {
 
 export function getLocalesByRegionId(regionId: RegionIdAsNumberOrString) {
   return localization.getLocalesByRegionId(regionId);
+}
+
+export function checkIfLocaleLooksValid(locale: Locale) {
+  return localization.checkIfLocaleLooksValid(locale);
+}
+
+export function validateLocale(locale: Locale) {
+  return localization.validateLocale(locale);
 }
 
 /** Default locales */

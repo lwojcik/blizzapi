@@ -46,9 +46,9 @@ describe('getRegionIdByName()', () => {
     ${'1abc'}  | ${RangeError}
     ${'!@#$'}  | ${RangeError}
     ${'><1'}   | ${RangeError}
-  `('throws $expectedResult for $input as string', ({ input, expected }) => {
+  `('throws $expectedResult for $input as string', ({ input, expectedResult }) => {
     expect(() => {
       getRegionIdByName(input);
-    }).toThrow(expected);
+    }).toThrow(expectedResult);
   });
 });

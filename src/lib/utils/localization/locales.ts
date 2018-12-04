@@ -1,6 +1,6 @@
 import constants from '../../constants';
 import { validateRegionId } from './regions';
-import { LocaleArray, RegionIdAsNumberOrString } from '../../types';
+import { Locale, LocaleArray, RegionIdAsNumberOrString } from '../../types';
 
 /**
  * Returns a list of all available locales
@@ -40,6 +40,57 @@ export function getLocalesByRegionId(regionId: RegionIdAsNumberOrString) {
   return constants.LOCALES[regionIdAsString];
 }
 
+/**
+ * Verifies whether locale matches regex pattern
+ *
+ * @param locale Locale name
+ * @return true if locale matches the pattern, false if not
+ */
+export function checkIfLocaleLooksValid(locale:Locale) {
+  const localeRegexPattern = /^(?:[a-z]{2}_[a-z]{2})$/gi;
+  const doesLocaleLookValid = localeRegexPattern.test(locale);
+  localeRegexPattern.lastIndex = 0;
+  return doesLocaleLookValid;
+}
+
+/**
+ * Validates locale name against locale list (whether it exists in the constants object)
+ *
+ * @param locale Locale name
+ * @return true if locale exists, false if not. Throws RangeError if locale doesn't match regex pattern
+ */
+export function validateLocale(locale: Locale) {
+  const doesLocaleLookValid = checkIfLocaleLooksValid(locale);
+
+  if (!doesLocaleLookValid) {
+    throw new RangeError(`${locale} is not a valid parameter for validateLocale()`);
+  }
+
+  const lowerCaseLocaleList = getAllLocaleNames().map(localeName => localeName.toLowerCase());
+  const lowerCaseLocale = locale.toLowerCase();
+  return lowerCaseLocaleList.includes(lowerCaseLocale);
+}
+
+
+/**
+ * Checks whether given locale is available for a given region id
+ *
+ * @param locale Locale name
+ * @param regionId Region id as integer or string
+ * @return List of locales available in a specific region as array of strings
+ */
+// export function isLocaleValidForRegionId(locale: Locale, regionId: RegionIdAsNumberOrString) {
+//   // const regionIdAsString = regionId.toString();
+//   // const isRegionIdValid = validateRegionId(regionIdAsString);
+
+//   // if (!isRegionIdValid) {
+//   //   throw new RangeError(`${regionIdAsString} is not a valid parameter for getLocalesByRegionId()`);
+//   // }
+
+//   // return constants.LOCALES[regionIdAsString];
+// }
+
+
 // /**
 //  * Returns a list of all available region ids
 //  *
@@ -63,34 +114,6 @@ export function getLocalesByRegionId(regionId: RegionIdAsNumberOrString) {
 //   return regionNamesAsStrings;
 // }
 
-// /**
-//  * Returns region name(s) represented by given region id
-//  *
-//  * @param regionId Region id as integer or string
-//  * @return Region name represented as two-letter code (e.g. "us" for Americas) or an array of regions
-//  * if more than one is specified for a given region id
-//  */
-// export function getRegionNameById(regionId: RegionIdAsNumberOrString) {
-//   const regionIds = Object.keys(constants.REGIONS);
-//   const regionIdAsString = regionId.toString();
-//   const isRegionIdValid = regionIds.includes(regionIdAsString);
-
-//   if (!isRegionIdValid) {
-//     throw new RangeError(`${regionIdAsString} is not a valid parameter for getRegionNameById()`);
-//   }
-
-//   return constants.REGIONS[regionIdAsString];
-// }
-
-// /**
-//  * Validates region id provided as number or string
-//  *
-//  * @param regionId Region id as integer or string
-//  * @return true for valid region id. false for invalid region id
-//  */
-// export function validateRegionId(regionId: RegionIdAsNumberOrString) {
-//   return Boolean(getRegionNameById(regionId));
-// }
 
 // /**
 //  * Returns region id for given region name
