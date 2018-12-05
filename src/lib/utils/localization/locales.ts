@@ -80,7 +80,8 @@ export function validateLocale(locale: Locale) {
  */
 export function isLocaleValidForRegionId(locale: Locale, regionId: RegionIdAsNumberOrString) {
   try {
-    const doesLocaleLookValid = checkIfLocaleLooksValid(locale);
+    const lowerCaseLocale = locale.toLowerCase();
+    const doesLocaleLookValid = checkIfLocaleLooksValid(lowerCaseLocale);
     const regionIdAsString = regionId.toString();
     const isRegionIdValid = validateRegionId(regionIdAsString);
 
@@ -96,8 +97,8 @@ export function isLocaleValidForRegionId(locale: Locale, regionId: RegionIdAsNum
       throw new RangeError(`${regionId} is not a valid regionId parameter for isLocaleValidForRegionId()`);
     }
 
-    const localesForRegionId = getLocalesByRegionId(regionId);
-    return localesForRegionId.includes(locale);
+    const localesForRegionId = getLocalesByRegionId(regionId).map(localeName => localeName.toLowerCase());
+    return localesForRegionId.includes(lowerCaseLocale);
   } catch (error) {
     throw new Error(error);
   }
