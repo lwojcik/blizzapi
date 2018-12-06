@@ -41,7 +41,7 @@ export function getLocalesByRegionId(regionId: RegionIdAsNumberOrString) {
 }
 
 /**
- * Verifies whether locale matches regex pattern
+ * Verifies whether locale matches the regex pattern
  *
  * @param locale Locale name
  * @return true if locale matches the pattern, false if not
@@ -79,27 +79,19 @@ export function validateLocale(locale: Locale) {
  * @return List of locales available in a specific region as array of strings
  */
 export function isLocaleValidForRegionId(locale: Locale, regionId: RegionIdAsNumberOrString) {
-  try {
-    const lowerCaseLocale = locale.toLowerCase();
-    const doesLocaleLookValid = checkIfLocaleLooksValid(lowerCaseLocale);
-    const regionIdAsString = regionId.toString();
-    const isRegionIdValid = validateRegionId(regionIdAsString);
+  const lowerCaseLocale = locale.toLowerCase();
+  const doesLocaleLookValid = validateLocale(lowerCaseLocale) || false;
+  const regionIdAsString = regionId.toString();
+  const isRegionIdValid = validateRegionId(regionIdAsString);
 
-    if (!doesLocaleLookValid && !isRegionIdValid) {
-      throw new RangeError(`${locale} and ${regionId} are not valid parameters for isLocaleValidForRegionId()`);
-    }
-
-    if (!doesLocaleLookValid) {
-      throw new RangeError(`${locale} is not a valid locale parameter for isLocaleValidForRegionId()`);
-    }
-
-    if (!isRegionIdValid) {
-      throw new RangeError(`${regionId} is not a valid regionId parameter for isLocaleValidForRegionId()`);
-    }
-
-    const localesForRegionId = getLocalesByRegionId(regionId).map(localeName => localeName.toLowerCase());
-    return localesForRegionId.includes(lowerCaseLocale);
-  } catch (error) {
-    throw new Error(error);
+  if (!doesLocaleLookValid) {
+    throw new RangeError(`${locale} is not a valid locale parameter for isLocaleValidForRegionId()`);
   }
+
+  if (!isRegionIdValid) {
+    throw new RangeError(`${regionId} is not a valid regionId parameter for isLocaleValidForRegionId()`);
+  }
+
+  const localesForRegionId = getLocalesByRegionId(regionId).map(localeName => localeName.toLowerCase());
+  return localesForRegionId.includes(lowerCaseLocale);
 }
