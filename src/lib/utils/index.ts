@@ -64,6 +64,18 @@ export function getAllDefaultLocaleIndexes() {
   return localization.getAllDefaultLocaleIndexes();
 }
 
+export function getAllDefaultLocaleNames() {
+  return localization.getAllDefaultLocaleNames();
+}
+
+export function getDefaultLocaleIndexForRegionId(regionId: RegionIdAsNumberOrString) {
+  return localization.getDefaultLocaleIndexForRegionId(regionId);
+}
+
+export function getDefaultLocaleNameForRegionId(regionId: RegionIdAsNumberOrString) {
+  return localization.getDefaultLocaleNameForRegionId(regionId);
+}
+
 /** StarCraft II realms */
 
 export function getAllSc2Realms() {

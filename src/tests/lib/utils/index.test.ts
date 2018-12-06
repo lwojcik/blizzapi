@@ -15,6 +15,9 @@ const {
   isLocaleValidForRegionId,
   validateLocale,
   getAllDefaultLocaleIndexes,
+  getAllDefaultLocaleNames,
+  getDefaultLocaleIndexForRegionId,
+  getDefaultLocaleNameForRegionId,
 } = utils;
 
 describe('utils', () => {
@@ -115,5 +118,23 @@ describe('utils', () => {
     expect(getAllDefaultLocaleIndexes).toBeDefined();
     expect(getAllDefaultLocaleIndexes).toBeTruthy();
     expect(typeof getAllDefaultLocaleIndexes).toBe('function');
+  });
+
+  test('should expose method getAllDefaultLocaleNames()', () => {
+    expect(getAllDefaultLocaleNames).toBeDefined();
+    expect(getAllDefaultLocaleNames).toBeTruthy();
+    expect(typeof getAllDefaultLocaleNames).toBe('function');
+  });
+
+  test('should expose method getDefaultLocaleIndexForRegionId()', () => {
+    expect(getDefaultLocaleIndexForRegionId).toBeDefined();
+    expect(getDefaultLocaleIndexForRegionId).toBeTruthy();
+    expect(typeof getDefaultLocaleIndexForRegionId).toBe('function');
+  });
+
+  test('should expose method getDefaultLocaleNameForRegionId()', () => {
+    expect(getDefaultLocaleNameForRegionId).toBeDefined();
+    expect(getDefaultLocaleNameForRegionId).toBeTruthy();
+    expect(typeof getDefaultLocaleNameForRegionId).toBe('function');
   });
 });
