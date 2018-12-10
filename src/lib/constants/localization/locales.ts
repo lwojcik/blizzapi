@@ -13,4 +13,6 @@ const locales: IRegionIdProperties<LocaleArray> = {
   5: ['zh_CN'],
 };
 
+Object.preventExtensions(locales);
+
 export default locales;

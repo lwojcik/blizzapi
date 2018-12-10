@@ -13,4 +13,6 @@ const oAuthAuthorizeUris: IRegionIdProperties<AuthorizeUri> = {
   5: 'https://www.battlenet.com.cn/oauth/authorize',
 };
 
+Object.preventExtensions(oAuthAuthorizeUris);
+
 export default oAuthAuthorizeUris;

@@ -13,4 +13,6 @@ const oAuthTokenUris: IRegionIdProperties<TokenUri> = {
   5: 'https://www.battlenet.com.cn/oauth/token',
 };
 
+Object.preventExtensions(oAuthTokenUris);
+
 export default oAuthTokenUris;

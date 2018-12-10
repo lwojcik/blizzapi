@@ -13,4 +13,6 @@ const sc2realms: IRegionIdProperties<Sc2RealmList> = {
   5: [1],
 };
 
+Object.preventExtensions(sc2realms);
+
 export default sc2realms;

@@ -51,9 +51,12 @@ describe('isLocaleValidForRegionId()', () => {
     ${'ko_kr'}  | ${3}          | ${true}
     ${'zh_tw'}  | ${3}          | ${true}
     ${'zh_cn'}  | ${5}          | ${true}
-  `('returns $expectedResult for $inputLocale and $inputRegionId as valid parameters', ({ inputLocale, inputRegionId, expectedResult }) => {
-    expect(isLocaleValidForRegionId(inputLocale, inputRegionId)).toBe(expectedResult);
-  });
+  `(
+    'returns $expectedResult for $inputLocale and $inputRegionId as valid parameters',
+    ({ inputLocale, inputRegionId, expectedResult }) => {
+      expect(isLocaleValidForRegionId(inputLocale, inputRegionId)).toBe(expectedResult);
+    },
+  );
 
   test.each`
     inputLocale | inputRegionId | expectedResult
@@ -67,22 +70,26 @@ describe('isLocaleValidForRegionId()', () => {
     ${'Rt_Gf'}  | ${5}          | ${RangeError}
     ${'eE_Aa'}  | ${5}          | ${RangeError}
   `('throws $expectedResult for $inputLocale as non-existent locale', ({ inputLocale, inputRegionId }) => {
-    expect(() => { isLocaleValidForRegionId(inputLocale, inputRegionId); }).toThrow();
+    expect(() => {
+      isLocaleValidForRegionId(inputLocale, inputRegionId);
+    }).toThrow();
   });
 
   test.each`
-    inputLocale   | inputRegionId | expectedResult
-    ${'avA_CA'}   | ${1}          | ${RangeError}
-    ${'tb_Wpk'}   | ${1}          | ${RangeError}
-    ${'QQ_wNN'}   | ${2}          | ${RangeError}
-    ${'WZa_azD'}  | ${2}          | ${RangeError}
-    ${'pOsvV'}    | ${3}          | ${RangeError}
-    ${'yy0cR'}    | ${3}          | ${RangeError}
-    ${'q1_bG'}    | ${5}          | ${RangeError}
-    ${'12_34'}    | ${5}          | ${RangeError}
-    ${'eEbd'}     | ${5}          | ${RangeError}
+    inputLocale  | inputRegionId | expectedResult
+    ${'avA_CA'}  | ${1}          | ${RangeError}
+    ${'tb_Wpk'}  | ${1}          | ${RangeError}
+    ${'QQ_wNN'}  | ${2}          | ${RangeError}
+    ${'WZa_azD'} | ${2}          | ${RangeError}
+    ${'pOsvV'}   | ${3}          | ${RangeError}
+    ${'yy0cR'}   | ${3}          | ${RangeError}
+    ${'q1_bG'}   | ${5}          | ${RangeError}
+    ${'12_34'}   | ${5}          | ${RangeError}
+    ${'eEbd'}    | ${5}          | ${RangeError}
   `('throws $expectedResult for $inputLocale as incorrect locale', ({ inputLocale, inputRegionId }) => {
-    expect(() => { isLocaleValidForRegionId(inputLocale, inputRegionId) }).toThrow();
+    expect(() => {
+      isLocaleValidForRegionId(inputLocale, inputRegionId);
+    }).toThrow();
   });
 
   test.each`
@@ -101,21 +108,28 @@ describe('isLocaleValidForRegionId()', () => {
     ${'zh_TW'}  | ${22}         | ${RangeError}
     ${'zh_CN'}  | ${33}         | ${RangeError}
   `('returns $expectedResult for $inputRegionId as incorrect region id', ({ inputLocale, inputRegionId }) => {
-    expect(() => { isLocaleValidForRegionId(inputLocale, inputRegionId) }).toThrow();
+    expect(() => {
+      isLocaleValidForRegionId(inputLocale, inputRegionId);
+    }).toThrow();
   });
 
   test.each`
-  inputLocale   | inputRegionId | expectedResult
-  ${'avA_CA'}   | ${'8'}        | ${RangeError}
-  ${'tb_Wpk'}   | ${8}          | ${RangeError}
-  ${'QQ_wNN'}   | ${8}          | ${RangeError}
-  ${'WZa_azD'}  | ${'9'}        | ${RangeError}
-  ${'pOsvV'}    | ${'10'}       | ${RangeError}
-  ${'yy0cR'}    | ${11}         | ${RangeError}
-  ${'q1_bG'}    | ${'12'}       | ${RangeError}
-  ${'12_34'}    | ${0}          | ${RangeError}
-  ${'eEbd'}     | ${'0'}        | ${RangeError}
-`('throws $expectedResult for $inputLocale as incorrect locale and $inputRegionId as incorrect region id', ({ inputLocale, inputRegionId, expectedResult }) => {
-  expect(() => { isLocaleValidForRegionId(inputLocale, inputRegionId) }).toThrow(expectedResult);
-});
+    inputLocale  | inputRegionId | expectedResult
+    ${'avA_CA'}  | ${'8'}        | ${RangeError}
+    ${'tb_Wpk'}  | ${8}          | ${RangeError}
+    ${'QQ_wNN'}  | ${8}          | ${RangeError}
+    ${'WZa_azD'} | ${'9'}        | ${RangeError}
+    ${'pOsvV'}   | ${'10'}       | ${RangeError}
+    ${'yy0cR'}   | ${11}         | ${RangeError}
+    ${'q1_bG'}   | ${'12'}       | ${RangeError}
+    ${'12_34'}   | ${0}          | ${RangeError}
+    ${'eEbd'}    | ${'0'}        | ${RangeError}
+  `(
+    'throws $expectedResult for $inputLocale as incorrect locale and $inputRegionId as incorrect region id',
+    ({ inputLocale, inputRegionId, expectedResult }) => {
+      expect(() => {
+        isLocaleValidForRegionId(inputLocale, inputRegionId);
+      }).toThrow(expectedResult);
+    },
+  );
 });

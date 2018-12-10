@@ -13,4 +13,6 @@ const hosts: IRegionIdProperties<HostUri> = {
   5: 'https://api.blizzard.com.cn',
 };
 
+Object.preventExtensions(hosts);
+
 export default hosts;

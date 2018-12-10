@@ -13,4 +13,6 @@ const regions: IRegionIdProperties<RegionNameArray> = {
   5: ['cn'],
 };
 
+Object.preventExtensions(regions);
+
 export default regions;

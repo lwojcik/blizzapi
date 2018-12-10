@@ -20,4 +20,6 @@ const defaultLocales: IRegionIdProperties<DefaultLocaleIndex> = {
   5: 0,
 };
 
+Object.preventExtensions(defaultLocales);
+
 export default defaultLocales;

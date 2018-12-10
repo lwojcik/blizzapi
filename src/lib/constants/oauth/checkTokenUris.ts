@@ -13,4 +13,6 @@ const oAuthCheckTokenUris: IRegionIdProperties<CheckTokenUri> = {
   5: 'https://www.battlenet.com.cn/oauth/check_token?token=',
 };
 
+Object.preventExtensions(oAuthCheckTokenUris);
+
 export default oAuthCheckTokenUris;
