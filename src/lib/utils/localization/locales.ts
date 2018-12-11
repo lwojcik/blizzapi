@@ -19,7 +19,7 @@ export function getAllLocales() {
 export function getAllLocaleNames(): LocaleArray {
   const locales = Object.values(constants.LOCALES);
   const flattenedLocales = ([] as LocaleArray[]).concat(...locales);
-  const localesAsStrings = flattenedLocales.map((locale: any) => locale.toString());
+  const localesAsStrings = flattenedLocales.map((locale: LocaleArray) => locale.toString());
   return localesAsStrings;
 }
 
