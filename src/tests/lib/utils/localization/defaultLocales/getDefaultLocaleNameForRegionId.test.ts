@@ -12,4 +12,6 @@ describe('getDefaultLocaleNameForRegionId()', () => {
   test('should be of type "function"', () => {
     expect(typeof getDefaultLocaleNameForRegionId).toBe('function');
   });
+
+  // TODO
 });
