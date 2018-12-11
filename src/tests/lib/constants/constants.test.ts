@@ -9,6 +9,14 @@ describe('CONSTANTS class', () => {
     expect(constants.REGIONS).toBeDefined();
   });
 
+  test('should contain REGIONS property', () => {
+    expect(constants.REGIONS).toBeDefined();
+  });
+
+  test('should contain REGIONS property', () => {
+    expect(constants.REGIONS).toBeDefined();
+  });
+
   test('should contain LOCALES property', () => {
     expect(constants.LOCALES).toBeDefined();
   });

@@ -7,6 +7,10 @@ describe('LOCALES', () => {
     expect(LOCALES).toBeDefined();
   });
 
+  test('should be frozen', () => {
+    expect(Object.isFrozen(LOCALES)).toBe(true);
+  });
+
   test('should contain 4 elements', () => {
     expect(Object.keys(LOCALES).length).toStrictEqual(4);
   });

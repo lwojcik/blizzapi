@@ -6,13 +6,11 @@
 import { IRegionIdProperties } from '../../interfaces';
 import { Sc2RealmList } from '../../types';
 
-const sc2realms: IRegionIdProperties<Sc2RealmList> = {
-  1: [1, 2],
-  2: [1, 2],
-  3: [1, 2],
-  5: [1],
-};
-
-Object.preventExtensions(sc2realms);
+const sc2realms: IRegionIdProperties<Sc2RealmList> = Object.freeze({
+  1: Object.freeze([1, 2]),
+  2: Object.freeze([1, 2]),
+  3: Object.freeze([1, 2]),
+  5: Object.freeze([1]),
+});
 
 export default sc2realms;

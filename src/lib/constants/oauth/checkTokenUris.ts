@@ -6,13 +6,11 @@
 import { IRegionIdProperties } from '../../interfaces';
 import { CheckTokenUri } from '../../types';
 
-const oAuthCheckTokenUris: IRegionIdProperties<CheckTokenUri> = {
+const oAuthCheckTokenUris: IRegionIdProperties<CheckTokenUri> = Object.freeze({
   1: 'https://us.battle.net/oauth/check_token?token=',
   2: 'https://eu.battle.net/oauth/check_token?token=',
   3: 'https://apac.battle.net/oauth/check_token?token=',
   5: 'https://www.battlenet.com.cn/oauth/check_token?token=',
-};
-
-Object.preventExtensions(oAuthCheckTokenUris);
+});
 
 export default oAuthCheckTokenUris;

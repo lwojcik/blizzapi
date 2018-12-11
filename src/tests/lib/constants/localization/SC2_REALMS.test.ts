@@ -7,6 +7,10 @@ describe('SC2_REALMS', () => {
     expect(SC2_REALMS).toBeDefined();
   });
 
+  test('should be frozen', () => {
+    expect(Object.isFrozen(SC2_REALMS)).toBe(true);
+  });
+
   test('should contain 4 elements', () => {
     expect(Object.keys(SC2_REALMS).length).toStrictEqual(4);
   });

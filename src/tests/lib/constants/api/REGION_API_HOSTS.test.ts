@@ -7,6 +7,10 @@ describe('REGION_API_HOSTS', () => {
     expect(REGION_API_HOSTS).toBeDefined();
   });
 
+  test('should be frozen', () => {
+    expect(Object.isFrozen(REGION_API_HOSTS)).toBe(true);
+  });
+
   test('should contain 4 elements', () => {
     expect(Object.keys(REGION_API_HOSTS).length).toStrictEqual(4);
   });

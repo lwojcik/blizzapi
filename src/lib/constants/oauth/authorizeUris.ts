@@ -6,13 +6,11 @@
 import { IRegionIdProperties } from '../../interfaces';
 import { AuthorizeUri } from '../../types';
 
-const oAuthAuthorizeUris: IRegionIdProperties<AuthorizeUri> = {
+const oAuthAuthorizeUris: IRegionIdProperties<AuthorizeUri> = Object.freeze({
   1: 'https://us.battle.net/oauth/authorize',
   2: 'https://eu.battle.net/oauth/authorize',
   3: 'https://apac.battle.net/oauth/authorize',
   5: 'https://www.battlenet.com.cn/oauth/authorize',
-};
-
-Object.preventExtensions(oAuthAuthorizeUris);
+});
 
 export default oAuthAuthorizeUris;

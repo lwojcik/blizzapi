@@ -13,13 +13,11 @@
 import { IRegionIdProperties } from '../../interfaces';
 import { DefaultLocaleIndex } from '../../types';
 
-const defaultLocales: IRegionIdProperties<DefaultLocaleIndex> = {
+const defaultLocales: IRegionIdProperties<DefaultLocaleIndex> = Object.freeze({
   1: 0,
   2: 0,
   3: 0,
   5: 0,
-};
-
-Object.preventExtensions(defaultLocales);
+});
 
 export default defaultLocales;

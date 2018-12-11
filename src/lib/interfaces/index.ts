@@ -2,5 +2,5 @@
 // https://github.com/Microsoft/TypeScript/issues/10908
 
 export interface IRegionIdProperties<Value> {
-  [regionId: string]: Value;
+  readonly [regionId: string]: Value;
 }

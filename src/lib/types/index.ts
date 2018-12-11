@@ -9,22 +9,22 @@ export type HostUri = string;
 export type RegionId = number;
 export type RegionIdKey = string;
 export type RegionIdAsNumberOrString = RegionId | RegionIdKey;
-export type RegionIdArray = RegionId[];
+export type RegionIdArray = ReadonlyArray<RegionId>;
 export type RegionName = string;
-export type RegionNameArray = RegionName[];
+export type RegionNameArray = ReadonlyArray<RegionName>;
 
 /** Locales */
 export type Locale = string;
-export type LocaleArray = Locale[];
+export type LocaleArray = ReadonlyArray<Locale>;
 
 /** Default locales */
 export type DefaultLocaleIndex = number;
-export type DefaultLocaleIndexArray = DefaultLocaleIndex[];
+export type DefaultLocaleIndexArray = ReadonlyArray<DefaultLocaleIndex>;
 export type RegionApiHostUri = Uri;
 
 /** StarCraft II realms  */
 export type Sc2Realm = number;
-export type Sc2RealmList = Sc2Realm[];
+export type Sc2RealmList = ReadonlyArray<Sc2Realm>;
 
 /** OAuth */
 export type AuthorizeUri = Uri;

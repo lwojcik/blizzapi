@@ -7,6 +7,10 @@ describe('REGIONS', () => {
     expect(REGIONS).toBeDefined();
   });
 
+  test('should be frozen', () => {
+    expect(Object.isFrozen(REGIONS)).toBe(true);
+  });
+
   test('should contain 4 elements', () => {
     expect(Object.keys(REGIONS).length).toStrictEqual(4);
   });

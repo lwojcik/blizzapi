@@ -7,6 +7,10 @@ describe('OAUTH_CHECK_TOKEN_URIS', () => {
     expect(OAUTH_CHECK_TOKEN_URIS).toBeDefined();
   });
 
+  test('should be frozen', () => {
+    expect(Object.isFrozen(OAUTH_CHECK_TOKEN_URIS)).toBe(true);
+  });
+
   test('should contain 4 elements', () => {
     expect(Object.keys(OAUTH_CHECK_TOKEN_URIS).length).toStrictEqual(4);
   });

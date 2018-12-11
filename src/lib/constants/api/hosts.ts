@@ -6,13 +6,11 @@
 import { IRegionIdProperties } from '../../interfaces';
 import { HostUri } from '../../types';
 
-const hosts: IRegionIdProperties<HostUri> = {
+const hosts: IRegionIdProperties<HostUri> = Object.freeze({
   1: 'https://us.api.blizzard.com',
   2: 'https://eu.api.blizzard.com',
   3: 'https://kr.api.blizzard.com',
   5: 'https://api.blizzard.com.cn',
-};
-
-Object.preventExtensions(hosts);
+});
 
 export default hosts;
