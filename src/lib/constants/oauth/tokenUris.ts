@@ -6,11 +6,11 @@
 import { IRegionIdProperties } from '../../interfaces';
 import { TokenUri } from '../../types';
 
-const oAuthTokenUris: IRegionIdProperties<TokenUri> = Object.freeze({
+const oAuthTokenUris: IRegionIdProperties<TokenUri> = {
   1: 'https://us.battle.net/oauth/token',
   2: 'https://eu.battle.net/oauth/token',
   3: 'https://apac.battle.net/oauth/token',
   5: 'https://www.battlenet.com.cn/oauth/token',
-});
+};
 
-export default oAuthTokenUris;
+export default Object.freeze(oAuthTokenUris);

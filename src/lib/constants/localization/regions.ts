@@ -6,11 +6,11 @@
 import { IRegionIdProperties } from '../../interfaces';
 import { RegionNameArray } from '../../types';
 
-const regions: IRegionIdProperties<RegionNameArray> = Object.freeze({
+const regions: IRegionIdProperties<RegionNameArray> = {
   1: Object.freeze(['us']),
   2: Object.freeze(['eu']),
   3: Object.freeze(['kr', 'tw']),
   5: Object.freeze(['cn']),
-});
+};
 
-export default regions;
+export default Object.freeze(regions);

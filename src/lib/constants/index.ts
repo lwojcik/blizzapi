@@ -1,5 +1,5 @@
 /**
- * Class exposing configuration constants as stated in Blizzard API docs
+ * Class exposing configuration constants
  *
  * Via:
  *
