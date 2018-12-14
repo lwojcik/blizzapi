@@ -7,7 +7,6 @@ describe('DEFAULT_LOCALES', () => {
     expect(DEFAULT_LOCALES).toBeDefined();
   });
 
-
   test('should be frozen', () => {
     expect(Object.isFrozen(DEFAULT_LOCALES)).toBe(true);
   });
