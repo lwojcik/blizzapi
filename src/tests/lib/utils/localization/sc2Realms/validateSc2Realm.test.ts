@@ -1,6 +1,4 @@
 import * as utils from '../../../../../lib/utils';
-// import constants from '../../../../../lib/constants';
-
 const { validateSc2Realm } = utils;
 
 describe('validateSc2Realm()', () => {
