@@ -22,7 +22,7 @@ export function getApiHostByRegionId(regionId: RegionIdAsNumberOrString) {
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
   if (!isRegionIdValid) {
-    throw new RangeError(`${regionIdAsString} is not a valid parameter for getLocalesByRegionId()`);
+    throw new RangeError(`${regionIdAsString} is not a valid parameter for getApiHostByRegionId()`);
   }
 
   return constants.REGION_API_HOSTS[regionIdAsString];
