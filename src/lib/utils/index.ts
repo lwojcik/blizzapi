@@ -1,4 +1,5 @@
 import * as localization from './localization';
+import * as api from './api';
 
 import { RegionName, RegionIdAsNumberOrString, Sc2RealmAsNumberOrString, Locale } from '../types';
 
@@ -100,4 +101,18 @@ export function validateSc2Realm(sc2Realm: Sc2RealmAsNumberOrString) {
 
 export function isSc2RealmValidForRegionId(sc2Realm: Sc2RealmAsNumberOrString, regionId: RegionIdAsNumberOrString) {
   return localization.isSc2RealmValidForRegionId(sc2Realm, regionId);
+}
+
+/** API hosts */
+
+export function getAllApiHosts() {
+  return api.getAllApiHosts();
+}
+
+export function getApiHostByRegionId(regionId: RegionIdAsNumberOrString) {
+  return api.getApiHostByRegionId(regionId);
+}
+
+export function getApiHostByRegionName(regionName: RegionName) {
+  return api.getApiHostByRegionName(regionName);
 }
