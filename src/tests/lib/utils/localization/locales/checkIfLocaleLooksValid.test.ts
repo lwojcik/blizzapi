@@ -69,4 +69,19 @@ describe('checkIfLocaleLooksValid()', () => {
   `('returns $expectedResult for $input as valid locale name', ({ input, expectedResult }) => {
     expect(checkIfLocaleLooksValid(input)).toBe(expectedResult);
   });
+
+  test.each`
+    input        | expectedResult
+    ${'avA_CA'}  | ${false}
+    ${'tb_Wpk'}  | ${false}
+    ${'QQ_wNN'}  | ${false}
+    ${'WZa_azD'} | ${false}
+    ${'pOsvV'}   | ${false}
+    ${'yy0cR'}   | ${false}
+    ${'q1_bG'}   | ${false}
+    ${'12_34'}   | ${false}
+    ${'eEbd'}    | ${false}
+  `('returns $expectedResult for $input as malformed locale', ({ input, expectedResult }) => {
+    expect(checkIfLocaleLooksValid(input)).toBe(expectedResult);
+  });
 });
