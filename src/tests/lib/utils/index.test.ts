@@ -24,6 +24,9 @@ const {
   checkIfSc2RealmLooksValid,
   validateSc2Realm,
   isSc2RealmValidForRegionId,
+  getAllApiHosts,
+  getApiHostByRegionId,
+  getApiHostByRegionName,
 } = utils;
 
 describe('utils', () => {
@@ -178,5 +181,23 @@ describe('utils', () => {
     expect(isSc2RealmValidForRegionId).toBeDefined();
     expect(isSc2RealmValidForRegionId).toBeTruthy();
     expect(typeof isSc2RealmValidForRegionId).toBe('function');
+  });
+
+  test('should expose method getAllApiHosts()', () => {
+    expect(getAllApiHosts).toBeDefined();
+    expect(getAllApiHosts).toBeTruthy();
+    expect(typeof getAllApiHosts).toBe('function');
+  });
+
+  test('should expose method getApiHostByRegionId()', () => {
+    expect(getApiHostByRegionId).toBeDefined();
+    expect(getApiHostByRegionId).toBeTruthy();
+    expect(typeof getApiHostByRegionId).toBe('function');
+  });
+
+  test('should expose method getApiHostByRegionName()', () => {
+    expect(getApiHostByRegionName).toBeDefined();
+    expect(getApiHostByRegionName).toBeTruthy();
+    expect(typeof getApiHostByRegionName).toBe('function');
   });
 });
