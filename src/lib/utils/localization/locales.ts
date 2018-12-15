@@ -3,7 +3,7 @@ import { validateRegionId } from './regions';
 import { Locale, LocaleArray, RegionIdAsNumberOrString } from '../../types';
 
 /**
- * Returns a list of all available locales
+ * Returns a list of all locales indexed by region id
  *
  * @return List of all available regions indexed by region id as array of strings.
  */
@@ -12,7 +12,7 @@ export function getAllLocales() {
 }
 
 /**
- * Returns a list of all locale names
+ * Returns a list of all available locale names
  *
  * @return List of all available locales as flat array of strings.
  */

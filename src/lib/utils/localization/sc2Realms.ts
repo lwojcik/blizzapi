@@ -1,6 +1,6 @@
 import constants from '../../constants';
 import { validateRegionId } from './regions';
-import { RegionIdAsNumberOrString, Sc2RealmAsNumberOrString } from '../../types';
+import { RegionIdAsNumberOrString, Sc2RealmAsNumberOrString, Sc2RealmList } from '../../types';
 
 /**
  * Returns a list of all available StarCraft II realms
@@ -9,6 +9,18 @@ import { RegionIdAsNumberOrString, Sc2RealmAsNumberOrString } from '../../types'
  */
 export function getAllSc2Realms() {
   return constants.SC2_REALMS;
+}
+
+/**
+ * Returns a list of all SC2 realms
+ *
+ * @return List of all available SC2 realms as flat array of integers.
+ */
+export function getAllAvailableSc2Realms(): Sc2RealmList {
+  const sc2Realms = Object.values(constants.SC2_REALMS);
+  const flattenedSc2Realms = ([] as Sc2RealmList).concat(...sc2Realms);
+  const dedupedSc2RealmList = flattenedSc2Realms.filter((el, i, a) => i === a.indexOf(el));
+  return dedupedSc2RealmList;
 }
 
 /**
@@ -40,6 +52,24 @@ export function checkIfSc2RealmLooksValid(sc2Realm: Sc2RealmAsNumberOrString) {
   const doesSc2RealmLookValid = sc2RealmRegexPattern.test(sc2RealmAsString);
   sc2RealmRegexPattern.lastIndex = 0;
   return doesSc2RealmLookValid;
+}
+
+/**
+ * Validates sc2 realm id against SC2 realms list (whether it exists in the constants object)
+ *
+ * @param sc2Realm SC2 realm id (single digit) as number or string
+ * @return true if locale exists, false if not. Throws RangeError if locale doesn't match regex pattern
+ */
+export function validateSc2Realm(sc2Realm: Sc2RealmAsNumberOrString) {
+  const doesSc2RealmLookValid = checkIfSc2RealmLooksValid(sc2Realm);
+
+  if (!doesSc2RealmLookValid) {
+    throw new RangeError(`${sc2Realm} is not a valid parameter for validateSc2Realm()`);
+  }
+
+  const sc2RealmList = getAllAvailableSc2Realms();
+  const sc2RealmAsNumber = typeof sc2Realm === 'number' ? sc2Realm : parseInt(sc2Realm, 10);
+  return sc2RealmList.includes(sc2RealmAsNumber);
 }
 
 /**

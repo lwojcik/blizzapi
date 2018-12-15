@@ -4,9 +4,9 @@
  */
 
 import { IRegionIdProperties } from '../../interfaces';
-import { Sc2RealmList } from '../../types';
+import { Sc2RealmArray } from '../../types';
 
-const sc2Realms: IRegionIdProperties<Sc2RealmList> = {
+const sc2Realms: IRegionIdProperties<Sc2RealmArray> = {
   1: Object.freeze([1, 2]),
   2: Object.freeze([1, 2]),
   3: Object.freeze([1, 2]),

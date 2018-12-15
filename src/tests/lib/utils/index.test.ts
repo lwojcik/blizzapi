@@ -18,6 +18,12 @@ const {
   getAllDefaultLocaleNames,
   getDefaultLocaleIndexForRegionId,
   getDefaultLocaleNameForRegionId,
+  getAllSc2Realms,
+  getAllAvailableSc2Realms,
+  getSc2RealmsByRegionId,
+  checkIfSc2RealmLooksValid,
+  validateSc2Realm,
+  isSc2RealmValidForRegionId,
 } = utils;
 
 describe('utils', () => {
@@ -136,5 +142,41 @@ describe('utils', () => {
     expect(getDefaultLocaleNameForRegionId).toBeDefined();
     expect(getDefaultLocaleNameForRegionId).toBeTruthy();
     expect(typeof getDefaultLocaleNameForRegionId).toBe('function');
+  });
+
+  test('should expose method getAllSc2Realms()', () => {
+    expect(getAllSc2Realms).toBeDefined();
+    expect(getAllSc2Realms).toBeTruthy();
+    expect(typeof getAllSc2Realms).toBe('function');
+  });
+
+  test('should expose method getAllAvailableSc2Realms()', () => {
+    expect(getAllAvailableSc2Realms).toBeDefined();
+    expect(getAllAvailableSc2Realms).toBeTruthy();
+    expect(typeof getAllAvailableSc2Realms).toBe('function');
+  });
+
+  test('should expose method getSc2RealmsByRegionId()', () => {
+    expect(getSc2RealmsByRegionId).toBeDefined();
+    expect(getSc2RealmsByRegionId).toBeTruthy();
+    expect(typeof getSc2RealmsByRegionId).toBe('function');
+  });
+
+  test('should expose method checkIfSc2RealmLooksValid()', () => {
+    expect(checkIfSc2RealmLooksValid).toBeDefined();
+    expect(checkIfSc2RealmLooksValid).toBeTruthy();
+    expect(typeof checkIfSc2RealmLooksValid).toBe('function');
+  });
+
+  test('should expose method validateSc2Realm()', () => {
+    expect(validateSc2Realm).toBeDefined();
+    expect(validateSc2Realm).toBeTruthy();
+    expect(typeof validateSc2Realm).toBe('function');
+  });
+
+  test('should expose method isSc2RealmValidForRegionId()', () => {
+    expect(isSc2RealmValidForRegionId).toBeDefined();
+    expect(isSc2RealmValidForRegionId).toBeTruthy();
+    expect(typeof isSc2RealmValidForRegionId).toBe('function');
   });
 });

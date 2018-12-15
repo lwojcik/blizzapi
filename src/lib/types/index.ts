@@ -1,4 +1,4 @@
-// Still don't know how to avoid shipping this file in dist build
+// I still don't know how to avoid shipping this file in dist build
 // https://github.com/Microsoft/TypeScript/issues/10908
 
 /** Common */
@@ -24,8 +24,9 @@ export type RegionApiHostUri = Uri;
 
 /** StarCraft II realms  */
 export type Sc2Realm = number;
+export type Sc2RealmArray = ReadonlyArray<Sc2Realm>;
+export type Sc2RealmList = Sc2Realm[];
 export type Sc2RealmAsNumberOrString = Sc2Realm | string;
-export type Sc2RealmList = ReadonlyArray<Sc2Realm>;
 
 /** OAuth */
 export type AuthorizeUri = Uri;
