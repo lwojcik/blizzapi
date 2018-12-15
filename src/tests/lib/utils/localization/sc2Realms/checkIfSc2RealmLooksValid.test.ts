@@ -13,29 +13,29 @@ describe('checkIfSc2RealmLooksValid()', () => {
   });
 
   test.each`
-    input   | expectedResult
-    ${6}    | ${true}
-    ${7}    | ${true}
-    ${8}    | ${true}
-    ${9}    | ${true}
-    ${'6'}  | ${true}
-    ${'7'}  | ${true}
-    ${'8'}  | ${true}
-    ${'9'}  | ${true}
+    input  | expectedResult
+    ${6}   | ${true}
+    ${7}   | ${true}
+    ${8}   | ${true}
+    ${9}   | ${true}
+    ${'6'} | ${true}
+    ${'7'} | ${true}
+    ${'8'} | ${true}
+    ${'9'} | ${true}
   `('returns $expectedResult for $input as non-existent SC2 realm', ({ input, expectedResult }) => {
     expect(checkIfSc2RealmLooksValid(input)).toBe(expectedResult);
   });
 
   test.each`
-    input   | expectedResult
-    ${1}    | ${true}
-    ${2}    | ${true}
-    ${3}    | ${true}
-    ${5}    | ${true}
-    ${'1'}  | ${true}
-    ${'2'}  | ${true}
-    ${'3'}  | ${true}
-    ${'5'}  | ${true}
+    input  | expectedResult
+    ${1}   | ${true}
+    ${2}   | ${true}
+    ${3}   | ${true}
+    ${5}   | ${true}
+    ${'1'} | ${true}
+    ${'2'} | ${true}
+    ${'3'} | ${true}
+    ${'5'} | ${true}
   `('returns $expectedResult for $input as valid sc2 realm', ({ input, expectedResult }) => {
     expect(checkIfSc2RealmLooksValid(input)).toBe(expectedResult);
   });

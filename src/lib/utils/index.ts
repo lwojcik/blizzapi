@@ -1,6 +1,6 @@
 import * as localization from './localization';
 
-import { RegionName, RegionIdAsNumberOrString, Sc2RealmAsNumberOrString, Locale  } from '../types';
+import { RegionName, RegionIdAsNumberOrString, Sc2RealmAsNumberOrString, Locale } from '../types';
 
 /** Regions */
 
@@ -93,7 +93,6 @@ export function getSc2RealmsByRegionId(regionId: RegionIdAsNumberOrString) {
 export function checkIfSc2RealmLooksValid(sc2Realm: Sc2RealmAsNumberOrString) {
   return localization.checkIfSc2RealmLooksValid(sc2Realm);
 }
-
 
 export function validateSc2Realm(sc2Realm: Sc2RealmAsNumberOrString) {
   return localization.validateSc2Realm(sc2Realm);

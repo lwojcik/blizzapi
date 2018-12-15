@@ -11,25 +11,25 @@ describe('validateSc2Realm()', () => {
   });
 
   test.each`
-    input   | expectedResult
-    ${1}    | ${true}
-    ${2}    | ${true}
-    ${'1'}  | ${true}
-    ${'2'}  | ${true}
+    input  | expectedResult
+    ${1}   | ${true}
+    ${2}   | ${true}
+    ${'1'} | ${true}
+    ${'2'} | ${true}
   `('returns $expectedResult for $input as valid sc2 realm', ({ input, expectedResult }) => {
     expect(validateSc2Realm(input)).toBe(expectedResult);
   });
 
   test.each`
-    input   | expectedResult
-    ${6}    | ${false}
-    ${7}    | ${false}
-    ${8}    | ${false}
-    ${9}    | ${false}
-    ${'6'}  | ${false}
-    ${'7'}  | ${false}
-    ${'8'}  | ${false}
-    ${'9'}  | ${false}
+    input  | expectedResult
+    ${6}   | ${false}
+    ${7}   | ${false}
+    ${8}   | ${false}
+    ${9}   | ${false}
+    ${'6'} | ${false}
+    ${'7'} | ${false}
+    ${'8'} | ${false}
+    ${'9'} | ${false}
   `('returns $expectedResult for $input as non-existent SC2 realm', ({ input, expectedResult }) => {
     expect(validateSc2Realm(input)).toBe(expectedResult);
   });
@@ -49,5 +49,4 @@ describe('validateSc2Realm()', () => {
       validateSc2Realm(input);
     }).toThrow(expectedResult);
   });
-
 });
