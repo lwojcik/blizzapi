@@ -24,6 +24,7 @@ export type RegionApiHostUri = Uri;
 
 /** StarCraft II realms  */
 export type Sc2Realm = number;
+export type Sc2RealmAsNumberOrString = Sc2Realm | string;
 export type Sc2RealmList = ReadonlyArray<Sc2Realm>;
 
 /** OAuth */

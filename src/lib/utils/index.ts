@@ -1,6 +1,6 @@
 import * as localization from './localization';
 
-import { RegionName, RegionIdAsNumberOrString, Locale } from '../types';
+import { RegionName, RegionIdAsNumberOrString, Sc2RealmAsNumberOrString, Locale  } from '../types';
 
 /** Regions */
 
@@ -80,4 +80,16 @@ export function getDefaultLocaleNameForRegionId(regionId: RegionIdAsNumberOrStri
 
 export function getAllSc2Realms() {
   return localization.getAllSc2Realms();
+}
+
+export function getSc2RealmsByRegionId(regionId: RegionIdAsNumberOrString) {
+  return localization.getSc2RealmsByRegionId(regionId);
+}
+
+export function checkIfSc2RealmLooksValid(sc2Realm: Sc2RealmAsNumberOrString) {
+  return localization.checkIfSc2RealmLooksValid(sc2Realm);
+}
+
+export function isSc2RealmValidForRegionId(sc2Realm: Sc2RealmAsNumberOrString, regionId: RegionIdAsNumberOrString) {
+  return localization.isSc2RealmValidForRegionId(sc2Realm, regionId);
 }
