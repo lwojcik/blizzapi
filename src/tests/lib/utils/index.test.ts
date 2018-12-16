@@ -1,34 +1,5 @@
 import * as utils from '../../../lib/utils';
 
-const {
-  getAllRegions,
-  getAllRegionIds,
-  getAllRegionNames,
-  getRegionNameById,
-  validateRegionId,
-  getRegionIdByName,
-  validateRegionName,
-  getAllLocales,
-  getAllLocaleNames,
-  getLocalesByRegionId,
-  checkIfLocaleLooksValid,
-  isLocaleValidForRegionId,
-  validateLocale,
-  getAllDefaultLocaleIndexes,
-  getAllDefaultLocaleNames,
-  getDefaultLocaleIndexForRegionId,
-  getDefaultLocaleNameForRegionId,
-  getAllSc2Realms,
-  getAllAvailableSc2Realms,
-  getSc2RealmsByRegionId,
-  checkIfSc2RealmLooksValid,
-  validateSc2Realm,
-  isSc2RealmValidForRegionId,
-  getAllApiHosts,
-  getApiHostByRegionId,
-  getApiHostByRegionName,
-} = utils;
-
 describe('utils', () => {
   test('should be defined', () => {
     expect(utils).toBeDefined();
@@ -40,164 +11,218 @@ describe('utils', () => {
   });
 
   test('should expose method getAllRegions()', () => {
-    expect(getAllRegions).toBeDefined();
-    expect(getAllRegions).toBeTruthy();
-    expect(typeof getAllRegions).toBe('function');
+    expect(utils.getAllRegions).toBeDefined();
+    expect(utils.getAllRegions).toBeTruthy();
+    expect(typeof utils.getAllRegions).toBe('function');
   });
 
   test('should expose method getAllRegionIds()', () => {
-    expect(getAllRegionIds).toBeDefined();
-    expect(getAllRegionIds).toBeTruthy();
-    expect(typeof getAllRegionIds).toBe('function');
+    expect(utils.getAllRegionIds).toBeDefined();
+    expect(utils.getAllRegionIds).toBeTruthy();
+    expect(typeof utils.getAllRegionIds).toBe('function');
   });
 
   test('should expose method getAllRegionNames()', () => {
-    expect(getAllRegionNames).toBeDefined();
-    expect(getAllRegionNames).toBeTruthy();
-    expect(typeof getAllRegionNames).toBe('function');
+    expect(utils.getAllRegionNames).toBeDefined();
+    expect(utils.getAllRegionNames).toBeTruthy();
+    expect(typeof utils.getAllRegionNames).toBe('function');
   });
 
   test('should expose method getRegionNameById()', () => {
-    expect(getRegionNameById).toBeDefined();
-    expect(getRegionNameById).toBeTruthy();
-    expect(typeof getRegionNameById).toBe('function');
+    expect(utils.getRegionNameById).toBeDefined();
+    expect(utils.getRegionNameById).toBeTruthy();
+    expect(typeof utils.getRegionNameById).toBe('function');
   });
 
   test('should expose method validateRegionId()', () => {
-    expect(validateRegionId).toBeDefined();
-    expect(validateRegionId).toBeTruthy();
-    expect(typeof validateRegionId).toBe('function');
+    expect(utils.validateRegionId).toBeDefined();
+    expect(utils.validateRegionId).toBeTruthy();
+    expect(typeof utils.validateRegionId).toBe('function');
   });
 
   test('should expose method getRegionIdByName()', () => {
-    expect(getRegionIdByName).toBeDefined();
-    expect(getRegionIdByName).toBeTruthy();
-    expect(typeof getRegionIdByName).toBe('function');
+    expect(utils.getRegionIdByName).toBeDefined();
+    expect(utils.getRegionIdByName).toBeTruthy();
+    expect(typeof utils.getRegionIdByName).toBe('function');
   });
 
   test('should expose method validateRegionName()', () => {
-    expect(validateRegionName).toBeDefined();
-    expect(validateRegionName).toBeTruthy();
-    expect(typeof validateRegionName).toBe('function');
+    expect(utils.validateRegionName).toBeDefined();
+    expect(utils.validateRegionName).toBeTruthy();
+    expect(typeof utils.validateRegionName).toBe('function');
   });
 
   test('should expose method getAllLocales()', () => {
-    expect(getAllLocales).toBeDefined();
-    expect(getAllLocales).toBeTruthy();
-    expect(typeof getAllLocales).toBe('function');
+    expect(utils.getAllLocales).toBeDefined();
+    expect(utils.getAllLocales).toBeTruthy();
+    expect(typeof utils.getAllLocales).toBe('function');
   });
 
   test('should expose method getAllLocaleNames()', () => {
-    expect(getAllLocaleNames).toBeDefined();
-    expect(getAllLocaleNames).toBeTruthy();
-    expect(typeof getAllLocaleNames).toBe('function');
+    expect(utils.getAllLocaleNames).toBeDefined();
+    expect(utils.getAllLocaleNames).toBeTruthy();
+    expect(typeof utils.getAllLocaleNames).toBe('function');
   });
 
   test('should expose method getLocalesByRegionId()', () => {
-    expect(getLocalesByRegionId).toBeDefined();
-    expect(getLocalesByRegionId).toBeTruthy();
-    expect(typeof getLocalesByRegionId).toBe('function');
+    expect(utils.getLocalesByRegionId).toBeDefined();
+    expect(utils.getLocalesByRegionId).toBeTruthy();
+    expect(typeof utils.getLocalesByRegionId).toBe('function');
   });
 
   test('should expose method checkIfLocaleLooksValid()', () => {
-    expect(checkIfLocaleLooksValid).toBeDefined();
-    expect(checkIfLocaleLooksValid).toBeTruthy();
-    expect(typeof checkIfLocaleLooksValid).toBe('function');
+    expect(utils.checkIfLocaleLooksValid).toBeDefined();
+    expect(utils.checkIfLocaleLooksValid).toBeTruthy();
+    expect(typeof utils.checkIfLocaleLooksValid).toBe('function');
   });
 
   test('should expose method validateLocale()', () => {
-    expect(validateLocale).toBeDefined();
-    expect(validateLocale).toBeTruthy();
-    expect(typeof validateLocale).toBe('function');
+    expect(utils.validateLocale).toBeDefined();
+    expect(utils.validateLocale).toBeTruthy();
+    expect(typeof utils.validateLocale).toBe('function');
   });
 
   test('should expose method getAllDefaultLocaleIndexes()', () => {
-    expect(getAllDefaultLocaleIndexes).toBeDefined();
-    expect(getAllDefaultLocaleIndexes).toBeTruthy();
-    expect(typeof getAllDefaultLocaleIndexes).toBe('function');
+    expect(utils.getAllDefaultLocaleIndexes).toBeDefined();
+    expect(utils.getAllDefaultLocaleIndexes).toBeTruthy();
+    expect(typeof utils.getAllDefaultLocaleIndexes).toBe('function');
   });
 
   test('should expose method isLocaleValidForRegionId()', () => {
-    expect(isLocaleValidForRegionId).toBeDefined();
-    expect(isLocaleValidForRegionId).toBeTruthy();
-    expect(typeof isLocaleValidForRegionId).toBe('function');
+    expect(utils.isLocaleValidForRegionId).toBeDefined();
+    expect(utils.isLocaleValidForRegionId).toBeTruthy();
+    expect(typeof utils.isLocaleValidForRegionId).toBe('function');
   });
 
   test('should expose method getAllDefaultLocaleIndexes()', () => {
-    expect(getAllDefaultLocaleIndexes).toBeDefined();
-    expect(getAllDefaultLocaleIndexes).toBeTruthy();
-    expect(typeof getAllDefaultLocaleIndexes).toBe('function');
+    expect(utils.getAllDefaultLocaleIndexes).toBeDefined();
+    expect(utils.getAllDefaultLocaleIndexes).toBeTruthy();
+    expect(typeof utils.getAllDefaultLocaleIndexes).toBe('function');
   });
 
   test('should expose method getAllDefaultLocaleNames()', () => {
-    expect(getAllDefaultLocaleNames).toBeDefined();
-    expect(getAllDefaultLocaleNames).toBeTruthy();
-    expect(typeof getAllDefaultLocaleNames).toBe('function');
+    expect(utils.getAllDefaultLocaleNames).toBeDefined();
+    expect(utils.getAllDefaultLocaleNames).toBeTruthy();
+    expect(typeof utils.getAllDefaultLocaleNames).toBe('function');
   });
 
   test('should expose method getDefaultLocaleIndexForRegionId()', () => {
-    expect(getDefaultLocaleIndexForRegionId).toBeDefined();
-    expect(getDefaultLocaleIndexForRegionId).toBeTruthy();
-    expect(typeof getDefaultLocaleIndexForRegionId).toBe('function');
+    expect(utils.getDefaultLocaleIndexForRegionId).toBeDefined();
+    expect(utils.getDefaultLocaleIndexForRegionId).toBeTruthy();
+    expect(typeof utils.getDefaultLocaleIndexForRegionId).toBe('function');
   });
 
   test('should expose method getDefaultLocaleNameForRegionId()', () => {
-    expect(getDefaultLocaleNameForRegionId).toBeDefined();
-    expect(getDefaultLocaleNameForRegionId).toBeTruthy();
-    expect(typeof getDefaultLocaleNameForRegionId).toBe('function');
+    expect(utils.getDefaultLocaleNameForRegionId).toBeDefined();
+    expect(utils.getDefaultLocaleNameForRegionId).toBeTruthy();
+    expect(typeof utils.getDefaultLocaleNameForRegionId).toBe('function');
   });
 
   test('should expose method getAllSc2Realms()', () => {
-    expect(getAllSc2Realms).toBeDefined();
-    expect(getAllSc2Realms).toBeTruthy();
-    expect(typeof getAllSc2Realms).toBe('function');
+    expect(utils.getAllSc2Realms).toBeDefined();
+    expect(utils.getAllSc2Realms).toBeTruthy();
+    expect(typeof utils.getAllSc2Realms).toBe('function');
   });
 
   test('should expose method getAllAvailableSc2Realms()', () => {
-    expect(getAllAvailableSc2Realms).toBeDefined();
-    expect(getAllAvailableSc2Realms).toBeTruthy();
-    expect(typeof getAllAvailableSc2Realms).toBe('function');
+    expect(utils.getAllAvailableSc2Realms).toBeDefined();
+    expect(utils.getAllAvailableSc2Realms).toBeTruthy();
+    expect(typeof utils.getAllAvailableSc2Realms).toBe('function');
   });
 
   test('should expose method getSc2RealmsByRegionId()', () => {
-    expect(getSc2RealmsByRegionId).toBeDefined();
-    expect(getSc2RealmsByRegionId).toBeTruthy();
-    expect(typeof getSc2RealmsByRegionId).toBe('function');
+    expect(utils.getSc2RealmsByRegionId).toBeDefined();
+    expect(utils.getSc2RealmsByRegionId).toBeTruthy();
+    expect(typeof utils.getSc2RealmsByRegionId).toBe('function');
   });
 
   test('should expose method checkIfSc2RealmLooksValid()', () => {
-    expect(checkIfSc2RealmLooksValid).toBeDefined();
-    expect(checkIfSc2RealmLooksValid).toBeTruthy();
-    expect(typeof checkIfSc2RealmLooksValid).toBe('function');
+    expect(utils.checkIfSc2RealmLooksValid).toBeDefined();
+    expect(utils.checkIfSc2RealmLooksValid).toBeTruthy();
+    expect(typeof utils.checkIfSc2RealmLooksValid).toBe('function');
   });
 
   test('should expose method validateSc2Realm()', () => {
-    expect(validateSc2Realm).toBeDefined();
-    expect(validateSc2Realm).toBeTruthy();
-    expect(typeof validateSc2Realm).toBe('function');
+    expect(utils.validateSc2Realm).toBeDefined();
+    expect(utils.validateSc2Realm).toBeTruthy();
+    expect(typeof utils.validateSc2Realm).toBe('function');
   });
 
   test('should expose method isSc2RealmValidForRegionId()', () => {
-    expect(isSc2RealmValidForRegionId).toBeDefined();
-    expect(isSc2RealmValidForRegionId).toBeTruthy();
-    expect(typeof isSc2RealmValidForRegionId).toBe('function');
+    expect(utils.isSc2RealmValidForRegionId).toBeDefined();
+    expect(utils.isSc2RealmValidForRegionId).toBeTruthy();
+    expect(typeof utils.isSc2RealmValidForRegionId).toBe('function');
   });
 
   test('should expose method getAllApiHosts()', () => {
-    expect(getAllApiHosts).toBeDefined();
-    expect(getAllApiHosts).toBeTruthy();
-    expect(typeof getAllApiHosts).toBe('function');
+    expect(utils.getAllApiHosts).toBeDefined();
+    expect(utils.getAllApiHosts).toBeTruthy();
+    expect(typeof utils.getAllApiHosts).toBe('function');
   });
 
   test('should expose method getApiHostByRegionId()', () => {
-    expect(getApiHostByRegionId).toBeDefined();
-    expect(getApiHostByRegionId).toBeTruthy();
-    expect(typeof getApiHostByRegionId).toBe('function');
+    expect(utils.getApiHostByRegionId).toBeDefined();
+    expect(utils.getApiHostByRegionId).toBeTruthy();
+    expect(typeof utils.getApiHostByRegionId).toBe('function');
   });
 
   test('should expose method getApiHostByRegionName()', () => {
-    expect(getApiHostByRegionName).toBeDefined();
-    expect(getApiHostByRegionName).toBeTruthy();
-    expect(typeof getApiHostByRegionName).toBe('function');
+    expect(utils.getApiHostByRegionName).toBeDefined();
+    expect(utils.getApiHostByRegionName).toBeTruthy();
+    expect(typeof utils.getApiHostByRegionName).toBe('function');
+  });
+
+  test('should expose method getAllAuthorizeUris()', () => {
+    expect(utils.getAllAuthorizeUris).toBeDefined();
+    expect(utils.getAllAuthorizeUris).toBeTruthy();
+    expect(typeof utils.getAllAuthorizeUris).toBe('function');
+  });
+
+  test('should expose method getAuthorizeUriByRegionId()', () => {
+    expect(utils.getAuthorizeUriByRegionId).toBeDefined();
+    expect(utils.getAuthorizeUriByRegionId).toBeTruthy();
+    expect(typeof utils.getAuthorizeUriByRegionId).toBe('function');
+  });
+
+  test('should expose method getAuthorizeUriByRegionName()', () => {
+    expect(utils.getAuthorizeUriByRegionName).toBeDefined();
+    expect(utils.getAuthorizeUriByRegionName).toBeTruthy();
+    expect(typeof utils.getAuthorizeUriByRegionName).toBe('function');
+  });
+
+  test('should expose method getAllCheckTokenUris()', () => {
+    expect(utils.getAllCheckTokenUris).toBeDefined();
+    expect(utils.getAllCheckTokenUris).toBeTruthy();
+    expect(typeof utils.getAllCheckTokenUris).toBe('function');
+  });
+
+  test('should expose method getCheckTokenUriByRegionId()', () => {
+    expect(utils.getCheckTokenUriByRegionId).toBeDefined();
+    expect(utils.getCheckTokenUriByRegionId).toBeTruthy();
+    expect(typeof utils.getCheckTokenUriByRegionId).toBe('function');
+  });
+
+  test('should expose method getCheckTokenUriByRegionName()', () => {
+    expect(utils.getCheckTokenUriByRegionName).toBeDefined();
+    expect(utils.getCheckTokenUriByRegionName).toBeTruthy();
+    expect(typeof utils.getCheckTokenUriByRegionName).toBe('function');
+  });
+
+  test('should expose method getAllTokenUris()', () => {
+    expect(utils.getAllTokenUris).toBeDefined();
+    expect(utils.getAllTokenUris).toBeTruthy();
+    expect(typeof utils.getAllTokenUris).toBe('function');
+  });
+
+  test('should expose method getTokenUriByRegionId()', () => {
+    expect(utils.getTokenUriByRegionId).toBeDefined();
+    expect(utils.getTokenUriByRegionId).toBeTruthy();
+    expect(typeof utils.getTokenUriByRegionId).toBe('function');
+  });
+
+  test('should expose method getTokenUriByRegionName()', () => {
+    expect(utils.getTokenUriByRegionName).toBeDefined();
+    expect(utils.getTokenUriByRegionName).toBeTruthy();
+    expect(typeof utils.getTokenUriByRegionName).toBe('function');
   });
 });

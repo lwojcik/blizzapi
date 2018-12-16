@@ -1,5 +1,6 @@
 import * as localization from './localization';
 import * as api from './api';
+import * as oauth from './oauth';
 
 import { RegionName, RegionIdAsNumberOrString, Sc2RealmAsNumberOrString, Locale } from '../types';
 
@@ -115,4 +116,46 @@ export function getApiHostByRegionId(regionId: RegionIdAsNumberOrString) {
 
 export function getApiHostByRegionName(regionName: RegionName) {
   return api.getApiHostByRegionName(regionName);
+}
+
+/** OAuth authorize uris */
+
+export function getAllAuthorizeUris() {
+  return oauth.getAllAuthorizeUris();
+}
+
+export function getAuthorizeUriByRegionId(regionId: RegionIdAsNumberOrString) {
+  return oauth.getAuthorizeUriByRegionId(regionId);
+}
+
+export function getAuthorizeUriByRegionName(regionName: RegionName) {
+  return oauth.getAuthorizeUriByRegionName(regionName);
+}
+
+/** OAuth check token uris */
+
+export function getAllCheckTokenUris() {
+  return oauth.getAllCheckTokenUris();
+}
+
+export function getCheckTokenUriByRegionId(regionId: RegionIdAsNumberOrString) {
+  return oauth.getCheckTokenUriByRegionId(regionId);
+}
+
+export function getCheckTokenUriByRegionName(regionName: RegionName) {
+  return oauth.getCheckTokenUriByRegionName(regionName);
+}
+
+/** OAuth token uris */
+
+export function getAllTokenUris() {
+  return oauth.getAllTokenUris();
+}
+
+export function getTokenUriByRegionId(regionId: RegionIdAsNumberOrString) {
+  return oauth.getTokenUriByRegionId(regionId);
+}
+
+export function getTokenUriByRegionName(regionName: RegionName) {
+  return oauth.getTokenUriByRegionName(regionName);
 }

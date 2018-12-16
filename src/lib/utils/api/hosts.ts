@@ -15,7 +15,7 @@ export function getAllApiHosts() {
  * Returns region API host uri for given region id
  *
  * @param regionId Region id as integer or string
- * @return List of locales available in a specific region as array of strings
+ * @return API host uri as a string
  */
 export function getApiHostByRegionId(regionId: RegionIdAsNumberOrString) {
   const regionIdAsString = regionId.toString();
@@ -32,7 +32,7 @@ export function getApiHostByRegionId(regionId: RegionIdAsNumberOrString) {
  * Returns region API host uri for given region name
  *
  * @param regionName Region name as two-letter string (e.g. 'us')
- * @return List of locales available in a specific region as array of strings
+ * @return API host uri as a string
  */
 export function getApiHostByRegionName(regionName: RegionName) {
   const isRegionNameValid = validateRegionName(regionName);
