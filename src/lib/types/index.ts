@@ -32,3 +32,10 @@ export type Sc2RealmAsNumberOrString = Sc2Realm | string;
 export type AuthorizeUri = Uri;
 export type TokenUri = Uri;
 export type CheckTokenUri = Uri;
+
+/** API class types */
+
+export type RegionIdOrName = RegionId | RegionName;
+export type ClientId = string;
+export type ClientSecret = string;
+export type AccessToken = string;

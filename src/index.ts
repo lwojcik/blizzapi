@@ -1,7 +1,7 @@
-import * as BattleNetUtils from './lib';
-// todo import battlenet api class
+import { default as BattleNetApi } from './lib/api';
+import * as BattleNetUtils from './lib/utils';
 
 export {
-  // todo: bnet api class export
+  BattleNetApi,
   BattleNetUtils,
 };
