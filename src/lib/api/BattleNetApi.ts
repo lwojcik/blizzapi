@@ -1,13 +1,13 @@
-import { RegionIdOrName, ClientId, ClientSecret, AccessToken } from '../types';
+import { RegionIdOrName, ClientId, ClientSecret, AccessToken, Options } from '../types';
 
 export default class BattleNetApi {
   public region: RegionIdOrName;
   public clientId: ClientId;
   public clientSecret: ClientSecret;
-  public options: Object | undefined;
+  public options: Options;
   accessToken: AccessToken;
 
-  constructor(region: RegionIdOrName, clientId:ClientId, clientSecret:ClientSecret, options?: Object | undefined) {
+  constructor(region: RegionIdOrName, clientId:ClientId, clientSecret:ClientSecret, options?: Options) {
     this.region = region;
     this.clientId = clientId;
     this.clientSecret = clientSecret;

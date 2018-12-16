@@ -39,3 +39,4 @@ export type RegionIdOrName = RegionId | RegionName;
 export type ClientId = string;
 export type ClientSecret = string;
 export type AccessToken = string;
+export type Options = Object | undefined;
