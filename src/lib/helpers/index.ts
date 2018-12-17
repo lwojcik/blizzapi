@@ -2,9 +2,9 @@ import { default as fetch } from 'cross-fetch';
 import { Uri } from '../types';
 
 /**
- * Validates uri against regex pattern
+ * Validates uri via matching it against regex pattern
  * @function
- * @param {string} uri Fetch request uri (e.g. https://example.com/api/endpoint)
+ * @param {string} uri Fetch request uri starting with http(s) (e.g. https://example.com/api/endpoint)
  * @returns {Boolean} True for valid uri, false for incorrect one
  */
 export function validateUri(uri:Uri) {
@@ -24,7 +24,7 @@ export async function fetchFromUri(uri:Uri) {
   const isUriValid = validateUri(uri);
 
   if (!isUriValid) {
-    throw new Error(`'${uri}' is not a valid parameter for fetchFromUri()`);
+    throw new RangeError(`'${uri}' is not a valid parameter for fetchFromUri()`);
   }
 
   try {
