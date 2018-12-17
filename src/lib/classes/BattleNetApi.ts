@@ -8,6 +8,7 @@ export default class BattleNetApi {
   accessToken: AccessToken;
 
   constructor(region: RegionIdOrName, clientId:ClientId, clientSecret:ClientSecret, options?: Options) {
+    console.log('constructing BattleNetApi class object');
     this.region = region;
     this.clientId = clientId;
     this.clientSecret = clientSecret;
@@ -15,13 +16,15 @@ export default class BattleNetApi {
     this.options = options;
   }
 
+  connect() {
+    console.log('Bnet Api class connect');
+    this.accessToken = this.fetchAccessToken(this.region, this.clientId, this.clientSecret);
+  }
+
   private fetchAccessToken(region: RegionIdOrName, clientId:ClientId, clientSecret: ClientSecret): AccessToken {
     console.log(`getting access token for region ${region}, clientId ${clientId} and clientSecret ${clientSecret}`);
     return '123456789';
   }
 
-  public connect() {
-    console.log('Bnet Api class connect');
-    this.accessToken = this.fetchAccessToken(this.region, this.clientId, this.clientSecret);
-  }
+
 }

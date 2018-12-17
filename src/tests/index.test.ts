@@ -1,5 +1,5 @@
 import { BattleNetApi, BattleNetUtils } from '../index';
-import api from '../lib/api';
+import { default as api } from '../lib/classes/BattleNetApi';
 import * as utils from '../lib/utils';
 
 describe('Index', () => {

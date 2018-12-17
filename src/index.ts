@@ -1,4 +1,4 @@
-import { default as BattleNetApi } from './lib/api';
+import BattleNetApi from './lib/classes/BattleNetApi';
 import * as BattleNetUtils from './lib/utils';
 
 export {
