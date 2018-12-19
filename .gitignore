@@ -55,3 +55,6 @@ dist/
 
 # js files in src folder
 src/*.js
+
+# generated docs
+docs/
