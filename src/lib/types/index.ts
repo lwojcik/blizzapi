@@ -36,6 +36,7 @@ export type CheckTokenUri = Uri;
 /** API class types */
 
 export type RegionIdOrName = RegionId | RegionName;
+export type MaybeRegion = RegionIdOrName | undefined;
 export type ClientId = string;
 export type ClientSecret = string;
 export type AccessToken = string;

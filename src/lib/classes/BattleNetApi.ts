@@ -25,6 +25,4 @@ export default class BattleNetApi {
     console.log(`getting access token for region ${region}, clientId ${clientId} and clientSecret ${clientSecret}`);
     return '123456789';
   }
-
-
 }
