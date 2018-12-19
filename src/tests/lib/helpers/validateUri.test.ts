@@ -1,4 +1,4 @@
-import { validateUri } from '../../../lib/helpers';
+import { validateUri } from '../../../lib/helpers/fetch';
 
 describe('validateUri()', () => {
   test('should be defined', () => {
