@@ -1,4 +1,4 @@
-import { default as fetch } from 'cross-fetch';
+import 'cross-fetch/polyfill';
 import { Uri } from '../types';
 
 /**
@@ -20,18 +20,12 @@ export function validateUri(uri:Uri) {
  * @param {string} uri Fetch request uri
  * @returns {object} Data returned by requested uri
  */
-export async function fetchFromUri(uri:Uri) {
+export function fetchFromUri(uri:Uri) {
   const isUriValid = validateUri(uri);
 
   if (!isUriValid) {
     throw new RangeError(`'${uri}' is not a valid parameter for fetchFromUri()`);
   }
 
-  try {
-    const data = await fetch(uri);
-    const response = await data.json();
-    return response;
-  } catch (error) {
-    throw new Error(error);
-  }
+  return fetch(uri);
 }

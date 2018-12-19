@@ -1,11 +1,4 @@
 import { fetchFromUri } from '../../../lib/helpers';
-// jest.mock('cross-fetch');
-
-// const fetch = jest.fn();
-
-// // jest.mock('fetch');
-
-// TODO: test fetch with this: https://www.npmjs.com/package/jest-fetch-mock
 
 describe('fetchFromUri()', () => {
   test('should be defined', () => {
@@ -32,29 +25,17 @@ describe('fetchFromUri()', () => {
     ${'255.255.255.255'}          | ${RangeError}
     ${'ssh://255.255.255.255'}    | ${RangeError}
     `('throws $expectedResult for incorrect uri $input', ({ input, expectedResult }) => {
-    expect.assertions(1);
-    return expect(fetchFromUri(input)).rejects.toThrow(expectedResult);
-  });
+      expect(() => { fetchFromUri(input); }).toThrow(expectedResult);
+    });
 
-  // test.each`
-  //   input                                             | expectedResult
-  //   ${'https://httpstat.us/200'}                      | ${1}
-  //   ${'http://httpstat.us/200'}                       | ${1}
-  //   ${'https://httpstat.us/404'}                      | ${1}
-  //   `('calls fetch function for $input as correct uri', async ({ input, expectedResult }) => {
-  //     fetchFromUri(input)
-  //       .then(() => {
-  //         expect(fetch.mock.calls.length).toBe(expectedResult);
-  //       })
-  //       .catch((error) => {
-  //         expect(error).toMatch('error');
-  //       });
-  //     // fetch.get.mockResolvedValue(input);
-  //     // expect.assertions(1);
-  //     // const fetch = jest.fn();
-  //     // fetchFromUri(input)
-  //     //   .then(() => {
-  //     //     expect(fetch.mock.calls.length).toBe(expectedResult)
-  //     //   });
-  // });
+  test.each`
+    input                                             | expectedResult
+    ${'https://httpstat.us/200'}                      | ${'object'}
+    ${'http://httpstat.us/200'}                       | ${'object'}
+    ${'https://httpstat.us/404'}                      | ${'object'}
+    ${'https://google.com'}                           | ${'object'}
+    ${'https://microsoft.com'}                        | ${'object'}
+    `('returns fetched data for $input as correct uri', ({ input, expectedResult }) => {
+      expect(typeof fetchFromUri(input)).toBe(expectedResult);
+  });
 });
