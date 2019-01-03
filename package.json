@@ -14,12 +14,6 @@
   },
   "author": "Łukasz Wójcik",
   "license": "MIT",
-  "jest": {
-    "automock": false,
-    "setupFiles": [
-      "./setupJest.ts"
-    ]
-  },
   "dependencies": {
     "cross-fetch": "3.0.0"
   },

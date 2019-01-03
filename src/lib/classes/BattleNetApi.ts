@@ -1,11 +1,13 @@
 import { RegionIdOrName, ClientId, ClientSecret, AccessToken, Options } from '../types';
+import * as oauth from '../helpers/oauth';
+import * as tokenUris from '../utils/oauth/tokenUris';
 
 export default class BattleNetApi {
-  public region: RegionIdOrName;
-  public clientId: ClientId;
-  public clientSecret: ClientSecret;
-  public options: Options;
-  accessToken: AccessToken;
+  region: RegionIdOrName;
+  clientId: ClientId;
+  clientSecret: ClientSecret;
+  options: Options;
+  private accessToken: AccessToken;
 
   constructor(region: RegionIdOrName, clientId:ClientId, clientSecret:ClientSecret, options?: Options) {
     console.log('constructing BattleNetApi class object');
@@ -18,11 +20,17 @@ export default class BattleNetApi {
 
   connect() {
     console.log('Bnet Api class connect');
-    this.accessToken = this.fetchAccessToken(this.region, this.clientId, this.clientSecret);
+    this.fetchAccessToken(this.region, this.clientId, this.clientSecret);
   }
 
-  private fetchAccessToken(region: RegionIdOrName, clientId:ClientId, clientSecret: ClientSecret): AccessToken {
-    console.log(`getting access token for region ${region}, clientId ${clientId} and clientSecret ${clientSecret}`);
-    return '123456789';
+  query(endpoint:string) {
+    console.log(endpoint);
+    console.log(this.accessToken);
+    return 'response';
+  }
+
+  private fetchAccessToken(region: RegionIdOrName, clientId:ClientId, clientSecret: ClientSecret) {
+    const tokenUri = tokenUris.getTokenUriByRegionIdOrName(region);
+    this.accessToken = oauth.fetchAccessToken(tokenUri, clientId, clientSecret);
   }
 }
