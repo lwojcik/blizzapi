@@ -1,6 +1,6 @@
 import constants from '../../constants';
 import { validateRegionId, validateRegionName, getRegionIdByName } from '../localization/regions';
-import { RegionName, RegionIdAsNumberOrString } from '../../types';
+import { RegionIdOrName, RegionName, RegionIdAsNumberOrString } from '../../types';
 
 /**
  * Returns a list of all OAuth check token uris
@@ -9,6 +9,22 @@ import { RegionName, RegionIdAsNumberOrString } from '../../types';
  */
 export function getAllCheckTokenUris() {
   return constants.OAUTH_CHECK_TOKEN_URIS;
+}
+
+/**
+ * Returns OAuth check token uri for given region id or region name
+ *
+ * @param regionIdOrName Region id or region name
+ * @return OAuth check token uri as a string
+ */
+export function getCheckTokenUriByRegionIdOrName(regionIdOrName: RegionIdOrName) {
+  const itIsRegionId = validateRegionId(regionIdOrName);
+  
+  if (itIsRegionId) {
+    return getCheckTokenUriByRegionId(regionIdOrName);
+  }
+
+  return getCheckTokenUriByRegionName(regionIdOrName.toString());
 }
 
 /**

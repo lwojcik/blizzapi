@@ -1,6 +1,7 @@
-import { RegionIdOrName, ClientId, ClientSecret, AccessToken, Options } from '../types';
-import * as oauth from '../helpers/oauth';
-import * as tokenUris from '../utils/oauth/tokenUris';
+import { RegionIdOrName, ClientId, ClientSecret, AccessToken, Options, Endpoint } from '../types';
+import * as oauthHelpers from '../helpers/oauth';
+import * as bnetHelpers from '../helpers/bnet';
+import * as tokenUriUtils from '../utils/oauth/tokenUris';
 
 export default class BattleNetApi {
   region: RegionIdOrName;
@@ -23,14 +24,12 @@ export default class BattleNetApi {
     this.fetchAccessToken(this.region, this.clientId, this.clientSecret);
   }
 
-  query(endpoint:string) {
-    console.log(endpoint);
-    console.log(this.accessToken);
-    return 'response';
+  query(endpoint:Endpoint) {
+    return bnetHelpers.queryEndpoint(this.region, endpoint, this.accessToken);
   }
 
   private fetchAccessToken(region: RegionIdOrName, clientId:ClientId, clientSecret: ClientSecret) {
-    const tokenUri = tokenUris.getTokenUriByRegionIdOrName(region);
-    this.accessToken = oauth.fetchAccessToken(tokenUri, clientId, clientSecret);
+    const tokenUri = tokenUriUtils.getTokenUriByRegionIdOrName(region);
+    this.accessToken = oauthHelpers.fetchAccessToken(tokenUri, clientId, clientSecret);
   }
 }

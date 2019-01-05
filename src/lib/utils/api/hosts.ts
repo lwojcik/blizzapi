@@ -1,6 +1,6 @@
 import constants from '../../constants';
 import { validateRegionId, validateRegionName, getRegionIdByName } from '../localization/regions';
-import { RegionName, RegionIdAsNumberOrString } from '../../types';
+import { RegionIdOrName, RegionName, RegionIdAsNumberOrString } from '../../types';
 
 /**
  * Returns a list of all region API host uris
@@ -9,6 +9,22 @@ import { RegionName, RegionIdAsNumberOrString } from '../../types';
  */
 export function getAllApiHosts() {
   return constants.REGION_API_HOSTS;
+}
+
+/**
+ * Returns region API host uri for given region id or region name
+ *
+ * @param regionIdOrName Region id or region name
+ * @return Region API host uri as a string
+ */
+export function getApiHostByRegionIdOrRegionName(regionIdOrName: RegionIdOrName) {
+  const itIsRegionId = validateRegionId(regionIdOrName);
+  
+  if (itIsRegionId) {
+    return getApiHostByRegionId(regionIdOrName);
+  }
+
+  return getApiHostByRegionName(regionIdOrName.toString());
 }
 
 /**

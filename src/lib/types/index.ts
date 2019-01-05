@@ -41,3 +41,4 @@ export type ClientId = string;
 export type ClientSecret = string;
 export type AccessToken = string;
 export type Options = Object | undefined;
+export type Endpoint = string;

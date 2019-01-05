@@ -11,7 +11,6 @@ export function getAllTokenUris() {
   return constants.OAUTH_TOKEN_URIS;
 }
 
-
 /**
  * Returns OAuth token uri for given region id or region name
  *

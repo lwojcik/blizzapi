@@ -1,6 +1,6 @@
 import constants from '../../constants';
 import { validateRegionId, validateRegionName, getRegionIdByName } from '../localization/regions';
-import { RegionName, RegionIdAsNumberOrString } from '../../types';
+import { RegionIdOrName, RegionName, RegionIdAsNumberOrString } from '../../types';
 
 /**
  * Returns a list of all OAuth authorize uris
@@ -9,6 +9,22 @@ import { RegionName, RegionIdAsNumberOrString } from '../../types';
  */
 export function getAllAuthorizeUris() {
   return constants.OAUTH_AUTHORIZE_URIS;
+}
+
+/**
+ * Returns OAuth authorize uri for given region id or region name
+ *
+ * @param regionIdOrName Region id or region name
+ * @return OAuth authorize uri as a string
+ */
+export function getAuthorizeUriByRegionIdOrName(regionIdOrName: RegionIdOrName) {
+  const itIsRegionId = validateRegionId(regionIdOrName);
+  
+  if (itIsRegionId) {
+    return getAuthorizeUriByRegionId(regionIdOrName);
+  }
+
+  return getAuthorizeUriByRegionName(regionIdOrName.toString());
 }
 
 /**
