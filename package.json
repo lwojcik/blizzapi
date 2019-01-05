@@ -15,9 +15,11 @@
   "author": "Łukasz Wójcik",
   "license": "MIT",
   "dependencies": {
+    "base-64": "0.1.0",
     "cross-fetch": "3.0.0"
   },
   "devDependencies": {
+    "@types/base-64": "0.1.2",
     "@types/jest": "23.3.9",
     "jest": "23.6.0",
     "jest-each": "23.6.0",

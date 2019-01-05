@@ -19,17 +19,28 @@ export default class BattleNetApi {
     this.options = options;
   }
 
-  connect() {
+  async connect() {
     console.log('Bnet Api class connect');
-    this.fetchAccessToken(this.region, this.clientId, this.clientSecret);
+    try {
+      await this.obtainAccessToken(this.region, this.clientId, this.clientSecret);
+    } catch (err) {
+      throw err;
+    }
   }
 
   query(endpoint:Endpoint) {
     return bnetHelpers.queryEndpoint(this.region, endpoint, this.accessToken);
   }
 
-  private fetchAccessToken(region: RegionIdOrName, clientId:ClientId, clientSecret: ClientSecret) {
-    const tokenUri = tokenUriUtils.getTokenUriByRegionIdOrName(region);
-    this.accessToken = oauthHelpers.fetchAccessToken(tokenUri, clientId, clientSecret);
+  private async obtainAccessToken(region: RegionIdOrName, clientId:ClientId, clientSecret: ClientSecret) {
+    console.log(`obtaining access token for ${clientId}`)
+    try {
+      const tokenUri = tokenUriUtils.getTokenUriByRegionIdOrName(region);
+      const accessToken = await oauthHelpers.getAccessToken(tokenUri, clientId, clientSecret);
+      console.log(accessToken);
+      this.accessToken = await accessToken;
+    } catch (error) {
+      throw error;
+    }
   }
 }
