@@ -5,12 +5,9 @@ import { fetchFromUri } from './fetch';
 // construct getTokenUri
 
 export async function getAccessToken(oauthUri: string, clientId: string, clientSecret: string) {
-  console.log(`getting access token for ${clientId}`);
   try {
     const accessTokenObject = await fetchAccessToken(oauthUri, clientId, clientSecret);
-    const accessTokenReponse = await accessTokenObject.json();
-    console.log(accessTokenReponse);
-    const accessToken = accessTokenReponse.access_token;
+    const accessToken = accessTokenObject.access_token;
     return accessToken;
   } catch (error) {
     throw error;

@@ -8,6 +8,7 @@ export default class BattleNetApi {
   clientId: ClientId;
   clientSecret: ClientSecret;
   options: Options;
+  private authorized: Boolean;
   private accessToken: AccessToken;
 
   constructor(region: RegionIdOrName, clientId:ClientId, clientSecret:ClientSecret, options?: Options) {
@@ -16,20 +17,27 @@ export default class BattleNetApi {
     this.clientId = clientId;
     this.clientSecret = clientSecret;
     this.accessToken = '';
+    this.authorized = false;
     this.options = options;
   }
 
   async connect() {
     console.log('Bnet Api class connect');
-    try {
-      await this.obtainAccessToken(this.region, this.clientId, this.clientSecret);
-    } catch (err) {
-      throw err;
-    }
+    await this.obtainAccessToken(this.region, this.clientId, this.clientSecret);
+    console.log(this.accessToken);
   }
 
-  query(endpoint:Endpoint) {
-    return bnetHelpers.queryEndpoint(this.region, endpoint, this.accessToken);
+  async query(endpoint:Endpoint) {
+    console.log('querying endpoint...');
+    try {
+      if (!this.authorized) {
+        throw new Error('not connected yet!');
+      }
+      const response = await bnetHelpers.queryEndpoint(this.region, endpoint, this.accessToken);
+      return response;
+    } catch (error) {
+      throw error;
+    }
   }
 
   private async obtainAccessToken(region: RegionIdOrName, clientId:ClientId, clientSecret: ClientSecret) {
@@ -37,7 +45,7 @@ export default class BattleNetApi {
       const tokenUri = tokenUriUtils.getTokenUriByRegionIdOrName(region);
       const accessToken = await oauthHelpers.getAccessToken(tokenUri, clientId, clientSecret);
       this.accessToken = await accessToken;
-      console.log(this.accessToken);
+      this.authorized = true;
     } catch (error) {
       throw error;
     }

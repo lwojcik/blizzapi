@@ -1,18 +1,18 @@
 import { RegionIdOrName, AccessToken } from '../types';
-
-// import { fetchFromUri } from './fetch';
+import { getApiHostByRegionIdOrRegionName } from '../utils/api/hosts';
+import { fetchFromUri } from './fetch';
 
 // construct checkTokenUri
 // construct getTokenUri
 
 export function queryEndpoint(region: RegionIdOrName, endpoint:string, accessToken:AccessToken) {
+  const apiHost = getApiHostByRegionIdOrRegionName(region);
+  const requestUri = `${apiHost}${endpoint}`;
 
-  console.log('querying endpoint');
-  console.log(region);
-  console.log(endpoint);
-  console.log(accessToken);
-  // TODO
-  return '123456789';
+  const headers = new Headers();
+  headers.append('Authorization', `Bearer ${accessToken}`);
+
+  return fetchFromUri(requestUri, 'GET', headers);
 }
 
 // getAccessToken

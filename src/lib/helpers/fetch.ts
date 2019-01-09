@@ -12,8 +12,6 @@ import { validateUri } from './common';
  * @returns {object} Data returned by requested uri
  */
 export async function fetchFromUri(uri:Uri, method = 'GET', headers?:Headers, params?:URLSearchParams) {
-  console.log(`fetching from uri ${uri}`);
-  console.log(params);
   try {
     const isUriValid = validateUri(uri);
 
@@ -21,11 +19,20 @@ export async function fetchFromUri(uri:Uri, method = 'GET', headers?:Headers, pa
       throw new RangeError(`'${uri}' is not a valid parameter for fetchFromUri()`);
     }
 
-    const response = await fetch(uri, {
-      headers,
+    const options = {
       method,
-      body: params,
-    });
+    };
+
+    if (headers) {
+      Object.assign(options, { headers });
+    }
+
+    // GET request method cannot have body, so I'm doing this
+    if (method === 'POST') {
+      Object.assign(options, { body: params });
+    }
+    const responseObject = await fetch(uri, options);
+    const response = await responseObject.json();
     return response;
   } catch (err) {
     throw err;
