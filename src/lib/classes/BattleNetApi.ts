@@ -33,12 +33,11 @@ export default class BattleNetApi {
   }
 
   private async obtainAccessToken(region: RegionIdOrName, clientId:ClientId, clientSecret: ClientSecret) {
-    console.log(`obtaining access token for ${clientId}`)
     try {
       const tokenUri = tokenUriUtils.getTokenUriByRegionIdOrName(region);
       const accessToken = await oauthHelpers.getAccessToken(tokenUri, clientId, clientSecret);
-      console.log(accessToken);
       this.accessToken = await accessToken;
+      console.log(this.accessToken);
     } catch (error) {
       throw error;
     }

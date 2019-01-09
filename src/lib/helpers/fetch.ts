@@ -6,10 +6,14 @@ import { validateUri } from './common';
  * Performs basic fetch request from given uri
  * @function
  * @param {string} uri Fetch request uri
+ * @param {string} method HTTP method to be used. Defaults to 'GET'
+ * @param {Headers} headers HTTP request headers
+ * @param {URLSearchParams} params HTTP request body parameters
  * @returns {object} Data returned by requested uri
  */
-export async function fetchFromUri(uri:Uri, method = 'GET', headers?:Headers, data?:object) {
+export async function fetchFromUri(uri:Uri, method = 'GET', headers?:Headers, params?:URLSearchParams) {
   console.log(`fetching from uri ${uri}`);
+  console.log(params);
   try {
     const isUriValid = validateUri(uri);
 
@@ -20,9 +24,8 @@ export async function fetchFromUri(uri:Uri, method = 'GET', headers?:Headers, da
     const response = await fetch(uri, {
       headers,
       method,
-      body: JSON.stringify(data),
+      body: params,
     });
-    console.log(response);
     return response;
   } catch (err) {
     throw err;

@@ -9,8 +9,8 @@ export async function getAccessToken(oauthUri: string, clientId: string, clientS
   try {
     const accessTokenObject = await fetchAccessToken(oauthUri, clientId, clientSecret);
     const accessTokenReponse = await accessTokenObject.json();
+    console.log(accessTokenReponse);
     const accessToken = accessTokenReponse.access_token;
-    console.log(accessToken);
     return accessToken;
   } catch (error) {
     throw error;
@@ -18,13 +18,13 @@ export async function getAccessToken(oauthUri: string, clientId: string, clientS
 }
 
 export function fetchAccessToken(oauthUri: string, clientId: string, clientSecret: string) {
-  console.log('fetchAccessToken');
   const headers = new Headers();
   headers.append('Authorization', `Basic ${base64.encode(`${clientId}:${clientSecret}`)}`);
   
-  const data = { grant_type: 'client_credentials' };
+  const params = new URLSearchParams();
+  params.append('grant_type', 'client_credentials');
 
-  return fetchFromUri(oauthUri, 'POST', headers, data);
+  return fetchFromUri(oauthUri, 'POST', headers, params);
 }
 
 // getAccessToken
