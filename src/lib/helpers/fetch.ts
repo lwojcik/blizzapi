@@ -31,6 +31,7 @@ export async function fetchFromUri(uri:Uri, method = 'GET', headers?:Headers, pa
     if (method === 'POST') {
       Object.assign(options, { body: params });
     }
+
     const responseObject = await fetch(uri, options);
     const response = await responseObject.json();
     return response;
