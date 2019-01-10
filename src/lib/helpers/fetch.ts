@@ -33,8 +33,11 @@ export async function fetchFromUri(uri:Uri, method = 'GET', headers?:Headers, pa
     }
 
     const responseObject = await fetch(uri, options);
-    const response = await responseObject.json();
-    return response;
+    const response = await responseObject;
+    if (!response.ok) return response;
+
+    const parsedResponse = await response.json();
+    return parsedResponse;
   } catch (err) {
     throw err;
   }

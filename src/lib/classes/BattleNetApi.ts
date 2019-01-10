@@ -1,4 +1,4 @@
-import { RegionIdOrName, ClientId, ClientSecret, Options, Endpoint } from '../types';
+import { RegionIdOrName, ClientId, ClientSecret, Options, Endpoint, AccessToken } from '../types';
 import * as oauthHelpers from '../helpers/oauth';
 import * as bnetHelpers from '../helpers/bnet';
 import * as tokenUriUtils from '../utils/oauth/tokenUris';
@@ -30,15 +30,14 @@ export default class BattleNetApi {
     return this.getAccessToken(this.region, this.clientId, this.clientSecret);
   }
 
-  async query(endpoint:Endpoint) {
+  async query(endpoint:Endpoint, customAccessToken?:AccessToken) {
     try {
-      const accessToken = await this.connect();
+      const accessToken = customAccessToken || await this.connect();
       const isEndpointValid = bnetHelpers.validateEndpoint(endpoint);
 
       if (!isEndpointValid) {
         throw `Endpoint ${endpoint} is not valid.`;
       }
-
       const response = await bnetHelpers.queryEndpoint(this.region, endpoint, accessToken);
       return response;
     } catch (error) {
