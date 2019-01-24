@@ -25,7 +25,9 @@ describe('fetchFromUri()', () => {
     ${'255.255.255.255'}          | ${RangeError}
     ${'ssh://255.255.255.255'}    | ${RangeError}
     `('throws $expectedResult for incorrect uri $input', ({ input, expectedResult }) => {
-      expect(() => { fetchFromUri(input); }).toThrow(expectedResult);
+      expect(
+        fetchFromUri(input)
+          .then((data) => expect(data).toThrow(expectedResult)));
     });
 
   test.each`
