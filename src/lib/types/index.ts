@@ -1,5 +1,3 @@
-// I still don't know how to avoid shipping this file in dist build
-// https://github.com/Microsoft/TypeScript/issues/10908
 
 /** Common */
 export type Uri = string;

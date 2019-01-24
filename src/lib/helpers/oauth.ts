@@ -1,10 +1,8 @@
 import * as base64 from 'base-64';
 import { fetchFromUri } from './fetch';
+import { Uri, ClientId, ClientSecret } from '../types';
 
-// construct checkTokenUri
-// construct getTokenUri
-
-export async function getAccessToken(oauthUri: string, clientId: string, clientSecret: string) {
+export async function getAccessToken(oauthUri: Uri, clientId: ClientId, clientSecret: ClientSecret) {
   try {
     const accessTokenObject = await fetchAccessToken(oauthUri, clientId, clientSecret);
     const accessToken = accessTokenObject.access_token;
@@ -14,7 +12,7 @@ export async function getAccessToken(oauthUri: string, clientId: string, clientS
   }
 }
 
-export function fetchAccessToken(oauthUri: string, clientId: string, clientSecret: string) {
+export function fetchAccessToken(oauthUri: Uri, clientId: ClientId, clientSecret: ClientSecret) {
   const headers = new Headers();
   headers.append('Authorization', `Basic ${base64.encode(`${clientId}:${clientSecret}`)}`);
   
@@ -24,6 +22,4 @@ export function fetchAccessToken(oauthUri: string, clientId: string, clientSecre
   return fetchFromUri(oauthUri, 'POST', headers, params);
 }
 
-// getAccessToken
 // validateAccessToken
-// checkAccessToken

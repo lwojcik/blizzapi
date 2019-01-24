@@ -19,6 +19,12 @@ export function validateEndpoint(endpoint: Endpoint) {
 }
 
 export function queryEndpoint(region: RegionIdOrName, endpoint:string, accessToken:AccessToken) {
+  const isEndpointValid = validateEndpoint(endpoint);
+
+  if (!isEndpointValid) {
+    throw new RangeError(`Error querying endpoint: ${endpoint} is not a valid endpoint.`);
+  }
+
   const apiHost = getApiHostByRegionIdOrRegionName(region);
   const requestUri = `${apiHost}${endpoint}`;
 
@@ -27,7 +33,3 @@ export function queryEndpoint(region: RegionIdOrName, endpoint:string, accessTok
 
   return fetchFromUri(requestUri, 'GET', headers);
 }
-
-// getAccessToken
-// validateAccessToken
-// checkAccessToken
