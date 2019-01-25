@@ -48,6 +48,8 @@ export default class BattleNetApi {
     }
   }
 
+  // queryAndParse(endpoint:Endpoint, selector: JSONSelector)
+
   async queryBatch(endpoints:Endpoints, queryBatchOptions:QueryBatchOptions) {
     try {
       const accessToken = await this.getAccessToken();
@@ -57,4 +59,6 @@ export default class BattleNetApi {
       throw `Error querying endpoint batch: ${error}`;
     }
   }
+
+  // queryAndParseBatch(endpoints:Endpoints, selectors:SelectorArray)
 }
