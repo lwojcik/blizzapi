@@ -1,6 +1,6 @@
 import constants from '../../constants';
-import { validateRegionId, validateRegionName, getRegionIdByName } from '../localization/regions';
 import { RegionIdOrName, RegionName, RegionIdAsNumberOrString } from '../../types';
+import { getUriByRegionIdOrName, getUriByRegionId, getUriByRegionName } from '../common';
 
 /**
  * Returns a list of all OAuth authorize uris
@@ -18,13 +18,7 @@ export function getAllAuthorizeUris() {
  * @return OAuth authorize uri as a string
  */
 export function getAuthorizeUriByRegionIdOrName(regionIdOrName: RegionIdOrName) {
-  const itIsRegionId = validateRegionId(regionIdOrName);
-  
-  if (itIsRegionId) {
-    return getAuthorizeUriByRegionId(regionIdOrName);
-  }
-
-  return getAuthorizeUriByRegionName(regionIdOrName.toString());
+  return getUriByRegionIdOrName(regionIdOrName, 'OAUTH_AUTHORIZE_URIS');
 }
 
 /**
@@ -34,14 +28,7 @@ export function getAuthorizeUriByRegionIdOrName(regionIdOrName: RegionIdOrName) 
  * @return OAuth authorize uri as a string
  */
 export function getAuthorizeUriByRegionId(regionId: RegionIdAsNumberOrString) {
-  const regionIdAsString = regionId.toString();
-  const isRegionIdValid = validateRegionId(regionIdAsString);
-
-  if (!isRegionIdValid) {
-    throw new RangeError(`${regionIdAsString} is not a valid parameter for getAuthorizeUriByRegionId()`);
-  }
-
-  return constants.OAUTH_AUTHORIZE_URIS[regionIdAsString];
+  return getUriByRegionId(regionId, 'OAUTH_AUTHORIZE_URIS');
 }
 
 /**
@@ -51,13 +38,5 @@ export function getAuthorizeUriByRegionId(regionId: RegionIdAsNumberOrString) {
  * @return OAuth authorize uri as a string
  */
 export function getAuthorizeUriByRegionName(regionName: RegionName) {
-  const isRegionNameValid = validateRegionName(regionName);
-
-  if (!isRegionNameValid) {
-    throw new RangeError(`${regionName} is not a valid parameter for getAuthorizeUriByRegionName()`);
-  }
-
-  const regionId = getRegionIdByName(regionName)
-
-  return constants.OAUTH_AUTHORIZE_URIS[regionId];
+  return getUriByRegionName(regionName, 'OAUTH_AUTHORIZE_URIS');
 }

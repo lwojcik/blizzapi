@@ -3,7 +3,20 @@
 export type Uri = string;
 export type HostUri = string;
 
+/** Generic */
+
+export type ConstantKey =
+  "REGIONS" |
+  "LOCALES" |
+  "DEFAULT_LOCALES" |
+  "REGION_API_HOSTS" |
+  "SC2_REALMS" |
+  "OAUTH_AUTHORIZE_URIS" |
+  "OAUTH_TOKEN_URIS" |
+  "OAUTH_CHECK_TOKEN_URIS";
+
 /** Regions */
+
 export type RegionId = number;
 export type RegionIdKey = string;
 export type RegionIdAsNumberOrString = RegionId | RegionIdKey;

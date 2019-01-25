@@ -1,6 +1,6 @@
 import constants from '../../constants';
-import { validateRegionId, validateRegionName, getRegionIdByName } from '../localization/regions';
 import { RegionIdOrName, RegionName, RegionIdAsNumberOrString } from '../../types';
+import { getUriByRegionIdOrName, getUriByRegionId, getUriByRegionName } from '../common';
 
 /**
  * Returns a list of all OAuth check token uris
@@ -18,13 +18,7 @@ export function getAllCheckTokenUris() {
  * @return OAuth check token uri as a string
  */
 export function getCheckTokenUriByRegionIdOrName(regionIdOrName: RegionIdOrName) {
-  const itIsRegionId = validateRegionId(regionIdOrName);
-  
-  if (itIsRegionId) {
-    return getCheckTokenUriByRegionId(regionIdOrName);
-  }
-
-  return getCheckTokenUriByRegionName(regionIdOrName.toString());
+  return getUriByRegionIdOrName(regionIdOrName, 'OAUTH_CHECK_TOKEN_URIS');
 }
 
 /**
@@ -34,14 +28,7 @@ export function getCheckTokenUriByRegionIdOrName(regionIdOrName: RegionIdOrName)
  * @return OAuth check token uri as a string
  */
 export function getCheckTokenUriByRegionId(regionId: RegionIdAsNumberOrString) {
-  const regionIdAsString = regionId.toString();
-  const isRegionIdValid = validateRegionId(regionIdAsString);
-
-  if (!isRegionIdValid) {
-    throw new RangeError(`${regionIdAsString} is not a valid parameter for getCheckTokenUriByRegionId()`);
-  }
-
-  return constants.OAUTH_CHECK_TOKEN_URIS[regionIdAsString];
+  return getUriByRegionId(regionId, 'OAUTH_CHECK_TOKEN_URIS');
 }
 
 /**
@@ -51,13 +38,5 @@ export function getCheckTokenUriByRegionId(regionId: RegionIdAsNumberOrString) {
  * @return OAuth check token uri as a string
  */
 export function getCheckTokenUriByRegionName(regionName: RegionName) {
-  const isRegionNameValid = validateRegionName(regionName);
-
-  if (!isRegionNameValid) {
-    throw new RangeError(`${regionName} is not a valid parameter for getCheckTokenUriByRegionName()`);
-  }
-
-  const regionId = getRegionIdByName(regionName)
-
-  return constants.OAUTH_CHECK_TOKEN_URIS[regionId];
+  return getUriByRegionName(regionName, 'OAUTH_CHECK_TOKEN_URIS');
 }
