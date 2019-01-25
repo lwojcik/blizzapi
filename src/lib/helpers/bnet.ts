@@ -1,5 +1,5 @@
 import { RegionIdOrName, AccessToken, Endpoint } from '../types';
-import { getApiHostByRegionIdOrName } from '../utils/api/hosts';
+import { getApiHostByRegion } from '../utils/api/hosts';
 import { fetchFromUri } from './fetch';
 
 // construct checkTokenUri
@@ -25,7 +25,7 @@ export function queryEndpoint(region: RegionIdOrName, endpoint:string, accessTok
     throw new RangeError(`${endpoint} is not a valid endpoint.`);
   }
 
-  const apiHost = getApiHostByRegionIdOrName(region);
+  const apiHost = getApiHostByRegion(region);
   const requestUri = `${apiHost}${endpoint}`;
 
   const headers = new Headers();

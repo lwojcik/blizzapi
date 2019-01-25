@@ -39,5 +39,5 @@ export function getUriByRegionName(regionName: RegionName, constantKey:ConstantK
 
   const regionId = getRegionIdByName(regionName);
 
-  return constants[constantKey][regionId];
+  return <Uri>constants[constantKey][regionId];
 }

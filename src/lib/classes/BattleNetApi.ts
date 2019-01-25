@@ -1,7 +1,7 @@
 import { RegionIdOrName, ClientId, ClientSecret, /* Options, */Endpoint, AccessToken } from '../types';
 import * as oauthHelpers from '../helpers/oauth';
 import * as bnetHelpers from '../helpers/bnet';
-import { getTokenUriByRegionIdOrName } from '../utils/oauth/tokenUris';
+import { getTokenUriByRegion } from '../utils/oauth/tokenUris';
 
 export default class BattleNetApi {
   private region: RegionIdOrName;
@@ -18,7 +18,7 @@ export default class BattleNetApi {
 
   private async obtainAccessToken() {
     try {
-      const tokenUri = getTokenUriByRegionIdOrName(this.region);
+      const tokenUri = getTokenUriByRegion(this.region);
       const accessToken = await oauthHelpers.getAccessToken(tokenUri, this.clientId, this.clientSecret);
       this.accessToken = accessToken;
       return accessToken;
