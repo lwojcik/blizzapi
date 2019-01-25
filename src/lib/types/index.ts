@@ -1,7 +1,6 @@
 
 /** Common */
 export type Uri = string;
-export type HostUri = string;
 
 /** Generic */
 
@@ -25,24 +24,20 @@ export type RegionName = string;
 export type RegionNameArray = ReadonlyArray<RegionName>;
 
 /** Locales */
+
 export type Locale = string;
 export type LocaleArray = ReadonlyArray<Locale>;
 
 /** Default locales */
-export type DefaultLocaleIndex = number;
+export type DefaultLocaleIndex = 0 | 1 | 2 | 3 | 4 | 5;
 export type DefaultLocaleIndexArray = ReadonlyArray<DefaultLocaleIndex>;
-export type RegionApiHostUri = Uri;
 
 /** StarCraft II realms  */
+
 export type Sc2Realm = number;
 export type Sc2RealmArray = ReadonlyArray<Sc2Realm>;
 export type Sc2RealmList = ReadonlyArray<Sc2Realm>;
 export type Sc2RealmAsNumberOrString = Sc2Realm | string;
-
-/** OAuth */
-export type AuthorizeUri = Uri;
-export type TokenUri = Uri;
-export type CheckTokenUri = Uri;
 
 /** API class types */
 

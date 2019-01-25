@@ -4,9 +4,9 @@
  */
 
 import { RegionIdProperties } from '../../interfaces';
-import { TokenUri } from '../../types';
+import { Uri } from '../../types';
 
-const oAuthTokenUris: RegionIdProperties<TokenUri> = {
+const oAuthTokenUris: RegionIdProperties<Uri> = {
   1: 'https://us.battle.net/oauth/token',
   2: 'https://eu.battle.net/oauth/token',
   3: 'https://apac.battle.net/oauth/token',

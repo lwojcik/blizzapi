@@ -1,7 +1,6 @@
 import constants from '../../constants';
 import { validateRegionId } from './regions';
-import { Locale, DefaultLocaleIndex, RegionIdAsNumberOrString } from '../../types';
-import { RegionIdProperties } from '../../interfaces';
+import { RegionIdAsNumberOrString } from '../../types';
 import { getAllLocales } from './locales';
 
 /**
@@ -19,12 +18,12 @@ export function getAllDefaultLocaleIndexes() {
  * @param regionId Region id as number or string
  * @return Index of default locale for given region id
  */
-export function getDefaultLocaleIndexForRegionId(regionId: RegionIdAsNumberOrString): DefaultLocaleIndex {
+export function getDefaultLocaleIndexForRegionId(regionId: RegionIdAsNumberOrString) {
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
   if (!isRegionIdValid) {
-    throw new RangeError(`${regionIdAsString} is not a valid parameter for getDefaultLocaleIndexForRegionId()`);
+    throw new RangeError(`${regionIdAsString} is not a valid parameter for ${arguments.callee}()`);
   }
 
   return constants.DEFAULT_LOCALES[regionIdAsString];
@@ -36,12 +35,12 @@ export function getDefaultLocaleIndexForRegionId(regionId: RegionIdAsNumberOrStr
  * @param regionId Region id as number or string
  * @return Name of the default locale for given region id
  */
-export function getDefaultLocaleNameForRegionId(regionId: RegionIdAsNumberOrString): Locale {
+export function getDefaultLocaleNameForRegionId(regionId: RegionIdAsNumberOrString) {
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
   if (!isRegionIdValid) {
-    throw new RangeError(`${regionIdAsString} is not a valid parameter for getDefaultLocaleNameForRegionId()`);
+    throw new RangeError(`${regionIdAsString} is not a valid parameter for ${arguments.callee}()`);
   }
 
   const defaultLocaleIndex = constants.DEFAULT_LOCALES[regionIdAsString];
@@ -53,16 +52,14 @@ export function getDefaultLocaleNameForRegionId(regionId: RegionIdAsNumberOrStri
  *
  * @return List of all available default locale names indexed by region id.
  */
-export function getAllDefaultLocaleNames(): RegionIdProperties<Locale> {
+export function getAllDefaultLocaleNames() {
   const allLocales = getAllLocales();
   const allLocaleKeys = Object.keys(allLocales);
 
-  const defaultLocaleNames = <RegionIdProperties<Locale>>Object.assign(
+  return Object.assign(
     {},
     ...allLocaleKeys.map(regionId => ({
       [regionId]: getDefaultLocaleNameForRegionId(regionId),
     })),
   );
-
-  return defaultLocaleNames;
 }

@@ -4,9 +4,9 @@
  */
 
 import { RegionIdProperties } from '../../interfaces';
-import { CheckTokenUri } from '../../types';
+import { Uri } from '../../types';
 
-const oAuthCheckTokenUris: RegionIdProperties<CheckTokenUri> = {
+const oAuthCheckTokenUris: RegionIdProperties<Uri> = {
   1: 'https://us.battle.net/oauth/check_token?token=',
   2: 'https://eu.battle.net/oauth/check_token?token=',
   3: 'https://apac.battle.net/oauth/check_token?token=',

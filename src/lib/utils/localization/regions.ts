@@ -18,8 +18,7 @@ export function getAllRegions() {
  */
 export function getAllRegionIds(): RegionIdArray {
   const regionKeys = Object.keys(constants.REGIONS);
-  const regionKeysAsIntegers = regionKeys.map(regionKey => parseInt(regionKey, 10));
-  return regionKeysAsIntegers;
+  return regionKeys.map(regionKey => parseInt(regionKey, 10));
 }
 
 /**
@@ -30,8 +29,7 @@ export function getAllRegionIds(): RegionIdArray {
 export function getAllRegionNames(): RegionNameArray {
   const regionNames = Object.values(constants.REGIONS);
   const flattenedRegionNames = ([] as RegionNameArray[]).concat(...regionNames);
-  const regionNamesAsStrings = flattenedRegionNames.map(regionName => regionName.toString());
-  return regionNamesAsStrings;
+  return flattenedRegionNames.map(regionName => regionName.toString());
 }
 
 /**

@@ -4,9 +4,9 @@
  */
 
 import { RegionIdProperties } from '../../interfaces';
-import { HostUri } from '../../types';
+import { Uri } from '../../types';
 
-const hosts: RegionIdProperties<HostUri> = {
+const hosts: RegionIdProperties<Uri> = {
   1: 'https://us.api.blizzard.com',
   2: 'https://eu.api.blizzard.com',
   3: 'https://kr.api.blizzard.com',

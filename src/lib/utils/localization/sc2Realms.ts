@@ -19,8 +19,7 @@ export function getAllSc2Realms() {
 export function getAllAvailableSc2Realms(): Sc2RealmList {
   const sc2Realms = Object.values(constants.SC2_REALMS);
   const flattenedSc2Realms = ([] as Sc2RealmList).concat(...sc2Realms);
-  const dedupedSc2RealmList = flattenedSc2Realms.filter((el, i, a) => i === a.indexOf(el));
-  return dedupedSc2RealmList;
+  return flattenedSc2Realms.filter((el, i, a) => i === a.indexOf(el));
 }
 
 /**

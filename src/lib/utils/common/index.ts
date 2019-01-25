@@ -2,7 +2,7 @@ import { ConstantKey, RegionIdOrName, RegionIdAsNumberOrString, RegionName, Uri 
 import constants from '../../constants';
 import { validateRegionId, validateRegionName, getRegionIdByName } from '../localization/regions';
 
-export function getUriByRegionIdOrName(regionIdOrName:RegionIdOrName,constantKey:ConstantKey) {
+export function getUriByRegion(regionIdOrName:RegionIdOrName,constantKey:ConstantKey) {
   const itIsRegionId = validateRegionId(regionIdOrName);
 
   if (itIsRegionId) {
@@ -17,26 +17,27 @@ export function getUriByRegionId(regionId: RegionIdAsNumberOrString, constantKey
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
   if (!isRegionIdValid) {
-    throw new RangeError(`${regionIdAsString} is not a valid parameter for ${arguments.callee}()`);
+    throw new RangeError(`${regionIdAsString} is not a valid parameter 2 for getUriByRegionId(${regionId}, '${constantKey}')`);
   }
 
   return <Uri>constants[constantKey][regionIdAsString];
 }
   
 /**
- * Returns OAuth check token uri for given region name
+ * Returns uri for given region name from specified constant object
  *
  * @param regionName Region name as two-letter string (e.g. 'us')
- * @return OAuth check token uri as a string
+ * @param constantKey Constant key
+ * @return Uri as a string
  */
 export function getUriByRegionName(regionName: RegionName, constantKey:ConstantKey) {
   const isRegionNameValid = validateRegionName(regionName);
 
   if (!isRegionNameValid) {
-    throw new RangeError(`${regionName} is not a valid parameter for ${arguments.callee}()`);
+    throw new RangeError(`${regionName} is not a valid parameter for getUriByRegionName(${regionName}, '${constantKey}')`);
   }
 
   const regionId = getRegionIdByName(regionName);
 
-  return <Uri>constants[constantKey][regionId];
+  return constants[constantKey][regionId];
 }

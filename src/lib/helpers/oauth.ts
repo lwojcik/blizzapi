@@ -5,7 +5,7 @@ import { Uri, ClientId, ClientSecret } from '../types';
 export async function getAccessToken(oauthUri: Uri, clientId: ClientId, clientSecret: ClientSecret) {
   try {
     const accessTokenObject = await fetchAccessToken(oauthUri, clientId, clientSecret);
-    const accessToken = accessTokenObject.access_token;
+    const accessToken = <string>accessTokenObject.access_token;
     return accessToken;
   } catch (error) {
     throw error;
