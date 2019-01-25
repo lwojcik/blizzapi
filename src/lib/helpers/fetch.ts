@@ -15,22 +15,16 @@ export async function fetchFromUri(uri:Uri, method = 'GET', headers?:Headers, pa
   try {
     const isUriValid = validateUri(uri);
 
-    if (!isUriValid) {
-      throw new RangeError(`'${uri}' is not a valid parameter for fetchFromUri()`);
-    }
+    if (!isUriValid) throw new RangeError(`'${uri}' is not a valid parameter for fetchFromUri()`);
 
     const options = {
       method,
     };
 
-    if (headers) {
-      Object.assign(options, { headers });
-    }
+    if (headers) Object.assign(options, { headers });
 
     // GET request method cannot have body, so I'm doing this
-    if (method === 'POST') {
-      Object.assign(options, { body: params });
-    }
+    if (method === 'POST') Object.assign(options, { body: params });
 
     const responseObject = await fetch(uri, options);
     const response = await responseObject;

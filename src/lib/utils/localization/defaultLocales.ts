@@ -1,7 +1,7 @@
 import constants from '../../constants';
 import { validateRegionId } from './regions';
 import { Locale, DefaultLocaleIndex, RegionIdAsNumberOrString } from '../../types';
-import { IRegionIdProperties } from '../../interfaces';
+import { RegionIdProperties } from '../../interfaces';
 import { getAllLocales } from './locales';
 
 /**
@@ -53,11 +53,11 @@ export function getDefaultLocaleNameForRegionId(regionId: RegionIdAsNumberOrStri
  *
  * @return List of all available default locale names indexed by region id.
  */
-export function getAllDefaultLocaleNames(): IRegionIdProperties<Locale> {
+export function getAllDefaultLocaleNames(): RegionIdProperties<Locale> {
   const allLocales = getAllLocales();
   const allLocaleKeys = Object.keys(allLocales);
 
-  const defaultLocaleNames = <IRegionIdProperties<Locale>>Object.assign(
+  const defaultLocaleNames = <RegionIdProperties<Locale>>Object.assign(
     {},
     ...allLocaleKeys.map(regionId => ({
       [regionId]: getDefaultLocaleNameForRegionId(regionId),

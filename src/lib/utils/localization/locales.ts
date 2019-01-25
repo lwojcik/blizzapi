@@ -16,10 +16,10 @@ export function getAllLocales() {
  *
  * @return List of all available locales as flat array of strings.
  */
-export function getAllLocaleNames(): LocaleArray {
+export function getAllLocaleNames() {
   const locales = Object.values(constants.LOCALES);
   const flattenedLocales = ([] as LocaleArray[]).concat(...locales);
-  const localesAsStrings = flattenedLocales.map((locale: LocaleArray) => locale.toString());
+  const localesAsStrings = flattenedLocales.map(locale => locale.toString());
   return localesAsStrings;
 }
 

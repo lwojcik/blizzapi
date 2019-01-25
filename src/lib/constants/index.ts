@@ -7,22 +7,19 @@
  * https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
  */
 
-import regions from './localization/regions';
-import locales from './localization/locales';
-import defaultLocales from './localization/defaultLocales';
-import hosts from './api/hosts';
-import sc2Realms from './localization/sc2Realms';
-import authorizeUris from './oauth/authorizeUris';
-import tokenUris from './oauth/tokenUris';
-import checkTokenUris from './oauth/checkTokenUris';
+import * as localization from './localization';
+import * as api from './api';
+import * as oauth from './oauth';
 
-export default class CONSTANTS {
-  public static readonly REGIONS = regions;
-  public static readonly LOCALES = locales;
-  public static readonly DEFAULT_LOCALES = defaultLocales;
-  public static readonly REGION_API_HOSTS = hosts;
-  public static readonly SC2_REALMS = sc2Realms;
-  public static readonly OAUTH_AUTHORIZE_URIS = authorizeUris;
-  public static readonly OAUTH_TOKEN_URIS = tokenUris;
-  public static readonly OAUTH_CHECK_TOKEN_URIS = checkTokenUris;
+const CONSTANTS = {
+  REGIONS: localization.regions,
+  LOCALES: localization.locales,
+  DEFAULT_LOCALES: localization.defaultLocales,
+  SC2_REALMS: localization.sc2Realms,
+  REGION_API_HOSTS: api.hosts,
+  OAUTH_AUTHORIZE_URIS: oauth.authorizeUris,
+  OAUTH_TOKEN_URIS: oauth.tokenUris,
+  OAUTH_CHECK_TOKEN_URIS: oauth.checkTokenUris,
 }
+
+export default CONSTANTS;

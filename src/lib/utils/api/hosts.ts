@@ -17,7 +17,7 @@ export function getAllApiHosts() {
  * @param regionIdOrName Region id or region name
  * @return Region API host uri as a string
  */
-export function getApiHostByRegionIdOrRegionName(regionIdOrName: RegionIdOrName) {
+export function getApiHostByRegionIdOrName(regionIdOrName: RegionIdOrName) {
   return getUriByRegionIdOrName(regionIdOrName, 'REGION_API_HOSTS');
 }
 

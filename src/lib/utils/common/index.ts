@@ -1,4 +1,4 @@
-import { ConstantKey, RegionIdOrName, RegionIdAsNumberOrString, RegionName } from '../../types';
+import { ConstantKey, RegionIdOrName, RegionIdAsNumberOrString, RegionName, Uri } from '../../types';
 import constants from '../../constants';
 import { validateRegionId, validateRegionName, getRegionIdByName } from '../localization/regions';
 
@@ -20,7 +20,7 @@ export function getUriByRegionId(regionId: RegionIdAsNumberOrString, constantKey
     throw new RangeError(`${regionIdAsString} is not a valid parameter for ${arguments.callee}()`);
   }
 
-  return constants[constantKey][regionIdAsString];
+  return <Uri>constants[constantKey][regionIdAsString];
 }
   
 /**
@@ -38,5 +38,5 @@ export function getUriByRegionName(regionName: RegionName, constantKey:ConstantK
 
   const regionId = getRegionIdByName(regionName);
 
-  return constants[constantKey][regionId];
+  return <Uri>constants[constantKey][regionId];
 }
