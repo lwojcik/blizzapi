@@ -1,7 +1,6 @@
 import constants from '../../constants';
-import { validateRegionId, validateRegionName, getRegionIdByName } from '../localization/regions';
 import { RegionIdOrName, RegionName, RegionIdAsNumberOrString } from '../../types';
-import { getParamByRegionIdOrName } from '../common';
+import { getUriByRegionIdOrName, getUriByRegionId, getUriByRegionName } from '../common';
 
 /**
  * Returns a list of all OAuth token uris
@@ -19,7 +18,7 @@ export function getAllTokenUris() {
  * @return OAuth token uri as a string
  */
 export function getTokenUriByRegionIdOrName(regionIdOrName: RegionIdOrName) {
-  return getParamByRegionIdOrName(regionIdOrName, getTokenUriByRegionId, getTokenUriByRegionName);
+  return getUriByRegionIdOrName(regionIdOrName, 'OAUTH_TOKEN_URIS');
 }
 
 /**
@@ -29,14 +28,7 @@ export function getTokenUriByRegionIdOrName(regionIdOrName: RegionIdOrName) {
  * @return OAuth token uri as a string
  */
 export function getTokenUriByRegionId(regionId: RegionIdAsNumberOrString) {
-  const regionIdAsString = regionId.toString();
-  const isRegionIdValid = validateRegionId(regionIdAsString);
-
-  if (!isRegionIdValid) {
-    throw new RangeError(`${regionIdAsString} is not a valid parameter for getTokenUriByRegionId()`);
-  }
-
-  return constants.OAUTH_TOKEN_URIS[regionIdAsString];
+  return getUriByRegionId(regionId, 'OAUTH_TOKEN_URIS');
 }
 
 /**
@@ -46,13 +38,5 @@ export function getTokenUriByRegionId(regionId: RegionIdAsNumberOrString) {
  * @return OAuth check token uri as a string
  */
 export function getTokenUriByRegionName(regionName: RegionName) {
-  const isRegionNameValid = validateRegionName(regionName);
-
-  if (!isRegionNameValid) {
-    throw new RangeError(`${regionName} is not a valid parameter for getTokenUriByRegionName()`);
-  }
-
-  const regionId = getRegionIdByName(regionName)
-
-  return constants.OAUTH_TOKEN_URIS[regionId];
+  return getUriByRegionName(regionName, 'OAUTH_TOKEN_URIS');
 }
