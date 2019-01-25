@@ -29,7 +29,7 @@ export type Locale = string;
 export type LocaleArray = ReadonlyArray<Locale>;
 
 /** Default locales */
-export type DefaultLocaleIndex = 0 | 1 | 2 | 3 | 4 | 5 | 6;
+export type DefaultLocaleIndex = number;
 export type DefaultLocaleIndexArray = ReadonlyArray<DefaultLocaleIndex>;
 
 /** StarCraft II realms  */
