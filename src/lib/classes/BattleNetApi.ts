@@ -1,8 +1,8 @@
-import jsonata = require('jsonata');
 import { RegionIdOrName, ClientId, ClientSecret, /* Options, */Endpoint, Endpoints, AccessToken, JSONSelector } from '../types';
 import { QueryBatchOptions } from '../interfaces';
 import * as oauthHelpers from '../helpers/oauth';
 import * as bnetHelpers from '../helpers/bnet';
+import * as jsonHelpers from '../helpers/json';
 import { getTokenUriByRegion } from '../utils/oauth/tokenUris';
 
 export default class BattleNetApi {
@@ -24,31 +24,29 @@ export default class BattleNetApi {
   }
 
   private async getAccessToken() {
-    return this.accessToken === '' ? await this.obtainAccessToken() : this.accessToken;
+    return this.accessToken === '' ? await this.setAccessToken() : this.accessToken;
   }
 
-  private async obtainAccessToken() {
+  private async setAccessToken() {
     const tokenUri = getTokenUriByRegion(this.region);
     const accessToken = await oauthHelpers.getAccessToken(tokenUri, this.clientId, this.clientSecret);
     this.accessToken = accessToken;
-    return accessToken;
+    return this.accessToken;
   }
 
   async query(endpoint:Endpoint) {
     const accessToken = await this.getAccessToken();
-    const response = await bnetHelpers.queryEndpoint(this.region, endpoint, accessToken);
-    return response;
+    return bnetHelpers.queryEndpoint(this.region, endpoint, accessToken);
   }
 
   async querySearch(endpoint:Endpoint, selector: JSONSelector) {
     const response = await this.query(endpoint);
-    return jsonata(selector).evaluate(response);
+    return jsonHelpers.querySearch(response, selector);
   }
 
   async queryBatch(endpoints:Endpoints, queryBatchOptions:QueryBatchOptions) {
       const accessToken = await this.getAccessToken();
-      const response = await bnetHelpers.queryBatch(this.region, endpoints, queryBatchOptions, accessToken);
-      return response;
+      return bnetHelpers.queryBatch(this.region, endpoints, queryBatchOptions, accessToken);
   }
 
   // queryAndParseBatch(endpoints:Endpoints, selectors:SelectorArray)

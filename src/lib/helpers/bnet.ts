@@ -26,13 +26,10 @@ export function validateEndpoints(endpoints: Endpoints) {
 export function queryEndpoint(region: RegionIdOrName, endpoint:string, accessToken:AccessToken) {
   const isEndpointValid = validateEndpoint(endpoint);
 
-  if (!isEndpointValid) {
-    throw new RangeError(`${endpoint} is not a valid endpoint.`);
-  }
+  if (!isEndpointValid) throw new RangeError(`${endpoint} is not a valid endpoint.`);
 
   const apiHost = getApiHostByRegion(region);
   const requestUri = `${apiHost}${endpoint}`;
-
   const headers = new Headers();
   headers.append('Authorization', `Bearer ${accessToken}`);
 
@@ -42,9 +39,8 @@ export function queryEndpoint(region: RegionIdOrName, endpoint:string, accessTok
 export function queryBatch(region: RegionIdOrName, endpoints:Endpoints, queryBatchOptions:QueryBatchOptions, accessToken:AccessToken) {
   const areEndpointsValid = validateEndpoints(endpoints);
 
-  if (!areEndpointsValid) {
-    throw new RangeError(`${endpoints} is not a valid endpoint batch.`);
-  }
+  if (!areEndpointsValid) throw new RangeError(`${endpoints} is not a valid endpoint batch.`);
+
   console.log(region);
   console.log(endpoints);
   console.log(queryBatchOptions);
