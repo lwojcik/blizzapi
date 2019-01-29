@@ -1,4 +1,5 @@
-import { RegionIdOrName, ClientId, ClientSecret, /* Options, */Endpoint, Endpoints, AccessToken } from '../types';
+import jsonata = require('jsonata');
+import { RegionIdOrName, ClientId, ClientSecret, /* Options, */Endpoint, Endpoints, AccessToken, JSONSelector } from '../types';
 import { QueryBatchOptions } from '../interfaces';
 import * as oauthHelpers from '../helpers/oauth';
 import * as bnetHelpers from '../helpers/bnet';
@@ -27,37 +28,27 @@ export default class BattleNetApi {
   }
 
   private async obtainAccessToken() {
-    try {
-      const tokenUri = getTokenUriByRegion(this.region);
-      const accessToken = await oauthHelpers.getAccessToken(tokenUri, this.clientId, this.clientSecret);
-      this.accessToken = accessToken;
-      return accessToken;
-    } catch (error) {
-      throw `Error while getting access token: ${error}`;
-    }
+    const tokenUri = getTokenUriByRegion(this.region);
+    const accessToken = await oauthHelpers.getAccessToken(tokenUri, this.clientId, this.clientSecret);
+    this.accessToken = accessToken;
+    return accessToken;
   }
 
   async query(endpoint:Endpoint) {
-    try {
-      const accessToken = await this.getAccessToken();
-      console.log(accessToken);
-      const response = await bnetHelpers.queryEndpoint(this.region, endpoint, accessToken);
-      return response;
-    } catch (error) {
-      throw `Error querying endpoint ${endpoint}: ${error}`;
-    }
+    const accessToken = await this.getAccessToken();
+    const response = await bnetHelpers.queryEndpoint(this.region, endpoint, accessToken);
+    return response;
   }
 
-  // queryAndParse(endpoint:Endpoint, selector: JSONSelector)
+  async querySearch(endpoint:Endpoint, selector: JSONSelector) {
+    const response = await this.query(endpoint);
+    return jsonata(selector).evaluate(response);
+  }
 
   async queryBatch(endpoints:Endpoints, queryBatchOptions:QueryBatchOptions) {
-    try {
       const accessToken = await this.getAccessToken();
       const response = await bnetHelpers.queryBatch(this.region, endpoints, queryBatchOptions, accessToken);
       return response;
-    } catch (error) {
-      throw `Error querying endpoint batch: ${error}`;
-    }
   }
 
   // queryAndParseBatch(endpoints:Endpoints, selectors:SelectorArray)
