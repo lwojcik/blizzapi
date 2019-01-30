@@ -1,5 +1,5 @@
 import { RegionIdOrName, ClientId, ClientSecret, /* Options, */Endpoint, Endpoints, AccessToken, JSONSelector } from '../types';
-import { QueryBatchOptions } from '../interfaces';
+// import { QueryBatchOptions } from '../interfaces';
 import * as oauthHelpers from '../helpers/oauth';
 import * as bnetHelpers from '../helpers/bnet';
 import * as jsonHelpers from '../helpers/json';
@@ -44,9 +44,9 @@ export default class BattleNetApi {
     return jsonHelpers.querySearch(response, selector);
   }
 
-  async queryBatch(endpoints:Endpoints, queryBatchOptions:QueryBatchOptions) {
+  async queryBatch(endpoints:Endpoints) {
       const accessToken = await this.getAccessToken();
-      return bnetHelpers.queryBatch(this.region, endpoints, queryBatchOptions, accessToken);
+      return bnetHelpers.queryBatch(this.region, endpoints, accessToken);
   }
 
   // queryAndParseBatch(endpoints:Endpoints, selectors:SelectorArray)
