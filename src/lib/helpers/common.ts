@@ -12,3 +12,7 @@ export function validateUri(uri:Uri) {
   uriTestRegex.lastIndex = 0;
   return uriTestRegex.test(uri);
 }
+
+export function delay(ms:number) {
+  return new Promise(fn => setTimeout(fn, ms))
+};

@@ -2,6 +2,7 @@ import { RegionIdOrName, AccessToken, Endpoint, Endpoints } from '../types';
 // import { QueryBatchOptions } from '../interfaces';
 import { getApiHostByRegion } from '../utils/api/hosts';
 import { fetchFromUri } from './fetch';
+import { delay } from './common';
 
 // construct checkTokenUri
 // construct getTokenUri
@@ -22,8 +23,8 @@ export function validateEndpoint(endpoint: Endpoint) {
 export function validateEndpoints(endpoints: Endpoints) {
   return endpoints.every(endpoint => validateEndpoint(endpoint));
 }
-
 export function queryEndpoint(region: RegionIdOrName, endpoint:string, accessToken:AccessToken) {
+  console.log(`querying endpoint ${endpoint} in ${region}...`);
   const validEndpoint = validateEndpoint(endpoint);
   if (!validEndpoint) throw new RangeError(`${endpoint} is not a valid endpoint.`);
 
@@ -39,6 +40,6 @@ export async function queryBatch(region: RegionIdOrName, endpoints:Endpoints, ac
   const validEndpoints = validateEndpoints(endpoints);
   if (!validEndpoints) throw new RangeError(`${endpoints} is not a valid endpoint batch.`);
 
-  const fetchObjects = endpoints.map(async value => await queryEndpoint(region, value, accessToken));
+  const fetchObjects = endpoints.map(async (endpoint, i) => delay(i*1000).then(() => queryEndpoint(region, endpoint, accessToken)));
   return Promise.all(fetchObjects);
 }
