@@ -2,10 +2,10 @@ import { ConstantKey, RegionIdOrName, RegionIdAsNumberOrString, RegionName, Uri 
 import constants from '../../constants';
 import { validateRegionId, validateRegionName, getRegionIdByName } from '../localization/regions';
 
-export function getUriByRegion(regionIdOrName:RegionIdOrName,constantKey:ConstantKey) {
-  const itIsRegionId = validateRegionId(regionIdOrName);
+export function getUriByRegion(regionIdOrName:RegionIdOrName, constantKey:ConstantKey) {
+  const validRegionId = validateRegionId(regionIdOrName);
 
-  if (itIsRegionId) {
+  if (validRegionId) {
     return getUriByRegionId(regionIdOrName, constantKey)
   }
 
