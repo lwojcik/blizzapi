@@ -20,6 +20,6 @@ const CONSTANTS = {
   OAUTH_AUTHORIZE_URIS: oauth.authorizeUris,
   OAUTH_TOKEN_URIS: oauth.tokenUris,
   OAUTH_CHECK_TOKEN_URIS: oauth.checkTokenUris,
-}
+};
 
 export default CONSTANTS;

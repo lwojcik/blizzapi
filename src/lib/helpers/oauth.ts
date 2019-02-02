@@ -15,7 +15,7 @@ export async function getAccessToken(oauthUri: Uri, clientId: ClientId, clientSe
 export function fetchAccessToken(oauthUri: Uri, clientId: ClientId, clientSecret: ClientSecret) {
   const headers = new Headers();
   headers.append('Authorization', `Basic ${base64.encode(`${clientId}:${clientSecret}`)}`);
-  
+
   const params = new URLSearchParams();
   params.append('grant_type', 'client_credentials');
 

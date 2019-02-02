@@ -1,4 +1,12 @@
-import { RegionIdOrName, ClientId, ClientSecret, /* Options, */Endpoint, Endpoints, AccessToken, JSONSelector } from '../types';
+import {
+  RegionIdOrName,
+  ClientId,
+  ClientSecret,
+  /* Options, */ Endpoint,
+  Endpoints,
+  AccessToken,
+  JSONSelector,
+} from '../types';
 // import { QueryBatchOptions } from '../interfaces';
 import * as oauthHelpers from '../helpers/oauth';
 import * as bnetHelpers from '../helpers/bnet';
@@ -16,7 +24,7 @@ export default class BattleNetApi {
   // onAccessTokenRefresh - fn to run after access token is fetched
   // onAccessTokenInvalid - fn to run if bnet responds with 403
 
-  constructor(region: RegionIdOrName, clientId:ClientId, clientSecret:ClientSecret, accessToken?: AccessToken) {
+  constructor(region: RegionIdOrName, clientId: ClientId, clientSecret: ClientSecret, accessToken?: AccessToken) {
     this.region = region;
     this.clientId = clientId;
     this.clientSecret = clientSecret;
@@ -34,19 +42,19 @@ export default class BattleNetApi {
     return this.accessToken;
   }
 
-  async query(endpoint:Endpoint) {
+  async query(endpoint: Endpoint) {
     const accessToken = await this.getAccessToken();
     return bnetHelpers.queryEndpoint(this.region, endpoint, accessToken);
   }
 
-  async querySearch(endpoint:Endpoint, selector: JSONSelector) {
+  async querySearch(endpoint: Endpoint, selector: JSONSelector) {
     const response = await this.query(endpoint);
     return jsonHelpers.querySearch(response, selector);
   }
 
-  async queryBatch(endpoints:Endpoints) {
-      const accessToken = await this.getAccessToken();
-      return bnetHelpers.queryBatch(this.region, endpoints, accessToken);
+  async queryBatch(endpoints: Endpoints) {
+    const accessToken = await this.getAccessToken();
+    return bnetHelpers.queryBatch(this.region, endpoints, accessToken);
   }
 
   // queryAndParseBatch(endpoints:Endpoints, selectors:SelectorArray)

@@ -22,10 +22,10 @@ describe('getAuthorizeUriByRegion()', () => {
   });
 
   (wrongRegionIdsJson as (string | number)[]).forEach(wrongRegionId => {
-      test(`should throw RangeError for ${wrongRegionId} as invalid region id`, () => {
-        expect(() => getAuthorizeUriByRegion(wrongRegionId)).toThrow(RangeError);
-      });
+    test(`should throw RangeError for ${wrongRegionId} as invalid region id`, () => {
+      expect(() => getAuthorizeUriByRegion(wrongRegionId)).toThrow(RangeError);
     });
+  });
 
   (regionNamesJson as string[]).forEach(regionName => {
     test(`should return correct value for ${regionName} as valid region name`, () => {

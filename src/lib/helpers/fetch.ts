@@ -11,7 +11,7 @@ import { validateUri } from './common';
  * @param {URLSearchParams} params HTTP request body parameters
  * @returns {object} Data returned by requested uri
  */
-export async function fetchFromUri(uri:Uri, method:HttpMethod = 'GET', headers?:Headers, params?:URLSearchParams) {
+export async function fetchFromUri(uri: Uri, method: HttpMethod = 'GET', headers?: Headers, params?: URLSearchParams) {
   try {
     const isUriValid = validateUri(uri);
 

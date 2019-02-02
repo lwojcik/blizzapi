@@ -1,33 +1,11 @@
 import { ConstantKey } from '../../../../lib/types';
 import * as utils from '../../../../lib/utils/common';
 
-const regionIds = [
-  1,
-  2,
-  3,
-  5,
-  '1',
-  '2',
-  '3',
-  '5',
-];
+const regionIds = [1, 2, 3, 5, '1', '2', '3', '5'];
 
-const wrongRegionIds = [
-  '10',
-  '9999',
-  '23232',
-  'a1',
-  'adasf',
-  '1abc',
-  '!@#$',
-  '><1',
-  10,
-  34,
-  6393,
-  9999,
-];
+const wrongRegionIds = ['10', '9999', '23232', 'a1', 'adasf', '1abc', '!@#$', '><1', 10, 34, 6393, 9999];
 
-const constantKeys:ConstantKey[] = [
+const constantKeys: ConstantKey[] = [
   'REGION_API_HOSTS',
   'OAUTH_AUTHORIZE_URIS',
   'OAUTH_TOKEN_URIS',

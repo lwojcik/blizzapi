@@ -29,25 +29,25 @@ describe('validateUri()', () => {
     ${'https://www.example.com#up'}                   | ${true}
     ${'http://255.255.255.255'}                       | ${true}
     ${'https://255.255.255.255'}                      | ${true}
-    `('returns $expectedResult for correct uri $input', ({ input, expectedResult }) => {
+  `('returns $expectedResult for correct uri $input', ({ input, expectedResult }) => {
     expect(validateUri(input)).toBe(expectedResult);
   });
 
   test.each`
-    input                                             | expectedResult
-    ${'www.example.com'}          | ${false}
-    ${'htp://www.example.com'}    | ${false}
-    ${'://blog.example.com'}      | ${false}
-    ${'//blog.example.com'}       | ${false}
-    ${'www.example.com/product'}  | ${false}
-    ${'example.com/product'}      | ${false}
-    ${'examplecom'}               | ${false}
-    ${'1234567890'}               | ${false}
-    ${'1a2b3c'}                   | ${false}
-    ${'ftp://test'}               | ${false}
-    ${'255.255.255.255'}          | ${false}
-    ${'ssh://255.255.255.255'}    | ${false}
-    `('returns $expectedResult for incorrect uri $input', ({ input, expectedResult }) => {
+    input                        | expectedResult
+    ${'www.example.com'}         | ${false}
+    ${'htp://www.example.com'}   | ${false}
+    ${'://blog.example.com'}     | ${false}
+    ${'//blog.example.com'}      | ${false}
+    ${'www.example.com/product'} | ${false}
+    ${'example.com/product'}     | ${false}
+    ${'examplecom'}              | ${false}
+    ${'1234567890'}              | ${false}
+    ${'1a2b3c'}                  | ${false}
+    ${'ftp://test'}              | ${false}
+    ${'255.255.255.255'}         | ${false}
+    ${'ssh://255.255.255.255'}   | ${false}
+  `('returns $expectedResult for incorrect uri $input', ({ input, expectedResult }) => {
     expect(validateUri(input)).toBe(expectedResult);
   });
 });

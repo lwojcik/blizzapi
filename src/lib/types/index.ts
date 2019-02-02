@@ -1,18 +1,17 @@
-
 /** Common */
 export type Uri = string;
 
 /** Generic */
 
 export type ConstantKey =
-  "REGIONS" |
-  "LOCALES" |
-  "DEFAULT_LOCALES" |
-  "REGION_API_HOSTS" |
-  "SC2_REALMS" |
-  "OAUTH_AUTHORIZE_URIS" |
-  "OAUTH_TOKEN_URIS" |
-  "OAUTH_CHECK_TOKEN_URIS";
+  | 'REGIONS'
+  | 'LOCALES'
+  | 'DEFAULT_LOCALES'
+  | 'REGION_API_HOSTS'
+  | 'SC2_REALMS'
+  | 'OAUTH_AUTHORIZE_URIS'
+  | 'OAUTH_TOKEN_URIS'
+  | 'OAUTH_CHECK_TOKEN_URIS';
 
 /** Regions */
 
@@ -49,5 +48,5 @@ export type AccessToken = string;
 export type Options = Object | undefined;
 export type Endpoint = string;
 export type Endpoints = Endpoint[];
-export type HttpMethod = "GET" | "POST";
+export type HttpMethod = 'GET' | 'POST';
 export type JSONSelector = string;

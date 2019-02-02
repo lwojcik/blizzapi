@@ -11,7 +11,6 @@ describe('Index', () => {
     expect(BattleNetUtils).toBeDefined();
   });
 
-
   test('BattleNetApi should be strictly equal to lib/api/BattleNetApi module', () => {
     expect(BattleNetApi).toStrictEqual(api);
   });

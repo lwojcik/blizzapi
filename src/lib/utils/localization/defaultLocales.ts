@@ -9,8 +9,7 @@ import { getAllLocales } from './locales';
  *
  * @return List of all available default locale indexes indexed by region id.
  */
-export const getAllDefaultLocaleIndexes = () =>
-  constants.DEFAULT_LOCALES;
+export const getAllDefaultLocaleIndexes = () => constants.DEFAULT_LOCALES;
 
 /**
  * Returns a default locale index for given region id
@@ -27,7 +26,7 @@ export const getDefaultLocaleIndexForRegionId = (regionId: RegionIdAsNumberOrStr
   }
 
   return constants.DEFAULT_LOCALES[regionIdAsString];
-}
+};
 
 /**
  * Returns a default locale name for given region id
@@ -45,7 +44,7 @@ export const getDefaultLocaleNameForRegionId = (regionId: RegionIdAsNumberOrStri
 
   const defaultLocaleIndex = constants.DEFAULT_LOCALES[regionIdAsString];
   return constants.LOCALES[regionId][defaultLocaleIndex];
-}
+};
 
 /**
  * Returns a list of all available default locale names

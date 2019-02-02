@@ -27,15 +27,9 @@ const regionNames = [
   'cN',
 ];
 
-const wrongRegionNames = [
-  'a1',
-  'adasf',
-  '1abc',
-  '!@#$',
-  '><1',
-];
+const wrongRegionNames = ['a1', 'adasf', '1abc', '!@#$', '><1'];
 
-const constantKeys:ConstantKey[] = [
+const constantKeys: ConstantKey[] = [
   'REGION_API_HOSTS',
   'OAUTH_AUTHORIZE_URIS',
   'OAUTH_TOKEN_URIS',
@@ -57,7 +51,7 @@ describe('getUriByRegionName()', () => {
         const regionId = getRegionIdByName(regionName);
         expect(getUriByRegionName(regionName, constantKey)).toBe(constants[constantKey][regionId]);
       });
-    })
+    }),
   );
 
   wrongRegionNames.forEach(wrongRegionName =>
@@ -65,7 +59,6 @@ describe('getUriByRegionName()', () => {
       test('should return correct value for ${regionName} and ${constantKey} as valid parameters', () => {
         expect(() => getUriByRegionName(wrongRegionName, constantKey)).toThrow(RangeError);
       });
-    })
+    }),
   );
-
 });
