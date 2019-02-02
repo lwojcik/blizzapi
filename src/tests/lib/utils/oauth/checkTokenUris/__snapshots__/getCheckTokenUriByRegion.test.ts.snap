@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getTokenUriByRegion() should return correct value for \${regionId} as valid region id 1`] = `"https://us.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionId} as valid region id 2`] = `"https://eu.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionId} as valid region id 3`] = `"https://apac.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionId} as valid region id 4`] = `"https://www.battlenet.com.cn/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionId} as valid region id 5`] = `"https://us.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionId} as valid region id 6`] = `"https://eu.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionId} as valid region id 7`] = `"https://apac.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionId} as valid region id 8`] = `"https://www.battlenet.com.cn/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 1`] = `"https://us.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 2`] = `"https://eu.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 3`] = `"https://apac.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 4`] = `"https://apac.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 5`] = `"https://www.battlenet.com.cn/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 6`] = `"https://us.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 7`] = `"https://eu.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 8`] = `"https://apac.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 9`] = `"https://apac.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 10`] = `"https://www.battlenet.com.cn/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 11`] = `"https://us.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 12`] = `"https://eu.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 13`] = `"https://apac.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 14`] = `"https://apac.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 15`] = `"https://www.battlenet.com.cn/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 16`] = `"https://us.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 17`] = `"https://eu.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 18`] = `"https://apac.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 19`] = `"https://apac.battle.net/oauth/check_token?token="`;
+
+exports[`getTokenUriByRegion() should return correct value for \${regionName} as valid region name 20`] = `"https://www.battlenet.com.cn/oauth/check_token?token="`;
