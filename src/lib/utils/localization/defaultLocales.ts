@@ -9,9 +9,8 @@ import { getAllLocales } from './locales';
  *
  * @return List of all available default locale indexes indexed by region id.
  */
-export function getAllDefaultLocaleIndexes() {
-  return constants.DEFAULT_LOCALES;
-}
+export const getAllDefaultLocaleIndexes = () =>
+  constants.DEFAULT_LOCALES;
 
 /**
  * Returns a default locale index for given region id
@@ -19,12 +18,12 @@ export function getAllDefaultLocaleIndexes() {
  * @param regionId Region id as number or string
  * @return Index of default locale for given region id
  */
-export function getDefaultLocaleIndexForRegionId(regionId: RegionIdAsNumberOrString) {
+export const getDefaultLocaleIndexForRegionId = (regionId: RegionIdAsNumberOrString) => {
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
   if (!isRegionIdValid) {
-    throw new RangeError(`${regionIdAsString} is not a valid parameter for ${arguments.callee}()`);
+    throw new RangeError(`${regionIdAsString} is not a valid parameter for getDefaultLocaleIndexForRegionId()`);
   }
 
   return constants.DEFAULT_LOCALES[regionIdAsString];
@@ -36,12 +35,12 @@ export function getDefaultLocaleIndexForRegionId(regionId: RegionIdAsNumberOrStr
  * @param regionId Region id as number or string
  * @return Name of the default locale for given region id
  */
-export function getDefaultLocaleNameForRegionId(regionId: RegionIdAsNumberOrString) {
+export const getDefaultLocaleNameForRegionId = (regionId: RegionIdAsNumberOrString) => {
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
   if (!isRegionIdValid) {
-    throw new RangeError(`${regionIdAsString} is not a valid parameter for ${arguments.callee}()`);
+    throw new RangeError(`${regionIdAsString} is not a valid parameter for getDefaultLocaleNameForRegionId()`);
   }
 
   const defaultLocaleIndex = constants.DEFAULT_LOCALES[regionIdAsString];

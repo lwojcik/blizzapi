@@ -17,7 +17,7 @@ export function getUriByRegionId(regionId: RegionIdAsNumberOrString, constantKey
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
   if (!isRegionIdValid) {
-    throw new RangeError(`${regionIdAsString} is not a valid parameter 2 for getUriByRegionId(${regionId}, '${constantKey}')`);
+    throw new RangeError(`${regionIdAsString} is not a valid parameter for getUriByRegionId(${regionId}, '${constantKey}')`);
   }
 
   return <Uri>constants[constantKey][regionIdAsString];

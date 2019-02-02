@@ -1,9 +1,38 @@
 import { ConstantKey } from '../../../../lib/types';
 import * as utils from '../../../../lib/utils/common/index';
-import constants from '../../../../lib/constants';
-import { getRegionIdByName } from '../../../../lib/utils/localization/regions';
 
 const { getUriByRegion } = utils;
+
+const regionNames = [
+  'us',
+  'eu',
+  'kr',
+  'tw',
+  'cn',
+  'us',
+  'EU',
+  'KR',
+  'TW',
+  'CN',
+  'Us',
+  'Eu',
+  'Kr',
+  'Tw',
+  'Cn',
+  'uS',
+  'eU',
+  'kR',
+  'tW',
+  'cN',
+];
+
+const wrongRegionNames = [
+  'a1',
+  'adasf',
+  '1abc',
+  '!@#$',
+  '><1',
+];
 
 const regionIds = [
   1,
@@ -14,20 +43,28 @@ const regionIds = [
   '2',
   '3',
   '5',
-]
+];
 
-const regionNames = [
-  'eu',
-  'us',
-  'kr',
-  'cn'
+const wrongRegionIds = [
+  '10',
+  '9999',
+  '23232',
+  'a1',
+  'adasf',
+  '1abc',
+  '!@#$',
+  '><1',
+  10,
+  34,
+  6393,
+  9999,
 ];
 
 const constantKeys:ConstantKey[] = [
   'REGION_API_HOSTS',
   'OAUTH_AUTHORIZE_URIS',
-  'OAUTH_CHECK_TOKEN_URIS',
   'OAUTH_TOKEN_URIS',
+  'OAUTH_CHECK_TOKEN_URIS',
 ];
 
 describe('getUriByRegion()', () => {
@@ -39,20 +76,35 @@ describe('getUriByRegion()', () => {
     expect(typeof getUriByRegion).toBe('function');
   });
 
-  regionIds.forEach((region) => {
+  regionIds.forEach(regionId =>
     constantKeys.forEach(constantKey => {
-      test(`should return correct uri for regionId ${region} and constant ${constantKey}`, () => {
-        expect(getUriByRegion(region, constantKey)).toBe(constants[constantKey][region]);
+      test('should return correct value for ${regionId} and ${constantKey} as valid parameters', () => {
+        expect(getUriByRegion(regionId, constantKey)).toMatchSnapshot();
       });
-    });
-  });
+    })
+  );
 
-  regionNames.forEach((regionName) => {
+  wrongRegionIds.forEach(wrongRegionId =>
     constantKeys.forEach(constantKey => {
-      const regionId = getRegionIdByName(regionName);
-      test(`should return correct uri for region name ${regionName} and constant ${constantKey}`, () => {
-        expect(getUriByRegion(regionName, constantKey)).toBe(constants[constantKey][regionId]);
+      test('should throw RangeError for ${wrongRegionId} as invalid parameter', () => {
+        expect(() => getUriByRegion(wrongRegionId, constantKey)).toThrow(RangeError);
       });
-    });
-  });
+    })
+  );
+
+  regionNames.forEach(regionName =>
+    constantKeys.forEach(constantKey => {
+      test('should return correct value for ${regionName} and ${constantKey} as valid parameters', () => {
+        expect(getUriByRegion(regionName, constantKey)).toMatchSnapshot();
+      });
+    })
+  );
+
+  wrongRegionNames.forEach(wrongRegionName =>
+    constantKeys.forEach(constantKey => {
+      test('should return correct value for ${regionName} and ${constantKey} as valid parameters', () => {
+        expect(() => getUriByRegion(wrongRegionName, constantKey)).toThrow(RangeError);
+      });
+    })
+  );
 });
