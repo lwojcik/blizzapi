@@ -6,13 +6,15 @@ import { Uri } from '../types';
  * @param {string} uri Fetch request uri starting with http(s) (e.g. https://example.com/api/endpoint)
  * @returns {Boolean} True for valid uri, false for incorrect one
  */
-export function validateUri(uri: Uri) {
+export const validateUri = (uri: Uri) => {
   // via https://www.regextester.com/94502
-  const uriTestRegex = /^(?:http(s)?:\/\/)[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
-  uriTestRegex.lastIndex = 0;
-  return uriTestRegex.test(uri);
-}
 
-export function delay(ms: number) {
+  /* tslint:disable no-expression-statement */
+  const uriTestRegex = /^(?:http(s)?:\/\/)[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
+  return uriTestRegex.test(uri);
+  /* tslint-enable no-expression-statement */
+};
+
+export const delay = (ms: number) => {
   return new Promise(fn => setTimeout(fn, ms));
-}
+};

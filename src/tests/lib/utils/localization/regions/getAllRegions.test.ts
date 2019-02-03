@@ -3,6 +3,7 @@ import constants from '../../../../../lib/constants';
 
 const { getAllRegions } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('getAllRegions()', () => {
   test('should be defined', () => {
     expect(getAllRegions).toBeDefined();
@@ -21,3 +22,4 @@ describe('getAllRegions()', () => {
     expect(getAllRegions()).toMatchObject(constants.REGIONS);
   });
 });
+/* tslint:enable no-expression-statement */

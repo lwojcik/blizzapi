@@ -1,6 +1,7 @@
 import * as utils from '../../../../../lib/utils';
 const { getRegionIdByName } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('getRegionIdByName()', () => {
   test('should be defined', () => {
     expect(getRegionIdByName).toBeDefined();
@@ -52,3 +53,4 @@ describe('getRegionIdByName()', () => {
     }).toThrow(expectedResult);
   });
 });
+/* tslint:enable no-expression-statement */

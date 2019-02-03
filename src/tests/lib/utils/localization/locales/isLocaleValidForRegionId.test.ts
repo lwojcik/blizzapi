@@ -1,6 +1,7 @@
 import * as utils from '../../../../../lib/utils';
 const { isLocaleValidForRegionId } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('isLocaleValidForRegionId()', () => {
   test('should be defined', () => {
     expect(isLocaleValidForRegionId).toBeDefined();
@@ -133,3 +134,4 @@ describe('isLocaleValidForRegionId()', () => {
     },
   );
 });
+/* tslint:enable no-expression-statement */

@@ -2,6 +2,7 @@ import constants from '../../../../lib/constants';
 
 const { LOCALES } = constants;
 
+/* tslint:disable no-expression-statement */
 describe('LOCALES', () => {
   test('should be defined', () => {
     expect(LOCALES).toBeDefined();
@@ -115,3 +116,4 @@ describe('LOCALES', () => {
     expect(LOCALES[5][0]).toStrictEqual('zh_CN');
   });
 });
+/* tslint:enable no-expression-statement */

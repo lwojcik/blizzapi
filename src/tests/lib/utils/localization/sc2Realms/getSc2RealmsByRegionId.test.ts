@@ -3,6 +3,7 @@ import constants from '../../../../../lib/constants';
 const { SC2_REALMS } = constants;
 const { getSc2RealmsByRegionId } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('getSc2RealmsByRegionId()', () => {
   test('should be defined', () => {
     expect(getSc2RealmsByRegionId).toBeDefined();
@@ -62,3 +63,4 @@ describe('getSc2RealmsByRegionId()', () => {
     }).toThrow(expected);
   });
 });
+/* tslint:enable no-expression-statement */

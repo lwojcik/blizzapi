@@ -1,8 +1,8 @@
 import * as utils from '../../../../../lib/utils';
-// import constants from '../../../../../lib/constants';
 
 const { checkIfSc2RealmLooksValid } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('checkIfSc2RealmLooksValid()', () => {
   test('should be defined', () => {
     expect(checkIfSc2RealmLooksValid).toBeDefined();
@@ -54,3 +54,4 @@ describe('checkIfSc2RealmLooksValid()', () => {
     expect(checkIfSc2RealmLooksValid(input)).toBe(expectedResult);
   });
 });
+/* tslint:enable no-expression-statement */

@@ -4,6 +4,7 @@ import constants from '../../../../../lib/constants';
 const { DEFAULT_LOCALES } = constants;
 const { getAllDefaultLocaleIndexes } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('getAllDefaultLocales()', () => {
   test('should be defined', () => {
     expect(getAllDefaultLocaleIndexes).toBeDefined();
@@ -22,3 +23,4 @@ describe('getAllDefaultLocales()', () => {
     expect(getAllDefaultLocaleIndexes()).toMatchObject(DEFAULT_LOCALES);
   });
 });
+/* tslint:enable no-expression-statement */

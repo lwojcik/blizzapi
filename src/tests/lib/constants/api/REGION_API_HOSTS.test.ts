@@ -2,6 +2,7 @@ import constants from '../../../../lib/constants';
 
 const { REGION_API_HOSTS } = constants;
 
+/* tslint:disable no-expression-statement */
 describe('REGION_API_HOSTS', () => {
   test('should be defined', () => {
     expect(REGION_API_HOSTS).toBeDefined();
@@ -47,3 +48,4 @@ describe('REGION_API_HOSTS', () => {
     expect(REGION_API_HOSTS[5]).toStrictEqual('https://api.blizzard.com.cn');
   });
 });
+/* tslint:enable no-expression-statement */

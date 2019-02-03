@@ -1,5 +1,6 @@
 import constants from '../../../lib/constants';
 
+/* tslint:disable no-expression-statement */
 describe('CONSTANTS class', () => {
   test('should be defined', () => {
     expect(constants).toBeDefined();
@@ -45,3 +46,4 @@ describe('CONSTANTS class', () => {
     expect(constants.OAUTH_CHECK_TOKEN_URIS).toBeDefined();
   });
 });
+/* tslint:enable no-expression-statement */

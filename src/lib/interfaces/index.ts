@@ -3,6 +3,6 @@ export interface RegionIdProperties<Value> {
 }
 
 export interface QueryBatchOptions {
-  async: boolean;
-  sleepInterval: number;
+  readonly async: boolean;
+  readonly sleepInterval: number;
 }

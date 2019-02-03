@@ -3,6 +3,7 @@ import constants from '../../../../../lib/constants';
 const { REGIONS } = constants;
 const { getRegionNameById } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('getRegionNameById()', () => {
   test('should be defined', () => {
     expect(getRegionNameById).toBeDefined();
@@ -62,3 +63,4 @@ describe('getRegionNameById()', () => {
     }).toThrow(expected);
   });
 });
+/* tslint:enable no-expression-statement */

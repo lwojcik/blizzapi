@@ -1,5 +1,6 @@
 import { fetchFromUri } from '../../../lib/helpers/fetch';
 
+/* tslint:disable no-expression-statement */
 describe('fetchFromUri()', () => {
   test('should be defined', () => {
     expect(fetchFromUri).toBeDefined();
@@ -42,3 +43,4 @@ describe('fetchFromUri()', () => {
   //     })
   // });
 });
+/* tslint:enable no-expression-statement */

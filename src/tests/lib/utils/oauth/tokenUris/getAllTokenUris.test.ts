@@ -3,6 +3,7 @@ import constants from '../../../../../lib/constants';
 
 const { getAllTokenUris } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('getApiHosts()', () => {
   test('should be defined', () => {
     expect(getAllTokenUris).toBeDefined();
@@ -21,3 +22,4 @@ describe('getApiHosts()', () => {
     expect(getAllTokenUris()).toMatchObject(constants.OAUTH_TOKEN_URIS);
   });
 });
+/* tslint:enable no-expression-statement */

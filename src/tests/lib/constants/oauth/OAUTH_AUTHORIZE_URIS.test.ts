@@ -2,6 +2,7 @@ import constants from '../../../../lib/constants';
 
 const { OAUTH_AUTHORIZE_URIS } = constants;
 
+/* tslint:disable no-expression-statement */
 describe('OAUTH_AUTHORIZE_URIS', () => {
   test('should be defined', () => {
     expect(OAUTH_AUTHORIZE_URIS).toBeDefined();
@@ -47,3 +48,4 @@ describe('OAUTH_AUTHORIZE_URIS', () => {
     expect(OAUTH_AUTHORIZE_URIS[5]).toStrictEqual('https://www.battlenet.com.cn/oauth/authorize');
   });
 });
+/* tslint:enable no-expression-statement */

@@ -2,6 +2,7 @@ import { BattleNetApi, BattleNetUtils } from '../index';
 import { default as api } from '../lib/classes/BattleNetApi';
 import * as utils from '../lib/utils';
 
+/* tslint:disable no-expression-statement */
 describe('Index', () => {
   test('should export BattleNetApi namespace', () => {
     expect(BattleNetApi).toBeDefined();
@@ -19,3 +20,4 @@ describe('Index', () => {
     expect(BattleNetUtils).toStrictEqual(utils);
   });
 });
+/* tslint:enable no-expression-statement */

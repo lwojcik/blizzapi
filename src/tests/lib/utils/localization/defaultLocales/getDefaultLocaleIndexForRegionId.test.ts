@@ -4,6 +4,7 @@ import constants from '../../../../../lib/constants';
 const { DEFAULT_LOCALES } = constants;
 const { getDefaultLocaleIndexForRegionId } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('getDefaultLocaleIndexForRegionId()', () => {
   test('should be defined', () => {
     expect(getDefaultLocaleIndexForRegionId).toBeDefined();
@@ -63,3 +64,4 @@ describe('getDefaultLocaleIndexForRegionId()', () => {
     }).toThrow(expected);
   });
 });
+/* tslint:enable no-expression-statement */

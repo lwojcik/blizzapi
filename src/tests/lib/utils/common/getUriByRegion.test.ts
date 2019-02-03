@@ -3,11 +3,11 @@ import * as utils from '../../../../lib/utils/common/index';
 
 const { getUriByRegion } = utils;
 
-import regionNamesJson from '../../../../__testData__/regionNames.json';
-import wrongRegionNamesJson from '../../../../__testData__/wrongRegionNames.json';
-import regionIdsJson from '../../../../__testData__/regionIds.json';
-import wrongRegionIdsJson from '../../../../__testData__/wrongRegionIds.json';
-import constantKeysJson from '../../../../__testData__/constantKeys.json';
+import regionNamesJson from '../../../__testData__/regionNames.json';
+import wrongRegionNamesJson from '../../../__testData__/wrongRegionNames.json';
+import regionIdsJson from '../../../__testData__/regionIds.json';
+import wrongRegionIdsJson from '../../../__testData__/wrongRegionIds.json';
+import constantKeysJson from '../../../__testData__/constantKeys.json';
 
 /* tslint:disable no-expression-statement */
 describe('getUriByRegion()', () => {

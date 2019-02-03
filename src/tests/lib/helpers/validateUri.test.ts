@@ -1,5 +1,6 @@
 import { validateUri } from '../../../lib/helpers/common';
 
+/* tslint:disable no-expression-statement */
 describe('validateUri()', () => {
   test('should be defined', () => {
     expect(validateUri).toBeDefined();
@@ -51,3 +52,4 @@ describe('validateUri()', () => {
     expect(validateUri(input)).toBe(expectedResult);
   });
 });
+/* tslint:enable no-expression-statement */

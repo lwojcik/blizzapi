@@ -2,6 +2,7 @@ import * as utils from '../../../../../lib/utils';
 
 const { getAllAvailableSc2Realms } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('getAllAvailableSc2Realms()', () => {
   test('should be defined', () => {
     expect(getAllAvailableSc2Realms).toBeDefined();
@@ -21,3 +22,4 @@ describe('getAllAvailableSc2Realms()', () => {
     expect(getAllAvailableSc2Realms().every(isInteger)).toBe(true);
   });
 });
+/* tslint:enable no-expression-statement */

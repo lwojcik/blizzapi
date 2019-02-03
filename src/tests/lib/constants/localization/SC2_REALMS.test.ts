@@ -2,6 +2,7 @@ import constants from '../../../../lib/constants';
 
 const { SC2_REALMS } = constants;
 
+/* tslint:disable no-expression-statement */
 describe('SC2_REALMS', () => {
   test('should be defined', () => {
     expect(SC2_REALMS).toBeDefined();
@@ -91,3 +92,4 @@ describe('SC2_REALMS', () => {
     expect(SC2_REALMS[5][0]).toStrictEqual(1);
   });
 });
+/* tslint:enable no-expression-statement */

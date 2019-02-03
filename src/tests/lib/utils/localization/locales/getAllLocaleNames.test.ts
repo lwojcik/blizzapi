@@ -5,6 +5,7 @@ const { LOCALES } = constants;
 
 const { getAllLocaleNames } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('getAllLocaleNames()', () => {
   test('should be defined', () => {
     expect(getAllLocaleNames).toBeDefined();
@@ -20,7 +21,8 @@ describe('getAllLocaleNames()', () => {
   });
 
   test('number of returned elements should match length of constants.REGIONS values after flattening', () => {
-    const flattenedLocaleNamesLength = <number>([] as string[]).concat(...Object.values(LOCALES)).length;
+    const flattenedLocaleNamesLength = <number>([] as ReadonlyArray<string>).concat(...Object.values(LOCALES)).length;
     expect(getAllLocaleNames().length).toStrictEqual(flattenedLocaleNamesLength);
   });
 });
+/* tslint:enable no-expression-statement */

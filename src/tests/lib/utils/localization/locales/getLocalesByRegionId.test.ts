@@ -3,6 +3,7 @@ import constants from '../../../../../lib/constants';
 const { LOCALES } = constants;
 const { getLocalesByRegionId } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('getLocalesByRegionId()', () => {
   test('should be defined', () => {
     expect(getLocalesByRegionId).toBeDefined();
@@ -62,3 +63,4 @@ describe('getLocalesByRegionId()', () => {
     }).toThrow(expected);
   });
 });
+/* tslint:enable no-expression-statement */

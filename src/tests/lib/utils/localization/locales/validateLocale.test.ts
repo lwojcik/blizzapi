@@ -1,6 +1,7 @@
 import * as utils from '../../../../../lib/utils';
 const { validateLocale } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('validateLocale()', () => {
   test('should be defined', () => {
     expect(validateLocale).toBeDefined();
@@ -87,3 +88,4 @@ describe('validateLocale()', () => {
     }).toThrow(expectedResult);
   });
 });
+/* tslint:enable no-expression-statement */

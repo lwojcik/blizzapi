@@ -13,6 +13,8 @@ export type ConstantKey =
   | 'OAUTH_TOKEN_URIS'
   | 'OAUTH_CHECK_TOKEN_URIS';
 
+export type ConstantKeys = ReadonlyArray<ConstantKey>;
+
 /** Regions */
 
 export type RegionId = number;

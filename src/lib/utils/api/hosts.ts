@@ -7,9 +7,7 @@ import { getUriByRegion } from '../common';
  *
  * @return List of all API host uris indexed by region id as array of strings.
  */
-export function getAllApiHosts() {
-  return constants.REGION_API_HOSTS;
-}
+export const getAllApiHosts = () => constants.REGION_API_HOSTS;
 
 /**
  * Returns region API host uri for given region id or region name
@@ -17,6 +15,5 @@ export function getAllApiHosts() {
  * @param regionIdOrName Region id or region name
  * @return Region API host uri as a string
  */
-export function getApiHostByRegion(regionIdOrName: RegionIdOrName) {
-  return getUriByRegion(regionIdOrName, 'REGION_API_HOSTS');
-}
+export const getApiHostByRegion = (regionIdOrName: RegionIdOrName) =>
+  getUriByRegion(regionIdOrName, 'REGION_API_HOSTS');

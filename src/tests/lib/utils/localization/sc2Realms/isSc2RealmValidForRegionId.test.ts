@@ -1,6 +1,7 @@
 import * as utils from '../../../../../lib/utils';
 const { isSc2RealmValidForRegionId } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('isSc2RealmValidForRegionId()', () => {
   test('should be defined', () => {
     expect(isSc2RealmValidForRegionId).toBeDefined();
@@ -86,3 +87,4 @@ describe('isSc2RealmValidForRegionId()', () => {
     },
   );
 });
+/* tslint:enable no-expression-statement */

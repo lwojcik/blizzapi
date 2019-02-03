@@ -2,6 +2,7 @@ import constants from '../../../../lib/constants';
 
 const { REGIONS } = constants;
 
+/* tslint:disable no-expression-statement */
 describe('REGIONS', () => {
   test('should be defined', () => {
     expect(REGIONS).toBeDefined();
@@ -95,3 +96,4 @@ describe('REGIONS', () => {
     });
   });
 });
+/* tslint:enable no-expression-statement */

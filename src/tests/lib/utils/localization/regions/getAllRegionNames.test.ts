@@ -5,6 +5,7 @@ const { REGIONS } = constants;
 
 const { getAllRegionNames } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('getAllRegionNames()', () => {
   test('should be defined', () => {
     expect(getAllRegionNames).toBeDefined();
@@ -20,7 +21,8 @@ describe('getAllRegionNames()', () => {
   });
 
   test('number of returned elements should match length of constants.REGIONS values after flattening', () => {
-    const flattenedRegionsLength = <number>([] as string[]).concat(...Object.values(REGIONS)).length;
+    const flattenedRegionsLength = <number>([] as ReadonlyArray<string>).concat(...Object.values(REGIONS)).length;
     expect(getAllRegionNames().length).toStrictEqual(flattenedRegionsLength);
   });
 });
+/* tslint:enable no-expression-statement */

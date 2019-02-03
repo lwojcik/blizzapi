@@ -1,19 +1,13 @@
-import { ConstantKey } from '../../../../lib/types';
+import { RegionIdArray, ConstantKeys } from '../../../../lib/types';
 import * as utils from '../../../../lib/utils/common';
 
-const regionIds = [1, 2, 3, 5, '1', '2', '3', '5'];
-
-const wrongRegionIds = ['10', '9999', '23232', 'a1', 'adasf', '1abc', '!@#$', '><1', 10, 34, 6393, 9999];
-
-const constantKeys: ConstantKey[] = [
-  'REGION_API_HOSTS',
-  'OAUTH_AUTHORIZE_URIS',
-  'OAUTH_TOKEN_URIS',
-  'OAUTH_CHECK_TOKEN_URIS',
-];
+import regionIdsJson from '../../../__testData__/regionIds.json';
+import wrongRegionIdsJson from '../../../__testData__/wrongRegionIds.json';
+import constantKeysJson from '../../../__testData__/constantKeys.json';
 
 const { getUriByRegionId } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('getUriByRegionId()', () => {
   test('should be defined', () => {
     expect(getUriByRegionId).toBeDefined();
@@ -23,19 +17,20 @@ describe('getUriByRegionId()', () => {
     expect(typeof getUriByRegionId).toBe('function');
   });
 
-  regionIds.forEach(regionId => {
-    constantKeys.forEach(constantKey => {
+  (regionIdsJson as RegionIdArray).forEach(regionId => {
+    (constantKeysJson as ConstantKeys).forEach(constantKey => {
       test('should return correct value for ${regionId} and ${constantKey} as valid parameters', () => {
         expect(getUriByRegionId(regionId, constantKey)).toMatchSnapshot();
       });
     });
   });
 
-  wrongRegionIds.forEach(wrongRegionId => {
-    constantKeys.forEach(constantKey => {
+  (wrongRegionIdsJson as RegionIdArray).forEach(wrongRegionId => {
+    (constantKeysJson as ConstantKeys).forEach(constantKey => {
       test('should throw RangeError for ${wrongRegionId} as invalid parameter', () => {
         expect(() => getUriByRegionId(wrongRegionId, constantKey)).toThrow(RangeError);
       });
     });
   });
 });
+/* tslint:enable no-expression-statement */

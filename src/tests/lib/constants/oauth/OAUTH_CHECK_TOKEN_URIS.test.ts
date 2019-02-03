@@ -2,6 +2,7 @@ import constants from '../../../../lib/constants';
 
 const { OAUTH_CHECK_TOKEN_URIS } = constants;
 
+/* tslint:disable no-expression-statement */
 describe('OAUTH_CHECK_TOKEN_URIS', () => {
   test('should be defined', () => {
     expect(OAUTH_CHECK_TOKEN_URIS).toBeDefined();
@@ -47,3 +48,4 @@ describe('OAUTH_CHECK_TOKEN_URIS', () => {
     expect(OAUTH_CHECK_TOKEN_URIS[5]).toStrictEqual('https://www.battlenet.com.cn/oauth/check_token?token=');
   });
 });
+/* tslint:enable no-expression-statement */

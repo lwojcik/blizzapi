@@ -1,6 +1,7 @@
 import * as utils from '../../../../../lib/utils';
 const { validateSc2Realm } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('validateSc2Realm()', () => {
   test('should be defined', () => {
     expect(validateSc2Realm).toBeDefined();
@@ -50,3 +51,4 @@ describe('validateSc2Realm()', () => {
     }).toThrow(expectedResult);
   });
 });
+/* tslint:enable no-expression-statement */

@@ -4,6 +4,7 @@ import constants from '../../../../../lib/constants';
 const { REGIONS } = constants;
 const { getAllDefaultLocaleNames } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('getAllDefaultLocales()', () => {
   test('should be defined', () => {
     expect(getAllDefaultLocaleNames).toBeDefined();
@@ -26,10 +27,11 @@ describe('getAllDefaultLocales()', () => {
 
   test('object values should be derived from constants.LOCALES', () => {
     const receivedLocaleNames = Object.values(getAllDefaultLocaleNames());
-    const expectedLocaleNames = ([] as string[]).concat(...Object.values(constants.LOCALES));
+    const expectedLocaleNames = ([] as ReadonlyArray<string>).concat(...Object.values(constants.LOCALES));
 
     receivedLocaleNames.forEach(localeName => {
       expect(expectedLocaleNames.includes(localeName)).toBe(true);
     });
   });
 });
+/* tslint:enable no-expression-statement */

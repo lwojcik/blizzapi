@@ -21,9 +21,11 @@ export const getDefaultLocaleIndexForRegionId = (regionId: RegionIdAsNumberOrStr
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
+  /* tslint:disable no-if-statement */
   if (!isRegionIdValid) {
     throw new RangeError(`${regionIdAsString} is not a valid parameter for getDefaultLocaleIndexForRegionId()`);
   }
+  /* tslint:enable no-if-statement */
 
   return constants.DEFAULT_LOCALES[regionIdAsString];
 };
@@ -38,9 +40,11 @@ export const getDefaultLocaleNameForRegionId = (regionId: RegionIdAsNumberOrStri
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
+  /* tslint:disable no-if-statement */
   if (!isRegionIdValid) {
     throw new RangeError(`${regionIdAsString} is not a valid parameter for getDefaultLocaleNameForRegionId()`);
   }
+  /* tslint:enable no-if-statement */
 
   const defaultLocaleIndex = constants.DEFAULT_LOCALES[regionIdAsString];
   return constants.LOCALES[regionId][defaultLocaleIndex];
@@ -51,14 +55,14 @@ export const getDefaultLocaleNameForRegionId = (regionId: RegionIdAsNumberOrStri
  *
  * @return List of all available default locale names indexed by region id.
  */
-export function getAllDefaultLocaleNames(): RegionIdProperties<Locale> {
+export const getAllDefaultLocaleNames = () => {
   const allLocales = getAllLocales();
   const allLocaleKeys = Object.keys(allLocales);
 
-  return Object.assign(
+  return <RegionIdProperties<Locale>>Object.assign(
     {},
     ...allLocaleKeys.map(regionId => ({
       [regionId]: getDefaultLocaleNameForRegionId(regionId),
     })),
   );
-}
+};

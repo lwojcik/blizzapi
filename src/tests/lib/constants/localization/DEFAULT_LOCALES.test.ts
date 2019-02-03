@@ -2,6 +2,7 @@ import constants from '../../../../lib/constants';
 
 const { DEFAULT_LOCALES } = constants;
 
+/* tslint:disable no-expression-statement */
 describe('DEFAULT_LOCALES', () => {
   test('should be defined', () => {
     expect(DEFAULT_LOCALES).toBeDefined();
@@ -47,3 +48,4 @@ describe('DEFAULT_LOCALES', () => {
     expect(DEFAULT_LOCALES[5]).toStrictEqual(0);
   });
 });
+/* tslint:enable no-expression-statement */

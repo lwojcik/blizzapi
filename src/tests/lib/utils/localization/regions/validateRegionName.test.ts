@@ -1,6 +1,7 @@
 import * as utils from '../../../../../lib/utils';
 const { validateRegionName } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('validateRegionName()', () => {
   test('should be defined', () => {
     expect(validateRegionName).toBeDefined();
@@ -50,3 +51,4 @@ describe('validateRegionName()', () => {
     expect(validateRegionName(input)).toBe(expectedResult);
   });
 });
+/* tslint:enable no-expression-statement */
