@@ -2,9 +2,9 @@
     "defaultSeverity": "error",
     "extends": [
         "tslint-config-airbnb",
-        "tslint-immutable/all",
         "tslint-config-prettier",
-        "tslint-plugin-prettier"
+        "tslint-plugin-prettier",
+        "tslint-immutable"
     ],
     "jsRules": {},
     "rules": {
@@ -12,14 +12,6 @@
         "no-var-keyword": true,
         "no-parameter-reassignment": true,
         "typedef": [true, "call-signature"],
-
-        // Immutability rules
-        "readonly-keyword": true,
-        "readonly-array": true,
-        "no-let": true,
-        "no-object-mutation": true,
-        "no-delete": true,
-        "no-method-signature": true,
 
         // Functional style rules
         "no-unnecessary-class": true,
