@@ -23,7 +23,7 @@ node_js:
   - 'node'
 
 install:
-  - npm ci
+  - npm install
   - npm install -g codecov
 
 before_script:
