@@ -1,6 +1,12 @@
 import * as utils from '../../../../../lib/utils';
 const { isSc2RealmValidForRegionId } = utils;
 
+import regionIdsJson from '../../../../__testData__/regionIds.json';
+import wrongRegionIdsJson from '../../../../__testData__/wrongRegionIds.json';
+import sc2realmsJson from '../../../../__testData__/sc2realms.json';
+import nonexistentSc2realmsJson from '../../../../__testData__/nonexistentSc2realms.json';
+import wrongSc2realmsJson from '../../../../__testData__/wrongSc2realms.json';
+
 /* tslint:disable no-expression-statement */
 describe('isSc2RealmValidForRegionId()', () => {
   test('should be defined', () => {
@@ -11,80 +17,52 @@ describe('isSc2RealmValidForRegionId()', () => {
     expect(typeof isSc2RealmValidForRegionId).toBe('function');
   });
 
-  test.each`
-    inputSc2Realm | inputRegionId | expectedResult
-    ${1}          | ${1}          | ${true}
-    ${'1'}        | ${1}          | ${true}
-    ${1}          | ${'1'}        | ${true}
-    ${'1'}        | ${'1'}        | ${true}
-    ${2}          | ${1}          | ${true}
-    ${'2'}        | ${1}          | ${true}
-    ${2}          | ${'1'}        | ${true}
-    ${'2'}        | ${'1'}        | ${true}
-    ${1}          | ${2}          | ${true}
-    ${'1'}        | ${2}          | ${true}
-    ${1}          | ${'2'}        | ${true}
-    ${'1'}        | ${'2'}        | ${true}
-    ${2}          | ${2}          | ${true}
-    ${'2'}        | ${2}          | ${true}
-    ${2}          | ${'2'}        | ${true}
-    ${'2'}        | ${'2'}        | ${true}
-    ${1}          | ${3}          | ${true}
-    ${'1'}        | ${3}          | ${true}
-    ${1}          | ${'3'}        | ${true}
-    ${'1'}        | ${'3'}        | ${true}
-    ${2}          | ${3}          | ${true}
-    ${'2'}        | ${3}          | ${true}
-    ${2}          | ${'3'}        | ${true}
-    ${'2'}        | ${'3'}        | ${true}
-    ${1}          | ${5}          | ${true}
-    ${'1'}        | ${5}          | ${true}
-    ${1}          | ${'5'}        | ${true}
-    ${'1'}        | ${'5'}        | ${true}
-  `(
-    'returns $expectedResult for $inputSc2Realm and $inputRegionId as valid parameters',
-    ({ inputSc2Realm, inputRegionId, expectedResult }) => {
-      expect(isSc2RealmValidForRegionId(inputSc2Realm, inputRegionId)).toBe(expectedResult);
-    },
+  (regionIdsJson as ReadonlyArray<number | string>).forEach(regionId =>
+    (sc2realmsJson as ReadonlyArray<number | string>).forEach(sc2realm => {
+      test(`should return correct value for ${regionId} and ${sc2realm} as valid parameters`, () => {
+        expect(isSc2RealmValidForRegionId(sc2realm, regionId)).toMatchSnapshot();
+      });
+    }),
   );
 
-  test.each`
-    inputSc2Realm | inputRegionId | expectedResult
-    ${6}          | ${31}         | ${RangeError}
-    ${'6'}        | ${11}         | ${RangeError}
-    ${7}          | ${'12'}       | ${RangeError}
-    ${'7'}        | ${'19'}       | ${RangeError}
-    ${8}          | ${81}         | ${RangeError}
-    ${'8'}        | ${71}         | ${RangeError}
-    ${9}          | ${'15'}       | ${RangeError}
-    ${'9'}        | ${'14'}       | ${RangeError}
-    ${10}         | ${32}         | ${RangeError}
-    ${'10'}       | ${22}         | ${RangeError}
-    ${11}         | ${'12'}       | ${RangeError}
-    ${'11'}       | ${'29'}       | ${RangeError}
-    ${22}         | ${82}         | ${RangeError}
-    ${'22'}       | ${27}         | ${RangeError}
-    ${23}         | ${'26'}       | ${RangeError}
-    ${'24'}       | ${'42'}       | ${RangeError}
-    ${15}         | ${23}         | ${RangeError}
-    ${'16'}       | ${93}         | ${RangeError}
-    ${10}         | ${'23'}       | ${RangeError}
-    ${'11'}       | ${'73'}       | ${RangeError}
-    ${24}         | ${63}         | ${RangeError}
-    ${'22'}       | ${53}         | ${RangeError}
-    ${29}         | ${'33'}       | ${RangeError}
-    ${'222'}      | ${'13'}       | ${RangeError}
-    ${13}         | ${35}         | ${RangeError}
-    ${'153'}      | ${85}         | ${RangeError}
-    ${121}        | ${'57'}       | ${RangeError}
-    ${'11'}       | ${'52'}       | ${RangeError}
-  `(
-    'throws $expectedResult for $inputSc2Realm and $inputRegionId as incorrect parameters',
-    ({ inputSc2Realm, inputRegionId }) => {
-      expect(() => {
-        isSc2RealmValidForRegionId(inputSc2Realm, inputRegionId);
-      }).toThrow();
-    },
+  (regionIdsJson as ReadonlyArray<number | string>).forEach(regionId =>
+    (nonexistentSc2realmsJson as ReadonlyArray<number | string>).forEach(nonexistentSc2realm => {
+      test(`should return false for ${regionId} as valid region id and ${nonexistentSc2realm} as non-existent SC2 realm`, () => {
+        expect(isSc2RealmValidForRegionId(nonexistentSc2realm, regionId)).toBe(false);
+      });
+    }),
+  );
+
+  (regionIdsJson as ReadonlyArray<number | string>).forEach(regionId =>
+    (wrongSc2realmsJson as ReadonlyArray<number | string>).forEach(wrongSc2realm => {
+      test(`should throw RangeError for ${regionId} as valid region id and ${wrongSc2realm} as invalid SC2 realm`, () => {
+        expect(() => isSc2RealmValidForRegionId(wrongSc2realm, regionId)).toThrow(RangeError);
+      });
+    }),
+  );
+
+  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach(wrongRegionId =>
+    (sc2realmsJson as ReadonlyArray<number | string>).forEach(sc2realm => {
+      test(`should throw RangeError for ${wrongRegionId} as wrong region id and ${sc2realm} as valid SC2 realm`, () => {
+        expect(() => isSc2RealmValidForRegionId(sc2realm, wrongRegionId)).toThrow(RangeError);
+      });
+    }),
+  );
+
+  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach(wrongRegionId =>
+    (nonexistentSc2realmsJson as ReadonlyArray<number | string>).forEach(nonexistentSc2realm => {
+      test(`should throw RangeError for ${wrongRegionId} as wrong region id and ${nonexistentSc2realm} as non-existent SC2 realm`, () => {
+        expect(() => isSc2RealmValidForRegionId(nonexistentSc2realm, wrongRegionId)).toThrow(RangeError);
+      });
+    }),
+  );
+
+  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach(wrongRegionId =>
+    (wrongSc2realmsJson as ReadonlyArray<number | string>).forEach(wrongSc2realm => {
+      test(`should throw RangeError for ${wrongRegionId} as wrong region id and ${wrongSc2realm} as invalid SC2 realm`, () => {
+        expect(() => isSc2RealmValidForRegionId(wrongSc2realm, wrongRegionId)).toThrow(RangeError);
+      });
+    }),
   );
 });
 /* tslint:enable no-expression-statement */

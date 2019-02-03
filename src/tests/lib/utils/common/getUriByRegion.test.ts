@@ -29,7 +29,7 @@ describe('getUriByRegion()', () => {
 
   (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach(wrongRegionId =>
     (constantKeysJson as ReadonlyArray<ConstantKey>).forEach(constantKey => {
-      test('should throw RangeError for ${wrongRegionId} as invalid parameter', () => {
+      test('should throw RangeError for ${wrongRegionId} as invalid region id', () => {
         expect(() => getUriByRegion(wrongRegionId, constantKey)).toThrow(RangeError);
       });
     }),

@@ -1,6 +1,10 @@
 import * as utils from '../../../../../lib/utils';
 const { validateSc2Realm } = utils;
 
+import sc2realmsJson from '../../../../__testData__/sc2realms.json';
+import nonexistentSc2realmsJson from '../../../../__testData__/nonexistentSc2realms.json';
+import wrongSc2realmsJson from '../../../../__testData__/wrongSc2realms.json';
+
 /* tslint:disable no-expression-statement */
 describe('validateSc2Realm()', () => {
   test('should be defined', () => {
@@ -11,44 +15,22 @@ describe('validateSc2Realm()', () => {
     expect(typeof validateSc2Realm).toBe('function');
   });
 
-  test.each`
-    input  | expectedResult
-    ${1}   | ${true}
-    ${2}   | ${true}
-    ${'1'} | ${true}
-    ${'2'} | ${true}
-  `('returns $expectedResult for $input as valid sc2 realm', ({ input, expectedResult }) => {
-    expect(validateSc2Realm(input)).toBe(expectedResult);
-  });
+  (sc2realmsJson as ReadonlyArray<string | number>).forEach(sc2realm =>
+    test(`should return true for ${sc2realm} as valid SC2 realm`, () => {
+      expect(validateSc2Realm(sc2realm)).toBe(true);
+    }),
+  );
 
-  test.each`
-    input  | expectedResult
-    ${6}   | ${false}
-    ${7}   | ${false}
-    ${8}   | ${false}
-    ${9}   | ${false}
-    ${'6'} | ${false}
-    ${'7'} | ${false}
-    ${'8'} | ${false}
-    ${'9'} | ${false}
-  `('returns $expectedResult for $input as non-existent SC2 realm', ({ input, expectedResult }) => {
-    expect(validateSc2Realm(input)).toBe(expectedResult);
-  });
+  (nonexistentSc2realmsJson as ReadonlyArray<string | number>).forEach(nonexistentSc2realmsJso =>
+    test(`should return false for ${nonexistentSc2realmsJso} as non-existent SC2 realm`, () => {
+      expect(validateSc2Realm(nonexistentSc2realmsJso)).toBe(false);
+    }),
+  );
 
-  test.each`
-    input     | expectedResult
-    ${10}     | ${RangeError}
-    ${100}    | ${RangeError}
-    ${999}    | ${RangeError}
-    ${4534}   | ${RangeError}
-    ${'10'}   | ${RangeError}
-    ${'100'}  | ${RangeError}
-    ${'999'}  | ${RangeError}
-    ${'4353'} | ${RangeError}
-  `('throws $expectedResult for $input as incorrect SC2 realm', ({ input, expectedResult }) => {
-    expect(() => {
-      validateSc2Realm(input);
-    }).toThrow(expectedResult);
-  });
+  (wrongSc2realmsJson as ReadonlyArray<string | number>).forEach(wrongSc2realm =>
+    test('should throw RangeError for ${wrongSc2realm} as invalid SC2 realm', () => {
+      expect(() => validateSc2Realm(wrongSc2realm)).toThrow(RangeError);
+    }),
+  );
 });
 /* tslint:enable no-expression-statement */
