@@ -4,10 +4,15 @@ env:
 
 language: node_js
 
-os:
-  - linux
+matrix:
+  include:
+    - os: linux
+      dist: xenial
+    - os: osx
+    - os: windows
 
 node_js:
+  - 'node'
   - 'lts/*'
 
 install:
