@@ -9,8 +9,6 @@ os:
   - osx
   - windows
 
-dist: xenial
-
 matrix:
   allow_failures:
     - os: windows
