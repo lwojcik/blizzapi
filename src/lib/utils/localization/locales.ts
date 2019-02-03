@@ -1,5 +1,6 @@
 import constants from '../../constants';
 import { validateRegionId } from './regions';
+import { getConstantByRegionId } from '../common';
 import { Locale, LocaleArray, RegionIdAsNumberOrString } from '../../types';
 
 /**
@@ -27,18 +28,8 @@ export const getAllLocaleNames = () => {
  * @param regionId Region id as integer or string
  * @return List of locales available in a specific region as array of strings
  */
-export const getLocalesByRegionId = (regionId: RegionIdAsNumberOrString) => {
-  const regionIdAsString = regionId.toString();
-  const isRegionIdValid = validateRegionId(regionIdAsString);
-
-  /* tslint:disable no-if-statement */
-  if (!isRegionIdValid) {
-    throw new RangeError(`${regionIdAsString} is not a valid parameter for getLocalesByRegionId()`);
-  }
-  /* tslint:enable no-if-statement */
-
-  return constants.LOCALES[regionIdAsString];
-};
+export const getLocalesByRegionId = (regionId: RegionIdAsNumberOrString) =>
+  <LocaleArray>getConstantByRegionId(regionId, 'LOCALES');
 
 /**
  * Verifies whether locale matches the regex pattern

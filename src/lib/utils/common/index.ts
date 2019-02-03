@@ -1,20 +1,20 @@
-import { ConstantKey, RegionIdOrName, RegionIdAsNumberOrString, RegionName, Uri } from '../../types';
+import { ConstantKey, RegionIdOrName, RegionIdAsNumberOrString, RegionName } from '../../types';
 import constants from '../../constants';
 import { validateRegionId, validateRegionName, getRegionIdByName } from '../localization/regions';
 
-export const getUriByRegion = (regionIdOrName: RegionIdOrName, constantKey: ConstantKey) => {
+export const getConstantByRegion = (regionIdOrName: RegionIdOrName, constantKey: ConstantKey) => {
   const validRegionId = validateRegionId(regionIdOrName);
 
   /* tslint:disable no-if-statement */
   if (validRegionId) {
-    return getUriByRegionId(regionIdOrName, constantKey);
+    return getConstantByRegionId(regionIdOrName, constantKey);
   }
   /* tslint:enable no-if-statement */
 
-  return getUriByRegionName(regionIdOrName.toString(), constantKey);
+  return getConstantByRegionName(regionIdOrName.toString(), constantKey);
 };
 
-export const getUriByRegionId = (regionId: RegionIdAsNumberOrString, constantKey: ConstantKey) => {
+export const getConstantByRegionId = (regionId: RegionIdAsNumberOrString, constantKey: ConstantKey) => {
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
@@ -26,7 +26,7 @@ export const getUriByRegionId = (regionId: RegionIdAsNumberOrString, constantKey
   }
   /* tslint:enable no-if-statement */
 
-  return <Uri>constants[constantKey][regionIdAsString];
+  return constants[constantKey][regionIdAsString];
 };
 
 /**
@@ -36,18 +36,18 @@ export const getUriByRegionId = (regionId: RegionIdAsNumberOrString, constantKey
  * @param constantKey Constant key
  * @return Uri as a string
  */
-export const getUriByRegionName = (regionName: RegionName, constantKey: ConstantKey) => {
+export const getConstantByRegionName = (regionName: RegionName, constantKey: ConstantKey) => {
   const isRegionNameValid = validateRegionName(regionName);
 
   /* tslint:disable no-if-statement */
   if (!isRegionNameValid) {
     throw new RangeError(
-      `${regionName} is not a valid parameter for getUriByRegionName(${regionName}, '${constantKey}')`,
+      `${regionName} is not a valid parameter for getConstantByRegionName(${regionName}, '${constantKey}')`,
     );
   }
   /* tslint:enable no-if-statement */
 
   const regionId = getRegionIdByName(regionName);
 
-  return <Uri>constants[constantKey][regionId];
+  return constants[constantKey][regionId];
 };

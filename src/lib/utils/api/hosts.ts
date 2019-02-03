@@ -1,6 +1,6 @@
 import constants from '../../constants';
 import { RegionIdOrName } from '../../types';
-import { getUriByRegion } from '../common';
+import { getConstantByRegion } from '../common';
 
 /**
  * Returns a list of all region API host uris
@@ -16,4 +16,4 @@ export const getAllApiHosts = () => constants.REGION_API_HOSTS;
  * @return Region API host uri as a string
  */
 export const getApiHostByRegion = (regionIdOrName: RegionIdOrName) =>
-  getUriByRegion(regionIdOrName, 'REGION_API_HOSTS');
+  getConstantByRegion(regionIdOrName, 'REGION_API_HOSTS');

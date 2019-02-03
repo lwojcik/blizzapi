@@ -2,7 +2,7 @@
     "defaultSeverity": "error",
     "extends": [
         "tslint-config-airbnb",
-        "tslint-immutable",
+        "tslint-immutable/all",
         "tslint-config-prettier",
         "tslint-plugin-prettier"
     ],

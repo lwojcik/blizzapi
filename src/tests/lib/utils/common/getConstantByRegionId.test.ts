@@ -5,22 +5,22 @@ import regionIdsJson from '../../../__testData__/regionIds.json';
 import wrongRegionIdsJson from '../../../__testData__/wrongRegionIds.json';
 import constantKeysJson from '../../../__testData__/constantKeys.json';
 
-const { getUriByRegionId } = utils;
+const { getConstantByRegionId } = utils;
 
 /* tslint:disable no-expression-statement */
 describe('getUriByRegionId()', () => {
   test('should be defined', () => {
-    expect(getUriByRegionId).toBeDefined();
+    expect(getConstantByRegionId).toBeDefined();
   });
 
   test('should be of type "function"', () => {
-    expect(typeof getUriByRegionId).toBe('function');
+    expect(typeof getConstantByRegionId).toBe('function');
   });
 
   (regionIdsJson as RegionIdArray).forEach(regionId => {
     (constantKeysJson as ConstantKeys).forEach(constantKey => {
       test('should return correct value for ${regionId} and ${constantKey} as valid parameters', () => {
-        expect(getUriByRegionId(regionId, constantKey)).toMatchSnapshot();
+        expect(getConstantByRegionId(regionId, constantKey)).toMatchSnapshot();
       });
     });
   });
@@ -28,7 +28,7 @@ describe('getUriByRegionId()', () => {
   (wrongRegionIdsJson as RegionIdArray).forEach(wrongRegionId => {
     (constantKeysJson as ConstantKeys).forEach(constantKey => {
       test('should throw RangeError for ${wrongRegionId} as invalid parameter', () => {
-        expect(() => getUriByRegionId(wrongRegionId, constantKey)).toThrow(RangeError);
+        expect(() => getConstantByRegionId(wrongRegionId, constantKey)).toThrow(RangeError);
       });
     });
   });

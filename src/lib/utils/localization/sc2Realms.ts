@@ -1,5 +1,6 @@
 import constants from '../../constants';
 import { validateRegionId } from './regions';
+import { getConstantByRegionId } from '../common';
 import { RegionIdAsNumberOrString, Sc2RealmAsNumberOrString, Sc2RealmList } from '../../types';
 
 /**
@@ -26,18 +27,8 @@ export function getAllAvailableSc2Realms(): Sc2RealmList {
  * @param regionId Region id as integer or string
  * @return List of SC2 realms available in a specific region as array of integers
  */
-export const getSc2RealmsByRegionId = (regionId: RegionIdAsNumberOrString) => {
-  const regionIdAsString = regionId.toString();
-  const isRegionIdValid = validateRegionId(regionIdAsString);
-
-  /* tslint:disable no-if-statement */
-  if (!isRegionIdValid) {
-    throw new RangeError(`${regionIdAsString} is not a valid parameter for getSc2RealmsByRegionId()`);
-  }
-  /* tslint:enable no-if-statement */
-
-  return constants.SC2_REALMS[regionIdAsString];
-};
+export const getSc2RealmsByRegionId = (regionId: RegionIdAsNumberOrString) =>
+  <Sc2RealmList>getConstantByRegionId(regionId, 'SC2_REALMS');
 
 /**
  * Verifies whether locale matches the regex pattern
