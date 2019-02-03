@@ -16,4 +16,4 @@ export const getAllTokenUris = () => constants.OAUTH_TOKEN_URIS;
  * @return OAuth token uri as a string
  */
 export const getTokenUriByRegion = (regionIdOrName: RegionIdOrName) =>
-  getConstantByRegion(regionIdOrName, 'OAUTH_TOKEN_URIS');
+  <string>getConstantByRegion(regionIdOrName, 'OAUTH_TOKEN_URIS');

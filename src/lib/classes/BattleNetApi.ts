@@ -13,7 +13,7 @@ import * as bnetHelpers from '../helpers/bnet';
 import * as jsonHelpers from '../helpers/json';
 import { getTokenUriByRegion } from '../utils/oauth/tokenUris';
 
-/* tslint:disable:no-unnecessary-class no-this no-expression-statement no-object-mutation readonly-keyword typedef */
+/* tslint:disable:no-class no-this no-expression-statement no-object-mutation readonly-keyword typedef */
 
 export default class BattleNetApi {
   private readonly region: RegionIdOrName;
