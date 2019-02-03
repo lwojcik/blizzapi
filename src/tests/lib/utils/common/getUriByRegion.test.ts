@@ -3,42 +3,13 @@ import * as utils from '../../../../lib/utils/common/index';
 
 const { getUriByRegion } = utils;
 
-const regionNames = [
-  'us',
-  'eu',
-  'kr',
-  'tw',
-  'cn',
-  'us',
-  'EU',
-  'KR',
-  'TW',
-  'CN',
-  'Us',
-  'Eu',
-  'Kr',
-  'Tw',
-  'Cn',
-  'uS',
-  'eU',
-  'kR',
-  'tW',
-  'cN',
-];
+import regionNamesJson from '../../../../__testData__/regionNames.json';
+import wrongRegionNamesJson from '../../../../__testData__/wrongRegionNames.json';
+import regionIdsJson from '../../../../__testData__/regionIds.json';
+import wrongRegionIdsJson from '../../../../__testData__/wrongRegionIds.json';
+import constantKeysJson from '../../../../__testData__/constantKeys.json';
 
-const wrongRegionNames = ['a1', 'adasf', '1abc', '!@#$', '><1'];
-
-const regionIds = [1, 2, 3, 5, '1', '2', '3', '5'];
-
-const wrongRegionIds = ['10', '9999', '23232', 'a1', 'adasf', '1abc', '!@#$', '><1', 10, 34, 6393, 9999];
-
-const constantKeys: ConstantKey[] = [
-  'REGION_API_HOSTS',
-  'OAUTH_AUTHORIZE_URIS',
-  'OAUTH_TOKEN_URIS',
-  'OAUTH_CHECK_TOKEN_URIS',
-];
-
+/* tslint:disable no-expression-statement */
 describe('getUriByRegion()', () => {
   test('should be defined', () => {
     expect(getUriByRegion).toBeDefined();
@@ -48,35 +19,36 @@ describe('getUriByRegion()', () => {
     expect(typeof getUriByRegion).toBe('function');
   });
 
-  regionIds.forEach(regionId =>
-    constantKeys.forEach(constantKey => {
-      test('should return correct value for ${regionId} and ${constantKey} as valid parameters', () => {
+  (regionIdsJson as ReadonlyArray<number | string>).forEach(regionId =>
+    (constantKeysJson as ReadonlyArray<ConstantKey>).forEach(constantKey => {
+      test(`should return correct value for ${regionId} and ${constantKey} as valid parameters`, () => {
         expect(getUriByRegion(regionId, constantKey)).toMatchSnapshot();
       });
     }),
   );
 
-  wrongRegionIds.forEach(wrongRegionId =>
-    constantKeys.forEach(constantKey => {
+  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach(wrongRegionId =>
+    (constantKeysJson as ReadonlyArray<ConstantKey>).forEach(constantKey => {
       test('should throw RangeError for ${wrongRegionId} as invalid parameter', () => {
         expect(() => getUriByRegion(wrongRegionId, constantKey)).toThrow(RangeError);
       });
     }),
   );
 
-  regionNames.forEach(regionName =>
-    constantKeys.forEach(constantKey => {
-      test('should return correct value for ${regionName} and ${constantKey} as valid parameters', () => {
+  (regionNamesJson as ReadonlyArray<string>).forEach(regionName =>
+    (constantKeysJson as ReadonlyArray<ConstantKey>).forEach(constantKey => {
+      test(`should return correct value for ${regionName} as valid region name`, () => {
         expect(getUriByRegion(regionName, constantKey)).toMatchSnapshot();
       });
     }),
   );
 
-  wrongRegionNames.forEach(wrongRegionName =>
-    constantKeys.forEach(constantKey => {
-      test('should return correct value for ${regionName} and ${constantKey} as valid parameters', () => {
+  (wrongRegionNamesJson as ReadonlyArray<string>).forEach(wrongRegionName =>
+    (constantKeysJson as ReadonlyArray<ConstantKey>).forEach(constantKey => {
+      test(`should throw RangeError for ${wrongRegionName} as invalid region name`, () => {
         expect(() => getUriByRegion(wrongRegionName, constantKey)).toThrow(RangeError);
       });
     }),
   );
 });
+/* tslint:enable no-expression-statement */

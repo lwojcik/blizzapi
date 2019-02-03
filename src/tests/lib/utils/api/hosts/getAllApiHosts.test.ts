@@ -3,6 +3,7 @@ import constants from '../../../../../lib/constants';
 
 const { getAllApiHosts } = utils;
 
+/* tslint:disable no-expression-statement */
 describe('getApiHosts()', () => {
   test('should be defined', () => {
     expect(getAllApiHosts).toBeDefined();
@@ -21,3 +22,4 @@ describe('getApiHosts()', () => {
     expect(getAllApiHosts()).toMatchObject(constants.REGION_API_HOSTS);
   });
 });
+/* tslint:enable no-expression-statement */

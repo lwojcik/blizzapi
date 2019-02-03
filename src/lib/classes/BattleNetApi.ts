@@ -13,10 +13,12 @@ import * as bnetHelpers from '../helpers/bnet';
 import * as jsonHelpers from '../helpers/json';
 import { getTokenUriByRegion } from '../utils/oauth/tokenUris';
 
+/* tslint:disable:no-unnecessary-class no-this no-expression-statement no-object-mutation readonly-keyword typedef */
+
 export default class BattleNetApi {
-  private region: RegionIdOrName;
-  private clientId: ClientId;
-  private clientSecret: ClientSecret;
+  private readonly region: RegionIdOrName;
+  private readonly clientId: ClientId;
+  private readonly clientSecret: ClientSecret;
   private accessToken: AccessToken;
   // options:
   // validateAccessTokenOnEachQuery - bool
@@ -59,3 +61,5 @@ export default class BattleNetApi {
 
   // queryAndParseBatch(endpoints:Endpoints, selectors:SelectorArray)
 }
+
+/* tslint:disable:no-unnecessary-class no-this */
