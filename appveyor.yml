@@ -13,7 +13,7 @@ platform:
 
 install:
   - ps: Install-Product node $env:nodejs_version
-  - npm ci
+  - npm install
 
 test_script:
   - node --version
