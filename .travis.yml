@@ -32,7 +32,7 @@ before_install: >
   fi
 
 install:
-  - npm ci
+  - node_version=$(node -v); if [ ${node_version:1:1} = 6 ]; then npm install; else; npm ci; fi;
   - npm install -g codecov
 
 before_script:
