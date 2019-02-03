@@ -21,6 +21,7 @@ before_script:
 
 script:
   - npm run test
+  - npm run build
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
