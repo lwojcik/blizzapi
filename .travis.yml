@@ -21,6 +21,16 @@ node_js:
   - 'lts/*'
   - 'node'
 
+before_install:
+ - npm install --global npm@
+before_install: >
+  node_version=$(node -v);
+  if  [ ${node_version:1:1} = 6 ]; then
+      npm install --global npm@^4
+    else
+      npm install --global npm@latest
+  fi
+
 install:
   - npm ci
   - npm install -g codecov
