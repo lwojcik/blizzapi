@@ -4,7 +4,7 @@
         "tslint-config-airbnb",
         "tslint-config-prettier",
         "tslint-plugin-prettier",
-        "tslint-immutable"
+        "tslint-immutable/all"
     ],
     "jsRules": {},
     "rules": {
