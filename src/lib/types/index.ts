@@ -1,3 +1,5 @@
+import { EndpointWithSelector } from '../interfaces';
+
 /** Common */
 export type Uri = string;
 
@@ -51,4 +53,6 @@ export type Options = Object | undefined;
 export type Endpoint = string;
 export type Endpoints = ReadonlyArray<Endpoint>;
 export type HttpMethod = 'GET' | 'POST';
-export type JSONSelector = string;
+export type Selector = string;
+
+export type EndpointsWithSelectors = ReadonlyArray<EndpointWithSelector>;

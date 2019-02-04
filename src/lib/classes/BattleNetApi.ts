@@ -6,8 +6,9 @@ import {
   Endpoints,
   AccessToken,
   JSONSelector,
+  EndpointsWithSelectors,
 } from '../types';
-// import { QueryBatchOptions } from '../interfaces';
+import /*QueryBatchOptions*/ '../interfaces';
 import * as oauthHelpers from '../helpers/oauth';
 import * as bnetHelpers from '../helpers/bnet';
 import * as jsonHelpers from '../helpers/json';
@@ -59,7 +60,10 @@ export default class BattleNetApi {
     return bnetHelpers.queryBatch(this.region, endpoints, accessToken);
   }
 
-  // queryAndParseBatch(endpoints:Endpoints, selectors:SelectorArray)
+  async querySearchBatch(endpointsWithSelectors: EndpointsWithSelectors) {
+    const accessToken = await this.getAccessToken();
+    return bnetHelpers.querySearchBatch(this.region, endpointsWithSelectors, accessToken);
+  }
 }
 
 /* tslint:disable:no-unnecessary-class no-this */

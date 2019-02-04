@@ -1,4 +1,4 @@
-import { validateUri } from '../../../lib/helpers/common';
+import { uri as validateUri } from '../../../lib/helpers/validators';
 
 /* tslint:disable no-expression-statement */
 describe('validateUri()', () => {

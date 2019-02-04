@@ -1,6 +1,6 @@
 import 'cross-fetch/polyfill';
-import { Uri, HttpMethod } from '../types';
-import { validateUri } from './common';
+import { Uri, HttpMethod } from '../../types';
+import { uri as validateUri } from '../validators';
 
 /**
  * Performs basic fetch request from given uri
@@ -11,20 +11,15 @@ import { validateUri } from './common';
  * @param {URLSearchParams} params HTTP request body parameters
  * @returns {object} Data returned by requested uri
  */
-export const fetchFromUri = async (
-  uri: Uri,
-  method: HttpMethod = 'GET',
-  headers?: Headers,
-  params?: URLSearchParams,
-) => {
+export default async (uri: Uri, method: HttpMethod = 'GET', headers?: Headers, params?: URLSearchParams) => {
   try {
-    const isUriValid = validateUri(uri);
-    /* tslint:disable no-if-statement */
-    if (!isUriValid) throw new RangeError(`'${uri}' is not a valid parameter for fetchFromUri()`);
-    /* tslint:enable no-if-statement */
+    // tslint:disable-next-line no-if-statement
+    if (!validateUri(uri)) throw new RangeError(`'${uri}' is not a valid parameter for fetchFromUri()`);
+
     const options = {
       method,
     };
+
     /* tslint:disable no-if-statement no-expression-statement */
     if (headers) Object.assign(options, { headers });
 
@@ -34,9 +29,9 @@ export const fetchFromUri = async (
 
     const responseObject = await fetch(uri, options);
     const response = await responseObject;
-    /* tslint:disable no-if-statement */
+
+    // tslint:disable-next-line no-if-statement
     if (!response.ok) return response;
-    /* tslint:enable no-if-statement */
 
     const parsedResponse = await response.json();
     return parsedResponse;

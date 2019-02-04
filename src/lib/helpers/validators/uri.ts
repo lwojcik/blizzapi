@@ -1,4 +1,4 @@
-import { Uri } from '../types';
+import { Uri } from '../../types';
 
 /**
  * Validates uri via matching it against regex pattern
@@ -6,15 +6,11 @@ import { Uri } from '../types';
  * @param {string} uri Fetch request uri starting with http(s) (e.g. https://example.com/api/endpoint)
  * @returns {Boolean} True for valid uri, false for incorrect one
  */
-export const validateUri = (uri: Uri) => {
+export default (uri: Uri) => {
   // via https://www.regextester.com/94502
 
   /* tslint:disable no-expression-statement */
   const uriTestRegex = /^(?:http(s)?:\/\/)[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
   return uriTestRegex.test(uri);
   /* tslint-enable no-expression-statement */
-};
-
-export const delay = (ms: number) => {
-  return new Promise(fn => setTimeout(fn, ms));
 };
