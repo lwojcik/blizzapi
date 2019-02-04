@@ -21,7 +21,9 @@ describe('getAllLocaleNames()', () => {
   });
 
   test('number of returned elements should match length of constants.REGIONS values after flattening', () => {
-    const flattenedLocaleNamesLength = <number>([] as ReadonlyArray<string>).concat(...Object.values(LOCALES)).length;
+    const flattenedLocaleNamesLength = <number>(
+      ([] as ReadonlyArray<string>).concat(...Object.values(LOCALES)).length
+    );
     expect(getAllLocaleNames().length).toStrictEqual(flattenedLocaleNamesLength);
   });
 });

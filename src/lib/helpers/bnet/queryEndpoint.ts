@@ -3,7 +3,11 @@ import { endpoint as validateEndpoint } from '../validators';
 import { getApiHostByRegion } from '../../utils/api';
 import { fetchFromUri } from '../fetch';
 
-export default (region: RegionIdOrName, endpoint: string, accessToken: AccessToken) => {
+export const queryEndpoint = (
+  region: RegionIdOrName,
+  endpoint: string,
+  accessToken: AccessToken,
+) => {
   const validEndpoint = validateEndpoint(endpoint);
 
   // tslint:disable-next-line no-if-statement

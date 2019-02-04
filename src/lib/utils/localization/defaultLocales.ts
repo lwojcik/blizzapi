@@ -23,7 +23,9 @@ export const getDefaultLocaleIndexForRegionId = (regionId: RegionIdAsNumberOrStr
 
   /* tslint:disable no-if-statement */
   if (!isRegionIdValid) {
-    throw new RangeError(`${regionIdAsString} is not a valid parameter for getDefaultLocaleIndexForRegionId()`);
+    throw new RangeError(
+      `${regionIdAsString} is not a valid parameter for getDefaultLocaleIndexForRegionId()`,
+    );
   }
   /* tslint:enable no-if-statement */
 
@@ -42,7 +44,9 @@ export const getDefaultLocaleNameForRegionId = (regionId: RegionIdAsNumberOrStri
 
   /* tslint:disable no-if-statement */
   if (!isRegionIdValid) {
-    throw new RangeError(`${regionIdAsString} is not a valid parameter for getDefaultLocaleNameForRegionId()`);
+    throw new RangeError(
+      `${regionIdAsString} is not a valid parameter for getDefaultLocaleNameForRegionId()`,
+    );
   }
   /* tslint:enable no-if-statement */
 

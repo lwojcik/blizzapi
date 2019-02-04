@@ -70,18 +70,25 @@ export const validateSc2Realm = (sc2Realm: Sc2RealmAsNumberOrString) => {
  * @param regionId Region id as integer or string
  * @return List of locales available in a specific region as array of strings
  */
-export const isSc2RealmValidForRegionId = (sc2Realm: Sc2RealmAsNumberOrString, regionId: RegionIdAsNumberOrString) => {
+export const isSc2RealmValidForRegionId = (
+  sc2Realm: Sc2RealmAsNumberOrString,
+  regionId: RegionIdAsNumberOrString,
+) => {
   const doesSc2RealmLookValid = checkIfSc2RealmLooksValid(sc2Realm);
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
   /* tslint:disable no-if-statement */
   if (!doesSc2RealmLookValid) {
-    throw new RangeError(`${sc2Realm} is not a valid sc2Realm parameter for isSc2RealmValidForRegionId()`);
+    throw new RangeError(
+      `${sc2Realm} is not a valid sc2Realm parameter for isSc2RealmValidForRegionId()`,
+    );
   }
 
   if (!isRegionIdValid) {
-    throw new RangeError(`${regionId} is not a valid regionId parameter for isSc2RealmValidForRegionId()`);
+    throw new RangeError(
+      `${regionId} is not a valid regionId parameter for isSc2RealmValidForRegionId()`,
+    );
   }
   /* tslint:enable no-if-statement */
 

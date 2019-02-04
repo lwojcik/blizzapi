@@ -52,7 +52,9 @@ describe('isSc2RealmValidForRegionId()', () => {
   (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach(wrongRegionId =>
     (nonexistentSc2realmsJson as ReadonlyArray<number | string>).forEach(nonexistentSc2realm => {
       test(`should throw RangeError for ${wrongRegionId} as wrong region id and ${nonexistentSc2realm} as non-existent SC2 realm`, () => {
-        expect(() => isSc2RealmValidForRegionId(nonexistentSc2realm, wrongRegionId)).toThrow(RangeError);
+        expect(() => isSc2RealmValidForRegionId(nonexistentSc2realm, wrongRegionId)).toThrow(
+          RangeError,
+        );
       });
     }),
   );

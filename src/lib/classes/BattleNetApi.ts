@@ -11,7 +11,7 @@ import {
 import /*QueryBatchOptions*/ '../interfaces';
 import * as oauthHelpers from '../helpers/oauth';
 import * as bnetHelpers from '../helpers/bnet';
-import * as jsonHelpers from '../helpers/json';
+import { searchObjectBySelector } from '../helpers/json';
 import { getTokenUriByRegion } from '../utils/oauth/tokenUris';
 
 /* tslint:disable:no-class no-this no-expression-statement no-object-mutation readonly-keyword typedef */
@@ -27,7 +27,12 @@ export default class BattleNetApi {
   // onAccessTokenRefresh - fn to run after access token is fetched
   // onAccessTokenInvalid - fn to run if bnet responds with 403
 
-  constructor(region: RegionIdOrName, clientId: ClientId, clientSecret: ClientSecret, accessToken?: AccessToken) {
+  constructor(
+    region: RegionIdOrName,
+    clientId: ClientId,
+    clientSecret: ClientSecret,
+    accessToken?: AccessToken,
+  ) {
     this.region = region;
     this.clientId = clientId;
     this.clientSecret = clientSecret;
@@ -35,14 +40,18 @@ export default class BattleNetApi {
   }
 
   private async getAccessToken() {
-    return this.accessToken === '' ? await this.setAccessToken() : this.accessToken;
+    return this.accessToken.length === 0 ? await this.setAccessToken() : this.accessToken;
   }
 
   private async setAccessToken() {
     const tokenUri = getTokenUriByRegion(this.region);
-    const accessToken = await oauthHelpers.getAccessToken(tokenUri, this.clientId, this.clientSecret);
+    const accessToken = await oauthHelpers.getAccessToken(
+      tokenUri,
+      this.clientId,
+      this.clientSecret,
+    );
     this.accessToken = accessToken;
-    return this.accessToken;
+    return accessToken;
   }
 
   async query(endpoint: Endpoint) {
@@ -52,7 +61,7 @@ export default class BattleNetApi {
 
   async querySearch(endpoint: Endpoint, selector: Selector) {
     const response = await this.query(endpoint);
-    return jsonHelpers.searchObjectBySelector(response, selector);
+    return selector ? searchObjectBySelector(response, selector) : response;
   }
 
   async queryBatch(endpoints: Endpoints) {

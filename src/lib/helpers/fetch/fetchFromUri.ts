@@ -14,8 +14,9 @@ import { uri as validateUri } from '../validators';
 export default async (uri: Uri, method: HttpMethod = 'GET', headers?: Headers, params?: URLSearchParams) => {
   try {
     // tslint:disable-next-line no-if-statement
-    if (!validateUri(uri)) throw new RangeError(`'${uri}' is not a valid parameter for fetchFromUri()`);
-
+    if (!validateUri(uri)) {
+      throw new RangeError(`'${uri}' is not a valid parameter for fetchFromUri()`);
+    }
     const options = {
       method,
     };

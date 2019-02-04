@@ -19,7 +19,9 @@ describe('getDefaultLocaleNameForRegionId()', () => {
 
   (regionIdsJson as ReadonlyArray<number | string>).forEach(regionId =>
     test(`should return correct value for ${regionId} as valid region id`, () => {
-      expect(getDefaultLocaleNameForRegionId(regionId)).toBe(LOCALES[regionId][DEFAULT_LOCALES[regionId]]);
+      expect(getDefaultLocaleNameForRegionId(regionId)).toBe(
+        LOCALES[regionId][DEFAULT_LOCALES[regionId]],
+      );
     }),
   );
 

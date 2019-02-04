@@ -14,7 +14,10 @@ export const getConstantByRegion = (regionIdOrName: RegionIdOrName, constantKey:
   return getConstantByRegionName(regionIdOrName.toString(), constantKey);
 };
 
-export const getConstantByRegionId = (regionId: RegionIdAsNumberOrString, constantKey: ConstantKey) => {
+export const getConstantByRegionId = (
+  regionId: RegionIdAsNumberOrString,
+  constantKey: ConstantKey,
+) => {
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = validateRegionId(regionIdAsString);
 

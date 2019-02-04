@@ -52,7 +52,9 @@ describe('isLocaleValidForRegionId()', () => {
   (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach(wrongRegionId =>
     (nonexistentLocalesJson as ReadonlyArray<string>).forEach(nonExistentLocale =>
       test('should throw RangeError for ${wrongRegionId} as invalid region id and ${nonExistentLocale} as non-existent locale', () => {
-        expect(() => isLocaleValidForRegionId(nonExistentLocale, wrongRegionId)).toThrow(RangeError);
+        expect(() => isLocaleValidForRegionId(nonExistentLocale, wrongRegionId)).toThrow(
+          RangeError,
+        );
       }),
     ),
   );

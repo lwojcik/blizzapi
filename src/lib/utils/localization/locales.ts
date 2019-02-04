@@ -78,14 +78,20 @@ export const isLocaleValidForRegionId = (locale: Locale, regionId: RegionIdAsNum
 
   /* tslint:disable no-if-statement */
   if (!doesLocaleLookValid) {
-    throw new RangeError(`${locale} is not a valid locale parameter for isLocaleValidForRegionId()`);
+    throw new RangeError(
+      `${locale} is not a valid locale parameter for isLocaleValidForRegionId()`,
+    );
   }
 
   if (!isRegionIdValid) {
-    throw new RangeError(`${regionId} is not a valid regionId parameter for isLocaleValidForRegionId()`);
+    throw new RangeError(
+      `${regionId} is not a valid regionId parameter for isLocaleValidForRegionId()`,
+    );
   }
   /* tslint:enable no-if-statement */
 
-  const localesForRegionId = getLocalesByRegionId(regionId).map(localeName => localeName.toLowerCase());
+  const localesForRegionId = getLocalesByRegionId(regionId).map(localeName =>
+    localeName.toLowerCase(),
+  );
   return localesForRegionId.includes(lowerCaseLocale);
 };

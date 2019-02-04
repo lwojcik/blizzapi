@@ -1,7 +1,11 @@
 import { RegionIdOrName, EndpointsWithSelectors, AccessToken } from '../../types';
 import { endpointsWithSelectors as validateEndpointsWithSelectors } from '../validators';
 
-export default (region: RegionIdOrName, endpointsWithSelectors: EndpointsWithSelectors, accessToken: AccessToken) => {
+export default (
+  region: RegionIdOrName,
+  endpointsWithSelectors: EndpointsWithSelectors,
+  accessToken: AccessToken,
+) => {
   // tslint:disable no-expression-statement
   console.log(region);
   console.log(accessToken);

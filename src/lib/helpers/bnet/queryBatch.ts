@@ -1,6 +1,6 @@
 import { RegionIdOrName, Endpoints, AccessToken } from '../../types';
 import { endpoints as validateEndpoints } from '../validators';
-import queryEndpoint from './queryEndpoint';
+import { queryEndpoint } from './queryEndpoint';
 import { delay } from '../common';
 
 export default async (region: RegionIdOrName, endpoints: Endpoints, accessToken: AccessToken) => {

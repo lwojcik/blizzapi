@@ -1,4 +1,7 @@
 import jsonata = require('jsonata');
 import { Selector } from '../../types';
 
-export default (data: object, selector: Selector) => jsonata(selector).evaluate(data);
+// tslint:disable
+export default (data: any, selector: Selector) => jsonata(selector).evaluate(data);
+
+// tslint:enable

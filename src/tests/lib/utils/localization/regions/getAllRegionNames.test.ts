@@ -21,7 +21,9 @@ describe('getAllRegionNames()', () => {
   });
 
   test('number of returned elements should match length of constants.REGIONS values after flattening', () => {
-    const flattenedRegionsLength = <number>([] as ReadonlyArray<string>).concat(...Object.values(REGIONS)).length;
+    const flattenedRegionsLength = <number>(
+      ([] as ReadonlyArray<string>).concat(...Object.values(REGIONS)).length
+    );
     expect(getAllRegionNames().length).toStrictEqual(flattenedRegionsLength);
   });
 });

@@ -27,7 +27,9 @@ describe('getAllDefaultLocales()', () => {
 
   test('object values should be derived from constants.LOCALES', () => {
     const receivedLocaleNames = Object.values(getAllDefaultLocaleNames());
-    const expectedLocaleNames = ([] as ReadonlyArray<string>).concat(...Object.values(constants.LOCALES));
+    const expectedLocaleNames = ([] as ReadonlyArray<string>).concat(
+      ...Object.values(constants.LOCALES),
+    );
 
     receivedLocaleNames.forEach(localeName => {
       expect(expectedLocaleNames.includes(localeName)).toBe(true);
