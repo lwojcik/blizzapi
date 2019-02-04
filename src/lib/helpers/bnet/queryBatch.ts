@@ -3,7 +3,7 @@ import { endpoints as validateEndpoints } from '../validators';
 import queryEndpoint from './queryEndpoint';
 import { delay } from '../common';
 
-export const queryBatch = async (region: RegionIdOrName, endpoints: Endpoints, accessToken: AccessToken) => {
+export default async (region: RegionIdOrName, endpoints: Endpoints, accessToken: AccessToken) => {
   const validEndpoints = validateEndpoints(endpoints);
 
   /* tslint:disable-next-line no-if-statement */

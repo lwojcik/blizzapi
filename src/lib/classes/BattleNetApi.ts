@@ -5,7 +5,7 @@ import {
   /* Options, */ Endpoint,
   Endpoints,
   AccessToken,
-  JSONSelector,
+  Selector,
   EndpointsWithSelectors,
 } from '../types';
 import /*QueryBatchOptions*/ '../interfaces';
@@ -50,9 +50,9 @@ export default class BattleNetApi {
     return bnetHelpers.queryEndpoint(this.region, endpoint, accessToken);
   }
 
-  async querySearch(endpoint: Endpoint, selector: JSONSelector) {
+  async querySearch(endpoint: Endpoint, selector: Selector) {
     const response = await this.query(endpoint);
-    return jsonHelpers.querySearch(response, selector);
+    return jsonHelpers.searchObjectBySelector(response, selector);
   }
 
   async queryBatch(endpoints: Endpoints) {
