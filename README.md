@@ -1,4 +1,4 @@
-# blizzard-battlenet-api
+# BlizzAPI
 
 [![Travis CI Build Status](https://travis-ci.org/lukemnet/blizzard-battlenet-api.svg?branch=master)](https://travis-ci.org/lukemnet/blizzard-battlenet-api)
 [![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/uevma0vydlu52bcd/branch/master?svg=true)](https://ci.appveyor.com/project/lwojcik/blizzard-battlenet-api/branch/master)
