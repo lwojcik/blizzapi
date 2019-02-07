@@ -11,7 +11,12 @@ import { uri as validateUri } from '../validators';
  * @param {URLSearchParams} params HTTP request body parameters
  * @returns {object} Data returned by requested uri
  */
-export default async (uri: Uri, method: HttpMethod = 'GET', headers?: Headers, params?: URLSearchParams) => {
+export default async (
+  uri: Uri,
+  method: HttpMethod = 'GET',
+  headers?: Headers,
+  params?: URLSearchParams,
+) => {
   try {
     // tslint:disable-next-line no-if-statement
     if (!validateUri(uri)) {

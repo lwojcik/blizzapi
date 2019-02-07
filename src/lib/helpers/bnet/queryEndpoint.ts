@@ -3,7 +3,7 @@ import { endpoint as validateEndpoint } from '../validators';
 import { getApiHostByRegion } from '../../utils/api';
 import { fetchFromUri } from '../fetch';
 
-export const queryEndpoint = (
+export const queryEndpoint = async (
   region: RegionIdOrName,
   endpoint: string,
   accessToken: AccessToken,
@@ -20,5 +20,6 @@ export const queryEndpoint = (
   // tslint:disable-next-line no-expression-statement
   headers.append('Authorization', `Bearer ${accessToken}`);
 
-  return fetchFromUri(requestUri, 'GET', headers);
+  const response = await fetchFromUri(requestUri, 'GET', headers);
+  return response;
 };

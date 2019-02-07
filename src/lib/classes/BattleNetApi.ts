@@ -8,7 +8,7 @@ import {
   Selector,
   EndpointsWithSelectors,
 } from '../types';
-import /*QueryBatchOptions*/ '../interfaces';
+/* import QueryBatchOptions '../interfaces' */
 import * as oauthHelpers from '../helpers/oauth';
 import * as bnetHelpers from '../helpers/bnet';
 import { searchObjectBySelector } from '../helpers/json';
@@ -39,8 +39,8 @@ export default class BattleNetApi {
     this.accessToken = accessToken || '';
   }
 
-  private async getAccessToken() {
-    return this.accessToken.length === 0 ? await this.setAccessToken() : this.accessToken;
+  private getAccessToken() {
+    return this.accessToken.length === 0 ? this.setAccessToken() : this.accessToken;
   }
 
   private async setAccessToken() {
