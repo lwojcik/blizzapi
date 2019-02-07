@@ -1,4 +1,4 @@
-import 'cross-fetch/polyfill';
+import { default as fetch } from 'cross-fetch';
 import { Uri, HttpMethod } from '../../types';
 import { uri as validateUri } from '../validators';
 
