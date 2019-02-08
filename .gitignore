@@ -47,9 +47,6 @@ ssl/
 # Local database 
 db/
 
-# Test data folder
-__TESTDATA__
-
 # Build
 dist/
 
