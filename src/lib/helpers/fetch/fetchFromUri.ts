@@ -1,6 +1,6 @@
-import { default as fetch } from 'cross-fetch';
 import { Uri, HttpMethod } from '../../types';
 import { uri as validateUri } from '../validators';
+import 'cross-fetch/polyfill';
 
 /**
  * Performs basic fetch request from given uri
@@ -33,14 +33,24 @@ export default async (
     if (method === 'POST') Object.assign(options, { body: params });
     /* tslint:enable no-if-statement */
 
-    const responseObject = await fetch(uri, options);
-    const response = await responseObject;
+    const response = await fetch(uri, options);
 
-    // tslint:disable-next-line no-if-statement
-    if (!response.ok) return response;
-
-    const parsedResponse = await response.json();
-    return parsedResponse;
+    switch (response.status) {
+      case 200:
+        const parsedResponse = await response.json();
+        return parsedResponse;
+      case 401:
+        return {
+          status: response.status,
+          statusText: response.statusText,
+          message: 'Client credentials wrong or missing (client id, client secret or access token)',
+        };
+      default:
+        return {
+          status: response.status,
+          statusText: response.statusText,
+        };
+    }
   } catch (err) {
     throw err;
   }

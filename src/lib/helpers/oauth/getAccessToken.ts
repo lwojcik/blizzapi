@@ -4,8 +4,7 @@ import fetchAccessToken from './fetchAccessToken';
 export default async (oauthUri: Uri, clientId: ClientId, clientSecret: ClientSecret) => {
   try {
     const accessTokenObject = await fetchAccessToken(oauthUri, clientId, clientSecret);
-    const accessToken = <string>accessTokenObject.access_token;
-    return accessToken;
+    return <string>accessTokenObject.access_token;
   } catch (error) {
     throw error;
   }

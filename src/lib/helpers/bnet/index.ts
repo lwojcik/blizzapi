@@ -1,4 +1,4 @@
+export { default as query } from './query';
 export { default as queryBatch } from './queryBatch';
-export { queryEndpoint } from './queryEndpoint';
+export { default as querySearch } from './querySearch';
 export { default as querySearchBatch } from './querySearchBatch';
-// export { default as queryEndpoint } from './queryEndpoint';

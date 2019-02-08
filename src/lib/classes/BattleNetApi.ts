@@ -2,17 +2,16 @@ import {
   RegionIdOrName,
   ClientId,
   ClientSecret,
-  /* Options, */ Endpoint,
+  Endpoint,
   Endpoints,
   AccessToken,
   Selector,
   EndpointsWithSelectors,
 } from '../types';
-/* import QueryBatchOptions '../interfaces' */
 import * as oauthHelpers from '../helpers/oauth';
 import * as bnetHelpers from '../helpers/bnet';
-import { searchObjectBySelector } from '../helpers/json';
 import { getTokenUriByRegion } from '../utils/oauth/tokenUris';
+import { QueryBatchOptions } from '../interfaces';
 
 /* tslint:disable:no-class no-this no-expression-statement no-object-mutation readonly-keyword typedef */
 
@@ -21,58 +20,54 @@ export default class BattleNetApi {
   private readonly clientId: ClientId;
   private readonly clientSecret: ClientSecret;
   private accessToken: AccessToken;
+  private options: QueryBatchOptions;
   // options:
   // validateAccessTokenOnEachQuery - bool
   // refreshAccessToken - bool - should access token be automatically if bnet responds with 403
   // onAccessTokenRefresh - fn to run after access token is fetched
-  // onAccessTokenInvalid - fn to run if bnet responds with 403
+  // onAccessTokenInvalid - fn to run if bnet responds with 401
 
   constructor(
     region: RegionIdOrName,
     clientId: ClientId,
     clientSecret: ClientSecret,
     accessToken?: AccessToken,
+    options?: QueryBatchOptions,
   ) {
     this.region = region;
     this.clientId = clientId;
     this.clientSecret = clientSecret;
-    this.accessToken = accessToken || '';
+    this.accessToken = accessToken || null;
+    this.options = (options as QueryBatchOptions) || {
+      interval: 1000,
+    };
   }
 
-  private getAccessToken() {
-    return this.accessToken.length === 0 ? this.setAccessToken() : this.accessToken;
-  }
+  private getAccessToken = () => (this.accessToken ? this.accessToken : this.setAccessToken());
 
-  private async setAccessToken() {
-    const tokenUri = getTokenUriByRegion(this.region);
-    const accessToken = await oauthHelpers.getAccessToken(
-      tokenUri,
+  private setAccessToken = async () =>
+    (this.accessToken = await oauthHelpers.getAccessToken(
+      getTokenUriByRegion(this.region),
       this.clientId,
       this.clientSecret,
+    ));
+
+  query = async (endpoint: Endpoint) =>
+    bnetHelpers.query(this.region, endpoint, await this.getAccessToken());
+
+  querySearch = async (endpoint: Endpoint, selector: Selector) =>
+    bnetHelpers.querySearch(this.region, endpoint, selector, await this.getAccessToken());
+
+  queryBatch = async (endpoints: Endpoints) =>
+    bnetHelpers.queryBatch(
+      this.region,
+      endpoints,
+      await this.getAccessToken(),
+      this.options.interval,
     );
-    this.accessToken = accessToken;
-    return accessToken;
-  }
 
-  async query(endpoint: Endpoint) {
-    const accessToken = await this.getAccessToken();
-    return bnetHelpers.queryEndpoint(this.region, endpoint, accessToken);
-  }
-
-  async querySearch(endpoint: Endpoint, selector: Selector) {
-    const response = await this.query(endpoint);
-    return selector ? searchObjectBySelector(response, selector) : response;
-  }
-
-  async queryBatch(endpoints: Endpoints) {
-    const accessToken = await this.getAccessToken();
-    return bnetHelpers.queryBatch(this.region, endpoints, accessToken);
-  }
-
-  async querySearchBatch(endpointsWithSelectors: EndpointsWithSelectors) {
-    const accessToken = await this.getAccessToken();
-    return bnetHelpers.querySearchBatch(this.region, endpointsWithSelectors, accessToken);
-  }
+  querySearchBatch = async (endpointsWithSelectors: EndpointsWithSelectors) =>
+    bnetHelpers.querySearchBatch(this.region, endpointsWithSelectors, await this.getAccessToken());
 }
 
 /* tslint:disable:no-unnecessary-class no-this */

@@ -5,8 +5,7 @@ export interface RegionIdProperties<Value> {
 }
 
 export interface QueryBatchOptions {
-  readonly async: boolean;
-  readonly sleepInterval: number;
+  readonly interval: number;
 }
 
 export interface EndpointWithSelector {
