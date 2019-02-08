@@ -19,6 +19,7 @@ describe('validateSelector()', () => {
   test('returns true for non-empty selector as parameter', () => {
     expect(validateSelector('test')).toBe(true);
   });
+
   test('returns false for empty selector as parameter', () => {
     expect(validateSelector('')).toBe(false);
   });

@@ -1,17 +1,13 @@
-import { Endpoint } from '../../types';
+import { ValidatorFunction, Endpoint } from '../../types';
 
-// tslint:disable no-expression-statement
-export default (endpoint: Endpoint) => {
-  const endpointStartsWithSlash = endpoint[0] === '/';
-  const endpointIsLongEnough = endpoint.length > 3;
-  const endpointHasMoreThanOneSlash = endpoint.split('/').length - 1 > 1;
+const endpointStartsWithSlash = (endpoint: Endpoint) => endpoint[0] === '/';
+const endpointIsLongEnough = (endpoint: Endpoint) => endpoint.length > 3;
+const endpointHasMoreThanOneSlash = (endpoint: Endpoint) => endpoint.split('/').length - 1 > 1;
 
-  return endpointStartsWithSlash
-    ? endpointIsLongEnough
-      ? endpointHasMoreThanOneSlash
-        ? true
-        : false
-      : false
-    : false;
-};
-// tslint:enable no-expression-statement
+const validators = [
+  endpointStartsWithSlash,
+  endpointIsLongEnough,
+  endpointHasMoreThanOneSlash,
+] as ReadonlyArray<ValidatorFunction>;
+
+export default (endpoint: Endpoint) => validators.every(validator => validator(endpoint));
