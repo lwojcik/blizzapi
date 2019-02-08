@@ -8,10 +8,10 @@ import {
   Selector,
   EndpointsWithSelectors,
 } from '../types';
+import { QueryBatchOptions } from '../interfaces';
 import * as oauthHelpers from '../helpers/oauth';
 import * as bnetHelpers from '../helpers/bnet';
 import { getTokenUriByRegion } from '../utils/oauth/tokenUris';
-import { QueryBatchOptions } from '../interfaces';
 
 /* tslint:disable:no-class no-this no-expression-statement no-object-mutation readonly-keyword typedef */
 
