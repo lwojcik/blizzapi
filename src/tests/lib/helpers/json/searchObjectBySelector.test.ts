@@ -18,7 +18,7 @@ describe('searchObjectBySelector()', () => {
   });
 
   test('should return filtered object for valid selector', () => {
-    expect(searchObjectBySelector(sc2profileJson, 'snapshot')).toMatchSnapshot();
+    expect(searchObjectBySelector(sc2profileJson, 'snapshot.seasonSnapshot')).toMatchSnapshot();
   });
 
   test(`should return 'undefined' for non-existent selector`, () => {
