@@ -7,22 +7,15 @@ import {
   AccessToken,
   Selector,
   EndpointsWithSelectors,
-  RegionIdAsNumberOrString,
 } from '../types';
 import { QueryOptions } from '../interfaces';
-import * as oauthHelpers from '../helpers/oauth';
+import BattleNetAPI from './abstract/BattleNetAPI';
 import * as bnetHelpers from '../helpers/bnet';
-import * as utils from '../utils';
-import { getTokenUriByRegion } from '../utils/oauth/tokenUris';
 
 /* tslint:disable:no-class no-this no-expression-statement no-object-mutation readonly-keyword typedef */
 
-export default class BattleNetApi {
-  private readonly region: RegionIdOrName;
-  private readonly clientId: ClientId;
-  private readonly clientSecret: ClientSecret;
-  private accessToken: AccessToken;
-  private readonly options: QueryOptions;
+export default class BlizzAPI extends BattleNetAPI {
+  readonly options: QueryOptions;
 
   constructor(
     region: RegionIdOrName,
@@ -31,10 +24,7 @@ export default class BattleNetApi {
     accessToken?: AccessToken,
     options?: QueryOptions,
   ) {
-    this.region = region;
-    this.clientId = clientId;
-    this.clientSecret = clientSecret;
-    this.accessToken = accessToken || null;
+    super(region, clientId, clientSecret, accessToken);
     this.options = (options as QueryOptions) || {
       batchQueryInterval: 1000, // interval between subsequent batch queries
       validateAccessToken: false, // whether access token should be validated
@@ -42,15 +32,6 @@ export default class BattleNetApi {
       onAccessTokenRefresh: null, // function to run when access token is refreshed
     };
   }
-
-  private getAccessToken = () => (this.accessToken ? this.accessToken : this.setAccessToken());
-
-  private setAccessToken = async () =>
-    (this.accessToken = await oauthHelpers.getAccessToken(
-      getTokenUriByRegion(this.region),
-      this.clientId,
-      this.clientSecret,
-    ));
 
   query = async (endpoint: Endpoint, options = this.options) =>
     bnetHelpers.query(this.region, endpoint, await this.getAccessToken(), options);
@@ -71,19 +52,6 @@ export default class BattleNetApi {
       await this.getAccessToken(),
       options,
     );
-
-  static validateAccessToken = async (region: RegionIdOrName, accessToken: AccessToken) =>
-    oauthHelpers.validateAccessToken(region, accessToken);
-
-  /* Static utility methods */
-  static getAllRegions = () => utils.getAllRegions();
-
-  static getAllRegionIds = () => utils.getAllRegionIds();
-
-  static getAllRegionNames = () => utils.getAllRegionNames();
-
-  static getRegionNameById = (regionId: RegionIdAsNumberOrString) =>
-    utils.getRegionNameById(regionId);
 }
 
 /* tslint:disable:no-unnecessary-class no-this */
