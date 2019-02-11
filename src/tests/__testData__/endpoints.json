@@ -1,6 +1,7 @@
 [
   "/oauth/authorize",
   "/oauth/token",
+  "/check_token?token=",
   "/oauth/userinfo",
   "/oauth/check_token",
   "/d3/data/act",

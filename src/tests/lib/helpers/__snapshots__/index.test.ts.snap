@@ -16,5 +16,6 @@ Object {
   "searchObjectBySelector": [Function],
   "selector": [Function],
   "uri": [Function],
+  "validateAccessToken": [Function],
 }
 `;

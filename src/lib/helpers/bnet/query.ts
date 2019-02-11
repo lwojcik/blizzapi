@@ -12,7 +12,8 @@ export default async (
 ) => {
   // tslint:disable-next-line
   console.log(options);
-
+  // tslint:disable-next-line
+  console.log(accessToken);
   const validEndpoint = validateEndpoint(endpoint);
 
   // tslint:disable-next-line no-if-statement

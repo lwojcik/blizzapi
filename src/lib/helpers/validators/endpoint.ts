@@ -1,13 +1,8 @@
 import { ValidatorFunction, Endpoint } from '../../types';
 
-const endpointStartsWithSlash = (endpoint: Endpoint) => endpoint[0] === '/';
-const endpointIsLongEnough = (endpoint: Endpoint) => endpoint.length > 3;
-const endpointHasMoreThanOneSlash = (endpoint: Endpoint) => endpoint.split('/').length - 1 > 1;
+const startsWithSlash = (endpoint: Endpoint) => endpoint[0] === '/';
+const isLongEnough = (endpoint: Endpoint) => endpoint.length > 3;
 
-const validators = [
-  endpointStartsWithSlash,
-  endpointIsLongEnough,
-  endpointHasMoreThanOneSlash,
-] as ReadonlyArray<ValidatorFunction>;
+const validators = [startsWithSlash, isLongEnough] as ReadonlyArray<ValidatorFunction>;
 
 export default (endpoint: Endpoint) => validators.every(validator => validator(endpoint));
