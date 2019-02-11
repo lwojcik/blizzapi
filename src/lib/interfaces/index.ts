@@ -4,8 +4,11 @@ export interface RegionIdProperties<Value> {
   readonly [regionId: string]: Value;
 }
 
-export interface QueryBatchOptions {
-  readonly interval: number;
+export interface QueryOptions {
+  readonly batchQueryInterval: number;
+  readonly refreshAccessToken: boolean;
+  readonly onAccessTokenInvalid: Function;
+  readonly onAccessTokenRefresh: Function;
 }
 
 export interface EndpointWithSelector {

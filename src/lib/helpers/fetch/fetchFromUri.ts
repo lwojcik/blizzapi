@@ -21,18 +21,18 @@ export default async (
   if (!validateUri(uri)) {
     throw new RangeError(`'${uri}' is not a valid parameter for fetchFromUri()`);
   }
-  const options = {
+  const requestOptions = {
     method,
   };
 
   /* tslint:disable no-if-statement no-expression-statement */
-  if (headers) Object.assign(options, { headers });
+  if (headers) Object.assign(requestOptions, { headers });
 
   // GET request method cannot have body, so I'm doing this
-  if (method === 'POST') Object.assign(options, { body: params });
+  if (method === 'POST') Object.assign(requestOptions, { body: params });
   /* tslint:enable no-if-statement */
 
-  const response = await fetch(uri, options);
+  const response = await fetch(uri, requestOptions);
 
   switch (response.status) {
     case 200:

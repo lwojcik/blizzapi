@@ -1,15 +1,18 @@
 import { RegionIdOrName, EndpointsWithSelectors, AccessToken } from '../../types';
+import { QueryOptions } from '../../interfaces';
 import { endpointsWithSelectors as validateEndpointsWithSelectors } from '../validators';
 
 export default (
   region: RegionIdOrName,
   endpointsWithSelectors: EndpointsWithSelectors,
   accessToken: AccessToken,
+  options: QueryOptions,
 ) => {
   // tslint:disable no-expression-statement
   console.log(region);
   console.log(accessToken);
   console.log(endpointsWithSelectors);
+  console.log(options);
   // tslint:enable no-expression-statement
 
   const validEndpointsWithSelectors = validateEndpointsWithSelectors(endpointsWithSelectors);
