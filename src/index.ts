@@ -1,1 +1,1 @@
-export * from './lib/classes/BlizzAPI';
+import './lib/classes/BlizzAPI';
