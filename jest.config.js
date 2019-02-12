@@ -5,7 +5,7 @@ module.exports = {
     "<rootDir>/"
   ],
   "transform": {
-    "^.+\\.tsx?$": "ts-jest"
+    "^.+\\.ts?$": "ts-jest"
   },
   "moduleFileExtensions": [
     "ts",
