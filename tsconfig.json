@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "system",
+    "module": "commonjs",
     "outDir": "dist",
     "sourceMap": true,
     "lib": ["es2017", "dom"],
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "declarationMap": true,
-    "outFile": "./dist/index.js",
+    // "outFile": "./dist/index.js",
     "removeComments": true,
     "strict": true,
     "noImplicitAny": true,
@@ -24,5 +24,11 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/tests/*.test.ts",
+    "tests"
+  ]
 }
