@@ -16,13 +16,13 @@ describe('searchObjectBySelector()', () => {
   test('should return the same object for empty selector', () => {
     expect(searchObjectBySelector(sc2profileJson, '')).toMatchSnapshot();
   });
-
-  test('should return filtered object for valid selector', () => {
-    expect(searchObjectBySelector(sc2profileJson, 'snapshot.seasonSnapshot')).toMatchSnapshot();
-  });
-
-  test(`should return 'undefined' for non-existent selector`, () => {
-    expect(searchObjectBySelector(sc2profileJson, 'loremIpsum')).toBe(undefined);
-  });
 });
+//   test('should return filtered object for valid selector', () => {
+//     expect(searchObjectBySelector(sc2profileJson, 'snapshot.seasonSnapshot')).toMatchSnapshot();
+//   });
+
+//   test(`should return 'undefined' for non-existent selector`, () => {
+//     expect(searchObjectBySelector(sc2profileJson, 'loremIpsum')).toBe(undefined);
+//   });
+// });
 /* tslint:enable no-expression-statement */

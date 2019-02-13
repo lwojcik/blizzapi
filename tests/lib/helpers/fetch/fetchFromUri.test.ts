@@ -1,5 +1,3 @@
-// tslint:disable-next-line
-jest.mock('fetchFromUri');
 import { default as fetchFromUri } from '../../../../src/lib/helpers/fetch/fetchFromUri';
 
 /* tslint:disable no-expression-statement */
