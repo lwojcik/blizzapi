@@ -21,6 +21,10 @@ module.exports = {
     "!**/*.{d.ts}",
     "!**/node_modules/**",
     "!**/dist/**"
+  ],
+  "automock": false,
+  "setupFiles": [
+    "./setupJest.ts"
   ]
   // "coverageThreshold": {
   //   "global": {

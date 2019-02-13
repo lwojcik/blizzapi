@@ -8,12 +8,9 @@
     ],
     "jsRules": {},
     "rules": {
-        // Recommended built-in rules
         "no-var-keyword": true,
         "no-parameter-reassignment": true,
         "typedef": [true, "call-signature"],
-
-        // Functional style rules
         "no-unnecessary-class": true,
         "no-this": true,
         "no-mixed-interface": true,
