@@ -11,6 +11,7 @@ import 'cross-fetch/polyfill';
  * @param {URLSearchParams} params HTTP request body parameters
  * @returns {object} Data returned by requested uri
  */
+/* istanbul ignore next */
 export default async (
   uri: Uri,
   method: HttpMethod = 'GET',
@@ -34,20 +35,5 @@ export default async (
 
   const response = await fetch(uri, requestOptions);
 
-  switch (response.status) {
-    case 200:
-      const parsedResponse = await response.json();
-      return parsedResponse;
-    case 401:
-      return {
-        status: response.status,
-        statusText: response.statusText,
-        message: 'Client credentials wrong or missing (client id, client secret or access token)',
-      };
-    default:
-      return {
-        status: response.status,
-        statusText: response.statusText,
-      };
-  }
+  return response.status === 200 ? await response.json() : response;
 };

@@ -1,7 +1,3 @@
-//tslint:disable
-import { GlobalWithFetchMock } from 'jest-fetch-mock';
-
-const customGlobal: GlobalWithFetchMock = global as GlobalWithFetchMock;
-customGlobal.fetch = require('jest-fetch-mock');
-customGlobal.fetchMock = customGlobal.fetch;
-//tslint:disable
+const globalAny: any = global;
+// tslint:disable-next-line
+globalAny.fetch = <any>require('jest-fetch-mock');

@@ -1,4 +1,6 @@
-import { fetchFromUri } from '../../../../src/lib/helpers/fetch';
+// tslint:disable-next-line
+jest.mock('fetchFromUri');
+import { default as fetchFromUri } from '../../../../src/lib/helpers/fetch/fetchFromUri';
 
 /* tslint:disable no-expression-statement */
 describe('fetchFromUri()', () => {
@@ -30,17 +32,6 @@ describe('fetchFromUri()', () => {
     await expect(fetchFromUri(input)).rejects.toThrow(expectedResult);
   });
 
-  // test.each`
-  //   input                                             | expectedResult
-  //   ${'https://httpstat.us/200'}                      | ${'object'}
-  //   ${'http://httpstat.us/200'}                       | ${'object'}
-  //   ${'https://httpstat.us/404'}                      | ${'object'}
-  //   ${'https://google.com'}                           | ${'object'}
-  //   ${'https://microsoft.com'}                        | ${'object'}
-  //   `('returns fetched data for $input as correct uri', ({ input, expectedResult }) => {
-  //     return fetchFromUri(input).then((data) => {
-  //       expect(typeof data).toBe(expectedResult);
-  //     })
-  // });
+  // TODO: unignore fetchFromUri in coverage and write actual tests
 });
 /* tslint:enable no-expression-statement */
