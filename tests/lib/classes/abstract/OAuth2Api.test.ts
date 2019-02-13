@@ -1,5 +1,4 @@
 import OAuth2API from '../../../../src/lib/classes/abstract/OAuth2API';
-import { ok } from 'assert';
 
 // tslint:disable
 class OAuth2APIMock extends OAuth2API {
@@ -9,7 +8,7 @@ class OAuth2APIMock extends OAuth2API {
 
   query(uri: string) {
     return {
-      status: ok,
+      status: 'ok',
       uri,
     };
   }
