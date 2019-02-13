@@ -9,7 +9,6 @@ import {
   EndpointsWithSelectors,
 } from '../types';
 import { QueryOptions } from '../interfaces';
-import jsonata from '../queryEngines/jsonata';
 import BattleNetAPI from './abstract/BattleNetAPI';
 import * as bnetHelpers from '../helpers/bnet';
 
@@ -31,7 +30,6 @@ export default class BlizzAPI extends BattleNetAPI {
       validateAccessToken: false, // whether access token should be validated
       onAccessTokenInvalid: null, // function to run when access token is invalid
       onAccessTokenRefresh: null, // function to run when access token is refreshed
-      queryEngine: jsonata, // engine used to search json object (defaults for jsonata)
     };
   }
 

@@ -1,5 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`searchObjectBySelector() should return filtered object for valid selector 1`] = `
+Object {
+  "1v1": Object {
+    "leagueName": null,
+    "rank": -1,
+    "totalGames": 0,
+    "totalWins": 0,
+  },
+  "2v2": Object {
+    "leagueName": null,
+    "rank": -1,
+    "totalGames": 0,
+    "totalWins": 0,
+  },
+  "3v3": Object {
+    "leagueName": null,
+    "rank": -1,
+    "totalGames": 0,
+    "totalWins": 0,
+  },
+  "4v4": Object {
+    "leagueName": null,
+    "rank": -1,
+    "totalGames": 0,
+    "totalWins": 0,
+  },
+  "Archon": Object {
+    "leagueName": null,
+    "rank": -1,
+    "totalGames": 0,
+    "totalWins": 0,
+  },
+}
+`;
+
 exports[`searchObjectBySelector() should return the same object for empty selector 1`] = `
 Object {
   "achievementShowcase": Array [],

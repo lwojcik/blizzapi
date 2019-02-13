@@ -9,9 +9,4 @@ export default async (
   selector: Selector,
   accessToken: AccessToken,
   options: QueryOptions,
-) =>
-  searchObjectBySelector(
-    await query(region, endpoint, accessToken, options),
-    selector,
-    options.queryEngine,
-  );
+) => searchObjectBySelector(await query(region, endpoint, accessToken, options), selector);

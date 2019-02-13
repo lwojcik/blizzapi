@@ -58,5 +58,3 @@ export type Selector = string;
 export type EndpointsWithSelectors = ReadonlyArray<EndpointWithSelector>;
 
 export type ValidatorFunction = (endpoint: Endpoint) => boolean;
-
-export type QueryEngine = (data: object, selector: Selector) => object;
