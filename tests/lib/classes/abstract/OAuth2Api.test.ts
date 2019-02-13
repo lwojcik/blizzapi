@@ -1,4 +1,4 @@
-import OAuth2API from '../../../src/lib/classes/abstract/OAuth2API';
+import OAuth2API from '../../../../src/lib/classes/abstract/OAuth2API';
 import { ok } from 'assert';
 
 // tslint:disable
