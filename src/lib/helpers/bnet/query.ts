@@ -1,19 +1,11 @@
 import { RegionIdOrName, AccessToken } from '../../types';
-import { QueryOptions } from '../../interfaces';
 import { endpoint as validateEndpoint } from '../validators';
 import { getApiHostByRegion } from '../../utils/api';
 import { fetchFromUri } from '../fetch';
 
-export default async (
-  region: RegionIdOrName,
-  endpoint: string,
-  accessToken: AccessToken,
-  options: QueryOptions,
-) => {
+export default async (region: RegionIdOrName, endpoint: string, accessToken: AccessToken) => {
   // tslint:disable-next-line
-  console.log(options);
   // tslint:disable-next-line
-  console.log(accessToken);
   const validEndpoint = validateEndpoint(endpoint);
 
   // tslint:disable-next-line no-if-statement

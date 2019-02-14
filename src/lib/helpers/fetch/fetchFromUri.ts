@@ -35,5 +35,5 @@ export default async (
 
   const response = await fetch(uri, requestOptions);
 
-  return response.status === 200 ? await response.json() : response;
+  return response.ok ? await response.json() : response;
 };

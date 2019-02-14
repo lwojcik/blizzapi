@@ -6,7 +6,7 @@ import {
   Endpoints,
   AccessToken,
   Selector,
-  EndpointsWithSelectors,
+  // EndpointsWithSelectors,
 } from '../types';
 import { QueryOptions } from '../interfaces';
 import BattleNetAPI from './abstract/BattleNetAPI';
@@ -26,32 +26,31 @@ export default class BlizzAPI extends BattleNetAPI {
   ) {
     super(region, clientId, clientSecret, accessToken);
     this.options = (options as QueryOptions) || {
-      batchQueryInterval: 1000, // interval between subsequent batch queries
-      validateAccessTokenOnQuery: true, // whether access token should be validated
-      onAccessTokenInvalid: null, // function to run when access token is invalid
-      onAccessTokenRefresh: null, // function to run when access token is refreshed
+      batchQueryInterval: 500, // interval between subsequent batch queries
+      // onAccessTokenInvalid: null, // function to run when access token is invalid
+      // onAccessTokenRefresh: null, // function to run when access token is refreshed
     };
   }
 
-  query = async (endpoint: Endpoint, options = this.options) =>
-    bnetHelpers.query(this.region, endpoint, await this.getAccessToken(), options);
+  query = async (endpoint: Endpoint) =>
+    bnetHelpers.query(this.region, endpoint, await this.getAccessToken());
 
-  querySearch = async (endpoint: Endpoint, selector: Selector, options = this.options) =>
-    bnetHelpers.querySearch(this.region, endpoint, selector, await this.getAccessToken(), options);
+  querySearch = async (endpoint: Endpoint, selector: Selector) =>
+    bnetHelpers.querySearch(this.region, endpoint, selector, await this.getAccessToken());
 
   queryBatch = async (endpoints: Endpoints, options = this.options) =>
     bnetHelpers.queryBatch(this.region, endpoints, await this.getAccessToken(), options);
 
-  querySearchBatch = async (
-    endpointsWithSelectors: EndpointsWithSelectors,
-    options = this.options,
-  ) =>
-    bnetHelpers.querySearchBatch(
-      this.region,
-      endpointsWithSelectors,
-      await this.getAccessToken(),
-      options,
-    );
+  // querySearchBatch = async (
+  //   endpointsWithSelectors: EndpointsWithSelectors,
+  //   options = this.options,
+  // ) =>
+  //   bnetHelpers.querySearchBatch(
+  //     this.region,
+  //     endpointsWithSelectors,
+  //     await this.getAccessToken(),
+  //     options,
+  //   );
 }
 
 /* tslint:disable:no-unnecessary-class no-this */

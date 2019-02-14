@@ -17,7 +17,7 @@ export default async (
   if (!validEndpoints) throw new RangeError(`${endpoints} is not a valid endpoint batch.`);
 
   const fetchObjects = endpoints.map(async (endpoint, i) =>
-    delay(i * interval).then(() => query(region, endpoint, accessToken, options)),
+    delay(i * interval).then(() => query(region, endpoint, accessToken)),
   );
   return Promise.all(fetchObjects);
 };
