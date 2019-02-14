@@ -1,6 +1,6 @@
 {
   "name": "blizzapi",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Feature-rich library for Blizzard Battle.net API",
   "homepage": "https://blizzapi.lukem.net",
   "main": "./dist/index.js",
@@ -57,5 +57,19 @@
     "tslint-immutable": "5.1.2",
     "tslint-plugin-prettier": "2.0.1",
     "typescript": "3.3.3"
-  }
+  },
+  "keywords": [
+    "blizzard",
+    "battlenet",
+    "battle-net",
+    "battle-net-api",
+    "api",
+    "starcraft2",
+    "sc2",
+    "wow",
+    "worldofwarcraft",
+    "world-of-warcraft",
+    "d3",
+    "diablo3"
+  ]
 }
