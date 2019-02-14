@@ -1,6 +1,6 @@
 {
   "name": "blizzapi",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Wrapper for Blizzard Battle.net API",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
