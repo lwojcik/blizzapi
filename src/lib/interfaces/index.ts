@@ -6,7 +6,7 @@ export interface RegionIdProperties<Value> {
 
 export interface QueryOptions {
   readonly batchQueryInterval: number;
-  readonly refreshAccessToken: boolean;
+  readonly validateAccessTokenOnQuery: boolean;
   readonly onAccessTokenInvalid: Function;
   readonly onAccessTokenRefresh: Function;
 }

@@ -27,7 +27,7 @@ export default class BlizzAPI extends BattleNetAPI {
     super(region, clientId, clientSecret, accessToken);
     this.options = (options as QueryOptions) || {
       batchQueryInterval: 1000, // interval between subsequent batch queries
-      validateAccessToken: false, // whether access token should be validated
+      validateAccessTokenOnQuery: true, // whether access token should be validated
       onAccessTokenInvalid: null, // function to run when access token is invalid
       onAccessTokenRefresh: null, // function to run when access token is refreshed
     };

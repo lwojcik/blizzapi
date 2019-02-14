@@ -6,5 +6,6 @@ export default async (regionIdOrName: RegionIdOrName, accessToken: AccessToken) 
   const checkTokenUri = getCheckTokenUriByRegion(regionIdOrName);
   const requestPath = `${checkTokenUri}${accessToken}`;
   const response = await fetchFromUri(requestPath);
-  return response;
+  const validationResult = await response.json();
+  return !(validationResult.error && validationResult.error === 'invalid_token');
 };
