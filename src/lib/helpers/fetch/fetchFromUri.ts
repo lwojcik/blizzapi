@@ -1,6 +1,6 @@
+import axios from 'axios';
 import { Uri, HttpMethod } from '../../types';
 import { uri as validateUri } from '../validators';
-import 'cross-fetch/polyfill';
 
 /**
  * Performs basic fetch request from given uri
@@ -18,22 +18,25 @@ export default async (
   headers?: Headers,
   params?: URLSearchParams,
 ) => {
-  // tslint:disable-next-line no-if-statement
-  if (!validateUri(uri)) {
-    throw new RangeError(`'${uri}' is not a valid parameter for fetchFromUri()`);
+  try {
+    // tslint:disable-next-line no-if-statement
+    if (!validateUri(uri)) {
+      throw new RangeError(`'${uri}' is not a valid parameter for fetchFromUri()`);
+    }
+    const requestOptions = {
+      method,
+    };
+
+    /* tslint:disable no-if-statement no-expression-statement */
+    if (headers) Object.assign(requestOptions, { headers });
+
+    // GET request method cannot have body, so I'm doing this
+    if (method === 'POST') Object.assign(requestOptions, { body: params });
+    /* tslint:enable no-if-statement */
+
+    const response = await axios.get(uri, requestOptions);
+    return response.data;
+  } catch (error) {
+    return error.response.data;
   }
-  const requestOptions = {
-    method,
-  };
-
-  /* tslint:disable no-if-statement no-expression-statement */
-  if (headers) Object.assign(requestOptions, { headers });
-
-  // GET request method cannot have body, so I'm doing this
-  if (method === 'POST') Object.assign(requestOptions, { body: params });
-  /* tslint:enable no-if-statement */
-
-  const response = await fetch(uri, requestOptions);
-
-  return response.ok ? await response.json() : response;
 };

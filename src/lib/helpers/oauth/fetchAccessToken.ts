@@ -3,7 +3,7 @@ import { fetchFromUri } from '../fetch';
 import { Uri, ClientId, ClientSecret } from '../../types';
 
 export default (oauthUri: Uri, clientId: ClientId, clientSecret: ClientSecret) => {
-  const headers = new Headers(); // Headers() delivered by cross-fetch/polyfill
+  const headers = new Headers();
   const params = new URLSearchParams();
 
   /* tslint:disable no-expression-statement */
