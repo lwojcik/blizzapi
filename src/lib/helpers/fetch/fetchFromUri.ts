@@ -27,16 +27,16 @@ export default async (
       method,
     };
 
-    /* tslint:disable no-if-statement no-expression-statement */
+    /* tslint:disable no-if-statement no-expression-statement no-object-mutation */
     if (headers) Object.assign(requestOptions, { headers });
 
     // GET request method cannot have body, so I'm doing this
     if (method === 'POST') Object.assign(requestOptions, { body: params });
-    /* tslint:enable no-if-statement */
+    /* tslint:enable no-if-statement no-expression-statement no-object-mutation */
 
     const response = await axios.get(uri, requestOptions);
     return response.data;
   } catch (error) {
-    return error.response.data;
+    throw error;
   }
 };
