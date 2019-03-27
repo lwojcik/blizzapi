@@ -6,9 +6,9 @@ export interface RegionIdProperties<Value> {
 
 export interface QueryOptions {
   readonly batchQueryInterval: number;
-  readonly validateAccessTokenOnQuery: boolean;
-  readonly onAccessTokenInvalid: Function;
-  readonly onAccessTokenRefresh: Function;
+  readonly validateAccessTokenOnEachQuery: boolean;
+  readonly revalidateAccessTokenIfExpired: boolean;
+  readonly onAccessTokenRefresh: Function | null;
 }
 
 export interface EndpointWithSelector {

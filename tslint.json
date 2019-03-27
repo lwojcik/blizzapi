@@ -11,11 +11,11 @@
         "no-var-keyword": true,
         "no-parameter-reassignment": true,
         "typedef": [true, "call-signature"],
-        "no-unnecessary-class": true,
+        "no-unnecessary-class": false,
         "no-this": true,
         "no-mixed-interface": true,
-        "no-expression-statement": true,
-        "no-if-statement": true
+        "no-expression-statement": false,
+        "no-if-statement": true,
     },
     "rulesDirectory": [
         "node_modules/tslint-eslint-rules/dist/rules"

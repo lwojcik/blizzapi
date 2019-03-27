@@ -14,7 +14,7 @@ import * as bnetHelpers from '../helpers/bnet';
 
 /* tslint:disable:no-class no-this no-expression-statement no-object-mutation readonly-keyword typedef */
 
-export default class BlizzAPI extends BattleNetAPI {
+export = class BlizzAPI extends BattleNetAPI {
   readonly options: QueryOptions;
 
   constructor(
@@ -25,10 +25,11 @@ export default class BlizzAPI extends BattleNetAPI {
     options?: QueryOptions,
   ) {
     super(region, clientId, clientSecret, accessToken);
-    this.options = (options as QueryOptions) || {
-      batchQueryInterval: 500, // interval between subsequent batch queries
-      // onAccessTokenInvalid: null, // function to run when access token is invalid
-      // onAccessTokenRefresh: null, // function to run when access token is refreshed
+    this.options = {
+      batchQueryInterval: options ? options.batchQueryInterval : 500, // interval between subsequent batch queries
+      validateAccessTokenOnEachQuery: options ? options.validateAccessTokenOnEachQuery : false, // revalidate access token on each single query
+      revalidateAccessTokenIfExpired: options ? options.revalidateAccessTokenIfExpired : false, // revalidate access token if error 403
+      onAccessTokenRefresh: options ? options.onAccessTokenRefresh : null, // function to run when access token is refreshed
     };
   }
 

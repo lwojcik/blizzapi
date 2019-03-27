@@ -5,7 +5,7 @@ import * as oauthHelpers from '../../helpers/oauth';
 
 /* tslint:disable:no-class no-unnecessary-class no-this no-expression-statement no-object-mutation readonly-keyword */
 
-export default abstract class BattleNetAPI extends OAuth2API {
+export = class BattleNetAPI extends OAuth2API {
   readonly region: RegionIdOrName;
   accessToken: AccessToken;
 

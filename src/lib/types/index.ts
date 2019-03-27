@@ -32,6 +32,7 @@ export type Locale = string;
 export type LocaleArray = ReadonlyArray<Locale>;
 
 /** Default locales */
+
 export type DefaultLocaleIndex = number;
 export type DefaultLocaleIndexArray = ReadonlyArray<DefaultLocaleIndex>;
 
