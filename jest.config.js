@@ -17,7 +17,8 @@ module.exports = {
   ],
   "collectCoverage": true,
   "collectCoverageFrom": [
-    "**/src/**.{js,jsx,ts,tsx}",
+    "**/src/**",
+    "!**/tests/**.{js,ts}",
     "!**/*.{d.ts}",
     "!**/node_modules/**",
     "!**/dist/**"
@@ -25,13 +26,13 @@ module.exports = {
   "automock": false,
   "setupFiles": [
     "./setupJest.ts"
-  ],
-  "coverageThreshold": {
-    "global": {
-      "branches": 100,
-      "functions": 100,
-      "lines": 100,
-      "statements": 100
-    }
-  }
+  ]
+  // "coverageThreshold": {
+  //   "global": {
+  //     "branches": 100,
+  //     "functions": 100,
+  //     "lines": 100,
+  //     "statements": 100
+  //   }
+  // }
 }

@@ -11,8 +11,7 @@ import { uri as validateUri } from '../validators';
  * @param {URLSearchParams} params HTTP request body parameters
  * @returns {object} Data returned by requested uri
  */
-/* istanbul ignore next */
-export default async (
+ export default async (
   uri: Uri,
   method: HttpMethod = 'GET',
   headers?: Headers,

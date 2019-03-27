@@ -9,7 +9,6 @@ export = class BattleNetAPI extends OAuth2API {
   readonly region: RegionIdOrName;
   accessToken: AccessToken;
 
-  /* istanbul ignore next */
   constructor(
     region: RegionIdOrName,
     clientId: ClientId,
@@ -21,10 +20,8 @@ export = class BattleNetAPI extends OAuth2API {
     this.accessToken = accessToken || null;
   }
 
-  /* istanbul ignore next */
   readonly getAccessToken = () => (this.accessToken ? this.accessToken : this.setAccessToken());
 
-  /* istanbul ignore next */
   readonly setAccessToken = async () =>
     (this.accessToken = await oauthHelpers.getAccessToken(
       getTokenUriByRegion(this.region),
@@ -32,7 +29,6 @@ export = class BattleNetAPI extends OAuth2API {
       this.clientSecret,
     ));
 
-  /* istanbul ignore next */
   static validateAccessToken = async (region: RegionIdOrName, accessToken: AccessToken) =>
     oauthHelpers.validateAccessToken(region, accessToken);
 }
