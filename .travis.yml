@@ -17,6 +17,7 @@ node_js:
   - '7'
   - '8'
   - '9'
+  - '11'
   - 'lts/*'
   - 'node'
 
@@ -32,6 +33,7 @@ before_script:
 
 script:
   - npm run test
+  - codecov
   - npm run build
 
 after_script:
