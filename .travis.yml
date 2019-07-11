@@ -32,8 +32,8 @@ before_script:
   - if [[ "$TRAVIS_OS_NAME" != "windows" ]]; then ./cc-test-reporter before-build; fi
 
 script:
-  - npm run test
-  - codecov
+  # - npm run test
+  # - codecov
   - npm run build
 
 after_script:
