@@ -1,6 +1,11 @@
 import constants from '../../constants';
 
-import { RegionName, RegionIdArray, RegionNameArray, RegionIdAsNumberOrString } from '../../../@types';
+import {
+  RegionName,
+  RegionIdArray,
+  RegionNameArray,
+  RegionIdAsNumberOrString,
+} from '../../../@types';
 
 /**
  * Returns a list of all available regions

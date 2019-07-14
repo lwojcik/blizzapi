@@ -30,6 +30,6 @@ export = class BattleNetAPI extends OAuth2API {
 
   static validateAccessToken = async (region: RegionIdOrName, accessToken: AccessToken) =>
     OAuthHelpers.validateAccessToken(region, accessToken);
-}
+};
 
 /* tslint:enable:no-this no-expression-statement no-object-mutation readonly-keyword */

@@ -56,7 +56,9 @@ export const validateLocale = (locale: Locale) => {
     throw new RangeError(`${locale} is not a valid parameter for validateLocale()`);
   }
 
-  const lowerCaseLocaleList = getAllLocaleNames().map((localeName: string) => localeName.toLowerCase());
+  const lowerCaseLocaleList = getAllLocaleNames().map((localeName: string) =>
+    localeName.toLowerCase(),
+  );
   const lowerCaseLocale = locale.toLowerCase();
   return lowerCaseLocaleList.includes(lowerCaseLocale);
 };

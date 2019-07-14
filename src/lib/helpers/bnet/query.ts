@@ -4,7 +4,12 @@ import { getApiHostByRegion } from '../../utils/api';
 import { fetchFromUri } from '../fetch';
 import { BlizzAPIOptions } from '../../classes/BlizzAPI';
 
-export default (region: RegionIdOrName, endpoint: string, accessToken: AccessToken, options?: BlizzAPIOptions) => {
+export default (
+  region: RegionIdOrName,
+  endpoint: string,
+  accessToken: AccessToken,
+  options?: BlizzAPIOptions,
+) => {
   const validEndpoint = validateEndpoint(endpoint);
 
   console.log(options);
