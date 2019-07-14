@@ -15,9 +15,11 @@
         "no-this": false,
         "no-mixed-interface": true,
         "no-expression-statement": false,
-        "no-if-statement": true,
+        "no-if-statement": false,
         "no-class": false,
-        "readonly-keyword": false
+        "readonly-keyword": false,
+        "no-throw": false,
+        "no-try": false
     },
     "rulesDirectory": [
         "node_modules/tslint-eslint-rules/dist/rules"
