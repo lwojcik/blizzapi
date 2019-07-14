@@ -3,14 +3,17 @@
  * via https://develop.battle.net/documentation/guides/using-oauth
  */
 
-import { RegionIdProperties } from '../../interfaces';
-import { Uri } from '../../types';
+import { RegionIdProperties } from '../../../@interfaces';
+import { Uri } from '../../../@types';
+import OAuthHosts from './OAuthHosts';
 
-const oAuthCheckTokenUris: RegionIdProperties<Uri> = {
-  1: 'https://us.battle.net/oauth/check_token?token=',
-  2: 'https://eu.battle.net/oauth/check_token?token=',
-  3: 'https://apac.battle.net/oauth/check_token?token=',
-  5: 'https://www.battlenet.com.cn/oauth/check_token?token=',
+const endpoint = '/oauth/check_token?token=';
+
+const checkTokenUris: RegionIdProperties<Uri> = {
+  1: `${OAuthHosts[1]}${endpoint}`,
+  2: `${OAuthHosts[2]}${endpoint}`,
+  3: `${OAuthHosts[3]}${endpoint}`,
+  5: `${OAuthHosts[5]}${endpoint}`,
 };
 
-export default Object.freeze(oAuthCheckTokenUris);
+export default Object.freeze(checkTokenUris);

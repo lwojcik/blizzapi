@@ -16,7 +16,7 @@ const CONSTANTS = {
   LOCALES: localization.locales,
   DEFAULT_LOCALES: localization.defaultLocales,
   SC2_REALMS: localization.sc2Realms,
-  REGION_API_HOSTS: api.hosts,
+  REGION_API_HOSTS: api.regionHosts,
   OAUTH_AUTHORIZE_URIS: oauth.authorizeUris,
   OAUTH_TOKEN_URIS: oauth.tokenUris,
   OAUTH_CHECK_TOKEN_URIS: oauth.checkTokenUris,

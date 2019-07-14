@@ -1,1 +1,1 @@
-export { default as hosts } from './hosts';
+export { default as regionHosts } from './regionHosts';
