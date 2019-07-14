@@ -53,3 +53,5 @@ export type Endpoint = string;
 export type Endpoints = ReadonlyArray<Endpoint>;
 export type HttpMethod = 'GET' | 'POST';
 export type Selector = string;
+
+export type ValidatorFunction = (endpoint: Endpoint) => boolean;
