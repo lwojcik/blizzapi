@@ -1,7 +1,7 @@
 import constants from '../../constants';
 import { validateRegionId } from './regions';
 import { getConstantByRegionId } from '../common';
-import { RegionIdAsNumberOrString, Sc2RealmAsNumberOrString, Sc2RealmList } from '../../../@types';
+import { RegionIdAsNumberOrString, Sc2RealmAsNumberOrString, Sc2RealmList } from '../../../../@types';
 
 /**
  * Returns a list of all available StarCraft II realms

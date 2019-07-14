@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Uri, HttpMethod } from '../../../@types';
+import { Uri, HttpMethod } from '../../../../@types';
 import { uri as validateUri } from '../validators';
 
 /**

@@ -3,8 +3,8 @@
  * via https://develop.battle.net/documentation/guides/using-oauth
  */
 
-import { RegionIdProperties } from '../../../@interfaces';
-import { Uri } from '../../../@types';
+import { RegionIdProperties } from '../../../../@interfaces';
+import { Uri } from '../../../../@types';
 
 const oAuthHosts: RegionIdProperties<Uri> = {
   1: 'https://us.battle.net',

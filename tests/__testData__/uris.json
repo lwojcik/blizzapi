@@ -1,0 +1,14 @@
+[
+  "https://www.example.com",
+  "http://www.example.com",
+  "http://blog.example.com",
+  "https://blog.example.com",
+  "http://www.example.com/product",
+  "https://www.example.com/product",
+  "http://www.example.com/products?id=1&page=2",
+  "https://www.example.com/products?id=1&page=2",
+  "http://www.example.com#up",
+  "https://www.example.com#up",
+  "http://255.255.255.255",
+  "https://255.255.255.255"
+]

@@ -1,5 +1,5 @@
 import constants from '../../constants';
-import { RegionIdOrName } from '../../../@types';
+import { RegionIdOrName } from '../../../../@types';
 import { getConstantByRegion } from '../common';
 
 /**

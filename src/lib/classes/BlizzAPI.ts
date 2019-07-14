@@ -1,6 +1,6 @@
 import * as helpers from '../helpers';
 import * as utils from '../utils';
-import { Endpoint, RegionIdOrName } from '../../@types';
+import { Endpoint, RegionIdOrName } from '../../../@types';
 import BattleNetAPI = require('./abstract/BattleNetAPI');
 export interface BlizzAPIOptions {
   validateAccessTokenOnEachQuery?: boolean;

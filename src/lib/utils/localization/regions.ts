@@ -5,7 +5,7 @@ import {
   RegionIdArray,
   RegionNameArray,
   RegionIdAsNumberOrString,
-} from '../../../@types';
+} from '../../../../@types';
 
 /**
  * Returns a list of all available regions

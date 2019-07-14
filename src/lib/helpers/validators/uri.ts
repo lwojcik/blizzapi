@@ -1,4 +1,4 @@
-import { Uri } from '../../../@types';
+import { Uri } from '../../../../@types';
 
 /**
  * Validates uri via matching it against regex pattern

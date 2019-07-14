@@ -1,4 +1,4 @@
-import { ValidatorFunction, Endpoint } from '../../../@types';
+import { ValidatorFunction, Endpoint } from '../../../../@types';
 
 const startsWithSlash = (endpoint: Endpoint) => endpoint[0] === '/';
 const isLongEnough = (endpoint: Endpoint) => endpoint.length > 3;

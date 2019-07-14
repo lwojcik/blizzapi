@@ -1,4 +1,4 @@
-import { ClientId, ClientSecret, RegionIdOrName } from '../../../@types';
+import { ClientId, ClientSecret, RegionIdOrName } from '../../../../@types';
 import fetchAccessToken from './fetchAccessToken';
 import { getTokenUriByRegion } from '../../utils';
 

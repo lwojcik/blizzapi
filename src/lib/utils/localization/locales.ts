@@ -1,7 +1,7 @@
 import constants from '../../constants';
 import { validateRegionId } from './regions';
 import { getConstantByRegionId } from '../common';
-import { Locale, LocaleArray, RegionIdAsNumberOrString } from '../../../@types';
+import { Locale, LocaleArray, RegionIdAsNumberOrString } from '../../../../@types';
 
 /**
  * Returns a list of all locales indexed by region id

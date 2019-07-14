@@ -3,7 +3,7 @@
  * via https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
  */
 
-import { RegionIdProperties } from '../../../@interfaces';
+import { RegionIdProperties } from '../../../../@interfaces';
 
 const hosts: RegionIdProperties<string | ReadonlyArray<string>> = {
   1: 'https://us.api.blizzard.com',

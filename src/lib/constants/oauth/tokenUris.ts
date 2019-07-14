@@ -3,8 +3,8 @@
  * via https://develop.battle.net/documentation/guides/using-oauth
  */
 
-import { RegionIdProperties } from '../../../@interfaces';
-import { Uri } from '../../../@types';
+import { RegionIdProperties } from '../../../../@interfaces';
+import { Uri } from '../../../../@types';
 import OAuthHosts from './OAuthHosts';
 
 const endpoint = '/oauth/token';

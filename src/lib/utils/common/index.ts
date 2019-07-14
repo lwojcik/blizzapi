@@ -1,4 +1,4 @@
-import { ConstantKey, RegionIdOrName, RegionIdAsNumberOrString, RegionName } from '../../../@types';
+import { ConstantKey, RegionIdOrName, RegionIdAsNumberOrString, RegionName } from '../../../../@types';
 import constants from '../../constants';
 import { validateRegionId, validateRegionName, getRegionIdByName } from '../localization/regions';
 

@@ -1,7 +1,7 @@
 import constants from '../../constants';
 import { validateRegionId } from './regions';
-import { Locale, RegionIdAsNumberOrString } from '../../../@types';
-import { RegionIdProperties } from '../../../@interfaces';
+import { Locale, RegionIdAsNumberOrString } from '../../../../@types';
+import { RegionIdProperties } from '../../../../@interfaces';
 import { getAllLocales } from './locales';
 
 /**

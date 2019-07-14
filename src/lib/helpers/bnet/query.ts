@@ -1,4 +1,4 @@
-import { RegionIdOrName, AccessToken } from '../../../@types';
+import { RegionIdOrName, AccessToken } from '../../../../@types';
 import { endpoint as validateEndpoint } from '../validators';
 import { getApiHostByRegion } from '../../utils/api';
 import { fetchFromUri } from '../fetch';

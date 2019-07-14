@@ -1,4 +1,4 @@
-import { ClientId, ClientSecret, RegionIdOrName, AccessToken } from '../../../@types';
+import { ClientId, ClientSecret, RegionIdOrName, AccessToken } from '../../../../@types';
 import OAuth2API from './OAuth2API';
 import * as OAuthHelpers from '../../helpers/oauth';
 
