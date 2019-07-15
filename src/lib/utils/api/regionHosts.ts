@@ -1,5 +1,5 @@
 import constants from '../../constants';
-import { RegionIdOrName } from '../../../../@types';
+import { RegionIdOrName, Uri } from '../../../../@types';
 import { getConstantByRegion } from '../common';
 
 /**
@@ -15,5 +15,12 @@ export const getAllApiHosts = () => constants.REGION_API_HOSTS;
  * @param regionIdOrName Region id or region name
  * @return Region API host uri as a string
  */
-export const getApiHostByRegion = (regionIdOrName: RegionIdOrName) =>
-  getConstantByRegion(regionIdOrName, 'REGION_API_HOSTS');
+export const getApiHostByRegion = (regionIdOrName: RegionIdOrName) => {
+  const apiHost = <Uri | ReadonlyArray<Uri>>getConstantByRegion(regionIdOrName, 'REGION_API_HOSTS');
+
+  return regionIdOrName === 'kr'
+    ? apiHost[0]
+    : regionIdOrName === 'tw'
+      ? apiHost[1]
+      : apiHost;
+}

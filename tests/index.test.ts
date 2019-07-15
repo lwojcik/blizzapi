@@ -1,4 +1,4 @@
-import { default as BlizzAPI } from '../src/index';
+import BlizzAPI from '../src/index';
 
 describe('Index', () => {
   test('should export BlizzAPI', () => {

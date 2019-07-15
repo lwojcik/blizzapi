@@ -19,7 +19,8 @@
         "no-class": false,
         "readonly-keyword": false,
         "no-throw": false,
-        "no-try": false
+        "no-try": false,
+        "import-name": false
     },
     "rulesDirectory": [
         "node_modules/tslint-eslint-rules/dist/rules"
