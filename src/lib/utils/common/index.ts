@@ -2,16 +2,17 @@ import { ConstantKey, RegionIdOrName, RegionIdAsNumberOrString, RegionName } fro
 import constants from '../../constants';
 import { validateRegionId, validateRegionName, getRegionIdByName } from '../localization/regions';
 
-export const getConstantByRegion = (regionIdOrName: RegionIdOrName, constantKey: ConstantKey) =>
-  validateRegionId(regionIdOrName)
+export const getConstantByRegion = (regionIdOrName: RegionIdOrName, constantKey: ConstantKey) => {
+  return validateRegionId(regionIdOrName)
     ? getConstantByRegionId(regionIdOrName, constantKey)
     : getConstantByRegionName(regionIdOrName.toString(), constantKey);
+}
 
 export const getConstantByRegionId = (
   regionId: RegionIdAsNumberOrString,
   constantKey: ConstantKey,
 ) => {
-  const regionIdAsString = regionId.toString();
+  const regionIdAsString = typeof regionId !== 'string' ? regionId : regionId.toString();
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
   /* tslint:disable no-if-statement */
@@ -21,7 +22,6 @@ export const getConstantByRegionId = (
     );
   }
   /* tslint:enable no-if-statement */
-
   return constants[constantKey][regionIdAsString];
 };
 

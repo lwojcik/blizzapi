@@ -33,32 +33,26 @@ export default class BlizzAPI extends BattleNetAPI {
   }
 
   query = async (endpoint: Endpoint) =>
-    helpers.query(this.region, endpoint, await this.getAccessToken(), this.options);
+    // helpers.query(this.region, endpoint, await this.getAccessToken(), this.options);
+    helpers.query(this.region, endpoint, await this.getAccessToken());
 
   static getAllRegions = utils.getAllRegions;
   static getAllRegionIds = utils.getAllRegionIds;
   static getAllRegionNames = utils.getAllRegionNames;
   static getRegionNameById = utils.getRegionNameById;
   static validateRegionId = utils.validateRegionId;
-  // static validateRegion = utils.validateRegion;
   static getRegionIdByName = utils.getRegionIdByName;
   static validateRegionName = utils.validateRegionName;
   static getAllLocales = utils.getAllLocales;
   static getAllLocaleNames = utils.getAllLocaleNames;
   static getLocalesByRegionId = utils.getLocalesByRegionId;
-  // static getLocalesByRegion = utils.getLocalesByRegionI;
   static checkIfLocaleLooksValid = utils.checkIfLocaleLooksValid;
   static validateLocale = utils.validateLocale;
   static isLocaleValidForRegionId = utils.isLocaleValidForRegionId;
-  // static isLocaleValidForRegion = utils.isLocaleValidForRegion;
   static getAllSc2Realms = utils.getAllSc2Realms;
   static getAllAvailableSc2Realms = utils.getAllAvailableSc2Realms;
   static getSc2RealmsByRegionId = utils.getSc2RealmsByRegionId;
-  // static getSc2RealmsByRegion = utils.getSc2RealmsByRegion;
   static checkIfSc2RealmLooksValid = utils.checkIfSc2RealmLooksValid;
   static validateSc2Realm = utils.validateSc2Realm;
   static isSc2RealmValidForRegionId = utils.isSc2RealmValidForRegionId;
-  // static isSc2RealmValidForRegion = utils.isSc2RealmValidForRegion;
-  static getAllApiHosts = utils.getAllApiHosts;
-  static getApiHostByRegion = utils.getApiHostByRegion;
 }

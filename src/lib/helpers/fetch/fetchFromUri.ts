@@ -14,7 +14,7 @@ import { uri as validateUri } from '../validators';
 export default async (
   uri: Uri,
   method: HttpMethod = 'GET',
-  headers?: Headers,
+  headers?: object | Headers,
   params?: URLSearchParams,
 ) => {
   try {
@@ -29,9 +29,8 @@ export default async (
     if (headers) Object.assign(requestOptions, { headers });
 
     // GET request method cannot have body, so I'm doing this
-    if (method === 'POST') Object.assign(requestOptions, { body: params });
+    if (method === 'POST') Object.assign(requestOptions, { params });
     /* tslint:enable no-expression-statement no-object-mutation */
-
     const response = await axios.get(uri, requestOptions);
     return response.data;
   } catch (error) {

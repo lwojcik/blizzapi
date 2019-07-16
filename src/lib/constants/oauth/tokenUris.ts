@@ -10,10 +10,10 @@ import OAuthHosts from './OAuthHosts';
 const endpoint = '/oauth/token';
 
 const tokenUris: RegionIdProperties<Uri> = {
-  1: `${OAuthHosts}${endpoint}`,
-  2: `${OAuthHosts}${endpoint}`,
-  3: `${OAuthHosts}${endpoint}`,
-  5: `${OAuthHosts}${endpoint}`,
+  1: `${OAuthHosts[1]}${endpoint}`,
+  2: `${OAuthHosts[2]}${endpoint}`,
+  3: `${OAuthHosts[3]}${endpoint}`,
+  5: `${OAuthHosts[5]}${endpoint}`,
 };
 
 export default Object.freeze(tokenUris);
