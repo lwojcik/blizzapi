@@ -1,4 +1,6 @@
 src
+@interfaces
+@types
 tsconfig.json
 tslint.json
 .prettierrc
