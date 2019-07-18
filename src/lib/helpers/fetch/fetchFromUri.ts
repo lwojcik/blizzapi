@@ -7,7 +7,7 @@ import { uri as validateUri } from '../validators';
  * @function
  * @param {string} uri Fetch request uri
  * @param {string} method HTTP method to be used. Defaults to 'GET'
- * @param {Headers} headers HTTP request headers
+ * @param {object | Headers} headers HTTP request headers
  * @param {URLSearchParams} params HTTP request body parameters
  * @returns {object} Data returned by requested uri
  */
@@ -28,7 +28,7 @@ export default async (
     /* tslint:disable no-expression-statement no-object-mutation */
     if (headers) Object.assign(requestOptions, { headers });
 
-    // GET request method cannot have body, so I'm doing this
+    // GET request method cannot have body, so I'm doing this nonsense
     if (method === 'POST') Object.assign(requestOptions, { params });
     /* tslint:enable no-expression-statement no-object-mutation */
     const response = await axios.get(uri, requestOptions);
