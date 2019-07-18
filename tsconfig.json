@@ -9,7 +9,6 @@
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "declarationMap": true,
-    // "outFile": "./dist/index.js",
     "removeComments": true,
     "strict": true,
     "noImplicitAny": true,

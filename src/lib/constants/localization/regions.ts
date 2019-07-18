@@ -3,8 +3,8 @@
  * via https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
  */
 
-import { RegionIdProperties } from '../../interfaces';
-import { RegionNameArray } from '../../types';
+import { RegionIdProperties } from '../../../../@interfaces';
+import { RegionNameArray } from '../../../../@types';
 
 const regions: RegionIdProperties<RegionNameArray> = {
   1: Object.freeze(['us']),

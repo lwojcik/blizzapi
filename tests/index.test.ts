@@ -1,9 +1,12 @@
-import * as BlizzAPI from '../src/index';
+import BlizzAPI from '../src/index';
 
-/* tslint:disable no-expression-statement */
 describe('Index', () => {
-  test('should export BlizzAPI class', () => {
+  test('should export BlizzAPI', () => {
     expect(BlizzAPI).toBeDefined();
   });
+
+  test('BlizzAPI should be a class', () => {
+    const blizzapi = new BlizzAPI({ region: '', clientId: '', clientSecret: ''});
+    expect(blizzapi instanceof BlizzAPI).toBe(true);
+  });
 });
-/* tslint:enable no-expression-statement */

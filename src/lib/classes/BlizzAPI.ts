@@ -1,57 +1,64 @@
-import {
-  RegionIdOrName,
-  ClientId,
-  ClientSecret,
-  Endpoint,
-  Endpoints,
-  AccessToken,
-  Selector,
-  // EndpointsWithSelectors,
-} from '../types';
-import { QueryOptions } from '../interfaces';
-import BattleNetAPI from './abstract/BattleNetAPI';
-import * as bnetHelpers from '../helpers/bnet';
+import * as helpers from '../helpers';
+import * as utils from '../utils';
+import { Endpoint, RegionIdOrName, AccessToken } from '../../../@types';
+import BattleNetAPI = require('./abstract/BattleNetAPI');
+export interface BlizzAPIOptions {
+  validateAccessTokenOnEachQuery?: boolean;
+  refreshExpiredAccessToken?: boolean;
+  onAccessTokenExpire?: Function | undefined;
+  onAccessTokenRefresh?: Function | undefined;
+}
 
-/* tslint:disable:no-class no-this no-expression-statement no-object-mutation readonly-keyword typedef */
+export interface BattleNetOptions extends BlizzAPIOptions {
+  region: RegionIdOrName;
+  clientId: string;
+  clientSecret: string;
+  accessToken?: string;
+}
 
-export = class BlizzAPI extends BattleNetAPI {
-  readonly options: QueryOptions;
+export default class BlizzAPI extends BattleNetAPI {
+  readonly options: BlizzAPIOptions;
 
-  constructor(
-    region: RegionIdOrName,
-    clientId: ClientId,
-    clientSecret: ClientSecret,
-    accessToken?: AccessToken,
-    options?: QueryOptions,
-  ) {
-    super(region, clientId, clientSecret, accessToken);
+  constructor(options: BattleNetOptions) {
+    super(options.region, options.clientId, options.clientSecret, options.accessToken);
     this.options = {
-      batchQueryInterval: options ? options.batchQueryInterval : 500, // interval between subsequent batch queries
-      validateAccessTokenOnEachQuery: options ? options.validateAccessTokenOnEachQuery : false, // revalidate access token on each single query
-      revalidateAccessTokenIfExpired: options ? options.revalidateAccessTokenIfExpired : false, // revalidate access token if error 403
-      onAccessTokenRefresh: options ? options.onAccessTokenRefresh : null, // function to run when access token is refreshed
+      validateAccessTokenOnEachQuery: options.validateAccessTokenOnEachQuery
+        ? options.validateAccessTokenOnEachQuery
+        : false, // revalidate access token on each single query
+      refreshExpiredAccessToken: options.refreshExpiredAccessToken
+        ? options.refreshExpiredAccessToken
+        : false, // revalidate access token if error 403
+      onAccessTokenRefresh: options.onAccessTokenRefresh ? options.onAccessTokenRefresh : undefined, // function to run when access token is refreshed
     };
   }
 
   query = async (endpoint: Endpoint) =>
-    bnetHelpers.query(this.region, endpoint, await this.getAccessToken());
+    // helpers.query(this.region, endpoint, await this.getAccessToken(), this.options);
+    helpers.query(this.region, endpoint, await this.getAccessToken());
 
-  querySearch = async (endpoint: Endpoint, selector: Selector) =>
-    bnetHelpers.querySearch(this.region, endpoint, selector, await this.getAccessToken());
+  getAccessToken = async () =>
+    helpers.getAccessToken(this.region, this.clientId, this.clientSecret);
 
-  queryBatch = async (endpoints: Endpoints, options = this.options) =>
-    bnetHelpers.queryBatch(this.region, endpoints, await this.getAccessToken(), options);
+  validateAccessToken = async (regionIdOrName: RegionIdOrName, accessToken: AccessToken) =>
+    helpers.validateAccessToken(regionIdOrName, accessToken);
 
-  // querySearchBatch = async (
-  //   endpointsWithSelectors: EndpointsWithSelectors,
-  //   options = this.options,
-  // ) =>
-  //   bnetHelpers.querySearchBatch(
-  //     this.region,
-  //     endpointsWithSelectors,
-  //     await this.getAccessToken(),
-  //     options,
-  //   );
+  static getAllRegions = utils.getAllRegions;
+  static getAllRegionIds = utils.getAllRegionIds;
+  static getAllRegionNames = utils.getAllRegionNames;
+  static getRegionNameById = utils.getRegionNameById;
+  static validateRegionId = utils.validateRegionId;
+  static getRegionIdByName = utils.getRegionIdByName;
+  static validateRegionName = utils.validateRegionName;
+  static getAllLocales = utils.getAllLocales;
+  static getAllLocaleNames = utils.getAllLocaleNames;
+  static getLocalesByRegionId = utils.getLocalesByRegionId;
+  static checkIfLocaleLooksValid = utils.checkIfLocaleLooksValid;
+  static validateLocale = utils.validateLocale;
+  static isLocaleValidForRegionId = utils.isLocaleValidForRegionId;
+  static getAllSc2Realms = utils.getAllSc2Realms;
+  static getAllAvailableSc2Realms = utils.getAllAvailableSc2Realms;
+  static getSc2RealmsByRegionId = utils.getSc2RealmsByRegionId;
+  static checkIfSc2RealmLooksValid = utils.checkIfSc2RealmLooksValid;
+  static validateSc2Realm = utils.validateSc2Realm;
+  static isSc2RealmValidForRegionId = utils.isSc2RealmValidForRegionId;
 }
-
-/* tslint:disable:no-unnecessary-class no-this */

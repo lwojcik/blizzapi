@@ -1,7 +1,7 @@
 import constants from '../../constants';
 import { validateRegionId } from './regions';
 import { getConstantByRegionId } from '../common';
-import { RegionIdAsNumberOrString, Sc2RealmAsNumberOrString, Sc2RealmList } from '../../types';
+import { RegionIdAsNumberOrString, Sc2RealmAsNumberOrString, Sc2RealmList } from '../../../../@types';
 
 /**
  * Returns a list of all available StarCraft II realms
@@ -52,11 +52,9 @@ export const checkIfSc2RealmLooksValid = (sc2Realm: Sc2RealmAsNumberOrString) =>
 export const validateSc2Realm = (sc2Realm: Sc2RealmAsNumberOrString) => {
   const doesSc2RealmLookValid = checkIfSc2RealmLooksValid(sc2Realm);
 
-  /* tslint:disable no-if-statement */
   if (!doesSc2RealmLookValid) {
     throw new RangeError(`${sc2Realm} is not a valid parameter for validateSc2Realm()`);
   }
-  /* tslint:enable no-if-statement */
 
   const sc2RealmList = getAllAvailableSc2Realms();
   const sc2RealmAsNumber = typeof sc2Realm === 'number' ? sc2Realm : parseInt(sc2Realm, 10);

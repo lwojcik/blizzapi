@@ -1,6 +1,11 @@
 import constants from '../../constants';
 
-import { RegionName, RegionIdArray, RegionNameArray, RegionIdAsNumberOrString } from '../../types';
+import {
+  RegionName,
+  RegionIdArray,
+  RegionNameArray,
+  RegionIdAsNumberOrString,
+} from '../../../../@types';
 
 /**
  * Returns a list of all available regions
@@ -27,7 +32,7 @@ export const getAllRegionIds = () => {
 export const getAllRegionNames = () => {
   const regionNames = Object.values(constants.REGIONS);
   const flattenedRegionNames = ([] as RegionNameArray).concat(...regionNames);
-  return <RegionNameArray>flattenedRegionNames.map(regionName => regionName.toString());
+  return flattenedRegionNames.map((regionName: string) => regionName.toString());
 };
 
 /**
@@ -42,11 +47,9 @@ export const getRegionNameById = (regionId: RegionIdAsNumberOrString) => {
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = regionIds.includes(regionIdAsString);
 
-  /* tslint:disable no-if-statement */
   if (!isRegionIdValid) {
     throw new RangeError(`${regionIdAsString} is not a valid parameter for getRegionNameById()`);
   }
-  /* tslint:enable no-if-statement */
 
   return constants.REGIONS[regionIdAsString];
 };
@@ -78,11 +81,9 @@ export const getRegionIdByName = (regionName: RegionName) => {
   const regionIdArray = regionKeys.filter(key => regions[key].includes(regionNameLowercase));
   const regionId = Number(regionIdArray[0]) || false;
 
-  /* tslint:disable no-if-statement */
   if (!regionId) {
     throw new RangeError(`"${regionName}" is not a valid parameter for getRegionIdByName()`);
   }
-  /* tslint:enable no-if-statement */
 
   return regionId;
 };

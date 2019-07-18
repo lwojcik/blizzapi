@@ -1,6 +1,4 @@
-/* tslint:disable:no-class no-unnecessary-class no-this no-expression-statement */
-
-export = class OAuth2API {
+export default class OAuth2API {
   readonly clientId: string;
   readonly clientSecret: string;
 
@@ -9,5 +7,3 @@ export = class OAuth2API {
     this.clientSecret = clientSecret;
   }
 }
-
-/* tslint:enable:no-class no-unnecessary-class no-this no-expression-statement */

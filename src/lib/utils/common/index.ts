@@ -1,24 +1,18 @@
-import { ConstantKey, RegionIdOrName, RegionIdAsNumberOrString, RegionName } from '../../types';
+import { ConstantKey, RegionIdOrName, RegionIdAsNumberOrString, RegionName } from '../../../../@types';
 import constants from '../../constants';
 import { validateRegionId, validateRegionName, getRegionIdByName } from '../localization/regions';
 
 export const getConstantByRegion = (regionIdOrName: RegionIdOrName, constantKey: ConstantKey) => {
-  const validRegionId = validateRegionId(regionIdOrName);
-
-  /* tslint:disable no-if-statement */
-  if (validRegionId) {
-    return getConstantByRegionId(regionIdOrName, constantKey);
-  }
-  /* tslint:enable no-if-statement */
-
-  return getConstantByRegionName(regionIdOrName.toString(), constantKey);
-};
+  return validateRegionId(regionIdOrName)
+    ? getConstantByRegionId(regionIdOrName, constantKey)
+    : getConstantByRegionName(regionIdOrName.toString(), constantKey);
+}
 
 export const getConstantByRegionId = (
   regionId: RegionIdAsNumberOrString,
   constantKey: ConstantKey,
 ) => {
-  const regionIdAsString = regionId.toString();
+  const regionIdAsString = typeof regionId !== 'string' ? regionId : regionId.toString();
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
   /* tslint:disable no-if-statement */
@@ -28,7 +22,6 @@ export const getConstantByRegionId = (
     );
   }
   /* tslint:enable no-if-statement */
-
   return constants[constantKey][regionIdAsString];
 };
 
@@ -42,13 +35,11 @@ export const getConstantByRegionId = (
 export const getConstantByRegionName = (regionName: RegionName, constantKey: ConstantKey) => {
   const isRegionNameValid = validateRegionName(regionName);
 
-  /* tslint:disable no-if-statement */
   if (!isRegionNameValid) {
     throw new RangeError(
       `${regionName} is not a valid parameter for getConstantByRegionName(${regionName}, '${constantKey}')`,
     );
   }
-  /* tslint:enable no-if-statement */
 
   const regionId = getRegionIdByName(regionName);
 

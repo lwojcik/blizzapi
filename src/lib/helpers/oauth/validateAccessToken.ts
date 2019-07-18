@@ -1,4 +1,4 @@
-import { RegionIdOrName, AccessToken } from '../../types';
+import { RegionIdOrName, AccessToken } from '../../../../@types';
 import { getCheckTokenUriByRegion } from '../../utils/oauth/checkTokenUris';
 import { fetchFromUri } from '../../helpers/fetch';
 

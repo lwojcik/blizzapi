@@ -1,7 +1,7 @@
 import constants from '../../constants';
 import { validateRegionId } from './regions';
 import { getConstantByRegionId } from '../common';
-import { Locale, LocaleArray, RegionIdAsNumberOrString } from '../../types';
+import { Locale, LocaleArray, RegionIdAsNumberOrString } from '../../../../@types';
 
 /**
  * Returns a list of all locales indexed by region id
@@ -18,7 +18,7 @@ export const getAllLocales = () => constants.LOCALES;
 export const getAllLocaleNames = () => {
   const locales = Object.values(constants.LOCALES);
   const flattenedLocales = ([] as LocaleArray).concat(...locales);
-  const localesAsStrings = flattenedLocales.map(locale => locale.toString());
+  const localesAsStrings = flattenedLocales.map((locale: string) => locale.toString());
   return localesAsStrings;
 };
 
@@ -52,13 +52,13 @@ export const checkIfLocaleLooksValid = (locale: Locale) => {
 export const validateLocale = (locale: Locale) => {
   const doesLocaleLookValid = checkIfLocaleLooksValid(locale);
 
-  /* tslint:disable no-if-statement */
   if (!doesLocaleLookValid) {
     throw new RangeError(`${locale} is not a valid parameter for validateLocale()`);
   }
-  /* tslint:enable no-if-statement */
 
-  const lowerCaseLocaleList = getAllLocaleNames().map(localeName => localeName.toLowerCase());
+  const lowerCaseLocaleList = getAllLocaleNames().map((localeName: string) =>
+    localeName.toLowerCase(),
+  );
   const lowerCaseLocale = locale.toLowerCase();
   return lowerCaseLocaleList.includes(lowerCaseLocale);
 };
@@ -76,7 +76,6 @@ export const isLocaleValidForRegionId = (locale: Locale, regionId: RegionIdAsNum
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
-  /* tslint:disable no-if-statement */
   if (!doesLocaleLookValid) {
     throw new RangeError(
       `${locale} is not a valid locale parameter for isLocaleValidForRegionId()`,
@@ -88,9 +87,8 @@ export const isLocaleValidForRegionId = (locale: Locale, regionId: RegionIdAsNum
       `${regionId} is not a valid regionId parameter for isLocaleValidForRegionId()`,
     );
   }
-  /* tslint:enable no-if-statement */
 
-  const localesForRegionId = getLocalesByRegionId(regionId).map(localeName =>
+  const localesForRegionId = getLocalesByRegionId(regionId).map((localeName: string) =>
     localeName.toLowerCase(),
   );
   return localesForRegionId.includes(lowerCaseLocale);

@@ -1,7 +1,7 @@
 import constants from '../../constants';
 import { validateRegionId } from './regions';
-import { Locale, RegionIdAsNumberOrString } from '../../types';
-import { RegionIdProperties } from '../../interfaces';
+import { Locale, RegionIdAsNumberOrString } from '../../../../@types';
+import { RegionIdProperties } from '../../../../@interfaces';
 import { getAllLocales } from './locales';
 
 /**
@@ -21,13 +21,11 @@ export const getDefaultLocaleIndexForRegionId = (regionId: RegionIdAsNumberOrStr
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
-  /* tslint:disable no-if-statement */
   if (!isRegionIdValid) {
     throw new RangeError(
       `${regionIdAsString} is not a valid parameter for getDefaultLocaleIndexForRegionId()`,
     );
   }
-  /* tslint:enable no-if-statement */
 
   return constants.DEFAULT_LOCALES[regionIdAsString];
 };
@@ -42,13 +40,11 @@ export const getDefaultLocaleNameForRegionId = (regionId: RegionIdAsNumberOrStri
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
-  /* tslint:disable no-if-statement */
   if (!isRegionIdValid) {
     throw new RangeError(
       `${regionIdAsString} is not a valid parameter for getDefaultLocaleNameForRegionId()`,
     );
   }
-  /* tslint:enable no-if-statement */
 
   const defaultLocaleIndex = constants.DEFAULT_LOCALES[regionIdAsString];
   return constants.LOCALES[regionId][defaultLocaleIndex];
