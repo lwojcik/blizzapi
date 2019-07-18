@@ -9,7 +9,7 @@
 
 import * as localization from './localization';
 import * as api from './api';
-import * as oauth from './oauth';
+import oauth from './oauth';
 
 const CONSTANTS = {
   REGIONS: localization.regions,

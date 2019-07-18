@@ -20,33 +20,32 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/lukem.net/blizzapi/blob/master/LICENSE"
+      "url": "https://github.com/lukemnet/blizzapi/blob/master/LICENSE"
     }
   ],
   "scripts": {
     "test": "jest",
     "clearTestCache": "jest --clearCache",
-    "build": "tsc",
-    "dev": "tsc -w",
+    "clean": "rimraf dist/*",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint --project tsconfig.json"
-  },
-  "dependencies": {
-    "axios": "0.19.0",
-    "base-64": "0.1.0",
-    "qs": "6.7.0"
+    "lint": "tslint --project tsconfig.json",
+    "build": "npm run lint && npm run test && npm run clean && tsc",
+    "dev": "tsc -w"
   },
   "jest": {
     "automock": false
   },
+  "dependencies": {
+    "axios": "0.19.0",
+    "base-64": "0.1.0"
+  },
   "devDependencies": {
-    "@types/axios": "0.14.0",
     "@types/base-64": "0.1.3",
     "@types/jest": "24.0.15",
     "@types/node": "12.6.2",
-    "@types/qs": "^6.5.3",
     "jest": "24.8.0",
     "prettier": "1.18.2",
+    "rimraf": "2.6.3",
     "ts-jest": "24.0.2",
     "tslint": "5.18.0",
     "tslint-config-airbnb": "5.11.1",
