@@ -3,11 +3,11 @@ import * as utils from '../../../src/lib/utils/common/index';
 
 const { getConstantByRegion } = utils;
 
-import regionNamesJson from '../../../__testData__/regionNames.json';
-import wrongRegionNamesJson from '../../../__testData__/wrongRegionNames.json';
-import regionIdsJson from '../../../__testData__/regionIds.json';
-import wrongRegionIdsJson from '../../../__testData__/wrongRegionIds.json';
-import constantKeysJson from '../../../__testData__/constantKeys.json';
+import regionNamesJson from '../../__testData__/regionNames.json';
+import wrongRegionNamesJson from '../../__testData__/wrongRegionNames.json';
+import regionIdsJson from '../__testData__/index';
+import wrongRegionIdsJson from '../../__testData__/wrongRegionIds.json';
+import constantKeysJson from '../../__testData__/constantKeys.json';
 
 /* tslint:disable no-expression-statement */
 describe('getConstantByRegion()', () => {
@@ -29,7 +29,7 @@ describe('getConstantByRegion()', () => {
 
   (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach(wrongRegionId =>
     (constantKeysJson as ReadonlyArray<ConstantKey>).forEach(constantKey => {
-      test('should throw RangeError for ${wrongRegionId} as invalid region id', () => {
+      test(`should throw RangeError for ${wrongRegionId} as invalid region id`, () => {
         expect(() => getConstantByRegion(wrongRegionId, constantKey)).toThrow(RangeError);
       });
     }),

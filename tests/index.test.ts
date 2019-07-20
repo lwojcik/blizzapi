@@ -1,4 +1,3 @@
-import '../../typings.d.ts';
 import BlizzAPI from '../src/index';
 
 describe('Index', () => {

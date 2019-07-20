@@ -2,10 +2,10 @@ import * as utils from '../../../../src/lib/utils';
 
 const { getTokenUriByRegion } = utils;
 
-import regionNamesJson from '../../../../__testData__/regionNames.json';
-import wrongRegionNamesJson from '../../../../__testData__/wrongRegionNames.json';
-import regionIdsJson from '../../../../__testData__/regionIds.json';
-import wrongRegionIdsJson from '../../../../__testData__/wrongRegionIds.json';
+import regionNamesJson from '../../../__testData__/regionNames.json';
+import wrongRegionNamesJson from '../../../__testData__/wrongRegionNames.json';
+import regionIdsJson from '../../../__testData__/regionIds.json';
+import wrongRegionIdsJson from '../../../__testData__/wrongRegionIds.json';
 
 /* tslint:disable no-expression-statement */
 describe('getTokenUriByRegion()', () => {

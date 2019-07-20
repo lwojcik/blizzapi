@@ -19,7 +19,7 @@ describe('getApiHostByRegion()', () => {
   });
 
   (regionIdsJson as ReadonlyArray<string | number>).forEach(regionId => {
-    test('should return correct value for ${regionId} as valid region id', () => {
+    test(`should return correct value for ${regionId} as valid region id`, () => {
       expect(getApiHostByRegion(regionId)).toMatchSnapshot();
     });
   });

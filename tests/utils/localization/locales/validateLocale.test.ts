@@ -1,9 +1,9 @@
-import * as utils from '../../../../../src/lib/utils';
+import * as utils from '../../../../src/lib/utils';
 const { validateLocale } = utils;
 
-import localesJson from '../../../../__testData__/locales.json';
-import nonexistentLocalesJson from '../../../../__testData__/nonexistentLocales.json';
-import wrongLocalesJson from '../../../../__testData__/wrongLocales.json';
+import localesJson from '../../../__testData__/locales.json';
+import nonexistentLocalesJson from '../../../__testData__/nonexistentLocales.json';
+import wrongLocalesJson from '../../../__testData__/wrongLocales.json';
 
 /* tslint:disable no-expression-statement */
 describe('validateLocale()', () => {

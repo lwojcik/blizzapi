@@ -1,5 +1,5 @@
-import * as utils from '../../../../../src/lib/utils';
-import constants from '../../../../../src/lib/constants';
+import * as utils from '../../../../src/lib/utils';
+import constants from '../../../../src/lib/constants';
 
 const { LOCALES } = constants;
 

@@ -1,11 +1,11 @@
-import * as utils from '../../../../../src/lib/utils';
+import * as utils from '../../../../src/lib/utils';
 const { isLocaleValidForRegionId } = utils;
 
-import regionIdsJson from '../../../../__testData__/regionIds.json';
-import wrongRegionIdsJson from '../../../../__testData__/wrongRegionIds.json';
-import localesJson from '../../../../__testData__/locales.json';
-import nonexistentLocalesJson from '../../../../__testData__/nonexistentLocales.json';
-import wrongLocalesJson from '../../../../__testData__/wrongLocales.json';
+import regionIdsJson from '../../../__testData__/regionIds.json';
+import wrongRegionIdsJson from '../../../__testData__/wrongRegionIds.json';
+import localesJson from '../../../__testData__/locales.json';
+import nonexistentLocalesJson from '../../../__testData__/nonexistentLocales.json';
+import wrongLocalesJson from '../../../__testData__/wrongLocales.json';
 
 /* tslint:disable no-expression-statement */
 describe('isLocaleValidForRegionId()', () => {

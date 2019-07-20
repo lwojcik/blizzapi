@@ -1,10 +1,10 @@
-import * as utils from '../../../../../src/lib/utils';
-import constants from '../../../../../src/lib/constants';
+import * as utils from '../../../../src/lib/utils';
+import constants from '../../../../src/lib/constants';
 const { LOCALES } = constants;
 const { getLocalesByRegionId } = utils;
 
-import regionIdsJson from '../../../../__testData__/regionIds.json';
-import wrongRegionIdsJson from '../../../../__testData__/wrongRegionIds.json';
+import regionIdsJson from '../../../__testData__/regionIds.json';
+import wrongRegionIdsJson from '../../../__testData__/wrongRegionIds.json';
 
 /* tslint:disable no-expression-statement */
 describe('getLocalesByRegionId()', () => {
