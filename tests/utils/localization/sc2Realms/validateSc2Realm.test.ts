@@ -1,9 +1,9 @@
 import * as utils from '../../../../src/lib/utils';
 const { validateSc2Realm } = utils;
 
-import sc2realmsJson from '../../../../__testData__/sc2realms.json';
-import nonexistentSc2realmsJson from '../../../../__testData__/nonexistentSc2realms.json';
-import wrongSc2realmsJson from '../../../../__testData__/wrongSc2realms.json';
+import sc2realmsJson from '../../../__testData__/sc2realms.json';
+import nonexistentSc2realmsJson from '../../../__testData__/nonexistentSc2realms.json';
+import wrongSc2realmsJson from '../../../__testData__/wrongSc2realms.json';
 
 /* tslint:disable no-expression-statement */
 describe('validateSc2Realm()', () => {
@@ -28,7 +28,7 @@ describe('validateSc2Realm()', () => {
   );
 
   (wrongSc2realmsJson as ReadonlyArray<string | number>).forEach(wrongSc2realm =>
-    test('should throw RangeError for ${wrongSc2realm} as invalid SC2 realm', () => {
+    test(`should throw RangeError for ${wrongSc2realm} as invalid SC2 realm`, () => {
       expect(() => validateSc2Realm(wrongSc2realm)).toThrow(RangeError);
     }),
   );

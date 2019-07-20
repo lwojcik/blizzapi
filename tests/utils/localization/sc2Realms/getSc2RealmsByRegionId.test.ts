@@ -3,8 +3,8 @@ import constants from '../../../../src/lib/constants';
 const { SC2_REALMS } = constants;
 const { getSc2RealmsByRegionId } = utils;
 
-import regionIdsJson from '../../../../__testData__/regionIds.json';
-import wrongRegionIdsJson from '../../../../__testData__/wrongRegionIds.json';
+import regionIdsJson from '../../../__testData__/regionIds.json';
+import wrongRegionIdsJson from '../../../__testData__/wrongRegionIds.json';
 
 /* tslint:disable no-expression-statement */
 describe('getSc2RealmsByRegionId()', () => {
@@ -23,7 +23,7 @@ describe('getSc2RealmsByRegionId()', () => {
   );
 
   (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach(wrongRegionId =>
-    test('should throw RangeError for ${wrongRegionId} as invalid region id', () => {
+    test(`should throw RangeError for ${wrongRegionId} as invalid region id`, () => {
       expect(() => getSc2RealmsByRegionId(wrongRegionId)).toThrow(RangeError);
     }),
   );

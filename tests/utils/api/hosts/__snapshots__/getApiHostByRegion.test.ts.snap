@@ -1,21 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getApiHostByRegion() should return correct value for \${regionId} as valid region id 1`] = `"https://us.api.blizzard.com"`;
-
-exports[`getApiHostByRegion() should return correct value for \${regionId} as valid region id 2`] = `"https://eu.api.blizzard.com"`;
-
-exports[`getApiHostByRegion() should return correct value for \${regionId} as valid region id 3`] = `
-Array [
-  "https://kr.api.blizzard.com",
-  "https://tw.api.blizzard.com/",
-]
-`;
-
-exports[`getApiHostByRegion() should return correct value for \${regionId} as valid region id 4`] = `"https://gateway.battlenet.com.cn/"`;
-
 exports[`getApiHostByRegion() should return correct value for 1 as valid region id 1`] = `"https://us.api.blizzard.com"`;
 
+exports[`getApiHostByRegion() should return correct value for 1 as valid region id 2`] = `"https://us.api.blizzard.com"`;
+
 exports[`getApiHostByRegion() should return correct value for 2 as valid region id 1`] = `"https://eu.api.blizzard.com"`;
+
+exports[`getApiHostByRegion() should return correct value for 2 as valid region id 2`] = `"https://eu.api.blizzard.com"`;
 
 exports[`getApiHostByRegion() should return correct value for 3 as valid region id 1`] = `
 Array [
@@ -24,7 +15,16 @@ Array [
 ]
 `;
 
+exports[`getApiHostByRegion() should return correct value for 3 as valid region id 2`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
+
 exports[`getApiHostByRegion() should return correct value for 5 as valid region id 1`] = `"https://gateway.battlenet.com.cn/"`;
+
+exports[`getApiHostByRegion() should return correct value for 5 as valid region id 2`] = `"https://gateway.battlenet.com.cn/"`;
 
 exports[`getApiHostByRegion() should return correct value for CN as valid region name 1`] = `"https://gateway.battlenet.com.cn/"`;
 

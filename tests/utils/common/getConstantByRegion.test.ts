@@ -5,7 +5,7 @@ const { getConstantByRegion } = utils;
 
 import regionNamesJson from '../../__testData__/regionNames.json';
 import wrongRegionNamesJson from '../../__testData__/wrongRegionNames.json';
-import regionIdsJson from '../__testData__/index';
+import regionIdsJson from '../../__testData__/regionIds.json';
 import wrongRegionIdsJson from '../../__testData__/wrongRegionIds.json';
 import constantKeysJson from '../../__testData__/constantKeys.json';
 

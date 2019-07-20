@@ -2,9 +2,9 @@ import { ConstantKeys } from '../../../@types';
 import * as utils from '../../../src/lib/utils/common';
 const { getConstantByRegionName } = utils;
 
-import regionNamesJson from '../../../__testData__/regionNames.json';
-import wrongRegionNamesJson from '../../../__testData__/wrongRegionNames.json';
-import constantKeysJson from '../../../__testData__/constantKeys.json';
+import regionNamesJson from '../../__testData__/regionNames.json';
+import wrongRegionNamesJson from '../../__testData__/wrongRegionNames.json';
+import constantKeysJson from '../../__testData__/constantKeys.json';
 
 /* tslint:disable no-expression-statement */
 describe('getConstantByRegionName()', () => {

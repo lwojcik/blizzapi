@@ -3,8 +3,8 @@ import constants from '../../../../src/lib/constants';
 const { REGIONS } = constants;
 const { getRegionNameById } = utils;
 
-import regionIdsJson from '../../../../__testData__/regionIds.json';
-import wrongRegionIdsJson from '../../../../__testData__/wrongRegionIds.json';
+import regionIdsJson from '../../../__testData__/regionIds.json';
+import wrongRegionIdsJson from '../../../__testData__/wrongRegionIds.json';
 
 describe('getRegionNameById()', () => {
   test('should be defined', () => {

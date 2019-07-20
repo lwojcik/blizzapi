@@ -1,11 +1,11 @@
 import * as utils from '../../../../src/lib/utils';
 const { isSc2RealmValidForRegionId } = utils;
 
-import regionIdsJson from '../../../../__testData__/regionIds.json';
-import wrongRegionIdsJson from '../../../../__testData__/wrongRegionIds.json';
-import sc2realmsJson from '../../../../__testData__/sc2realms.json';
-import nonexistentSc2realmsJson from '../../../../__testData__/nonexistentSc2realms.json';
-import wrongSc2realmsJson from '../../../../__testData__/wrongSc2realms.json';
+import regionIdsJson from '../../../__testData__/regionIds.json';
+import wrongRegionIdsJson from '../../../__testData__/wrongRegionIds.json';
+import sc2realmsJson from '../../../__testData__/sc2realms.json';
+import nonexistentSc2realmsJson from '../../../__testData__/nonexistentSc2realms.json';
+import wrongSc2realmsJson from '../../../__testData__/wrongSc2realms.json';
 
 /* tslint:disable no-expression-statement */
 describe('isSc2RealmValidForRegionId()', () => {

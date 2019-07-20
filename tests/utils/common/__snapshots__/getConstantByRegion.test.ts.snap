@@ -44,9 +44,19 @@ exports[`getConstantByRegion() should return correct value for 3 and OAUTH_TOKEN
 
 exports[`getConstantByRegion() should return correct value for 3 and OAUTH_TOKEN_URIS as valid parameters 2`] = `"https://apac.battle.net/oauth/token"`;
 
-exports[`getConstantByRegion() should return correct value for 3 and REGION_API_HOSTS as valid parameters 1`] = `"https://kr.api.blizzard.com"`;
+exports[`getConstantByRegion() should return correct value for 3 and REGION_API_HOSTS as valid parameters 1`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
 
-exports[`getConstantByRegion() should return correct value for 3 and REGION_API_HOSTS as valid parameters 2`] = `"https://kr.api.blizzard.com"`;
+exports[`getConstantByRegion() should return correct value for 3 and REGION_API_HOSTS as valid parameters 2`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
 
 exports[`getConstantByRegion() should return correct value for 5 and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/authorize"`;
 
@@ -60,11 +70,11 @@ exports[`getConstantByRegion() should return correct value for 5 and OAUTH_TOKEN
 
 exports[`getConstantByRegion() should return correct value for 5 and OAUTH_TOKEN_URIS as valid parameters 2`] = `"https://www.battlenet.com.cn/oauth/token"`;
 
-exports[`getConstantByRegion() should return correct value for 5 and REGION_API_HOSTS as valid parameters 1`] = `"https://api.blizzard.com.cn"`;
+exports[`getConstantByRegion() should return correct value for 5 and REGION_API_HOSTS as valid parameters 1`] = `"https://gateway.battlenet.com.cn/"`;
 
-exports[`getConstantByRegion() should return correct value for 5 and REGION_API_HOSTS as valid parameters 2`] = `"https://api.blizzard.com.cn"`;
+exports[`getConstantByRegion() should return correct value for 5 and REGION_API_HOSTS as valid parameters 2`] = `"https://gateway.battlenet.com.cn/"`;
 
-exports[`getConstantByRegion() should return correct value for CN as valid region name 1`] = `"https://api.blizzard.com.cn"`;
+exports[`getConstantByRegion() should return correct value for CN as valid region name 1`] = `"https://gateway.battlenet.com.cn/"`;
 
 exports[`getConstantByRegion() should return correct value for CN as valid region name 2`] = `"https://www.battlenet.com.cn/oauth/authorize"`;
 
@@ -72,7 +82,7 @@ exports[`getConstantByRegion() should return correct value for CN as valid regio
 
 exports[`getConstantByRegion() should return correct value for CN as valid region name 4`] = `"https://www.battlenet.com.cn/oauth/check_token?token="`;
 
-exports[`getConstantByRegion() should return correct value for Cn as valid region name 1`] = `"https://api.blizzard.com.cn"`;
+exports[`getConstantByRegion() should return correct value for Cn as valid region name 1`] = `"https://gateway.battlenet.com.cn/"`;
 
 exports[`getConstantByRegion() should return correct value for Cn as valid region name 2`] = `"https://www.battlenet.com.cn/oauth/authorize"`;
 
@@ -96,7 +106,12 @@ exports[`getConstantByRegion() should return correct value for Eu as valid regio
 
 exports[`getConstantByRegion() should return correct value for Eu as valid region name 4`] = `"https://eu.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegion() should return correct value for KR as valid region name 1`] = `"https://kr.api.blizzard.com"`;
+exports[`getConstantByRegion() should return correct value for KR as valid region name 1`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
 
 exports[`getConstantByRegion() should return correct value for KR as valid region name 2`] = `"https://apac.battle.net/oauth/authorize"`;
 
@@ -104,7 +119,12 @@ exports[`getConstantByRegion() should return correct value for KR as valid regio
 
 exports[`getConstantByRegion() should return correct value for KR as valid region name 4`] = `"https://apac.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegion() should return correct value for Kr as valid region name 1`] = `"https://kr.api.blizzard.com"`;
+exports[`getConstantByRegion() should return correct value for Kr as valid region name 1`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
 
 exports[`getConstantByRegion() should return correct value for Kr as valid region name 2`] = `"https://apac.battle.net/oauth/authorize"`;
 
@@ -112,7 +132,12 @@ exports[`getConstantByRegion() should return correct value for Kr as valid regio
 
 exports[`getConstantByRegion() should return correct value for Kr as valid region name 4`] = `"https://apac.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegion() should return correct value for TW as valid region name 1`] = `"https://kr.api.blizzard.com"`;
+exports[`getConstantByRegion() should return correct value for TW as valid region name 1`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
 
 exports[`getConstantByRegion() should return correct value for TW as valid region name 2`] = `"https://apac.battle.net/oauth/authorize"`;
 
@@ -120,7 +145,12 @@ exports[`getConstantByRegion() should return correct value for TW as valid regio
 
 exports[`getConstantByRegion() should return correct value for TW as valid region name 4`] = `"https://apac.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegion() should return correct value for Tw as valid region name 1`] = `"https://kr.api.blizzard.com"`;
+exports[`getConstantByRegion() should return correct value for Tw as valid region name 1`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
 
 exports[`getConstantByRegion() should return correct value for Tw as valid region name 2`] = `"https://apac.battle.net/oauth/authorize"`;
 
@@ -136,7 +166,7 @@ exports[`getConstantByRegion() should return correct value for Us as valid regio
 
 exports[`getConstantByRegion() should return correct value for Us as valid region name 4`] = `"https://us.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegion() should return correct value for cN as valid region name 1`] = `"https://api.blizzard.com.cn"`;
+exports[`getConstantByRegion() should return correct value for cN as valid region name 1`] = `"https://gateway.battlenet.com.cn/"`;
 
 exports[`getConstantByRegion() should return correct value for cN as valid region name 2`] = `"https://www.battlenet.com.cn/oauth/authorize"`;
 
@@ -144,7 +174,7 @@ exports[`getConstantByRegion() should return correct value for cN as valid regio
 
 exports[`getConstantByRegion() should return correct value for cN as valid region name 4`] = `"https://www.battlenet.com.cn/oauth/check_token?token="`;
 
-exports[`getConstantByRegion() should return correct value for cn as valid region name 1`] = `"https://api.blizzard.com.cn"`;
+exports[`getConstantByRegion() should return correct value for cn as valid region name 1`] = `"https://gateway.battlenet.com.cn/"`;
 
 exports[`getConstantByRegion() should return correct value for cn as valid region name 2`] = `"https://www.battlenet.com.cn/oauth/authorize"`;
 
@@ -168,7 +198,12 @@ exports[`getConstantByRegion() should return correct value for eu as valid regio
 
 exports[`getConstantByRegion() should return correct value for eu as valid region name 4`] = `"https://eu.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegion() should return correct value for kR as valid region name 1`] = `"https://kr.api.blizzard.com"`;
+exports[`getConstantByRegion() should return correct value for kR as valid region name 1`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
 
 exports[`getConstantByRegion() should return correct value for kR as valid region name 2`] = `"https://apac.battle.net/oauth/authorize"`;
 
@@ -176,7 +211,12 @@ exports[`getConstantByRegion() should return correct value for kR as valid regio
 
 exports[`getConstantByRegion() should return correct value for kR as valid region name 4`] = `"https://apac.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegion() should return correct value for kr as valid region name 1`] = `"https://kr.api.blizzard.com"`;
+exports[`getConstantByRegion() should return correct value for kr as valid region name 1`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
 
 exports[`getConstantByRegion() should return correct value for kr as valid region name 2`] = `"https://apac.battle.net/oauth/authorize"`;
 
@@ -184,7 +224,12 @@ exports[`getConstantByRegion() should return correct value for kr as valid regio
 
 exports[`getConstantByRegion() should return correct value for kr as valid region name 4`] = `"https://apac.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegion() should return correct value for tW as valid region name 1`] = `"https://kr.api.blizzard.com"`;
+exports[`getConstantByRegion() should return correct value for tW as valid region name 1`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
 
 exports[`getConstantByRegion() should return correct value for tW as valid region name 2`] = `"https://apac.battle.net/oauth/authorize"`;
 
@@ -192,7 +237,12 @@ exports[`getConstantByRegion() should return correct value for tW as valid regio
 
 exports[`getConstantByRegion() should return correct value for tW as valid region name 4`] = `"https://apac.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegion() should return correct value for tw as valid region name 1`] = `"https://kr.api.blizzard.com"`;
+exports[`getConstantByRegion() should return correct value for tw as valid region name 1`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
 
 exports[`getConstantByRegion() should return correct value for tw as valid region name 2`] = `"https://apac.battle.net/oauth/authorize"`;
 

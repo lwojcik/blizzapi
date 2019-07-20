@@ -1,8 +1,8 @@
 import * as utils from '../../../../src/lib/utils';
 const { getRegionIdByName } = utils;
 
-import regionNamesJson from '../../../../__testData__/regionNames.json';
-import wrongRegionNamesJson from '../../../../__testData__/wrongRegionNames.json';
+import regionNamesJson from '../../../__testData__/regionNames.json';
+import wrongRegionNamesJson from '../../../__testData__/wrongRegionNames.json';
 
 describe('getRegionIdByName()', () => {
   test('should be defined', () => {

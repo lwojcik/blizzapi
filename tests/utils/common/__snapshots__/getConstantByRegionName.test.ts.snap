@@ -1,161 +1,201 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 1`] = `"https://us.api.blizzard.com"`;
+exports[`getConstantByRegionName() should return correct value for CN and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 2`] = `"https://us.battle.net/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for CN and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 3`] = `"https://us.battle.net/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for CN and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 4`] = `"https://us.battle.net/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for CN and REGION_API_HOSTS as valid parameters 1`] = `"https://gateway.battlenet.com.cn/"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 5`] = `"https://eu.api.blizzard.com"`;
+exports[`getConstantByRegionName() should return correct value for Cn and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 6`] = `"https://eu.battle.net/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for Cn and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 7`] = `"https://eu.battle.net/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for Cn and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 8`] = `"https://eu.battle.net/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for Cn and REGION_API_HOSTS as valid parameters 1`] = `"https://gateway.battlenet.com.cn/"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 9`] = `"https://kr.api.blizzard.com"`;
+exports[`getConstantByRegionName() should return correct value for EU and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://eu.battle.net/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 10`] = `"https://apac.battle.net/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for EU and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://eu.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 11`] = `"https://apac.battle.net/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for EU and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://eu.battle.net/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 12`] = `"https://apac.battle.net/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for EU and REGION_API_HOSTS as valid parameters 1`] = `"https://eu.api.blizzard.com"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 13`] = `"https://kr.api.blizzard.com"`;
+exports[`getConstantByRegionName() should return correct value for Eu and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://eu.battle.net/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 14`] = `"https://apac.battle.net/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for Eu and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://eu.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 15`] = `"https://apac.battle.net/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for Eu and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://eu.battle.net/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 16`] = `"https://apac.battle.net/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for Eu and REGION_API_HOSTS as valid parameters 1`] = `"https://eu.api.blizzard.com"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 17`] = `"https://api.blizzard.com.cn"`;
+exports[`getConstantByRegionName() should return correct value for KR and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 18`] = `"https://www.battlenet.com.cn/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for KR and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 19`] = `"https://www.battlenet.com.cn/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for KR and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 20`] = `"https://www.battlenet.com.cn/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for KR and REGION_API_HOSTS as valid parameters 1`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 21`] = `"https://us.api.blizzard.com"`;
+exports[`getConstantByRegionName() should return correct value for Kr and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 22`] = `"https://us.battle.net/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for Kr and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 23`] = `"https://us.battle.net/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for Kr and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 24`] = `"https://us.battle.net/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for Kr and REGION_API_HOSTS as valid parameters 1`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 25`] = `"https://eu.api.blizzard.com"`;
+exports[`getConstantByRegionName() should return correct value for TW and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 26`] = `"https://eu.battle.net/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for TW and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 27`] = `"https://eu.battle.net/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for TW and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 28`] = `"https://eu.battle.net/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for TW and REGION_API_HOSTS as valid parameters 1`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 29`] = `"https://kr.api.blizzard.com"`;
+exports[`getConstantByRegionName() should return correct value for Tw and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 30`] = `"https://apac.battle.net/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for Tw and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 31`] = `"https://apac.battle.net/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for Tw and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 32`] = `"https://apac.battle.net/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for Tw and REGION_API_HOSTS as valid parameters 1`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 33`] = `"https://kr.api.blizzard.com"`;
+exports[`getConstantByRegionName() should return correct value for Us and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://us.battle.net/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 34`] = `"https://apac.battle.net/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for Us and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://us.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 35`] = `"https://apac.battle.net/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for Us and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://us.battle.net/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 36`] = `"https://apac.battle.net/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for Us and REGION_API_HOSTS as valid parameters 1`] = `"https://us.api.blizzard.com"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 37`] = `"https://api.blizzard.com.cn"`;
+exports[`getConstantByRegionName() should return correct value for cN and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 38`] = `"https://www.battlenet.com.cn/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for cN and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 39`] = `"https://www.battlenet.com.cn/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for cN and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 40`] = `"https://www.battlenet.com.cn/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for cN and REGION_API_HOSTS as valid parameters 1`] = `"https://gateway.battlenet.com.cn/"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 41`] = `"https://us.api.blizzard.com"`;
+exports[`getConstantByRegionName() should return correct value for cn and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 42`] = `"https://us.battle.net/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for cn and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 43`] = `"https://us.battle.net/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for cn and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 44`] = `"https://us.battle.net/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for cn and REGION_API_HOSTS as valid parameters 1`] = `"https://gateway.battlenet.com.cn/"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 45`] = `"https://eu.api.blizzard.com"`;
+exports[`getConstantByRegionName() should return correct value for eU and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://eu.battle.net/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 46`] = `"https://eu.battle.net/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for eU and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://eu.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 47`] = `"https://eu.battle.net/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for eU and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://eu.battle.net/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 48`] = `"https://eu.battle.net/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for eU and REGION_API_HOSTS as valid parameters 1`] = `"https://eu.api.blizzard.com"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 49`] = `"https://kr.api.blizzard.com"`;
+exports[`getConstantByRegionName() should return correct value for eu and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://eu.battle.net/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 50`] = `"https://apac.battle.net/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for eu and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://eu.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 51`] = `"https://apac.battle.net/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for eu and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://eu.battle.net/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 52`] = `"https://apac.battle.net/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for eu and REGION_API_HOSTS as valid parameters 1`] = `"https://eu.api.blizzard.com"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 53`] = `"https://kr.api.blizzard.com"`;
+exports[`getConstantByRegionName() should return correct value for kR and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 54`] = `"https://apac.battle.net/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for kR and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 55`] = `"https://apac.battle.net/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for kR and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 56`] = `"https://apac.battle.net/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for kR and REGION_API_HOSTS as valid parameters 1`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 57`] = `"https://api.blizzard.com.cn"`;
+exports[`getConstantByRegionName() should return correct value for kr and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 58`] = `"https://www.battlenet.com.cn/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for kr and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 59`] = `"https://www.battlenet.com.cn/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for kr and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 60`] = `"https://www.battlenet.com.cn/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for kr and REGION_API_HOSTS as valid parameters 1`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 61`] = `"https://us.api.blizzard.com"`;
+exports[`getConstantByRegionName() should return correct value for tW and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 62`] = `"https://us.battle.net/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for tW and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 63`] = `"https://us.battle.net/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for tW and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 64`] = `"https://us.battle.net/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for tW and REGION_API_HOSTS as valid parameters 1`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 65`] = `"https://eu.api.blizzard.com"`;
+exports[`getConstantByRegionName() should return correct value for tw and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 66`] = `"https://eu.battle.net/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for tw and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 67`] = `"https://eu.battle.net/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for tw and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 68`] = `"https://eu.battle.net/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for tw and REGION_API_HOSTS as valid parameters 1`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 69`] = `"https://kr.api.blizzard.com"`;
+exports[`getConstantByRegionName() should return correct value for uS and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://us.battle.net/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 70`] = `"https://apac.battle.net/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for uS and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://us.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 71`] = `"https://apac.battle.net/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for uS and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://us.battle.net/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 72`] = `"https://apac.battle.net/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for uS and REGION_API_HOSTS as valid parameters 1`] = `"https://us.api.blizzard.com"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 73`] = `"https://kr.api.blizzard.com"`;
+exports[`getConstantByRegionName() should return correct value for us and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://us.battle.net/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 74`] = `"https://apac.battle.net/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for us and OAUTH_AUTHORIZE_URIS as valid parameters 2`] = `"https://us.battle.net/oauth/authorize"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 75`] = `"https://apac.battle.net/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for us and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://us.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 76`] = `"https://apac.battle.net/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for us and OAUTH_CHECK_TOKEN_URIS as valid parameters 2`] = `"https://us.battle.net/oauth/check_token?token="`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 77`] = `"https://api.blizzard.com.cn"`;
+exports[`getConstantByRegionName() should return correct value for us and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://us.battle.net/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 78`] = `"https://www.battlenet.com.cn/oauth/authorize"`;
+exports[`getConstantByRegionName() should return correct value for us and OAUTH_TOKEN_URIS as valid parameters 2`] = `"https://us.battle.net/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 79`] = `"https://www.battlenet.com.cn/oauth/token"`;
+exports[`getConstantByRegionName() should return correct value for us and REGION_API_HOSTS as valid parameters 1`] = `"https://us.api.blizzard.com"`;
 
-exports[`getConstantByRegionName() should return correct value for \${regionName} and \${constantKey} as valid parameters 80`] = `"https://www.battlenet.com.cn/oauth/check_token?token="`;
+exports[`getConstantByRegionName() should return correct value for us and REGION_API_HOSTS as valid parameters 2`] = `"https://us.api.blizzard.com"`;
