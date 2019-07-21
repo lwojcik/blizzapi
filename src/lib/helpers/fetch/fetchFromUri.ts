@@ -25,12 +25,12 @@ export default async (
       method,
     };
 
-    /* tslint:disable no-expression-statement no-object-mutation */
+    /* tslint:disable no-object-mutation */
     if (headers) Object.assign(requestOptions, { headers });
 
     // GET request method cannot have body, so I'm doing this nonsense
     if (method === 'POST') Object.assign(requestOptions, { params });
-    /* tslint:enable no-expression-statement no-object-mutation */
+    /* tslint:enable no-object-mutation */
     const response = await axios.get(uri, requestOptions);
     return response.data;
   } catch (error) {
