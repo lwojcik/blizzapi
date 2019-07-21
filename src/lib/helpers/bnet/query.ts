@@ -4,7 +4,6 @@ import { getApiHostByRegion } from '../../utils/api';
 import { fetchFromUri } from '../fetch';
 // import { BlizzAPIOptions } from '../../classes/BlizzAPI';
 
-
 export default (
   region: RegionIdOrName,
   endpoint: string,
@@ -18,7 +17,7 @@ export default (
   const requestUri = `${apiHost}${endpoint}`;
   const headers = {
     Authorization: `Bearer ${accessToken}`,
-  }
+  };
 
   return fetchFromUri(requestUri, 'GET', headers);
 };

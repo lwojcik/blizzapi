@@ -1,4 +1,9 @@
-import { ConstantKey, RegionIdOrName, RegionIdAsNumberOrString, RegionName } from '../../../../@types';
+import {
+  ConstantKey,
+  RegionIdOrName,
+  RegionIdAsNumberOrString,
+  RegionName,
+} from '../../../../@types';
 import constants from '../../constants';
 import { validateRegionId, validateRegionName, getRegionIdByName } from '../localization/regions';
 
@@ -6,7 +11,7 @@ export const getConstantByRegion = (regionIdOrName: RegionIdOrName, constantKey:
   return validateRegionId(regionIdOrName)
     ? getConstantByRegionId(regionIdOrName, constantKey)
     : getConstantByRegionName(regionIdOrName.toString(), constantKey);
-}
+};
 
 export const getConstantByRegionId = (
   regionId: RegionIdAsNumberOrString,

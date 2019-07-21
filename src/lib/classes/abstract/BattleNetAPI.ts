@@ -2,7 +2,7 @@ import { ClientId, ClientSecret, RegionIdOrName, AccessToken } from '../../../..
 import OAuth2API from './OAuth2API';
 import * as OAuthHelpers from '../../helpers/oauth';
 
-/* tslint:disable:no-this no-expression-statement no-object-mutation readonly-keyword */
+/* tslint:disable:no-this no-object-mutation */
 
 export = class BattleNetAPI extends OAuth2API {
   readonly region: RegionIdOrName;
@@ -32,4 +32,4 @@ export = class BattleNetAPI extends OAuth2API {
     OAuthHelpers.validateAccessToken(region, accessToken);
 };
 
-/* tslint:enable:no-this no-expression-statement no-object-mutation readonly-keyword */
+/* tslint:enable:no-this no-object-mutation */

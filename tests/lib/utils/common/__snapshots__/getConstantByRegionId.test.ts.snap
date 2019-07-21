@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getUriByRegionId() should return correct value for 1 and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://us.battle.net/oauth/authorize"`;
+
+exports[`getUriByRegionId() should return correct value for 1 and OAUTH_AUTHORIZE_URIS as valid parameters 2`] = `"https://us.battle.net/oauth/authorize"`;
+
+exports[`getUriByRegionId() should return correct value for 1 and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://us.battle.net/oauth/check_token?token="`;
+
+exports[`getUriByRegionId() should return correct value for 1 and OAUTH_CHECK_TOKEN_URIS as valid parameters 2`] = `"https://us.battle.net/oauth/check_token?token="`;
+
+exports[`getUriByRegionId() should return correct value for 1 and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://us.battle.net/oauth/token"`;
+
+exports[`getUriByRegionId() should return correct value for 1 and OAUTH_TOKEN_URIS as valid parameters 2`] = `"https://us.battle.net/oauth/token"`;
+
+exports[`getUriByRegionId() should return correct value for 1 and REGION_API_HOSTS as valid parameters 1`] = `"https://us.api.blizzard.com"`;
+
+exports[`getUriByRegionId() should return correct value for 1 and REGION_API_HOSTS as valid parameters 2`] = `"https://us.api.blizzard.com"`;
+
+exports[`getUriByRegionId() should return correct value for 2 and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://eu.battle.net/oauth/authorize"`;
+
+exports[`getUriByRegionId() should return correct value for 2 and OAUTH_AUTHORIZE_URIS as valid parameters 2`] = `"https://eu.battle.net/oauth/authorize"`;
+
+exports[`getUriByRegionId() should return correct value for 2 and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://eu.battle.net/oauth/check_token?token="`;
+
+exports[`getUriByRegionId() should return correct value for 2 and OAUTH_CHECK_TOKEN_URIS as valid parameters 2`] = `"https://eu.battle.net/oauth/check_token?token="`;
+
+exports[`getUriByRegionId() should return correct value for 2 and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://eu.battle.net/oauth/token"`;
+
+exports[`getUriByRegionId() should return correct value for 2 and OAUTH_TOKEN_URIS as valid parameters 2`] = `"https://eu.battle.net/oauth/token"`;
+
+exports[`getUriByRegionId() should return correct value for 2 and REGION_API_HOSTS as valid parameters 1`] = `"https://eu.api.blizzard.com"`;
+
+exports[`getUriByRegionId() should return correct value for 2 and REGION_API_HOSTS as valid parameters 2`] = `"https://eu.api.blizzard.com"`;
+
+exports[`getUriByRegionId() should return correct value for 3 and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/authorize"`;
+
+exports[`getUriByRegionId() should return correct value for 3 and OAUTH_AUTHORIZE_URIS as valid parameters 2`] = `"https://apac.battle.net/oauth/authorize"`;
+
+exports[`getUriByRegionId() should return correct value for 3 and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/check_token?token="`;
+
+exports[`getUriByRegionId() should return correct value for 3 and OAUTH_CHECK_TOKEN_URIS as valid parameters 2`] = `"https://apac.battle.net/oauth/check_token?token="`;
+
+exports[`getUriByRegionId() should return correct value for 3 and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/token"`;
+
+exports[`getUriByRegionId() should return correct value for 3 and OAUTH_TOKEN_URIS as valid parameters 2`] = `"https://apac.battle.net/oauth/token"`;
+
+exports[`getUriByRegionId() should return correct value for 3 and REGION_API_HOSTS as valid parameters 1`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
+
+exports[`getUriByRegionId() should return correct value for 3 and REGION_API_HOSTS as valid parameters 2`] = `
+Array [
+  "https://kr.api.blizzard.com",
+  "https://tw.api.blizzard.com/",
+]
+`;
+
+exports[`getUriByRegionId() should return correct value for 5 and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/authorize"`;
+
+exports[`getUriByRegionId() should return correct value for 5 and OAUTH_AUTHORIZE_URIS as valid parameters 2`] = `"https://www.battlenet.com.cn/oauth/authorize"`;
+
+exports[`getUriByRegionId() should return correct value for 5 and OAUTH_CHECK_TOKEN_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/check_token?token="`;
+
+exports[`getUriByRegionId() should return correct value for 5 and OAUTH_CHECK_TOKEN_URIS as valid parameters 2`] = `"https://www.battlenet.com.cn/oauth/check_token?token="`;
+
+exports[`getUriByRegionId() should return correct value for 5 and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/token"`;
+
+exports[`getUriByRegionId() should return correct value for 5 and OAUTH_TOKEN_URIS as valid parameters 2`] = `"https://www.battlenet.com.cn/oauth/token"`;
+
+exports[`getUriByRegionId() should return correct value for 5 and REGION_API_HOSTS as valid parameters 1`] = `"https://gateway.battlenet.com.cn/"`;
+
+exports[`getUriByRegionId() should return correct value for 5 and REGION_API_HOSTS as valid parameters 2`] = `"https://gateway.battlenet.com.cn/"`;

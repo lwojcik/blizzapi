@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BattleNetAPI class should define clientId property 1`] = `"sample client id from BattleNetAPIMock"`;
+
+exports[`BattleNetAPI class should define clientSecret property 1`] = `"sample client secret from BattleNetAPIMock"`;
+
+exports[`BattleNetAPI class should define region property 1`] = `"us"`;
+
+exports[`BattleNetAPI class should get access token 1`] = `"sample mocked access token"`;
+
+exports[`BattleNetAPI class should get access token 2`] = `"sample provided access token"`;
+
+exports[`BattleNetAPI class should save accessToken as undefined 1`] = `undefined`;
+
+exports[`BattleNetAPI class should set access token 1`] = `"sample mocked access token"`;
+
+exports[`BattleNetAPI class should validate access token 1`] = `false`;

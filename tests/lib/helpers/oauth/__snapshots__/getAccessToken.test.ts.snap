@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getAccessToken() returns correct response for GET request to a valid uri 1`] = `"sample mocked access token"`;
