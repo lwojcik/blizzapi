@@ -4,8 +4,9 @@ const axios = jest.genMockFromModule('axios');
 (axios as any).get = (uri: string, params?: any) => Promise.resolve({
   data: {
     title: `sample mocked data for ${params.method} request to ${uri}`,
+    headers: params.headers || { data: 'default sample headers' },
   }
 });
-
-module.exports = axios;
 // tslint:enable no-object-mutation
+
+export default axios;

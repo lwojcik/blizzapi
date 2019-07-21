@@ -1,6 +1,5 @@
 import fetchFromUri from '../../../../src/lib/helpers/fetch/fetchFromUri';
 
-/* tslint:disable no-expression-statement */
 describe('fetchFromUri()', () => {
   test('should be defined', () => {
     expect(fetchFromUri).toBeDefined();
@@ -25,7 +24,4 @@ describe('fetchFromUri()', () => {
     const response = await fetchFromUri('http://example.org/valid/endpoint', 'GET', { data: 'sample headers' });
     expect(response).toMatchSnapshot();
   });
-
-  // TODO: unignore fetchFromUri in coverage and write actual tests
 });
-/* tslint:enable no-expression-statement */

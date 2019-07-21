@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`query() returns correct response for GET request to a valid uri 1`] = `
+Object {
+  "headers": Object {
+    "Authorization": "Bearer sample access token",
+  },
+  "title": "sample mocked data for GET request to https://us.api.blizzard.com/sc2/sample/endpoint",
+}
+`;
