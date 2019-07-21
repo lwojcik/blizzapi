@@ -5,6 +5,7 @@ const axios = jest.genMockFromModule('axios');
   data: {
     title: `sample mocked data for ${params.method} request to ${uri}`,
     headers: params.headers || { data: 'default sample headers' },
+    access_token: 'sample mocked access token',
   }
 });
 // tslint:enable no-object-mutation
