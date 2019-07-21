@@ -1,9 +1,12 @@
 import BattleNetAPI from '../../../../src/lib/classes/abstract/BattleNetAPI';
+// import * as oauth from '../../../../src/lib/helpers';
+
+jest.genMockFromModule('../../../../src/lib/classes/abstract/BattleNetAPI');
 
 // tslint:disable
 class BattleNetAPIMock extends BattleNetAPI {
-  constructor() {
-    super('us', 'foo', 'bar', 'baz');
+  constructor(accessToken?: string) {
+    super('us', 'sample client id from BattleNetAPIMock', 'sample client secret from BattleNetAPIMock', accessToken);
   }
 
   query(uri: string) {
@@ -22,31 +25,43 @@ describe('BattleNetAPI class', () => {
   });
 
   test('should define region property', () => {
-    expect(new BattleNetAPIMock().region).toBe('us');
+    expect(new BattleNetAPIMock().region).toMatchSnapshot();
   });
 
   test('should define clientId property', () => {
-    expect(new BattleNetAPIMock().clientId).toBe('foo');
+    expect(new BattleNetAPIMock().clientId).toMatchSnapshot();
   });
 
   test('should define clientSecret property', () => {
-    expect(new BattleNetAPIMock().clientSecret).toBe('bar');
+    expect(new BattleNetAPIMock().clientSecret).toMatchSnapshot();
   });
 
-  test('should define accessToken property', () => {
-    expect(new BattleNetAPIMock().accessToken).toBe('baz');
+  test('should save accessToken as undefined', () => {
+    expect(new BattleNetAPIMock().accessToken).toMatchSnapshot();
   });
 
-  test('should define setAccessToken method', () => {
-    expect(new BattleNetAPIMock().setAccessToken).toBeDefined;
+  test('should set access token', async () => {
+    const bnetApi = new BattleNetAPIMock();
+    const response = await bnetApi.setAccessToken();
+    expect(response).toMatchSnapshot();
   });
 
-  test('should define validateAccessToken method', () => {
-    expect(BattleNetAPIMock.validateAccessToken).toBeDefined;
+  test('should get access token', async () => {
+    const bnetApi = new BattleNetAPIMock();
+    const response = await bnetApi.getAccessToken();
+    expect(response).toMatchSnapshot();
   });
 
-  test('should define getAccessToken method', () => {
-    expect(new BattleNetAPIMock().getAccessToken).toBeDefined;
+
+  test('should get access token', async () => {
+    const bnetApi = new BattleNetAPIMock('sample provided access token');
+    const response = await bnetApi.getAccessToken();
+    expect(response).toMatchSnapshot();
+  });
+
+  test('should validate access token', async () => {
+    const response = await BattleNetAPIMock.validateAccessToken('us', 'sample access token');
+    expect(response).toMatchSnapshot();
   });
 });
 /* tslint:enable no-expression-statement */
