@@ -1,7 +1,6 @@
 import * as base64 from 'base-64';
 import { fetchFromUri } from '../fetch';
 import { Uri, ClientId, ClientSecret } from '../../../../@types';
-import { URLSearchParams } from 'url';
 
 export default (oauthUri: Uri, clientId: ClientId, clientSecret: ClientSecret) => {
   const params = new URLSearchParams();
