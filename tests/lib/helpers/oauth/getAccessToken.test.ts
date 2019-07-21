@@ -1,6 +1,5 @@
 import { getAccessToken } from '../../../../src/lib/helpers/oauth';
 
-/* tslint:disable no-expression-statement */
 describe('getAccessToken()', () => {
   const region = 'us';
   const clientId = 'sample client id';
@@ -20,4 +19,3 @@ describe('getAccessToken()', () => {
     expect(response).toMatchSnapshot();
   });
 });
-/* tslint:enable no-expression-statement */

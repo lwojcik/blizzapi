@@ -7,7 +7,6 @@ import constantKeysJson from '../../../__testData__/constantKeys.json';
 
 const { getConstantByRegionId } = utils;
 
-/* tslint:disable no-expression-statement */
 describe('getUriByRegionId()', () => {
   test('should be defined', () => {
     expect(getConstantByRegionId).toBeDefined();
@@ -33,4 +32,3 @@ describe('getUriByRegionId()', () => {
     });
   });
 });
-/* tslint:enable no-expression-statement */

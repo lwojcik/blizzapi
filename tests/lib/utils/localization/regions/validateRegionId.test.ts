@@ -1,7 +1,6 @@
 import * as utils from '../../../../../src/lib/utils';
 const { validateRegionId } = utils;
 
-/* tslint:disable no-expression-statement */
 describe('validateRegionId()', () => {
   test('should be defined', () => {
     expect(validateRegionId).toBeDefined();
@@ -56,4 +55,3 @@ describe('validateRegionId()', () => {
   //   expect(validateRegionId(parseInt(input, 10))).toBe(expectedResult);
   // });
 });
-/* tslint:enable no-expression-statement */

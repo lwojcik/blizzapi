@@ -17,9 +17,9 @@ export const getAllApiHosts = () => constants.REGION_API_HOSTS;
  */
 export const getApiHostByRegion = (regionIdOrName: RegionIdOrName) => {
   const apiHost = <Uri | ReadonlyArray<Uri>>getConstantByRegion(regionIdOrName, 'REGION_API_HOSTS');
-  return (typeof regionIdOrName === 'string' && (regionIdOrName as string).toLowerCase() === 'kr')
+  return typeof regionIdOrName === 'string' && (regionIdOrName as string).toLowerCase() === 'kr'
     ? apiHost[0]
-    : (typeof regionIdOrName === 'string' && (regionIdOrName as string).toLowerCase() === 'tw')
-      ? apiHost[1]
-      : apiHost;
-}
+    : typeof regionIdOrName === 'string' && (regionIdOrName as string).toLowerCase() === 'tw'
+    ? apiHost[1]
+    : apiHost;
+};

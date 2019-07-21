@@ -7,7 +7,7 @@ export default (oauthUri: Uri, clientId: ClientId, clientSecret: ClientSecret) =
   params.append('grant_type', 'client_credentials');
 
   const headers = {
-    Authorization: `Basic ${base64.encode(`${clientId}:${clientSecret}`)}`
+    Authorization: `Basic ${base64.encode(`${clientId}:${clientSecret}`)}`,
   };
 
   return fetchFromUri(oauthUri, 'POST', headers, params);

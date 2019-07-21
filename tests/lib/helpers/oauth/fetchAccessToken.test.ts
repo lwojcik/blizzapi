@@ -1,6 +1,5 @@
 import { fetchAccessToken } from '../../../../src/lib/helpers/oauth';
 
-/* tslint:disable no-expression-statement */
 describe('fetchAccessToken()', () => {
   const oauthUri = 'http://sample.oauth.uri/';
   const clientId = 'sample client id';
@@ -20,4 +19,3 @@ describe('fetchAccessToken()', () => {
     expect(response).toMatchSnapshot();
   });
 });
-/* tslint:enable no-expression-statement */

@@ -15,7 +15,6 @@ class OAuth2APIMock extends OAuth2API {
 }
 // tslint:enable
 
-/* tslint:disable no-expression-statement */
 describe('OAuth2API class', () => {
   test('should be defined', () => {
     expect(OAuth2API).toBeDefined();
@@ -33,4 +32,3 @@ describe('OAuth2API class', () => {
     expect(new OAuth2APIMock().query).toBeDefined();
   });
 });
-/* tslint:enable no-expression-statement */

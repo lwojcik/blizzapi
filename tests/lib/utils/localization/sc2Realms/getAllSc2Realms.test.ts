@@ -3,7 +3,6 @@ import constants from '../../../../../src/lib/constants';
 
 const { getAllSc2Realms } = utils;
 
-/* tslint:disable no-expression-statement */
 describe('getAllSc2Realms()', () => {
   test('should be defined', () => {
     expect(getAllSc2Realms).toBeDefined();
@@ -22,4 +21,3 @@ describe('getAllSc2Realms()', () => {
     expect(getAllSc2Realms()).toMatchObject(constants.SC2_REALMS);
   });
 });
-/* tslint:enable no-expression-statement */

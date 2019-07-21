@@ -4,7 +4,6 @@ import constants from '../../../../../src/lib/constants';
 const { REGIONS } = constants;
 const { getAllRegionIds } = utils;
 
-/* tslint:disable no-expression-statement */
 describe('getAllRegionIds()', () => {
   test('should be defined', () => {
     expect(getAllRegionIds).toBeDefined();
@@ -28,4 +27,3 @@ describe('getAllRegionIds()', () => {
     expect(getAllRegionIds().every(isInteger)).toBe(true);
   });
 });
-/* tslint:enable no-expression-statement */

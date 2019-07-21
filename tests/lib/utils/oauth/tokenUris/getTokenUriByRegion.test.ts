@@ -7,7 +7,6 @@ import wrongRegionNamesJson from '../../../../__testData__/wrongRegionNames.json
 import regionIdsJson from '../../../../__testData__/regionIds.json';
 import wrongRegionIdsJson from '../../../../__testData__/wrongRegionIds.json';
 
-/* tslint:disable no-expression-statement */
 describe('getTokenUriByRegion()', () => {
   test('should be defined', () => {
     expect(getTokenUriByRegion).toBeDefined();
@@ -41,4 +40,3 @@ describe('getTokenUriByRegion()', () => {
     });
   });
 });
-/* tslint:enable no-expression-statement */

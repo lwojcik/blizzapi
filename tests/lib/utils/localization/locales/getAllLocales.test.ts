@@ -3,7 +3,6 @@ import constants from '../../../../../src/lib/constants';
 
 const { getAllLocales } = utils;
 
-/* tslint:disable no-expression-statement */
 describe('getAllLocales()', () => {
   test('should be defined', () => {
     expect(getAllLocales).toBeDefined();
@@ -22,4 +21,3 @@ describe('getAllLocales()', () => {
     expect(getAllLocales()).toMatchObject(constants.LOCALES);
   });
 });
-/* tslint:enable no-expression-statement */

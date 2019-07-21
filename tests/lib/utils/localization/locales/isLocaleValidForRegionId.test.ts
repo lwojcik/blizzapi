@@ -7,7 +7,6 @@ import localesJson from '../../../../__testData__/locales.json';
 import nonexistentLocalesJson from '../../../../__testData__/nonexistentLocales.json';
 import wrongLocalesJson from '../../../../__testData__/wrongLocales.json';
 
-/* tslint:disable no-expression-statement */
 describe('isLocaleValidForRegionId()', () => {
   test('should be defined', () => {
     expect(isLocaleValidForRegionId).toBeDefined();
@@ -67,4 +66,3 @@ describe('isLocaleValidForRegionId()', () => {
     ),
   );
 });
-/* tslint:enable no-expression-statement */

@@ -1,6 +1,5 @@
 import { fetchFromUri } from '../../../src/lib/helpers/fetch';
 
-/* tslint:disable no-expression-statement */
 describe('fetchFromUri()', () => {
   test('should be defined', () => {
     expect(fetchFromUri).toBeDefined();
@@ -29,18 +28,4 @@ describe('fetchFromUri()', () => {
     expect.assertions(1);
     await expect(fetchFromUri(input)).rejects.toThrow(expectedResult);
   });
-
-  // test.each`
-  //   input                                             | expectedResult
-  //   ${'https://httpstat.us/200'}                      | ${'object'}
-  //   ${'http://httpstat.us/200'}                       | ${'object'}
-  //   ${'https://httpstat.us/404'}                      | ${'object'}
-  //   ${'https://google.com'}                           | ${'object'}
-  //   ${'https://microsoft.com'}                        | ${'object'}
-  //   `('returns fetched data for $input as correct uri', ({ input, expectedResult }) => {
-  //     return fetchFromUri(input).then((data) => {
-  //       expect(typeof data).toBe(expectedResult);
-  //     })
-  // });
 });
-/* tslint:enable no-expression-statement */

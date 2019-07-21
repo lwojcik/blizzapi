@@ -5,7 +5,6 @@ import localesJson from '../../../../__testData__/locales.json';
 import nonexistentLocalesJson from '../../../../__testData__/nonexistentLocales.json';
 import wrongLocalesJson from '../../../../__testData__/wrongLocales.json';
 
-/* tslint:disable no-expression-statement */
 describe('validateLocale()', () => {
   test('should be defined', () => {
     expect(validateLocale).toBeDefined();
@@ -33,4 +32,3 @@ describe('validateLocale()', () => {
     }),
   );
 });
-/* tslint:enable no-expression-statement */

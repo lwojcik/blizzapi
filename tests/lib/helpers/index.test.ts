@@ -1,6 +1,5 @@
 import * as helpers from '../../../src/lib/helpers';
 
-/* tslint:disable no-expression-statement */
 describe('Helpers module', () => {
   test('should be defined', () => {
     expect(helpers).toBeDefined();
@@ -10,4 +9,3 @@ describe('Helpers module', () => {
     expect(helpers).toMatchSnapshot();
   });
 });
-/* tslint:enable no-expression-statement */

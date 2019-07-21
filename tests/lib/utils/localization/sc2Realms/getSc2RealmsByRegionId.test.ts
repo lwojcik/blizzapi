@@ -6,7 +6,6 @@ const { getSc2RealmsByRegionId } = utils;
 import regionIdsJson from '../../../../__testData__/regionIds.json';
 import wrongRegionIdsJson from '../../../../__testData__/wrongRegionIds.json';
 
-/* tslint:disable no-expression-statement */
 describe('getSc2RealmsByRegionId()', () => {
   test('should be defined', () => {
     expect(getSc2RealmsByRegionId).toBeDefined();
@@ -28,4 +27,3 @@ describe('getSc2RealmsByRegionId()', () => {
     }),
   );
 });
-/* tslint:enable no-expression-statement */

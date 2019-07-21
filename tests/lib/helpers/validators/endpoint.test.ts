@@ -3,7 +3,6 @@ import { endpoint as validateEndpoint } from '../../../../src/lib/helpers/valida
 import endpointsJson from '../../../__testData__/endpoints.json';
 import invalidEndpointsJson from '../../../__testData__/invalidEndpoints.json';
 
-/* tslint:disable no-expression-statement */
 describe('validateEndpoint()', () => {
   test('should be defined', () => {
     expect(validateEndpoint).toBeDefined();
@@ -31,4 +30,3 @@ describe('validateEndpoint()', () => {
     });
   });
 });
-/* tslint:enable no-expression-statement */

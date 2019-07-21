@@ -15,4 +15,3 @@ describe('SC2_REALMS', () => {
     expect(SC2_REALMS).toMatchSnapshot();
   });
 });
-/* tslint:enable no-expression-statement */

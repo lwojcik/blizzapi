@@ -4,7 +4,6 @@ import { uri as validateUri } from '../../../../src/lib/helpers/validators';
 import urisJson from '../../../__testData__/uris.json';
 import invalidUrisJson from '../../../__testData__/invalidUris.json';
 
-/* tslint:disable no-expression-statement */
 describe('validateUri()', () => {
   test('should be defined', () => {
     expect(validateUri).toBeDefined();
@@ -32,4 +31,3 @@ describe('validateUri()', () => {
     });
   });
 });
-/* tslint:enable no-expression-statement */

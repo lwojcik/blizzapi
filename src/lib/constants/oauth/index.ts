@@ -21,4 +21,4 @@ export default {
   authorizeUris: Object.freeze(authorizeUris),
   tokenUris: Object.freeze(tokenUris),
   checkTokenUris: Object.freeze(checkTokenUris),
-}
+};

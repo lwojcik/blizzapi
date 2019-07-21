@@ -5,7 +5,6 @@ const { REGIONS } = constants;
 
 const { getAllRegionNames } = utils;
 
-/* tslint:disable no-expression-statement */
 describe('getAllRegionNames()', () => {
   test('should be defined', () => {
     expect(getAllRegionNames).toBeDefined();
@@ -27,4 +26,3 @@ describe('getAllRegionNames()', () => {
     expect(getAllRegionNames().length).toStrictEqual(flattenedRegionsLength);
   });
 });
-/* tslint:enable no-expression-statement */

@@ -7,7 +7,6 @@ import sc2realmsJson from '../../../../__testData__/sc2realms.json';
 import nonexistentSc2realmsJson from '../../../../__testData__/nonexistentSc2realms.json';
 import wrongSc2realmsJson from '../../../../__testData__/wrongSc2realms.json';
 
-/* tslint:disable no-expression-statement */
 describe('isSc2RealmValidForRegionId()', () => {
   test('should be defined', () => {
     expect(isSc2RealmValidForRegionId).toBeDefined();
@@ -67,4 +66,3 @@ describe('isSc2RealmValidForRegionId()', () => {
     }),
   );
 });
-/* tslint:enable no-expression-statement */

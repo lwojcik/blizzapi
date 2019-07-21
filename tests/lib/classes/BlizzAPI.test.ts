@@ -1,6 +1,5 @@
 import BlizzAPI from '../../../src/lib/classes/BlizzAPI';
 
-/* tslint:disable no-expression-statement */
 describe('BlizzAPI class', () => {
   test('should be defined', () => {
     expect(BlizzAPI).toBeDefined();
@@ -107,7 +106,6 @@ describe('BlizzAPI class', () => {
     expect(response).toMatchSnapshot();
   });
 
-
   test('should validate access token', async () => {
     const bnetApi = new BlizzAPI({
       region: 'us',
@@ -118,7 +116,4 @@ describe('BlizzAPI class', () => {
     const response = await bnetApi.validateAccessToken('us', 'correctAccessToken');
     expect(response).toMatchSnapshot();
   });
-
-
 });
-/* tslint:enable no-expression-statement */

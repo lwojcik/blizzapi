@@ -7,7 +7,6 @@ import wrongRegionNamesJson from '../../../../__testData__/wrongRegionNames.json
 import regionIdsJson from '../../../../__testData__/regionIds.json';
 import wrongRegionIdsJson from '../../../../__testData__/wrongRegionIds.json';
 
-/* tslint:disable no-expression-statement */
 describe('getApiHostByRegion()', () => {
   test('should be defined', () => {
     expect(getApiHostByRegion).toBeDefined();

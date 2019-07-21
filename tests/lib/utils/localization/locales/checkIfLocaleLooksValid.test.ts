@@ -1,7 +1,6 @@
 import * as utils from '../../../../../src/lib/utils';
 const { checkIfLocaleLooksValid } = utils;
 
-/* tslint:disable no-expression-statement */
 describe('checkIfLocaleLooksValid()', () => {
   test('should be defined', () => {
     expect(checkIfLocaleLooksValid).toBeDefined();
@@ -86,4 +85,3 @@ describe('checkIfLocaleLooksValid()', () => {
   //   expect(checkIfLocaleLooksValid(input)).toBe(expectedResult);
   // });
 });
-/* tslint:enable no-expression-statement */

@@ -3,7 +3,6 @@ import constants from '../../../../../src/lib/constants';
 
 const { getAllCheckTokenUris } = utils;
 
-/* tslint:disable no-expression-statement */
 describe('getAllCheckTokenUris()', () => {
   test('should be defined', () => {
     expect(getAllCheckTokenUris).toBeDefined();
@@ -22,4 +21,3 @@ describe('getAllCheckTokenUris()', () => {
     expect(getAllCheckTokenUris()).toMatchObject(constants.OAUTH_CHECK_TOKEN_URIS);
   });
 });
-/* tslint:enable no-expression-statement */

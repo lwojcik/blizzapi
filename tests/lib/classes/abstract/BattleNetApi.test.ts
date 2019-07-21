@@ -18,7 +18,6 @@ class BattleNetAPIMock extends BattleNetAPI {
 }
 // tslint:enable
 
-/* tslint:disable no-expression-statement */
 describe('BattleNetAPI class', () => {
   test('should be defined', () => {
     expect(BattleNetAPI).toBeDefined();
@@ -64,4 +63,3 @@ describe('BattleNetAPI class', () => {
     expect(response).toMatchSnapshot();
   });
 });
-/* tslint:enable no-expression-statement */

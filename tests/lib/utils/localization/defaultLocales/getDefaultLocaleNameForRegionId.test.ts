@@ -7,7 +7,6 @@ const { getDefaultLocaleNameForRegionId } = utils;
 import regionIdsJson from '../../../../__testData__/regionIds.json';
 import wrongRegionIdsJson from '../../../../__testData__/wrongRegionIds.json';
 
-/* tslint:disable no-expression-statement */
 describe('getDefaultLocaleNameForRegionId()', () => {
   test('should be defined', () => {
     expect(getDefaultLocaleNameForRegionId).toBeDefined();
@@ -31,4 +30,3 @@ describe('getDefaultLocaleNameForRegionId()', () => {
     }),
   );
 });
-/* tslint:enable no-expression-statement */

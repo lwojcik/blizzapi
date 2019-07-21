@@ -6,7 +6,6 @@ import regionNamesJson from '../../../__testData__/regionNames.json';
 import wrongRegionNamesJson from '../../../__testData__/wrongRegionNames.json';
 import constantKeysJson from '../../../__testData__/constantKeys.json';
 
-/* tslint:disable no-expression-statement */
 describe('getConstantByRegionName()', () => {
   test('should be defined', () => {
     expect(getConstantByRegionName).toBeDefined();
@@ -32,4 +31,3 @@ describe('getConstantByRegionName()', () => {
     }),
   );
 });
-/* tslint:enable no-expression-statement */
