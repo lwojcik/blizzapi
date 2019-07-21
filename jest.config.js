@@ -24,6 +24,9 @@ module.exports = {
     "!**/dist/**"
   ],
   "automock": false,
+  "setupFiles": [
+    "./setupJest.ts"
+  ]
   // "coverageThreshold": {
   //   "global": {
   //     "branches": 100,

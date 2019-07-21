@@ -33,10 +33,7 @@
     "dev": "tsc -w"
   },
   "jest": {
-    "automock": false,
-    "setupFiles": [
-      "./setupJest.ts"
-    ]
+    "automock": false
   },
   "dependencies": {
     "axios": "0.19.0",
