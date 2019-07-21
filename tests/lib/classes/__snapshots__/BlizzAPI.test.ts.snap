@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlizzAPI class should query an endpoint 1`] = `
+Object {
+  "access_token": "sample mocked access token",
+  "headers": Object {
+    "Authorization": "Bearer sample mocked access token",
+  },
+  "title": "sample mocked data for GET request to https://us.api.blizzard.com/sample/endpoint",
+}
+`;
+
+exports[`BlizzAPI class should validate access token 1`] = `true`;

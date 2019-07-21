@@ -2,6 +2,7 @@ import * as helpers from '../helpers';
 import * as utils from '../utils';
 import { Endpoint, RegionIdOrName, AccessToken } from '../../../@types';
 import BattleNetAPI = require('./abstract/BattleNetAPI');
+
 export interface BlizzAPIOptions {
   validateAccessTokenOnEachQuery?: boolean;
   refreshExpiredAccessToken?: boolean;
@@ -17,19 +18,19 @@ export interface BattleNetOptions extends BlizzAPIOptions {
 }
 
 export default class BlizzAPI extends BattleNetAPI {
-  readonly options: BlizzAPIOptions;
+  // readonly options: BlizzAPIOptions;
 
   constructor(options: BattleNetOptions) {
     super(options.region, options.clientId, options.clientSecret, options.accessToken);
-    this.options = {
-      validateAccessTokenOnEachQuery: options.validateAccessTokenOnEachQuery
-        ? options.validateAccessTokenOnEachQuery
-        : false, // revalidate access token on each single query
-      refreshExpiredAccessToken: options.refreshExpiredAccessToken
-        ? options.refreshExpiredAccessToken
-        : false, // revalidate access token if error 403
-      onAccessTokenRefresh: options.onAccessTokenRefresh ? options.onAccessTokenRefresh : undefined, // function to run when access token is refreshed
-    };
+    // this.options = {
+    //   validateAccessTokenOnEachQuery: options.validateAccessTokenOnEachQuery
+    //     ? options.validateAccessTokenOnEachQuery
+    //     : false, // revalidate access token on each single query
+    //   refreshExpiredAccessToken: options.refreshExpiredAccessToken
+    //     ? options.refreshExpiredAccessToken
+    //     : false, // revalidate access token if error 403
+    //   onAccessTokenRefresh: options.onAccessTokenRefresh ? options.onAccessTokenRefresh : undefined, // function to run when access token is refreshed
+    // };
   }
 
   query = async (endpoint: Endpoint) =>
