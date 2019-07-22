@@ -1,10 +1,4 @@
 import { validateAccessToken } from '../../../../src/lib/helpers/oauth';
-
-// import regionNamesJson from '../../../__testData__/regionNames.json';
-// import wrongRegionNamesJson from '../../../__testData__/wrongRegionNames.json';
-// import regionIdsJson from '../../../__testData__/regionIds.json';
-// import wrongRegionIdsJson from '../../../__testData__/wrongRegionIds.json';
-
 const fetch = require('../../../../src/lib/helpers/fetch');
 
 // tslint:disable-next-line: no-object-mutation
