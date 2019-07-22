@@ -4,8 +4,7 @@ import * as OAuthHelpers from '../../helpers/oauth';
 import { BattleNetOptions } from '../../../../@interfaces';
 
 /* tslint:disable:no-this no-object-mutation */
-
-export = class BattleNetAPI extends OAuth2API {
+export default class BattleNetAPI extends OAuth2API {
   readonly region: RegionIdOrName;
   accessToken: AccessToken;
 

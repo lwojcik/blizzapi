@@ -1,6 +1,6 @@
 import * as helpers from '../helpers';
 import * as utils from '../utils';
-import BattleNetAPI = require('./abstract/BattleNetAPI');
+import BattleNetAPI from './abstract/BattleNetAPI';
 import { Endpoint } from '../../../@types';
 import { BattleNetOptions, AccessTokenOptions } from '../../../@interfaces';
 
