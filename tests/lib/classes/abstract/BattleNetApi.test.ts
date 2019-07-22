@@ -6,7 +6,12 @@ jest.genMockFromModule('../../../../src/lib/classes/abstract/BattleNetAPI');
 // tslint:disable
 class BattleNetAPIMock extends BattleNetAPI {
   constructor(accessToken?: string) {
-    super('us', 'sample client id from BattleNetAPIMock', 'sample client secret from BattleNetAPIMock', accessToken);
+    super({
+      accessToken,
+      region: 'us',
+      clientId: 'sample client id from BattleNetAPIMock',
+      clientSecret: 'sample client secret from BattleNetAPIMock',
+    });
   }
 
   query(uri: string) {

@@ -1,27 +1,19 @@
 import * as helpers from '../helpers';
 import * as utils from '../utils';
-import { Endpoint, RegionIdOrName, AccessToken } from '../../../@types';
+import { Endpoint } from '../../../@types';
 import BattleNetAPI = require('./abstract/BattleNetAPI');
-
-export interface BlizzAPIOptions {
-  validateAccessTokenOnEachQuery?: boolean;
-  refreshExpiredAccessToken?: boolean;
-  onAccessTokenExpire?: Function | undefined;
-  onAccessTokenRefresh?: Function | undefined;
-}
-
-export interface BattleNetOptions extends BlizzAPIOptions {
-  region: RegionIdOrName;
-  clientId: string;
-  clientSecret: string;
-  accessToken?: string;
-}
+import { BattleNetOptions } from '../../../@interfaces/BattleNetOptions';
 
 export default class BlizzAPI extends BattleNetAPI {
   // readonly options: BlizzAPIOptions;
 
   constructor(options: BattleNetOptions) {
-    super(options.region, options.clientId, options.clientSecret, options.accessToken);
+    super({
+      region: options.region,
+      clientId: options.clientId,
+      clientSecret: options.clientSecret,
+      accessToken: options.accessToken,
+    });
     // this.options = {
     //   validateAccessTokenOnEachQuery: options.validateAccessTokenOnEachQuery
     //     ? options.validateAccessTokenOnEachQuery
@@ -34,14 +26,7 @@ export default class BlizzAPI extends BattleNetAPI {
   }
 
   query = async (endpoint: Endpoint) =>
-    // helpers.query(this.region, endpoint, await this.getAccessToken(), this.options);
     helpers.query(this.region, endpoint, await this.getAccessToken());
-
-  getAccessToken = async () =>
-    helpers.getAccessToken(this.region, this.clientId, this.clientSecret);
-
-  validateAccessToken = async (regionIdOrName: RegionIdOrName, accessToken: AccessToken) =>
-    helpers.validateAccessToken(regionIdOrName, accessToken);
 
   static getAllRegions = utils.getAllRegions;
   static getAllRegionIds = utils.getAllRegionIds;

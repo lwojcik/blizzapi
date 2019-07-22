@@ -1,6 +1,7 @@
-import { ClientId, ClientSecret, RegionIdOrName, AccessToken } from '../../../../@types';
+import { RegionIdOrName, AccessToken } from '../../../../@types';
 import OAuth2API from './OAuth2API';
 import * as OAuthHelpers from '../../helpers/oauth';
+import { BattleNetOptions } from '../../../../@interfaces/BattleNetOptions';
 
 /* tslint:disable:no-this no-object-mutation */
 
@@ -8,15 +9,10 @@ export = class BattleNetAPI extends OAuth2API {
   readonly region: RegionIdOrName;
   accessToken: AccessToken;
 
-  constructor(
-    region: RegionIdOrName,
-    clientId: ClientId,
-    clientSecret: ClientSecret,
-    accessToken?: AccessToken,
-  ) {
-    super(clientId, clientSecret);
-    this.region = region;
-    this.accessToken = accessToken || undefined;
+  constructor(options: BattleNetOptions) {
+    super(options.clientId, options.clientSecret);
+    this.region = options.region;
+    this.accessToken = options.accessToken || undefined;
   }
 
   readonly getAccessToken = () => (this.accessToken ? this.accessToken : this.setAccessToken());
