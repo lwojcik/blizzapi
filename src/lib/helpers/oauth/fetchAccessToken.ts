@@ -2,7 +2,14 @@ import * as base64 from 'base-64';
 import { fetchFromUri } from '../fetch';
 import { Uri, ClientId, ClientSecret } from '../../../../@types';
 
-export default (oauthUri: Uri, clientId: ClientId, clientSecret: ClientSecret) => {
+interface FetchAccessTokenOptions {
+  oauthUri: Uri;
+  clientId: ClientId;
+  clientSecret: ClientSecret;
+}
+
+export default (options: FetchAccessTokenOptions) => {
+  const { oauthUri, clientId, clientSecret } = options;
   const params = new URLSearchParams();
   params.append('grant_type', 'client_credentials');
 
@@ -10,5 +17,10 @@ export default (oauthUri: Uri, clientId: ClientId, clientSecret: ClientSecret) =
     Authorization: `Basic ${base64.encode(`${clientId}:${clientSecret}`)}`,
   };
 
-  return fetchFromUri(oauthUri, 'POST', headers, params);
+  return fetchFromUri({
+    headers,
+    params,
+    uri: oauthUri,
+    method: 'POST',
+  });
 };

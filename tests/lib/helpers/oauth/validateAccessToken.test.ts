@@ -8,13 +8,13 @@ import { validateAccessToken } from '../../../../src/lib/helpers/oauth';
 const fetch = require('../../../../src/lib/helpers/fetch');
 
 // tslint:disable-next-line: no-object-mutation
-fetch.fetchFromUri = jest.fn().mockImplementation((uri: string) => {
-  if (uri.includes("incorrectAccessToken")) {
+fetch.fetchFromUri = jest.fn().mockImplementation((options: { uri: string }) => {
+  if (options.uri.includes("incorrectAccessToken")) {
     return {
       error: 'invalid_token',
     }
   }
-  if (uri.includes("accessTokenWithApiError")) {
+  if (options.uri.includes("accessTokenWithApiError")) {
     throw new Error('invalid token');
   }
   return {

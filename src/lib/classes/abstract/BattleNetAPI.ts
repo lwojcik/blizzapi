@@ -18,13 +18,13 @@ export = class BattleNetAPI extends OAuth2API {
   readonly getAccessToken = () => (this.accessToken ? this.accessToken : this.setAccessToken());
 
   readonly setAccessToken = async () =>
-    (this.accessToken = await OAuthHelpers.getAccessToken(
-      this.region,
-      this.clientId,
-      this.clientSecret,
-    ));
+    (this.accessToken = await OAuthHelpers.getAccessToken({
+      region: this.region,
+      clientId: this.clientId,
+      clientSecret: this.clientSecret,
+    }));
 
-  static validateAccessToken = async (region: RegionIdOrName, accessToken: AccessToken) =>
+  static validateAccessToken = (region: RegionIdOrName, accessToken: AccessToken) =>
     OAuthHelpers.validateAccessToken(region, accessToken);
 };
 

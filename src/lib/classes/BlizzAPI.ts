@@ -26,7 +26,11 @@ export default class BlizzAPI extends BattleNetAPI {
   }
 
   query = async (endpoint: Endpoint) =>
-    helpers.query(this.region, endpoint, await this.getAccessToken());
+    helpers.query({
+      endpoint,
+      region: this.region,
+      accessToken: await this.getAccessToken(),
+    });
 
   static getAllRegions = utils.getAllRegions;
   static getAllRegionIds = utils.getAllRegionIds;

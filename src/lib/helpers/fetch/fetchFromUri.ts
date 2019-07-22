@@ -2,21 +2,19 @@ import axios from 'axios';
 import { Uri, HttpMethod } from '../../../../@types';
 import { uri as validateUri } from '../validators';
 
-/**
- * Performs basic fetch request from given uri
- * @function
- * @param {string} uri Fetch request uri
- * @param {string} method HTTP method to be used. Defaults to 'GET'
- * @param {object | Headers} headers HTTP request headers
- * @param {URLSearchParams} params HTTP request body parameters
- * @returns {object} Data returned by requested uri
- */
-export default async (
+interface FetchFromUriOptions {
   uri: Uri,
-  method: HttpMethod = 'GET',
-  headers?: object | Headers,
-  params?: URLSearchParams,
-) => {
+  method?: HttpMethod;
+  headers?: object | Headers;
+  params?: URLSearchParams;
+}
+
+/**
+ * Performs basic fetch request from a given uri
+ */
+export default async (options: FetchFromUriOptions) => {
+  const { uri } = options;
+  const method = options.method || 'GET';
   try {
     if (!validateUri(uri)) {
       throw new RangeError(`'${uri}' is not a valid parameter for fetchFromUri()`);
@@ -26,10 +24,10 @@ export default async (
     };
 
     /* tslint:disable no-object-mutation */
-    if (headers) Object.assign(requestOptions, { headers });
+    if (options.headers) Object.assign(requestOptions, { headers: options.headers });
 
     // GET request method cannot have body, so I'm doing this nonsense
-    if (method === 'POST') Object.assign(requestOptions, { params });
+    if (method === 'POST') Object.assign(requestOptions, { params: options.params });
     /* tslint:enable no-object-mutation */
     const response = await axios.get(uri, requestOptions);
     return response.data;

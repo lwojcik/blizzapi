@@ -9,7 +9,6 @@ describe('BlizzAPI class', () => {
     expect(new BlizzAPI({ region: '', clientId: '', clientSecret: '' }).query).toBeDefined();
   });
 
-
   test('should define getAccessToken method', () => {
     expect(new BlizzAPI({ region: '', clientId: '', clientSecret: '' }).getAccessToken).toBeDefined();
   });

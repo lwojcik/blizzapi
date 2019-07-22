@@ -15,7 +15,7 @@ describe('fetchAccessToken()', () => {
   });
 
   test('returns correct response for GET request to a valid uri', async () => {
-    const response = await fetchAccessToken(oauthUri, clientId, clientSecret);
+    const response = await fetchAccessToken({ oauthUri, clientId, clientSecret });
     expect(response).toMatchSnapshot();
   });
 });
