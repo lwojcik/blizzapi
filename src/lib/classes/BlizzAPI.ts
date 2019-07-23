@@ -17,9 +17,10 @@ export default class BlizzAPI extends BattleNetAPI {
       accessToken: options.accessToken,
     });
     this.options = {
-      validateAccessTokenOnEachQuery: options.validateAccessTokenOnEachQuery || false,  // revalidate access token on each single query
-      refreshAccessTokenIfExpired: options.refreshAccessTokenIfExpired || false, // revalidate access token if error 403
-      onAccessTokenRefresh: options.onAccessTokenRefresh ? options.onAccessTokenRefresh : undefined, // function to run when access token is refreshed
+      validateAccessTokenOnEachQuery: options.validateAccessTokenOnEachQuery || false,  // revalidate access token on every single query
+      refreshAccessTokenIfExpired: options.refreshAccessTokenIfExpired ? options.refreshAccessTokenIfExpired : false, // revalidate access token if error 403
+      onAccessTokenExpire: options.onAccessTokenExpire || undefined,
+      onAccessTokenRefresh: options.onAccessTokenRefresh || undefined,
     };
   }
 
@@ -28,6 +29,11 @@ export default class BlizzAPI extends BattleNetAPI {
       endpoint,
       region: this.region,
       accessToken: await this.getAccessToken(),
+      options: {
+        clientId: this.clientId,
+        clientSecret: this.clientSecret,
+        ...this.options,
+      },
     });
 
   static getAllRegions = utils.getAllRegions;
