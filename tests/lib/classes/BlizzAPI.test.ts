@@ -97,16 +97,16 @@ describe('BlizzAPI class', () => {
   test('should query an endpoint', async () => {
     const bnetApi = new BlizzAPI({
       region: 'us',
-      clientId: 'sample client id',
-      clientSecret: 'sample client secret'
+      clientId: 'valid_client_id',
+      clientSecret: 'valid_client_secret'
     });
 
     const response = await bnetApi.query('/sample/endpoint');
     expect(response).toMatchSnapshot();
   });
 
-  test('should validate access token', async () => {
-    const response = await BlizzAPI.validateAccessToken('us', 'correctAccessToken');
+  test('should validate access token and return true', async () => {
+    const response = await BlizzAPI.validateAccessToken('us', 'valid_access_token');
     expect(response).toMatchSnapshot();
   });
 });

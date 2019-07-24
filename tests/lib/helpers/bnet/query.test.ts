@@ -14,9 +14,9 @@ describe('query()', () => {
     const response = await query({
       region: 'us',
       endpoint: '/sc2/sample/endpoint',
-      clientId: 'sample client id',
-      clientSecret: 'sample client secret',
-      accessToken: 'sample access token',
+      clientId: 'valid_client_id',
+      clientSecret: 'valid_client_secret',
+      accessToken: 'valid_access_token',
       options: {
         validateAccessTokenOnEachQuery: false,
         refreshExpiredAccessToken: false,
@@ -31,9 +31,9 @@ describe('query()', () => {
     expect(query({
         region: 'us',
         endpoint: 'invalidEndpoint',
-        clientId: 'sample client id',
-        clientSecret: 'sample client secret',
-        accessToken: 'sample access token',
+        clientId: 'valid_client_id',
+        clientSecret: 'valid_client_secret',
+        accessToken: 'valid_access_token',
         options: {
           validateAccessTokenOnEachQuery: false,
           refreshExpiredAccessToken: false,

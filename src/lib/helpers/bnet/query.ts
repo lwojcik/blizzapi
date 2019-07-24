@@ -43,8 +43,8 @@ export default async (queryOptions: QueryOptions) => {
   } = queryOptions.options;
 
   if (validateAccessTokenOnEachQuery) {
-    const invalidAccessToken = !(await validateAccessToken(region, accessToken));
-    if (invalidAccessToken) {
+    const validAccessToken = await validateAccessToken(region, accessToken);
+    if (!validAccessToken) {
       return {
         error: 'access_token_invalid',
       }

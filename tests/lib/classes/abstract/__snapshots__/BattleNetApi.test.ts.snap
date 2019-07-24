@@ -15,3 +15,5 @@ exports[`BattleNetAPI class should save accessToken as undefined 1`] = `undefine
 exports[`BattleNetAPI class should set access token 1`] = `"sample mocked access token"`;
 
 exports[`BattleNetAPI class should validate access token 1`] = `false`;
+
+exports[`BattleNetAPI class should validate access token and return true 1`] = `true`;

@@ -9,8 +9,8 @@ class BattleNetAPIMock extends BattleNetAPI {
     super({
       accessToken,
       region: 'us',
-      clientId: 'sample client id from BattleNetAPIMock',
-      clientSecret: 'sample client secret from BattleNetAPIMock',
+      clientId: 'valid_client_id_from_BattleNetAPIMock',
+      clientSecret: 'valid_client_secret_from_BattleNetAPIMock',
     });
   }
 
@@ -58,13 +58,13 @@ describe('BattleNetAPI class', () => {
 
 
   test('should get access token', async () => {
-    const bnetApi = new BattleNetAPIMock('sample provided access token');
+    const bnetApi = new BattleNetAPIMock('valid_access_token');
     const response = await bnetApi.getAccessToken();
     expect(response).toMatchSnapshot();
   });
 
-  test('should validate access token', async () => {
-    const response = await BattleNetAPIMock.validateAccessToken('us', 'sample access token');
+  test('should validate access token and return true', async () => {
+    const response = await BattleNetAPIMock.validateAccessToken('us', 'valid_access_token');
     expect(response).toMatchSnapshot();
   });
 });

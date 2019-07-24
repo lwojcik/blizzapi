@@ -2,6 +2,10 @@
 
 exports[`validateAccessToken() returns false for incorrect token 1`] = `false`;
 
+exports[`validateAccessToken() returns false for invalid access token 1`] = `false`;
+
 exports[`validateAccessToken() returns false in case of API error 1`] = `false`;
 
 exports[`validateAccessToken() returns true for correct token 1`] = `true`;
+
+exports[`validateAccessToken() returns true for valid access token 1`] = `true`;

@@ -2,8 +2,8 @@ import { fetchAccessToken } from '../../../../src/lib/helpers/oauth';
 
 describe('fetchAccessToken()', () => {
   const oauthUri = 'http://sample.oauth.uri/';
-  const clientId = 'sample client id';
-  const clientSecret = 'sample client secret';
+  const clientId = 'sample_client_id';
+  const clientSecret = 'sample_client_secret';
 
   test('should be defined', () => {
     expect(fetchAccessToken).toBeDefined();
