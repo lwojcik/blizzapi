@@ -4,7 +4,6 @@ import { endpoint as validateEndpoint } from '../validators';
 import { getAccessToken, validateAccessToken }  from '../oauth';
 import { getApiHostByRegion } from '../../utils/api';
 import { fetchFromUri } from '../fetch';
-// getAccessToken, 
 
 interface QueryOptions {
   region: RegionIdOrName,

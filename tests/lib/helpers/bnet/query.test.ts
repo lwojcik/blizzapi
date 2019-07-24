@@ -100,7 +100,6 @@ describe('query()', () => {
         onAccessTokenRefresh:  undefined,
       },
     });
-    console.log(response);
     expect(response).toMatchSnapshot();
   });
 
