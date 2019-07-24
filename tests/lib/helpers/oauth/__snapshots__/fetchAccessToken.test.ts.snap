@@ -2,9 +2,9 @@
 
 exports[`fetchAccessToken() returns correct response for GET request to a valid uri 1`] = `
 Object {
-  "access_token": "sample mocked access token",
+  "access_token": "valid_access_token",
   "headers": Object {
-    "Authorization": "Basic c2FtcGxlIGNsaWVudCBpZDpzYW1wbGUgY2xpZW50IHNlY3JldA==",
+    "Authorization": "Basic c2FtcGxlX2NsaWVudF9pZDpzYW1wbGVfY2xpZW50X3NlY3JldA==",
   },
   "title": "sample mocked data for POST request to http://sample.oauth.uri/",
 }
