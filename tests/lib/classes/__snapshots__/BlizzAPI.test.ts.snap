@@ -2,9 +2,9 @@
 
 exports[`BlizzAPI class should query an endpoint 1`] = `
 Object {
-  "access_token": "valid_access_token",
+  "access_token": "dmFsaWRfY2xpZW50X2lkOnZhbGlkX2NsaWVudF9zZWNyZXQ=",
   "headers": Object {
-    "Authorization": "Bearer valid_access_token",
+    "Authorization": "Bearer dmFsaWRfY2xpZW50X2lkOnZhbGlkX2NsaWVudF9zZWNyZXQ=",
   },
   "title": "sample mocked data for GET request to https://us.api.blizzard.com/sample/endpoint",
 }
