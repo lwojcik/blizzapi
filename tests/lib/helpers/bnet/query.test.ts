@@ -14,16 +14,32 @@ describe('query()', () => {
     const response = await query({
       region: 'us',
       endpoint: '/sc2/sample/endpoint',
-      accessToken: 'sample access token'
+      clientId: 'sample client id',
+      clientSecret: 'sample client secret',
+      accessToken: 'sample access token',
+      options: {
+        validateAccessTokenOnEachQuery: false,
+        refreshExpiredAccessToken: false,
+        onAccessTokenExpired: undefined,
+        onAccessTokenRefresh:  undefined,
+      }
     });
     expect(response).toMatchSnapshot();
   });
 
-  test('throws RangeError for invalid endpoint', async () => {
-    expect(() => query({
-      region: 'us',
-      endpoint: 'invalidEndpoint',
-      accessToken: 'sample access token'
-    })).toThrow(RangeError);
+  test('rejects and throws RangeError for invalid endpoint', async () => {
+    expect(query({
+        region: 'us',
+        endpoint: 'invalidEndpoint',
+        clientId: 'sample client id',
+        clientSecret: 'sample client secret',
+        accessToken: 'sample access token',
+        options: {
+          validateAccessTokenOnEachQuery: false,
+          refreshExpiredAccessToken: false,
+          onAccessTokenExpired: undefined,
+          onAccessTokenRefresh:  undefined,
+        },
+      })).rejects.toThrow(RangeError);
   });
 });

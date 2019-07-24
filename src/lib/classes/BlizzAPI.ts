@@ -17,11 +17,9 @@ export default class BlizzAPI extends BattleNetAPI {
       accessToken: options.accessToken,
     });
     this.options = {
-      clientId: options.clientId,
-      clientSecret: options.clientSecret,
-      validateAccessTokenOnEachQuery: options.validateAccessTokenOnEachQuery || false,  // revalidate access token on every single query
-      refreshAccessTokenIfExpired: options.refreshAccessTokenIfExpired ? options.refreshAccessTokenIfExpired : true, // revalidate access token if error 403
-      onAccessTokenExpire: options.onAccessTokenExpire || undefined,
+      validateAccessTokenOnEachQuery: options.validateAccessTokenOnEachQuery || false, 
+      refreshExpiredAccessToken: options.refreshExpiredAccessToken || undefined,
+      onAccessTokenExpired: options.onAccessTokenExpired || undefined,
       onAccessTokenRefresh: options.onAccessTokenRefresh || undefined,
     };
   }
@@ -30,10 +28,10 @@ export default class BlizzAPI extends BattleNetAPI {
     helpers.query({
       endpoint,
       region: this.region,
+      clientId: this.clientId,
+      clientSecret: this.clientSecret,
       accessToken: await this.getAccessToken(),
       options: {
-        clientId: this.clientId,
-        clientSecret: this.clientSecret,
         ...this.options,
       },
     });

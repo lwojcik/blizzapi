@@ -50,8 +50,8 @@ export type ClientId = string;
 export type ClientSecret = string;
 export type AccessToken = string | undefined;
 export type Endpoint = string;
-export type Endpoints = ReadonlyArray<Endpoint>;
+// export type Endpoints = ReadonlyArray<Endpoint>;
 export type HttpMethod = 'GET' | 'POST';
-export type Selector = string;
+// export type Selector = string;
 
 export type ValidatorFunction = (endpoint: Endpoint) => boolean;

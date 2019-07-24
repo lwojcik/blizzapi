@@ -4,10 +4,13 @@ import { endpoint as validateEndpoint } from '../validators';
 import { getAccessToken, validateAccessToken }  from '../oauth';
 import { getApiHostByRegion } from '../../utils/api';
 import { fetchFromUri } from '../fetch';
+// getAccessToken, 
 
 interface QueryOptions {
   region: RegionIdOrName,
   endpoint: string,
+  clientId: string,
+  clientSecret: string,
   accessToken: AccessToken,
   options: AccessTokenOptions,
 }
@@ -30,29 +33,39 @@ const queryWithAccessToken = (queryOptions: QueryOptions, accessToken: AccessTok
   });
 }
 
-const accessTokenIsValid = async (region: RegionIdOrName, accessToken: AccessToken, next: Function) => {
-  const isAccessTokenValid = await validateAccessToken(region, accessToken);
-  if (!isAccessTokenValid) {
-    return {
-      error: 'access_token_invalid',
-    }
-  }
-  return next();
-}
-
 export default async (queryOptions: QueryOptions) => {
   const { region, accessToken } = queryOptions;
-  if (queryOptions.options.validateAccessTokenOnEachQuery) {
-    return accessTokenIsValid(region, accessToken, async () => {
-      try {
-        const data = await queryWithAccessToken(queryOptions, `${accessToken}23`);
-        return data;
-      } catch (error) {
-        const newAccessToken = await getAccessToken(queryOptions);
-        return 'lololo';
+  const {
+    validateAccessTokenOnEachQuery,
+    refreshExpiredAccessToken,
+    onAccessTokenExpired,
+    onAccessTokenRefresh,
+  } = queryOptions.options;
+
+  if (validateAccessTokenOnEachQuery) {
+    const invalidAccessToken = !(await validateAccessToken(region, accessToken));
+    if (invalidAccessToken) {
+      return {
+        error: 'access_token_invalid',
       }
-    });
+    }
   }
 
-  return queryWithAccessToken(queryOptions, queryOptions.accessToken);
+  try {
+    const data = await queryWithAccessToken(queryOptions, accessToken);
+    return data;
+  } catch (error) {
+    if (error.response && error.response.status === 401) {
+      onAccessTokenExpired && onAccessTokenExpired();
+      if (refreshExpiredAccessToken) {
+        const newAccessToken = await getAccessToken(queryOptions);
+        onAccessTokenRefresh && onAccessTokenRefresh(newAccessToken);
+        return queryWithAccessToken(queryOptions, newAccessToken);
+      }
+      return Promise.resolve({
+        error: 'access_token_invalid',
+      });
+    }
+    throw error;
+  }
 };
