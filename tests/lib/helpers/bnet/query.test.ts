@@ -7,6 +7,11 @@ oauth.validateAccessToken = jest.fn().mockImplementation(({}, accessToken: strin
   return Promise.resolve(true);
 });
 
+// tslint:disable-next-line: no-object-mutation
+oauth.getAccessToken = jest.fn().mockImplementation(() => {
+  return Promise.resolve('new_refreshed_access_token');
+})
+
 describe('query()', () => { 
   test('should be defined', () => {
     expect(query).toBeDefined();
@@ -114,10 +119,47 @@ describe('query()', () => {
         onAccessTokenExpired,
         validateAccessTokenOnEachQuery: false,
         refreshExpiredAccessToken: false,
-        onAccessTokenRefresh:  undefined,
+        onAccessTokenRefresh: undefined,
       },
     });
     expect(response).toMatchSnapshot();
-    expect(onAccessTokenExpired).toHaveBeenCalledTimes(1);
+    expect(onAccessTokenExpired).toHaveBeenCalled();
+  });
+
+  test(`refreshes access token if refreshExpiredAccessToken is set to true`, async () => {
+    const response = await query({
+      region: 'us',
+      endpoint: '/valid/endpoint',
+      clientId: 'valid_client_id',
+      clientSecret: 'valid_client_secret',
+      accessToken: 'invalid_access_token',
+      options: {
+        validateAccessTokenOnEachQuery: false,
+        refreshExpiredAccessToken: true,
+        onAccessTokenExpired: undefined,
+        onAccessTokenRefresh: undefined,
+      },
+    });
+    expect(response).toMatchSnapshot();
+  });
+
+  test(`calls onAccessTokenRefresh() if provided and refreshExpiredAccessToken is set to true`, async () => {
+    const onAccessTokenRefresh = jest.fn();
+
+    const response = await query({
+      region: 'us',
+      endpoint: '/valid/endpoint',
+      clientId: 'valid_client_id',
+      clientSecret: 'valid_client_secret',
+      accessToken: 'invalid_access_token',
+      options: {
+        onAccessTokenRefresh,
+        validateAccessTokenOnEachQuery: false,
+        refreshExpiredAccessToken: true,
+        onAccessTokenExpired: undefined,
+      },
+    });
+    expect(response).toMatchSnapshot();
+    expect(onAccessTokenRefresh).toHaveBeenCalled();
   });
 });
