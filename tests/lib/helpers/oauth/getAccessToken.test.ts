@@ -15,7 +15,7 @@ describe('getAccessToken()', () => {
   });
 
   test('returns correct response for GET request to a valid uri', async () => {
-    const response = await getAccessToken(region, clientId, clientSecret);
+    const response = await getAccessToken({ region, clientId, clientSecret });
     expect(response).toMatchSnapshot();
   });
 });

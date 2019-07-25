@@ -1,4 +1,4 @@
-export default interface InitOptions {
+export interface InitOptions {
   region: string | number;
   clientId?: string;
   clientSecret?: string;

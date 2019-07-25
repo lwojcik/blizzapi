@@ -1,4 +1,4 @@
-import InitOptions from './InitOptions';
-import RegionIdProperties from './RegionIdProperties';
-
-export { InitOptions, RegionIdProperties };
+export { InitOptions } from './InitOptions';
+export { RegionIdProperties } from './RegionIdProperties';
+export { BattleNetOptions } from './BattleNetOptions';
+export { AccessTokenOptions } from './AccessTokenOptions';

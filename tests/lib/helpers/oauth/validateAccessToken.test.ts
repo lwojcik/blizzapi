@@ -1,20 +1,14 @@
 import { validateAccessToken } from '../../../../src/lib/helpers/oauth';
-
-// import regionNamesJson from '../../../__testData__/regionNames.json';
-// import wrongRegionNamesJson from '../../../__testData__/wrongRegionNames.json';
-// import regionIdsJson from '../../../__testData__/regionIds.json';
-// import wrongRegionIdsJson from '../../../__testData__/wrongRegionIds.json';
-
 const fetch = require('../../../../src/lib/helpers/fetch');
 
 // tslint:disable-next-line: no-object-mutation
-fetch.fetchFromUri = jest.fn().mockImplementation((uri: string) => {
-  if (uri.includes("incorrectAccessToken")) {
+fetch.fetchFromUri = jest.fn().mockImplementation((options: { uri: string }) => {
+  if (options.uri.includes("invalid_access_token")) {
     return {
       error: 'invalid_token',
     }
   }
-  if (uri.includes("accessTokenWithApiError")) {
+  if (options.uri.includes("access_token_with_api_error")) {
     throw new Error('invalid token');
   }
   return {
@@ -24,9 +18,9 @@ fetch.fetchFromUri = jest.fn().mockImplementation((uri: string) => {
 
 describe('validateAccessToken()', () => {
   const region = 'us';
-  const accessToken = 'correctAccessToken';
-  const incorrectAccessToken = 'incorrectAccessToken';
-  const accessTokenWithApiError = 'accessTokenWithApiError';
+  const validAccessToken = 'valid_access_token';
+  const invalidAccessToken = 'invalid_access_token';
+  const accessTokenWithApiError = 'access_token_with_api_error';
 
   test('should be defined', () => {
     expect(validateAccessToken).toBeDefined();
@@ -37,13 +31,13 @@ describe('validateAccessToken()', () => {
     expect(typeof validateAccessToken).toBe('function');
   });
 
-  test('returns true for correct token', async () => {
-    const response = await validateAccessToken(region, accessToken);
+  test('returns true for valid access token', async () => {
+    const response = await validateAccessToken(region, validAccessToken);
     expect(response).toMatchSnapshot();
   });
 
-  test('returns false for incorrect token', async () => {
-    const response = await validateAccessToken(region, incorrectAccessToken);
+  test('returns false for invalid access token', async () => {
+    const response = await validateAccessToken(region, invalidAccessToken);
     expect(response).toMatchSnapshot();
   });
 

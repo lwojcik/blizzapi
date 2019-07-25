@@ -11,17 +11,26 @@ describe('fetchFromUri()', () => {
   });
 
   test('returns correct response for GET request to a valid uri', async () => {
-    const response = await fetchFromUri('http://example.org/valid/endpoint');
+    const response = await fetchFromUri({ uri: 'http://example.org/valid/endpoint' });
     expect(response).toMatchSnapshot();
   });
 
   test('returns correct response for POST request to a valid uri', async () => {
-    const response = await fetchFromUri('http://example.org/valid/endpoint', 'POST');
+    const response = await fetchFromUri({
+      uri: 'http://example.org/valid/endpoint',
+      method: 'POST',
+    });
     expect(response).toMatchSnapshot();
   });
 
   test('returns correct response for GET request with headers to a valid uri ', async () => {
-    const response = await fetchFromUri('http://example.org/valid/endpoint', 'GET', { data: 'sample headers' });
+    const response = await fetchFromUri({
+      uri: 'http://example.org/valid/endpoint',
+      method: 'GET',
+      headers: {
+        data: 'sample headers'
+      }
+    });
     expect(response).toMatchSnapshot();
   });
 });

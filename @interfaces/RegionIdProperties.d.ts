@@ -1,3 +1,3 @@
-export default interface RegionIdProperties<Value> {
+export interface RegionIdProperties<Value> {
   readonly [regionId: string]: Value;
 }

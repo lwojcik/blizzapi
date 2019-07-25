@@ -1,47 +1,40 @@
 import * as helpers from '../helpers';
 import * as utils from '../utils';
-import { Endpoint, RegionIdOrName, AccessToken } from '../../../@types';
-import BattleNetAPI = require('./abstract/BattleNetAPI');
+import BattleNetAPI from './abstract/BattleNetAPI';
+import { Endpoint } from '../../../@types';
+import { BattleNetOptions, AccessTokenOptions } from '../../../@interfaces';
 
-export interface BlizzAPIOptions {
-  validateAccessTokenOnEachQuery?: boolean;
-  refreshExpiredAccessToken?: boolean;
-  onAccessTokenExpire?: Function | undefined;
-  onAccessTokenRefresh?: Function | undefined;
-}
-
-export interface BattleNetOptions extends BlizzAPIOptions {
-  region: RegionIdOrName;
-  clientId: string;
-  clientSecret: string;
-  accessToken?: string;
-}
+interface BlizzAPIOptions extends BattleNetOptions, AccessTokenOptions {};
 
 export default class BlizzAPI extends BattleNetAPI {
-  // readonly options: BlizzAPIOptions;
+  readonly options: AccessTokenOptions;
 
-  constructor(options: BattleNetOptions) {
-    super(options.region, options.clientId, options.clientSecret, options.accessToken);
-    // this.options = {
-    //   validateAccessTokenOnEachQuery: options.validateAccessTokenOnEachQuery
-    //     ? options.validateAccessTokenOnEachQuery
-    //     : false, // revalidate access token on each single query
-    //   refreshExpiredAccessToken: options.refreshExpiredAccessToken
-    //     ? options.refreshExpiredAccessToken
-    //     : false, // revalidate access token if error 403
-    //   onAccessTokenRefresh: options.onAccessTokenRefresh ? options.onAccessTokenRefresh : undefined, // function to run when access token is refreshed
-    // };
+  constructor(options: BlizzAPIOptions) {
+    super({
+      region: options.region,
+      clientId: options.clientId,
+      clientSecret: options.clientSecret,
+      accessToken: options.accessToken,
+    });
+    this.options = {
+      validateAccessTokenOnEachQuery: options.validateAccessTokenOnEachQuery || false, 
+      refreshExpiredAccessToken: options.refreshExpiredAccessToken || undefined,
+      onAccessTokenExpired: options.onAccessTokenExpired || undefined,
+      onAccessTokenRefresh: options.onAccessTokenRefresh || undefined,
+    };
   }
 
   query = async (endpoint: Endpoint) =>
-    // helpers.query(this.region, endpoint, await this.getAccessToken(), this.options);
-    helpers.query(this.region, endpoint, await this.getAccessToken());
-
-  getAccessToken = async () =>
-    helpers.getAccessToken(this.region, this.clientId, this.clientSecret);
-
-  validateAccessToken = async (regionIdOrName: RegionIdOrName, accessToken: AccessToken) =>
-    helpers.validateAccessToken(regionIdOrName, accessToken);
+    helpers.query({
+      endpoint,
+      region: this.region,
+      clientId: this.clientId,
+      clientSecret: this.clientSecret,
+      accessToken: await this.getAccessToken(),
+      options: {
+        ...this.options,
+      },
+    });
 
   static getAllRegions = utils.getAllRegions;
   static getAllRegionIds = utils.getAllRegionIds;

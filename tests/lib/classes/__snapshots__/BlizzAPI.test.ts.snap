@@ -2,12 +2,12 @@
 
 exports[`BlizzAPI class should query an endpoint 1`] = `
 Object {
-  "access_token": "sample mocked access token",
+  "access_token": "dmFsaWRfY2xpZW50X2lkOnZhbGlkX2NsaWVudF9zZWNyZXQ=",
   "headers": Object {
-    "Authorization": "Bearer sample mocked access token",
+    "Authorization": "Bearer dmFsaWRfY2xpZW50X2lkOnZhbGlkX2NsaWVudF9zZWNyZXQ=",
   },
   "title": "sample mocked data for GET request to https://us.api.blizzard.com/sample/endpoint",
 }
 `;
 
-exports[`BlizzAPI class should validate access token 1`] = `true`;
+exports[`BlizzAPI class should validate access token and return true 1`] = `true`;

@@ -2,7 +2,7 @@
 
 exports[`fetchFromUri() returns correct response for GET request to a valid uri 1`] = `
 Object {
-  "access_token": "sample mocked access token",
+  "access_token": "no_access_token_provided",
   "headers": Object {
     "data": "default sample headers",
   },
@@ -12,7 +12,7 @@ Object {
 
 exports[`fetchFromUri() returns correct response for GET request with headers to a valid uri  1`] = `
 Object {
-  "access_token": "sample mocked access token",
+  "access_token": "no_access_token_provided",
   "headers": Object {
     "data": "sample headers",
   },
@@ -22,7 +22,7 @@ Object {
 
 exports[`fetchFromUri() returns correct response for POST request to a valid uri 1`] = `
 Object {
-  "access_token": "sample mocked access token",
+  "access_token": "no_access_token_provided",
   "headers": Object {
     "data": "default sample headers",
   },
