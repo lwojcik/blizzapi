@@ -19,7 +19,7 @@ export const getAllSc2Realms = () => constants.SC2_REALMS;
  *
  * @return List of all available SC2 realms as flat array of integers.
  */
-export function getAllAvailableSc2Realms(): Sc2RealmList {
+export const getAllAvailableSc2Realms = (): Sc2RealmList => {
   const sc2Realms = Object.values(constants.SC2_REALMS);
   const flattenedSc2Realms = ([] as Sc2RealmList).concat(...sc2Realms);
   return flattenedSc2Realms.filter((el, i, a) => i === a.indexOf(el));
