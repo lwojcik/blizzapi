@@ -48,7 +48,7 @@ npm run build
 
 ## License
 
-Licensed under MIT License. See [LICENSE](https://github.com/lukemnet/tridi/blob/master/LICENSE) for more information.
+Licensed under MIT License. See [LICENSE](https://github.com/lukemnet/blizzapi/blob/master/LICENSE) for more information.
 
 ## Legal
 
