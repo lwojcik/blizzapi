@@ -1,7 +1,7 @@
 {
   "name": "blizzapi",
-  "version": "0.1.1",
-  "description": "Feature-rich library for Blizzard Battle.net API",
+  "version": "1.0.0",
+  "description": "Flexible and feature-rich library for Blizzard Battle.net API",
   "homepage": "https://blizzapi.lukem.net",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
