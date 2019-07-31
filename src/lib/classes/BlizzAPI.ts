@@ -18,7 +18,7 @@ export default class BlizzAPI extends BattleNetAPI {
     });
     this.options = {
       validateAccessTokenOnEachQuery: options.validateAccessTokenOnEachQuery || false, 
-      refreshExpiredAccessToken: options.refreshExpiredAccessToken || undefined,
+      refreshExpiredAccessToken: options.refreshExpiredAccessToken || false,
       onAccessTokenExpired: options.onAccessTokenExpired || undefined,
       onAccessTokenRefresh: options.onAccessTokenRefresh || undefined,
     };

@@ -23,7 +23,7 @@ export const getConstantByRegionId = (
   /* tslint:disable no-if-statement */
   if (!isRegionIdValid) {
     throw new RangeError(
-      `${regionIdAsString} is not a valid parameter for getUriByRegionId(${regionId}, '${constantKey}')`,
+      `${regionIdAsString} is not a valid parameter for getConstantByRegionId(${regionId}, '${constantKey}')`,
     );
   }
   /* tslint:enable no-if-statement */
