@@ -4,7 +4,7 @@ import BattleNetAPI from './abstract/BattleNetAPI';
 import { Endpoint } from '../../../@types';
 import { BattleNetOptions, AccessTokenOptions } from '../../../@interfaces';
 
-interface BlizzAPIOptions extends BattleNetOptions, AccessTokenOptions {};
+export interface BlizzAPIOptions extends BattleNetOptions, AccessTokenOptions {};
 
 export default class BlizzAPI extends BattleNetAPI {
   readonly options: AccessTokenOptions;
