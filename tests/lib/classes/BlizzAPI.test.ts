@@ -94,6 +94,14 @@ describe('BlizzAPI class', () => {
     expect(BlizzAPI.isSc2RealmValidForRegionId).toBeDefined();
   });
 
+  test('should define getDefaultLocaleNameForRegionId static method', () => {
+    expect(BlizzAPI.getDefaultLocaleNameForRegionId).toBeDefined();
+  });
+
+  test('should define getAllDefaultLocaleNames static method', () => {
+    expect(BlizzAPI.getAllDefaultLocaleNames).toBeDefined();
+  });
+
   test('should query an endpoint', async () => {
     const bnetApi = new BlizzAPI({
       region: 'us',
