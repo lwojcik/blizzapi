@@ -55,4 +55,6 @@ export default class BlizzAPI extends BattleNetAPI {
   static checkIfSc2RealmLooksValid = utils.checkIfSc2RealmLooksValid;
   static validateSc2Realm = utils.validateSc2Realm;
   static isSc2RealmValidForRegionId = utils.isSc2RealmValidForRegionId;
+  static getDefaultLocaleNameForRegionId = utils.getDefaultLocaleNameForRegionId;
+  static getAllDefaultLocaleNames = utils.getAllDefaultLocaleNames;
 }
