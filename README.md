@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/lukemnet/blizzapi-docs/master/docs/.vuepress/public/logo.png" alt="StarCraft2-API logo" width="200" height="200">
+
 # BlizzAPI
 
 [![npm (latest)](https://img.shields.io/npm/v/blizzapi/latest.svg)](https://www.npmjs.com/package/blizzapi)
