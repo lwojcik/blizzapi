@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/lukemnet/blizzapi-docs/master/docs/.vuepress/public/logo.png" alt="BlizzAPI logo" width="200" height="200">
+
 # BlizzAPI
 
 [![Travis CI Build Status](https://travis-ci.org/lukemnet/blizzapi.svg?branch=master)](https://travis-ci.org/lukemnet/blizzapi)
