@@ -7,7 +7,7 @@ import { Uri } from '../../../../@types';
  * @returns {Boolean} True for valid uri, false for incorrect one
  */
 export default (uri: Uri) => {
-  // via https://www.regextester.com/94502
-  const uriTestRegex = /^(?:http(s)?:\/\/)[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
+  // based on https://www.regextester.com/1965
+  const uriTestRegex = /(?:http[s]?:\/\/)[^\s(["<,>]*\.[^\s[",><]*/gm;
   return uriTestRegex.test(uri);
 };
