@@ -13,7 +13,7 @@ interface FetchFromUriOptions {
  * Performs basic fetch request from a given uri
  */
 export default async (options: FetchFromUriOptions) => {
-  const { uri } = options;
+  const uri = encodeURI(options.uri);
   const method = options.method || 'GET';
   try {
     if (!validateUri(uri)) {
