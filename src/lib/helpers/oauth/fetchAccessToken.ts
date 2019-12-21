@@ -10,8 +10,9 @@ interface FetchAccessTokenOptions {
 
 export default (options: FetchAccessTokenOptions) => {
   const { oauthUri, clientId, clientSecret } = options;
-  const params = new URLSearchParams();
-  params.append('grant_type', 'client_credentials');
+  const params = {
+    grant_type: 'client_credentials',
+  };
 
   const headers = {
     Authorization: `Basic ${base64.encode(`${clientId}:${clientSecret}`)}`,
