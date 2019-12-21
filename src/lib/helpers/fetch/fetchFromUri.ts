@@ -6,7 +6,7 @@ interface FetchFromUriOptions {
   uri: Uri,
   method?: HttpMethod;
   headers?: object | Headers;
-  params?: object | URLSearchParams;
+  params?: object;
 }
 
 /**
