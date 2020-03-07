@@ -37,7 +37,7 @@
     "automock": false
   },
   "dependencies": {
-    "axios": "0.19.1",
+    "axios": "0.19.2",
     "base-64": "0.1.0"
   },
   "devDependencies": {
