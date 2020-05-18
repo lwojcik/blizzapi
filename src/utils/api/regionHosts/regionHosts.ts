@@ -4,4 +4,4 @@ import getApiHostByRegion from './getApiHostByRegion/getApiHostByRegion';
 export {
   getAllApiHosts,
   getApiHostByRegion,
-}
+};

@@ -1,18 +1,18 @@
-import constants from '../../constants';
+import config from 'config';
 
 import {
   RegionName,
   RegionIdArray,
   RegionNameArray,
   RegionIdAsNumberOrString,
-} from '../../../../@types';
+} from 'types';
 
 /**
  * Returns a list of all available regions
  *
  * @return List of all available regions indexed by region id.
  */
-export const getAllRegions = () => constants.REGIONS;
+export const getAllRegions = () => config.REGIONS;
 
 /**
  * Returns a list of all available region ids
@@ -20,7 +20,7 @@ export const getAllRegions = () => constants.REGIONS;
  * @return List of all available regions as flat array of numbers.
  */
 export const getAllRegionIds = () => {
-  const regionKeys = Object.keys(constants.REGIONS);
+  const regionKeys = Object.keys(config.REGIONS);
   return <RegionIdArray>regionKeys.map(regionKey => parseInt(regionKey, 10));
 };
 
@@ -30,7 +30,7 @@ export const getAllRegionIds = () => {
  * @return {Array} List of all available regions as flat array of strings.
  */
 export const getAllRegionNames = () => {
-  const regionNames = Object.values(constants.REGIONS);
+  const regionNames = Object.values(config.REGIONS);
   const flattenedRegionNames = ([] as RegionNameArray).concat(...regionNames);
   return flattenedRegionNames.map((regionName: string) => regionName.toString());
 };
@@ -39,11 +39,12 @@ export const getAllRegionNames = () => {
  * Returns region name(s) represented by given region id
  *
  * @param regionId Region id as integer or string
- * @return Region name represented as two-letter code (e.g. "us" for Americas) or an array of regions
+ * @return Region name represented as two-letter code (e.g. "us" for Americas)
+ * or an array of regions
  * if more than one is specified for a given region id
  */
 export const getRegionNameById = (regionId: RegionIdAsNumberOrString) => {
-  const regionIds = Object.keys(constants.REGIONS);
+  const regionIds = Object.keys(config.REGIONS);
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = regionIds.includes(regionIdAsString);
 
@@ -51,7 +52,7 @@ export const getRegionNameById = (regionId: RegionIdAsNumberOrString) => {
     throw new RangeError(`${regionIdAsString} is not a valid parameter for getRegionNameById()`);
   }
 
-  return constants.REGIONS[regionIdAsString];
+  return config.REGIONS[regionIdAsString];
 };
 
 /**
@@ -76,7 +77,7 @@ export const validateRegionId = (regionId: RegionIdAsNumberOrString) => {
  */
 export const getRegionIdByName = (regionName: RegionName) => {
   const regionNameLowercase = regionName.toLowerCase();
-  const regions = constants.REGIONS;
+  const regions = config.REGIONS;
   const regionKeys = Object.keys(regions);
   const regionIdArray = regionKeys.filter(key => regions[key].includes(regionNameLowercase));
   const regionId = Number(regionIdArray[0]) || false;

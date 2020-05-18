@@ -1,15 +1,18 @@
-import constants from '../../constants';
-import { validateRegionId } from './regions';
-import { Locale, RegionIdAsNumberOrString } from '../../../../@types';
-import { RegionIdProperties } from '../../../../@interfaces';
-import { getAllLocales } from './locales';
+import config from 'config';
+import { validateRegionId } from '../regions';
+import {
+  Locale,
+  RegionIdAsNumberOrString,
+  RegionIdProperties,
+} from 'types';
+import { getAllLocales } from '../locales';
 
 /**
  * Returns a list of all available default locale indexes
  *
  * @return List of all available default locale indexes indexed by region id.
  */
-export const getAllDefaultLocaleIndexes = () => constants.DEFAULT_LOCALES;
+export const getAllDefaultLocaleIndexes = () => config.DEFAULT_LOCALES;
 
 /**
  * Returns a default locale index for given region id
@@ -27,7 +30,7 @@ export const getDefaultLocaleIndexForRegionId = (regionId: RegionIdAsNumberOrStr
     );
   }
 
-  return constants.DEFAULT_LOCALES[regionIdAsString];
+  return config.DEFAULT_LOCALES[regionIdAsString];
 };
 
 /**
@@ -46,8 +49,8 @@ export const getDefaultLocaleNameForRegionId = (regionId: RegionIdAsNumberOrStri
     );
   }
 
-  const defaultLocaleIndex = constants.DEFAULT_LOCALES[regionIdAsString];
-  return constants.LOCALES[regionId][defaultLocaleIndex];
+  const defaultLocaleIndex = config.DEFAULT_LOCALES[regionIdAsString];
+  return config.LOCALES[regionId][defaultLocaleIndex];
 };
 
 /**

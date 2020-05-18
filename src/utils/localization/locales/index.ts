@@ -1,14 +1,18 @@
-import constants from '../../constants';
-import { validateRegionId } from './regions';
+import config from 'config';
+import { validateRegionId } from '../regions/regions';
 import { getConstantByRegionId } from '../common';
-import { Locale, LocaleArray, RegionIdAsNumberOrString } from '../../../../@types';
+import {
+  Locale,
+  LocaleArray,
+  RegionIdAsNumberOrString,
+} from 'types';
 
 /**
  * Returns a list of all locales indexed by region id
  *
  * @return List of all available regions indexed by region id as array of strings.
  */
-export const getAllLocales = () => constants.LOCALES;
+export const getAllLocales = () => config.LOCALES;
 
 /**
  * Returns a list of all available locale names
@@ -16,7 +20,7 @@ export const getAllLocales = () => constants.LOCALES;
  * @return List of all available locales as flat array of strings.
  */
 export const getAllLocaleNames = () => {
-  const locales = Object.values(constants.LOCALES);
+  const locales = Object.values(config.LOCALES);
   const flattenedLocales = ([] as LocaleArray).concat(...locales);
   const localesAsStrings = flattenedLocales.map((locale: string) => locale.toString());
   return localesAsStrings;
@@ -47,7 +51,8 @@ export const checkIfLocaleLooksValid = (locale: Locale) => {
  * Validates locale name against locale list (whether it exists in the constants object)
  *
  * @param locale Locale name
- * @return true if locale exists, false if not. Throws RangeError if locale doesn't match regex pattern
+ * @return true if locale exists, false if not.
+ * Throws RangeError if locale doesn't match regex pattern
  */
 export const validateLocale = (locale: Locale) => {
   const doesLocaleLookValid = checkIfLocaleLooksValid(locale);

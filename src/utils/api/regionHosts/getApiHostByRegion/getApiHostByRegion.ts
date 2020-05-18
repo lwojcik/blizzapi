@@ -1,5 +1,5 @@
-import { RegionIdOrName } from '../../../../types';
-import { getConstantByRegion } from '../../../common';
+import { RegionIdOrName } from 'types';
+import { getConstantByRegion } from '../../../../utils/utils';
 
 /**
  * Returns region API host uri for given region id or region name
@@ -12,7 +12,7 @@ const getApiHostByRegion = (regionIdOrName: RegionIdOrName) => {
   const regionNameIs = (name: string) =>
     typeof regionIdOrName === 'string'
       && (regionIdOrName as string).toLowerCase() === name;
-  
+
   return regionNameIs('kr')
     ? apiHost[0]
       : regionNameIs('tw')

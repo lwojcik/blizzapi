@@ -7,11 +7,12 @@
  * https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
  */
 
-import * as localization from './localization';
-import * as api from './api';
-import oauth from './oauth';
+import * as localization from 'config/localization';
+import * as api from 'config/api';
+import oauth from 'config/oauth';
+import { ConfigObject } from 'types';
 
-const CONSTANTS = {
+const config = {
   REGIONS: localization.regions,
   LOCALES: localization.locales,
   DEFAULT_LOCALES: localization.defaultLocales,
@@ -20,6 +21,6 @@ const CONSTANTS = {
   OAUTH_AUTHORIZE_URIS: oauth.authorizeUris,
   OAUTH_TOKEN_URIS: oauth.tokenUris,
   OAUTH_CHECK_TOKEN_URIS: oauth.checkTokenUris,
-};
+} as ConfigObject;
 
-export default CONSTANTS;
+export default config;

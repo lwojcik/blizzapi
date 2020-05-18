@@ -26,6 +26,24 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "classes/*": [
+        "src/classes/*"
+      ],
+      "constants/*": [
+        "src/constants/*"
+      ],
+      "helpers/*": [
+        "src/helpers/*"
+      ],
+      "utils/*": [
+        "src/utils/*"
+      ],
+    },
+    "typeRoots": ["./src/types", "./node_modules/@types"]
   },
   "exclude": [
     "node_modules",

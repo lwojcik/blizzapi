@@ -1,18 +1,18 @@
-import constants from '../../constants';
+import config from 'config';
 import { validateRegionId } from './regions';
-import { getConstantByRegionId } from '../common';
+import { getConstantByRegionId } from 'utils';
 import {
   RegionIdAsNumberOrString,
   Sc2RealmAsNumberOrString,
   Sc2RealmList,
-} from '../../../../@types';
+} from 'types';
 
 /**
  * Returns a list of all available StarCraft II realms
  *
  * @return List of all available StarCraft II realms indexed by region id.
  */
-export const getAllSc2Realms = () => constants.SC2_REALMS;
+export const getAllSc2Realms = () => config.SC2_REALMS;
 
 /**
  * Returns a list of all SC2 realms
@@ -20,7 +20,7 @@ export const getAllSc2Realms = () => constants.SC2_REALMS;
  * @return List of all available SC2 realms as flat array of integers.
  */
 export const getAllAvailableSc2Realms = (): Sc2RealmList => {
-  const sc2Realms = Object.values(constants.SC2_REALMS);
+  const sc2Realms = Object.values(config.SC2_REALMS);
   const flattenedSc2Realms = ([] as Sc2RealmList).concat(...sc2Realms);
   return flattenedSc2Realms.filter((el, i, a) => i === a.indexOf(el));
 }

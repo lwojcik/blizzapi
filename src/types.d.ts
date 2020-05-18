@@ -84,3 +84,11 @@ export interface InitOptions {
 export interface RegionIdProperties<Value> {
   readonly [regionId: string]: Value;
 }
+
+export interface FrozenObject {
+  [key: string]: any;
+}
+
+export type ConfigObject = {
+  [key in ConstantKey]: FrozenObject;
+}

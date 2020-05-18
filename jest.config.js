@@ -23,7 +23,14 @@ module.exports = {
     "!**/node_modules/**",
     "!**/dist/**"
   ],
-  "automock": false
+  "automock": false,
+  "moduleNameMapper": {
+    "^src/(.*)": "<rootDir>/src/src/$1",
+    "^classes/(.*)": "<rootDir>/src/classes/$1",
+    "^constants/(.*)": "<rootDir>/src/constants/$1",
+    "^helpers/(.*)": "<rootDir>/src/helpers/$1",
+    "^utils/(.*)": "<rootDir>/src/utils/$1"
+  },
   // "coverageThreshold": {
   //   "global": {
   //     "branches": 100,
