@@ -1,4 +1,4 @@
-import { getAccessToken } from '../../../../src/lib/helpers/oauth';
+import { getAccessToken } from 'lib/helpers/oauth';
 
 describe('getAccessToken()', () => {
   const region = 'us';

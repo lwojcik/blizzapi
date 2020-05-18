@@ -23,6 +23,10 @@ module.exports = {
     "!**/node_modules/**",
     "!**/dist/**"
   ],
+  moduleDirectories: [
+    "node_modules",
+    "src"
+  ],
   "automock": false
   // "coverageThreshold": {
   //   "global": {

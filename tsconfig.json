@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
+    "baseUrl": "src",
     "rootDir": "src",
     "outDir": "dist",
     "sourceMap": true,
@@ -31,5 +32,8 @@
     "dist",
     "**/tests/*.test.ts",
     "tests"
+  ],
+  "include": [
+    "src"
   ]
 }
