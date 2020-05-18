@@ -24,7 +24,7 @@
     }
   ],
   "scripts": {
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "clearTestCache": "jest --clearCache",
     "clean": "rimraf dist/*",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
