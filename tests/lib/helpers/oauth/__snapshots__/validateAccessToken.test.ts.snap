@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`validateAccessToken() returns false for invalid access token 1`] = `false`;
-
-exports[`validateAccessToken() returns false in case of API error 1`] = `false`;
-
-exports[`validateAccessToken() returns true for valid access token 1`] = `true`;

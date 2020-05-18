@@ -1,7 +1,6 @@
-import BlizzAPI, { BlizzAPIOptions } from './lib/classes/BlizzAPI';
+import BlizzAPI, { BlizzAPIOptions } from './classes/BlizzAPI';
 
-export * from '../@types';
-export * from '../@interfaces';
+export * from './types';
 
 export { BlizzAPIOptions };
 export default BlizzAPI;
