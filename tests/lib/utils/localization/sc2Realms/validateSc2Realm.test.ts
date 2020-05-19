@@ -1,4 +1,4 @@
-import * as utils from '../../../../../src/lib/utils';
+import * as utils from '../../../../../src/utils';
 const { validateSc2Realm } = utils;
 
 import sc2realmsJson from '../../../../__testData__/sc2realms.json';

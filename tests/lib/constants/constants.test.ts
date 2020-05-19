@@ -1,4 +1,4 @@
-import constants from '../../../src/lib/constants';
+import constants from '../../../src/constants';
 
 describe('CONSTANTS class', () => {
   test('should be defined', () => {

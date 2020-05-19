@@ -1,4 +1,4 @@
-import * as helpers from '../../../src/lib/helpers';
+import * as helpers from '../../../src/helpers';
 
 describe('Helpers module', () => {
   test('should be defined', () => {

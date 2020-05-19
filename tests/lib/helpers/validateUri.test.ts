@@ -1,5 +1,5 @@
-import { Uri } from '../../../@types';
-import { uri as validateUri } from '../../../src/lib/helpers/validators';
+import { Uri } from '../../../src/types';
+import { uri as validateUri } from '../../../src/helpers/validators';
 
 import urisJson from '../../__testData__/uris.json';
 import invalidUrisJson from '../../__testData__/invalidUris.json';

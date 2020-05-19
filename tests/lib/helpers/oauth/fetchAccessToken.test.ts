@@ -1,4 +1,4 @@
-import { fetchAccessToken } from '../../../../src/lib/helpers/oauth';
+import { fetchAccessToken } from '../../../../src/helpers/oauth';
 
 describe('fetchAccessToken()', () => {
   const oauthUri = 'http://sample.oauth.uri/';

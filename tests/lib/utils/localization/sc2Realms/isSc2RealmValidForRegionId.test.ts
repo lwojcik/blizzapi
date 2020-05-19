@@ -1,4 +1,4 @@
-import * as utils from '../../../../../src/lib/utils';
+import * as utils from '../../../../../src/utils';
 const { isSc2RealmValidForRegionId } = utils;
 
 import regionIdsJson from '../../../../__testData__/regionIds.json';

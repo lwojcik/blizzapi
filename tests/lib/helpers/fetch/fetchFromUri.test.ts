@@ -1,4 +1,4 @@
-import fetchFromUri from '../../../../src/lib/helpers/fetch/fetchFromUri';
+import fetchFromUri from '../../../../src/helpers/fetch/fetchFromUri';
 
 describe('fetchFromUri()', () => {
   test('should be defined', () => {

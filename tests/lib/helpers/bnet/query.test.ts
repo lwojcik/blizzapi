@@ -1,5 +1,6 @@
-import query from '../../../../src/lib/helpers/bnet/query';
-const oauth = require('../../../../src/lib/helpers/oauth');
+import query from '../../../../src/helpers/bnet/query';
+jest.mock('../../../../src/helpers/oauth');
+const oauth = require('../../../../src/helpers/oauth');
 
 // tslint:disable-next-line: no-object-mutation
 oauth.validateAccessToken = jest.fn().mockImplementation(({}, accessToken: string) => {
@@ -12,7 +13,7 @@ oauth.getAccessToken = jest.fn().mockImplementation(() => {
   return Promise.resolve('new_refreshed_access_token');
 });
 
-describe('query()', () => { 
+describe('query()', () => {
   test('should be defined', () => {
     expect(query).toBeDefined();
   });

@@ -21,7 +21,8 @@ module.exports = {
     "!**/tests/**.{js,ts}",
     "!**/*.{d.ts}",
     "!**/node_modules/**",
-    "!**/dist/**"
+    "!**/dist/**",
+    "!**/src/types.d.ts"
   ],
   "automock": false
   // "coverageThreshold": {

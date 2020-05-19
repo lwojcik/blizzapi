@@ -1,4 +1,4 @@
-import { endpoint as validateEndpoint } from '../../../../src/lib/helpers/validators';
+import { endpoint as validateEndpoint } from '../../../../src/helpers/validators';
 
 import endpointsJson from '../../../__testData__/endpoints.json';
 import invalidEndpointsJson from '../../../__testData__/invalidEndpoints.json';

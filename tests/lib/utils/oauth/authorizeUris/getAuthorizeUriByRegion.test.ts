@@ -1,4 +1,4 @@
-import * as utils from '../../../../../src/lib/utils';
+import * as utils from '../../../../../src/utils';
 const { getAuthorizeUriByRegion } = utils;
 
 import regionNamesJson from '../../../../__testData__/regionNames.json';

@@ -1,5 +1,5 @@
-import { ConstantKey } from '../../../../@types';
-import * as utils from '../../../../src/lib/utils/common/index';
+import { ConstantKey } from '../../../../src/types';
+import * as utils from '../../../../src/utils/common/index';
 
 const { getConstantByRegion } = utils;
 
