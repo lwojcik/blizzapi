@@ -14,5 +14,4 @@ describe('OAUTH_CHECK_TOKEN_URIS', () => {
   test('should match snapshot', () => {
     expect(OAUTH_CHECK_TOKEN_URIS).toMatchSnapshot();
   });
-
 });

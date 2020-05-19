@@ -30,7 +30,7 @@ describe('getAllDefaultLocales()', () => {
       ...Object.values(constants.LOCALES),
     );
 
-    receivedLocaleNames.forEach(localeName => {
+    receivedLocaleNames.forEach((localeName) => {
       expect(expectedLocaleNames.includes(localeName)).toBe(true);
     });
   });

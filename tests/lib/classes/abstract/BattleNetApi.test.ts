@@ -60,7 +60,6 @@ describe('BattleNetAPI class', () => {
     expect(response).toMatchSnapshot();
   });
 
-
   test('should get access token when provided by user', async () => {
     const bnetApi = new BattleNetAPIMock('valid_access_token');
     const response = await bnetApi.getAccessToken();

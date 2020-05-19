@@ -5,7 +5,7 @@ import {
   Endpoint,
   BattleNetOptions,
   AccessTokenOptions,
-} from 'types';
+} from '../types';
 
 export interface BlizzAPIOptions extends BattleNetOptions, AccessTokenOptions {}
 

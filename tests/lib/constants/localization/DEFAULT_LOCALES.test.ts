@@ -14,6 +14,4 @@ describe('DEFAULT_LOCALES', () => {
   test('should match snapshot', () => {
     expect(DEFAULT_LOCALES).toMatchSnapshot();
   });
-
-
 });
