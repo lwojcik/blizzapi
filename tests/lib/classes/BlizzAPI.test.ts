@@ -1,4 +1,4 @@
-import BlizzAPI from '../../../src/lib/classes/BlizzAPI';
+import BlizzAPI from '../../../src/classes/BlizzAPI';
 
 describe('BlizzAPI class', () => {
   test('should be defined', () => {
@@ -10,7 +10,11 @@ describe('BlizzAPI class', () => {
   });
 
   test('should define getAccessToken method', () => {
-    expect(new BlizzAPI({ region: '', clientId: '', clientSecret: '' }).getAccessToken).toBeDefined();
+    expect(new BlizzAPI({
+      region: '',
+      clientId: '',
+      clientSecret: '',
+    }).getAccessToken).toBeDefined();
   });
 
   test('should define validateAccessToken static method', () => {

@@ -1,19 +1,20 @@
-import { validateAccessToken } from '../../../../src/lib/helpers/oauth';
-const fetch = require('../../../../src/lib/helpers/fetch');
+import { validateAccessToken } from '../../../../src/helpers/oauth';
+jest.mock('../../../../src/helpers/fetch');
+const fetch = require('../../../../src/helpers/fetch');
 
 // tslint:disable-next-line: no-object-mutation
 fetch.fetchFromUri = jest.fn().mockImplementation((options: { uri: string }) => {
-  if (options.uri.includes("invalid_access_token")) {
+  if (options.uri.includes('invalid_access_token')) {
     return {
       error: 'invalid_token',
-    }
+    };
   }
-  if (options.uri.includes("access_token_with_api_error")) {
+  if (options.uri.includes('access_token_with_api_error')) {
     throw new Error('invalid token');
   }
   return {
     data: 'valid token',
-  }
+  };
 });
 
 describe('validateAccessToken()', () => {

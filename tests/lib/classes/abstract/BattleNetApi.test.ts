@@ -1,7 +1,7 @@
-import BattleNetAPI from '../../../../src/lib/classes/abstract/BattleNetAPI';
-// import * as oauth from '../../../../src/lib/helpers';
+import BattleNetAPI from '../../../../src/classes/abstract/BattleNetAPI';
+// import * as oauth from '../../../../src/helpers';
 
-jest.genMockFromModule('../../../../src/lib/classes/abstract/BattleNetAPI');
+jest.genMockFromModule('../../../../src/classes/abstract/BattleNetAPI');
 
 // tslint:disable-next-line: no-object-mutation
 BattleNetAPI.prototype.getAccessToken = jest.fn().mockImplementation(() =>
@@ -59,7 +59,6 @@ describe('BattleNetAPI class', () => {
     const response = await bnetApi.getAccessToken();
     expect(response).toMatchSnapshot();
   });
-
 
   test('should get access token when provided by user', async () => {
     const bnetApi = new BattleNetAPIMock('valid_access_token');

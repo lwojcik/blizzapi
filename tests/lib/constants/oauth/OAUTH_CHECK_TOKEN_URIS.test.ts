@@ -1,4 +1,4 @@
-import constants from '../../../../src/lib/constants';
+import constants from '../../../../src/constants';
 
 const { OAUTH_CHECK_TOKEN_URIS } = constants;
 
@@ -14,5 +14,4 @@ describe('OAUTH_CHECK_TOKEN_URIS', () => {
   test('should match snapshot', () => {
     expect(OAUTH_CHECK_TOKEN_URIS).toMatchSnapshot();
   });
-
 });

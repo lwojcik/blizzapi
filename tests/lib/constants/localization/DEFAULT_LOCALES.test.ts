@@ -1,4 +1,4 @@
-import constants from '../../../../src/lib/constants';
+import constants from '../../../../src/constants';
 
 const { DEFAULT_LOCALES } = constants;
 
@@ -14,6 +14,4 @@ describe('DEFAULT_LOCALES', () => {
   test('should match snapshot', () => {
     expect(DEFAULT_LOCALES).toMatchSnapshot();
   });
-
-
 });

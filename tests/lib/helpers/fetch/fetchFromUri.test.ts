@@ -1,4 +1,4 @@
-import fetchFromUri from '../../../../src/lib/helpers/fetch/fetchFromUri';
+import fetchFromUri from '../../../../src/helpers/fetch/fetchFromUri';
 
 describe('fetchFromUri()', () => {
   test('should be defined', () => {
@@ -28,17 +28,19 @@ describe('fetchFromUri()', () => {
       uri: 'http://example.org/valid/endpoint',
       method: 'GET',
       headers: {
-        data: 'sample headers'
-      }
+        data: 'sample headers',
+      },
     });
     expect(response).toMatchSnapshot();
   });
 
-  test('returns correct response for GET request to uri containing regional characters', async () => {
-    const response = await fetchFromUri({
-      uri: 'http://ęxąmple.org/zażółćgęśląjaźń/гордунни/좋은경기',
-      method: 'GET',
-    });
-    expect(response).toMatchSnapshot();
-  });
+  test(
+      'returns correct response for GET request to uri containing regional characters',
+      async () => {
+        const response = await fetchFromUri({
+          uri: 'http://ęxąmple.org/zażółćgęśląjaźń/гордунни/좋은경기',
+          method: 'GET',
+        });
+        expect(response).toMatchSnapshot();
+      });
 });

@@ -1,4 +1,4 @@
-import { endpoint as validateEndpoint } from '../../../../src/lib/helpers/validators';
+import { endpoint as validateEndpoint } from '../../../../src/helpers/validators';
 
 import endpointsJson from '../../../__testData__/endpoints.json';
 import invalidEndpointsJson from '../../../__testData__/invalidEndpoints.json';
@@ -18,13 +18,13 @@ describe('validateEndpoint()', () => {
     expect(typeof validateEndpoint).toBe('function');
   });
 
-  (endpointsJson as ReadonlyArray<string>).forEach(endpoint => {
+  (endpointsJson as ReadonlyArray<string>).forEach((endpoint) => {
     test(`should return true for ${endpoint} as valid endpoint`, () => {
       expect(validateEndpoint(endpoint)).toBe(true);
     });
   });
 
-  (invalidEndpointsJson as ReadonlyArray<string>).forEach(invalidEndpoint => {
+  (invalidEndpointsJson as ReadonlyArray<string>).forEach((invalidEndpoint) => {
     test(`should return false for ${invalidEndpoint} as valid endpoint`, () => {
       expect(validateEndpoint(invalidEndpoint)).toBe(false);
     });

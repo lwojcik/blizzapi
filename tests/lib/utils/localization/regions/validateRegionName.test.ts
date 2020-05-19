@@ -1,4 +1,4 @@
-import * as utils from '../../../../../src/lib/utils';
+import * as utils from '../../../../../src/utils';
 const { validateRegionName } = utils;
 
 describe('validateRegionName()', () => {

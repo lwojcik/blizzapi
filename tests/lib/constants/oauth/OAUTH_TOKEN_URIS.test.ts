@@ -1,4 +1,4 @@
-import constants from '../../../../src/lib/constants';
+import constants from '../../../../src/constants';
 
 const { OAUTH_TOKEN_URIS } = constants;
 

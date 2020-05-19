@@ -1,5 +1,5 @@
-import { ConstantKeys } from '../../../../@types';
-import * as utils from '../../../../src/lib/utils/common';
+import { ConstantKeys } from '../../../../src/types';
+import * as utils from '../../../../src/utils/common';
 const { getConstantByRegionName } = utils;
 
 import regionNamesJson from '../../../__testData__/regionNames.json';
@@ -16,15 +16,18 @@ describe('getConstantByRegionName()', () => {
   });
 
   (regionNamesJson as ReadonlyArray<string>).forEach(regionName =>
-    (constantKeysJson as ConstantKeys).forEach(constantKey => {
-      test(`should return correct value for ${regionName} and ${constantKey} as valid parameters`, () => {
-        expect(getConstantByRegionName(regionName, constantKey)).toMatchSnapshot();
-      });
+    (constantKeysJson as ConstantKeys).forEach((constantKey) => {
+      test(
+          `should return correct value for ${regionName} and ${constantKey} as valid parameters`,
+          () => {
+            expect(getConstantByRegionName(regionName, constantKey)).toMatchSnapshot();
+          },
+        );
     }),
   );
 
   (wrongRegionNamesJson as ReadonlyArray<string>).forEach(wrongRegionName =>
-    (constantKeysJson as ConstantKeys).forEach(constantKey => {
+    (constantKeysJson as ConstantKeys).forEach((constantKey) => {
       test(`should throw RangeError for ${wrongRegionName} and ${constantKey}`, () => {
         expect(() => getConstantByRegionName(wrongRegionName, constantKey)).toThrow(RangeError);
       });

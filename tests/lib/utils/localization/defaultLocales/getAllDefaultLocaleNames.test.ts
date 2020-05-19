@@ -1,5 +1,5 @@
-import * as utils from '../../../../../src/lib/utils';
-import constants from '../../../../../src/lib/constants';
+import * as utils from '../../../../../src/utils';
+import constants from '../../../../../src/constants';
 
 const { REGIONS } = constants;
 const { getAllDefaultLocaleNames } = utils;
@@ -30,7 +30,7 @@ describe('getAllDefaultLocales()', () => {
       ...Object.values(constants.LOCALES),
     );
 
-    receivedLocaleNames.forEach(localeName => {
+    receivedLocaleNames.forEach((localeName) => {
       expect(expectedLocaleNames.includes(localeName)).toBe(true);
     });
   });

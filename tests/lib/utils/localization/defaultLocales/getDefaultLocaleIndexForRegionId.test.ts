@@ -1,5 +1,5 @@
-import * as utils from '../../../../../src/lib/utils';
-import constants from '../../../../../src/lib/constants';
+import * as utils from '../../../../../src/utils';
+import constants from '../../../../../src/constants';
 
 const { DEFAULT_LOCALES } = constants;
 const { getDefaultLocaleIndexForRegionId } = utils;
@@ -16,7 +16,7 @@ describe('getDefaultLocaleIndexForRegionId()', () => {
     expect(typeof getDefaultLocaleIndexForRegionId).toBe('function');
   });
 
-  (regionIdsJson as ReadonlyArray<number | string>).forEach(regionId => {
+  (regionIdsJson as ReadonlyArray<number | string>).forEach((regionId) => {
     test(`should return correct value for ${regionId} as valid region id`, () => {
       expect(getDefaultLocaleIndexForRegionId(regionId)).toBe(DEFAULT_LOCALES[regionId]);
     });
