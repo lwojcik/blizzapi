@@ -47,7 +47,8 @@ export const checkIfLocaleLooksValid = (locale: Locale) => {
  * Validates locale name against locale list (whether it exists in the constants object)
  *
  * @param locale Locale name
- * @return true if locale exists, false if not. Throws RangeError if locale doesn't match regex pattern
+ * @return true if locale exists, false if not.
+ * Throws RangeError if locale doesn't match regex pattern
  */
 export const validateLocale = (locale: Locale) => {
   const doesLocaleLookValid = checkIfLocaleLooksValid(locale);

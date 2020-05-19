@@ -39,8 +39,8 @@ export const getAllRegionNames = () => {
  * Returns region name(s) represented by given region id
  *
  * @param regionId Region id as integer or string
- * @return Region name represented as two-letter code (e.g. "us" for Americas) or an array of regions
- * if more than one is specified for a given region id
+ * @return Region name represented as two-letter code (e.g. "us" for Americas)
+ * or an array of regions if more than one is specified for a given region id
  */
 export const getRegionNameById = (regionId: RegionIdAsNumberOrString) => {
   const regionIds = Object.keys(constants.REGIONS);

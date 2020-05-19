@@ -4,7 +4,7 @@ import BattleNetAPI from './abstract/BattleNetAPI';
 import { Endpoint } from '../../../@types';
 import { BattleNetOptions, AccessTokenOptions } from '../../../@interfaces';
 
-export interface BlizzAPIOptions extends BattleNetOptions, AccessTokenOptions {};
+export interface BlizzAPIOptions extends BattleNetOptions, AccessTokenOptions {}
 
 export default class BlizzAPI extends BattleNetAPI {
   readonly options: AccessTokenOptions;
@@ -17,7 +17,7 @@ export default class BlizzAPI extends BattleNetAPI {
       accessToken: options.accessToken,
     });
     this.options = {
-      validateAccessTokenOnEachQuery: options.validateAccessTokenOnEachQuery || false, 
+      validateAccessTokenOnEachQuery: options.validateAccessTokenOnEachQuery || false,
       refreshExpiredAccessToken: options.refreshExpiredAccessToken || false,
       onAccessTokenExpired: options.onAccessTokenExpired || undefined,
       onAccessTokenRefresh: options.onAccessTokenRefresh || undefined,
@@ -34,7 +34,7 @@ export default class BlizzAPI extends BattleNetAPI {
       options: {
         ...this.options,
       },
-    });
+    })
 
   static getAllRegions = utils.getAllRegions;
   static getAllRegionIds = utils.getAllRegionIds;

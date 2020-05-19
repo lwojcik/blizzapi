@@ -6,7 +6,7 @@ describe('Index', () => {
   });
 
   test('BlizzAPI should be a class', () => {
-    const blizzapi = new BlizzAPI({ region: '', clientId: '', clientSecret: ''});
+    const blizzapi = new BlizzAPI({ region: '', clientId: '', clientSecret: '' });
     expect(blizzapi instanceof BlizzAPI).toBe(true);
   });
 });

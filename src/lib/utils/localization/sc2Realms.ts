@@ -23,7 +23,7 @@ export const getAllAvailableSc2Realms = (): Sc2RealmList => {
   const sc2Realms = Object.values(constants.SC2_REALMS);
   const flattenedSc2Realms = ([] as Sc2RealmList).concat(...sc2Realms);
   return flattenedSc2Realms.filter((el, i, a) => i === a.indexOf(el));
-}
+};
 
 /**
  * Returns StarCraft II realms for given region id
@@ -51,7 +51,8 @@ export const checkIfSc2RealmLooksValid = (sc2Realm: Sc2RealmAsNumberOrString) =>
  * Validates sc2 realm id against SC2 realms list (whether it exists in the constants object)
  *
  * @param sc2Realm SC2 realm id (single digit) as number or string
- * @return true if locale exists, false if not. Throws RangeError if locale doesn't match regex pattern
+ * @return true if locale exists, false if not.
+ * Throws RangeError if locale doesn't match regex pattern
  */
 export const validateSc2Realm = (sc2Realm: Sc2RealmAsNumberOrString) => {
   const doesSc2RealmLookValid = checkIfSc2RealmLooksValid(sc2Realm);

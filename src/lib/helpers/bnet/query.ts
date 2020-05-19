@@ -1,17 +1,17 @@
 import { RegionIdOrName, AccessToken } from '../../../../@types';
-import { AccessTokenOptions } from '../../../../@interfaces'
+import { AccessTokenOptions } from '../../../../@interfaces';
 import { endpoint as validateEndpoint } from '../validators';
 import { getAccessToken, validateAccessToken }  from '../oauth';
 import { getApiHostByRegion } from '../../utils/api';
 import { fetchFromUri } from '../fetch';
 
 interface QueryOptions {
-  region: RegionIdOrName,
-  endpoint: string,
-  clientId: string,
-  clientSecret: string,
-  accessToken: AccessToken,
-  options: AccessTokenOptions,
+  region: RegionIdOrName;
+  endpoint: string;
+  clientId: string;
+  clientSecret: string;
+  accessToken: AccessToken;
+  options: AccessTokenOptions;
 }
 
 const queryWithAccessToken = (queryOptions: QueryOptions, accessToken: AccessToken) => {
@@ -30,7 +30,7 @@ const queryWithAccessToken = (queryOptions: QueryOptions, accessToken: AccessTok
     uri: requestUri,
     method: 'GET',
   });
-}
+};
 
 export default async (queryOptions: QueryOptions) => {
   const { region, accessToken } = queryOptions;
@@ -46,7 +46,7 @@ export default async (queryOptions: QueryOptions) => {
     if (invalidAccessToken) {
       return {
         error: 'access_token_invalid',
-      }
+      };
     }
   }
 

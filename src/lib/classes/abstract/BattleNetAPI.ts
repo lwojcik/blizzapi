@@ -21,10 +21,10 @@ export default class BattleNetAPI extends OAuth2API {
       region: this.region,
       clientId: this.clientId,
       clientSecret: this.clientSecret,
-    }));
+    }))
 
   static validateAccessToken = (region: RegionIdOrName, accessToken: AccessToken) =>
-    OAuthHelpers.validateAccessToken(region, accessToken);
-};
+    OAuthHelpers.validateAccessToken(region, accessToken)
+}
 
 /* tslint:enable:no-this no-object-mutation */

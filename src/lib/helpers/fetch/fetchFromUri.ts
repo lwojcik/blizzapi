@@ -3,7 +3,7 @@ import { Uri, HttpMethod } from '../../../../@types';
 import { uri as validateUri } from '../validators';
 
 interface FetchFromUriOptions {
-  uri: Uri,
+  uri: Uri;
   method?: HttpMethod;
   headers?: object | Headers;
   params?: object;
