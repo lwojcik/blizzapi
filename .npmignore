@@ -8,3 +8,4 @@ appveyor.yml
 .travis.yml
 jest.config.js
 setupJest.ts
+.mergify.yml
