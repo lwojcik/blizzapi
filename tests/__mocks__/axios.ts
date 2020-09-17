@@ -1,12 +1,13 @@
 const axios = jest.genMockFromModule('axios');
 
 // tslint:disable no-object-mutation
-(axios as any).get = (uri: string, params?: any) => {
-  const accessToken = params.headers && params.headers.Authorization
+(axios as any).request = (params?: any) => {
+  const method = params.method || 'GET';
+  const accessToken = params.headers?.Authorization
     ? params.headers.Authorization.split(' ')[1]
     : 'no_access_token_provided';
-  
-    if (accessToken && accessToken === 'invalid_access_token') {
+
+  if (accessToken && accessToken === 'invalid_access_token') {
     // tslint:disable-next-line: no-reject
     return Promise.reject({
       response: {
@@ -16,18 +17,18 @@ const axios = jest.genMockFromModule('axios');
       data: {
         status: 401,
         message: 'invalid_access_token',
-      }
+      },
     });
   }
-  
+
   return Promise.resolve({
     data: {
-      title: `sample mocked data for ${params.method} request to ${uri}`,
+      title: `sample mocked data for ${method} request to ${params.url}`,
       headers: params.headers || { data: 'default sample headers' },
       access_token: accessToken,
-    }
+    },
   });
-}
+};
 // tslint:enable no-object-mutation
 
 export default axios;

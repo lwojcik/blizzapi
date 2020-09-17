@@ -10,7 +10,6 @@ interface FetchFromUriOptions {
   method?: HttpMethod;
   headers?: object | Headers;
   data?: string;
-  params?: object;
   auth?: AxiosBasicCredentials;
 }
 
@@ -23,7 +22,6 @@ export default async (options: FetchFromUriOptions) => {
     method,
     headers,
     data,
-    params,
     auth,
   } = options;
 
@@ -34,9 +32,8 @@ export default async (options: FetchFromUriOptions) => {
 
     const requestOptions = {
       method,
-      url: uri,
+      url: encodeURI(uri),
       ...headers && { headers },
-      ...params && { params },
       ...auth && { auth },
       ...data && { data },
     };
