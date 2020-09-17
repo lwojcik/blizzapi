@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosBasicCredentials } from 'axios';
 import { uri as validateUri } from '../validators';
 import {
   Uri,
@@ -9,30 +9,36 @@ interface FetchFromUriOptions {
   uri: Uri;
   method?: HttpMethod;
   headers?: object | Headers;
-  params?: object;
+  data?: string;
+  auth?: AxiosBasicCredentials;
 }
 
 /**
  * Performs basic fetch request from a given uri
  */
 export default async (options: FetchFromUriOptions) => {
-  const uri = encodeURI(options.uri);
-  const method = options.method || 'GET';
+  const {
+    uri,
+    method,
+    headers,
+    data,
+    auth,
+  } = options;
+
   try {
     if (!validateUri(uri)) {
       throw new RangeError(`'${uri}' is not a valid parameter for fetchFromUri()`);
     }
+
     const requestOptions = {
       method,
+      url: encodeURI(uri),
+      ...headers && { headers },
+      ...auth && { auth },
+      ...data && { data },
     };
 
-    /* tslint:disable no-object-mutation */
-    if (options.headers) Object.assign(requestOptions, { headers: options.headers });
-
-    // GET request method cannot have body, so I'm doing this nonsense
-    if (method === 'POST') Object.assign(requestOptions, { params: options.params });
-    /* tslint:enable no-object-mutation */
-    const response = await axios.get(uri, requestOptions);
+    const response = await axios.request(requestOptions);
     return response.data;
   } catch (error) {
     throw error;

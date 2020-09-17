@@ -6,12 +6,12 @@ exports[`BattleNetAPI class should define clientSecret property 1`] = `"valid_cl
 
 exports[`BattleNetAPI class should define region property 1`] = `"us"`;
 
-exports[`BattleNetAPI class should get access token 1`] = `"dmFsaWRfY2xpZW50X2lkX2Zyb21fQmF0dGxlTmV0QVBJTW9jazp2YWxpZF9jbGllbnRfc2VjcmV0X2Zyb21fQmF0dGxlTmV0QVBJTW9jaw=="`;
+exports[`BattleNetAPI class should get access token 1`] = `"no_access_token_provided"`;
 
 exports[`BattleNetAPI class should get access token when provided by user 1`] = `"valid_access_token"`;
 
 exports[`BattleNetAPI class should save accessToken as undefined 1`] = `undefined`;
 
-exports[`BattleNetAPI class should set access token 1`] = `"dmFsaWRfY2xpZW50X2lkX2Zyb21fQmF0dGxlTmV0QVBJTW9jazp2YWxpZF9jbGllbnRfc2VjcmV0X2Zyb21fQmF0dGxlTmV0QVBJTW9jaw=="`;
+exports[`BattleNetAPI class should set access token 1`] = `"no_access_token_provided"`;
 
 exports[`BattleNetAPI class should validate access token and return true 1`] = `true`;
