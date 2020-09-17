@@ -1,4 +1,3 @@
-import * as base64 from 'base-64';
 import { fetchFromUri } from '../fetch';
 import {
   Uri,
@@ -13,18 +12,22 @@ interface FetchAccessTokenOptions {
 }
 
 export default (options: FetchAccessTokenOptions) => {
-  const { oauthUri, clientId, clientSecret } = options;
-  const params = {
-    grant_type: 'client_credentials',
+  const {
+    oauthUri,
+    clientId,
+    clientSecret,
+  } = options;
+
+  const auth = {
+    username: clientId,
+    password: clientSecret,
   };
 
-  const headers = {
-    Authorization: `Basic ${base64.encode(`${clientId}:${clientSecret}`)}`,
-  };
+  const data = 'grant_type=client_credentials';
 
   return fetchFromUri({
-    headers,
-    params,
+    data,
+    auth,
     uri: oauthUri,
     method: 'POST',
   });
