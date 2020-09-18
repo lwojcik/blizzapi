@@ -7,7 +7,7 @@ import {
 
 interface FetchFromUriOptions {
   uri: Uri;
-  method?: HttpMethod;
+  method: HttpMethod;
   headers?: object | Headers;
   data?: string;
   auth?: AxiosBasicCredentials;
