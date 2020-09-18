@@ -19,11 +19,12 @@ interface FetchFromUriOptions {
 export default async (options: FetchFromUriOptions) => {
   const {
     uri,
-    method,
     headers,
     data,
     auth,
   } = options;
+
+  const method = options.method || 'GET';
 
   try {
     if (!validateUri(uri)) {
