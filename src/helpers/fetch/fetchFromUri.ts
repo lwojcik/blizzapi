@@ -7,7 +7,7 @@ import {
 
 interface FetchFromUriOptions {
   uri: Uri;
-  method: HttpMethod;
+  method?: HttpMethod;
   headers?: object | Headers;
   data?: string;
   auth?: AxiosBasicCredentials;
@@ -19,11 +19,12 @@ interface FetchFromUriOptions {
 export default async (options: FetchFromUriOptions) => {
   const {
     uri,
-    method,
     headers,
     data,
     auth,
   } = options;
+
+  const method = options.method || 'GET';
 
   try {
     if (!validateUri(uri)) {
