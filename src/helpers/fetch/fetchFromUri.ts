@@ -34,6 +34,7 @@ export default async (options: FetchFromUriOptions) => {
     const requestOptions = {
       method,
       url: encodeURI(uri),
+      timeout: 10000,
       ...headers && { headers },
       ...auth && { auth },
       ...data && { data },
