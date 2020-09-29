@@ -25,6 +25,7 @@ const axios = jest.genMockFromModule('axios');
     data: {
       title: `sample mocked data for ${method} request to ${params.url}`,
       headers: params.headers || { data: 'default sample headers' },
+      params: params.params || { data: 'default sample params' },
       access_token: accessToken,
     },
   });

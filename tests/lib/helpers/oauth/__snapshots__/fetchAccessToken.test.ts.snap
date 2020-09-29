@@ -6,6 +6,9 @@ Object {
   "headers": Object {
     "data": "default sample headers",
   },
+  "params": Object {
+    "data": "default sample params",
+  },
   "title": "sample mocked data for POST request to http://sample.oauth.uri/",
 }
 `;

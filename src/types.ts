@@ -63,6 +63,12 @@ export interface AccessTokenOptions {
   onAccessTokenRefresh?: Function | undefined;
 }
 
+export interface QueryOptions {
+  timeout?: number;
+  headers?: object | Headers;
+  params?: object | URLSearchParams;
+}
+
 export interface BattleNetOptions {
   region: RegionIdOrName;
   clientId: ClientId;

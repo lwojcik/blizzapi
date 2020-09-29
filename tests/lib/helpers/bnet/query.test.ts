@@ -40,6 +40,26 @@ describe('query()', () => {
     expect(response).toMatchSnapshot();
   });
 
+  test('returns correct response for GET request with params to a valid uri', async () => {
+    const response = await query({
+      region: 'us',
+      endpoint: '/sc2/sample/endpoint',
+      clientId: 'valid_client_id',
+      clientSecret: 'valid_client_secret',
+      accessToken: 'valid_access_token',
+      options: {
+        validateAccessTokenOnEachQuery: false,
+        refreshExpiredAccessToken: false,
+        onAccessTokenExpired: undefined,
+        onAccessTokenRefresh:  undefined,
+        params: {
+          data: 'test params',
+        },
+      },
+    });
+    expect(response).toMatchSnapshot();
+  });
+
   test('rejects and throws RangeError for invalid endpoint', async () => {
     expect(query({
       region: 'us',

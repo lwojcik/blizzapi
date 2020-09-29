@@ -43,4 +43,15 @@ describe('fetchFromUri()', () => {
         });
         expect(response).toMatchSnapshot();
       });
+
+  test('returns correct response for GET request with params to a valid uri ', async () => {
+    const response = await fetchFromUri({
+      uri: 'http://example.org/valid/endpoint',
+      method: 'GET',
+      params: {
+        data: 'custom params',
+      },
+    });
+    expect(response).toMatchSnapshot();
+  });
 });
