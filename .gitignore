@@ -56,4 +56,7 @@ src/*.js
 # generated docs
 docs/
 
+# WebStormIDE
+.idea
+
 package-lock.json
