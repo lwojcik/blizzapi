@@ -6,6 +6,9 @@ Object {
   "headers": Object {
     "Authorization": "Bearer no_access_token_provided",
   },
+  "params": Object {
+    "data": "default sample params",
+  },
   "title": "sample mocked data for GET request to https://us.api.blizzard.com/sample/endpoint",
 }
 `;
