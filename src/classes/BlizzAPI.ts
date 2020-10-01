@@ -5,6 +5,7 @@ import {
   Endpoint,
   BattleNetOptions,
   AccessTokenOptions,
+  QueryOptions,
 } from '../types';
 
 export interface BlizzAPIOptions extends BattleNetOptions, AccessTokenOptions {}
@@ -27,7 +28,7 @@ export default class BlizzAPI extends BattleNetAPI {
     };
   }
 
-  query = async (endpoint: Endpoint) =>
+  query = async (endpoint: Endpoint, options?: QueryOptions) =>
     helpers.query({
       endpoint,
       region: this.region,
@@ -36,6 +37,7 @@ export default class BlizzAPI extends BattleNetAPI {
       accessToken: await this.getAccessToken(),
       options: {
         ...this.options,
+        ...options,
       },
     })
 

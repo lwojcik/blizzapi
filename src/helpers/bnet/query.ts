@@ -6,36 +6,51 @@ import {
   RegionIdOrName,
   AccessToken,
   AccessTokenOptions,
+  QueryOptions,
 } from '../../types';
 
-interface QueryOptions {
+interface BattleNetQueryOptions {
   region: RegionIdOrName;
   endpoint: string;
   clientId: string;
   clientSecret: string;
   accessToken: AccessToken;
-  options: AccessTokenOptions;
+  options: AccessTokenOptions & QueryOptions;
 }
 
-const queryWithAccessToken = (queryOptions: QueryOptions, accessToken: AccessToken) => {
-  const { region, endpoint } = queryOptions;
+const queryWithAccessToken = (queryOptions: BattleNetQueryOptions, accessToken: AccessToken) => {
+  const {
+    region,
+    endpoint,
+    options,
+  } = queryOptions;
+  const {
+    headers,
+    params,
+  } = options;
   const validEndpoint = validateEndpoint(endpoint);
   if (!validEndpoint) throw new RangeError(`${endpoint} is not a valid endpoint.`);
 
   const apiHost = getApiHostByRegion(region);
   const requestUri = `${apiHost}${endpoint}`;
-  const headers = {
+  const authHeaders = {
     Authorization: `Bearer ${accessToken}`,
   };
 
+  const fetchHeaders = {
+    ...headers,
+    ...authHeaders,
+  };
+
   return fetchFromUri({
-    headers,
     uri: requestUri,
     method: 'GET',
+    headers: fetchHeaders,
+    ...params && { params },
   });
 };
 
-export default async (queryOptions: QueryOptions) => {
+export default async (queryOptions: BattleNetQueryOptions) => {
   const { region, accessToken } = queryOptions;
   const {
     validateAccessTokenOnEachQuery,

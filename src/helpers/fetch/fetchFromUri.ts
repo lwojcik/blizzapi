@@ -3,12 +3,12 @@ import { uri as validateUri } from '../validators';
 import {
   Uri,
   HttpMethod,
+  QueryOptions,
 } from '../../types';
 
-interface FetchFromUriOptions {
+interface FetchFromUriOptions extends QueryOptions {
   uri: Uri;
   method?: HttpMethod;
-  headers?: object | Headers;
   data?: string;
   auth?: AxiosBasicCredentials;
 }
@@ -19,7 +19,9 @@ interface FetchFromUriOptions {
 export default async (options: FetchFromUriOptions) => {
   const {
     uri,
+    timeout,
     headers,
+    params,
     data,
     auth,
   } = options;
@@ -34,7 +36,9 @@ export default async (options: FetchFromUriOptions) => {
     const requestOptions = {
       method,
       url: encodeURI(uri),
+      timeout: timeout || 10000,
       ...headers && { headers },
+      ...params && { params },
       ...auth && { auth },
       ...data && { data },
     };
