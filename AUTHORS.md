@@ -1,0 +1,8 @@
+# This aims to be an exhaustive list
+# of all authors and contributors to the project
+
+# Entries should be added alphabetically in the form:
+# Name or Organization <optional email address OR website URL>
+
+AlexZeDim <https://github.com/alexzedim>
+Łukasz Wójcik <https://github.com/lwojcik>
