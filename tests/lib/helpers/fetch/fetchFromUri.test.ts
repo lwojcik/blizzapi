@@ -54,4 +54,15 @@ describe('fetchFromUri()', () => {
     });
     expect(response).toMatchSnapshot();
   });
+
+  test('returns correct response for GET request with "last-modified" header', async () => {
+    const response = await fetchFromUri({
+      uri: 'http://example.org/valid/endpoint/lastModified',
+      method: 'GET',
+      params: {
+        data: 'custom params',
+      },
+    });
+    expect(response).toMatchSnapshot();
+  });
 });
