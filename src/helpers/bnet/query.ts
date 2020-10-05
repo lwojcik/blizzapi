@@ -1,5 +1,5 @@
 import { endpoint as validateEndpoint } from '../validators';
-import { getAccessToken, validateAccessToken }  from '../oauth';
+import { getAccessToken, validateAccessToken } from '../oauth';
 import { getApiHostByRegion } from '../../utils/api';
 import { fetchFromUri } from '../fetch';
 import {
@@ -69,8 +69,7 @@ export default async (queryOptions: BattleNetQueryOptions) => {
   }
 
   try {
-    const data = await queryWithAccessToken(queryOptions, accessToken);
-    return data;
+    return await queryWithAccessToken(queryOptions, accessToken);
   } catch (error) {
     if (error.response && error.response.status === 401) {
       onAccessTokenExpired && onAccessTokenExpired();
