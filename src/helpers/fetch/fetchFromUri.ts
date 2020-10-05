@@ -45,13 +45,14 @@ export default async (options: FetchFromUriOptions) => {
 
     const response = await axios.request(requestOptions);
 
-    if (response.headers['last-modified']) {
-      return {
-        ...response.data,
-        ...{ lastModified: response.headers['last-modified'] },
-      };
-    }
-    return response.data;
+    const lastModified = response.headers['last-modified']
+      ? response.headers['last-modified']
+      : null;
+
+    return {
+      ...response.data,
+      ...lastModified && { lastModified },
+    };
   } catch (error) {
     throw error;
   }
