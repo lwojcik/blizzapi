@@ -9,3 +9,6 @@ appveyor.yml
 jest.config.js
 setupJest.ts
 .mergify.yml
+AUTHORS
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md

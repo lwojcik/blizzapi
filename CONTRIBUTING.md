@@ -5,7 +5,7 @@ BlizzAPI is as an open source project. Contributions of any kind are welcome.
 You can contribute to the project in many ways:
 
 * file a bug report
-* request a feature
+* suggest a feature
 * improve documentation either within the project itself or the [doc site repository](https://github.com/lukemnet/blizzapi-docs)
 * submit a pull request
 
@@ -21,9 +21,9 @@ There is no specific format you have to follow while filing your report. However
 * expected behavior - what you expected to happen
 * any other contextual information about the problem (if applicable)
 
-## Feature requests
+## Feature suggest
 
-You can use GitHub Issues section to submit ideas or request features you would like to be added to the project.
+You can use GitHub Issues section to suggest ideas or features you would like to be added to the project.
 
 There is no specific format you have to follow while filling your request. Just be sure to provide clear and concise description of the feature. Examples, test cases and any any additional context would be greatly appreciated.
 
@@ -38,7 +38,7 @@ Feel free to submit any relevant fixes (typos, error corrections, improvements t
 
 ## Pull requests
 
-Code patches that add features or fix any of the bugs (submitted or not) can be sent as pull requests on GitHub.
+Code patches that add features or fix bugs (submitted or not) can be sent as pull requests on GitHub.
 
 To make the process of merging your pull request as quick as possible, be sure to read and follow the guidelines below:
 
