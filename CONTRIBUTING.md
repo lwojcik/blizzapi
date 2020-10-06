@@ -21,7 +21,7 @@ There is no specific format you have to follow while filing your report. However
 * expected behavior - what you expected to happen
 * any other contextual information about the problem (if applicable)
 
-## Feature suggest
+## Feature suggestions
 
 You can use GitHub Issues section to suggest ideas or features you would like to be added to the project.
 
@@ -38,17 +38,17 @@ Feel free to submit any relevant fixes (typos, error corrections, improvements t
 
 ## Pull requests
 
-Code patches that add features or fix bugs (submitted or not) can be sent as pull requests on GitHub.
+Code patches that add features or fix bugs (submitted or not) can be sent as [pull requests on GitHub](https://github.com/lukemnet/blizzapi/pulls).
 
 To make the process of merging your pull request as quick as possible, be sure to read and follow the guidelines below:
 
-* All GitHub status checks marked as 'Required' MUST pass in order to merge and close the pull request.
+* All GitHub status checks marked as 'Required' MUST pass in order to merge the pull request.
 
 * It's highly appreciated if you attempt to fix any failing status checks not marked as 'Required'. Their purpose is to help maintaining general project hygiene but they aren't meant to be gatekeepers. A small percentage of issues may be false positives that can be safely ignored. Use your best judgement while deciding whether it's something you should spend time working on.
 
-* Adding tests in your pull request is highly appreciated but not mandatory. Again, use your best judgement whether this is something you can add within reasonable timeframe.
+* Adding tests for your code is highly appreciated but not mandatory. Again, use your best judgement whether this is something you can provide within reasonable timeframe.
 
-* If your pull request is not ready to be merged, please prefix its title with 'WIP' (Work In Progress) or indicate this in the description.
+* If your pull request isn't ready to be merged, please prefix its title with 'WIP' (Work In Progress) or indicate this in the description.
 
 * Pull requests are merged to `master` branch via squash-and-merge strategy. There are no specific requirements about quality and quantity of commits within feature branches.
 
@@ -60,19 +60,19 @@ This section intends to explain how the project works from the developer point o
 
 ### Development
 
-BlizzAPI is written in TypeScript and compiled to ES5 with `tsc` command. To run the project in development mode, use `npm run dev` or `tsc -w`.
+BlizzAPI is written in TypeScript and compiles to ES5 with `tsc` command. To run the project in development mode, use `npm run dev` or `tsc -w`.
 
-Full project build, including linting and testing, can be triggered with `npm run build`. To trigger a build without testing and linting use `tsc`.
+Full project build, including linting and testing, can be triggered with `npm run build`. To trigger a build without linting and testing use `tsc`.
 
-Type definitions are storted in `types.ts` file. Storing them in a separate file allows for reusing them in multiple places and triggering errors
+Type definitions are storted in `types.ts` file. Storing them in a separate file allows for reusing them in multiple places.
 
 ### Code conventions / linting
 
-BlizzAPI uses [Airbnb style guide](https://github.com/airbnb/javascript) as a base for linting. Project code is written in TypeScript and transpiled to ES5.
+BlizzAPI uses [Airbnb style guide](https://github.com/airbnb/javascript) as a base for linting.
 
-Internal project code is intended to follow basic principles of functional programming. Non-functional constructs, such as `BlizzAPI` class are sometimes used for user interface.
+Internal project code is intended to follow basic principles of functional programming. Non-functional constructs, such as `BlizzAPI` class, are occasionally used for user interface.
 
-Linting is a part of build process. Unresolved lint errors fail the build. However, in justified situations it's acceptable to [supress lint errors with TSLint comment flags](https://palantir.github.io/tslint/usage/rule-flags/). 
+Linting is a part of build process. Unresolved lint errors fail the build. However, in justified situations it's acceptable to [supress lint errors with TSLint comment flags](https://palantir.github.io/tslint/usage/rule-flags/).
 
 ### Testing
 
@@ -86,13 +86,13 @@ Testing is done via:
 
 All test components are treated as an integral part of project code. All modifications to existing snapshots as well as adding new ones have to be committed before building the project.
 
-It's possible to utilize snapshots for testing new code with help of [`toMatchSnapshot()`](https://jestjs.io/docs/en/snapshot-testing) directive. Jest will generate new snapshots automatically on next `npm test`. Resulting changes must be committed to Git.
+It's possible to create new snapshots with help of [`toMatchSnapshot()`](https://jestjs.io/docs/en/snapshot-testing) directive. Jest will auto-generate new snapshots on next `npm test`. Resulting changes must be committed to Git.
 
 If a code change modifies one or more existing snapshots or makes any previously created snapshots obsolete, snapshot changes have to be reviewed and accepted manually before proceeding. Accepting snapshot changes is done by running `npm test -- -u`. Resulting changes must be committed to Git.
 
 Each run of `npm test` command generates human-readable coverage report which can be accessed locally in a web browser by opening `/path/to/blizzapi/coverage/lcov-report/index.html`. Those reports often provide useful hints on how to fill missing coverage gaps.
 
-Note that automated tests are powerful tool for quick quality control, but they don't replace the need for integration testing against real-life contexts.
+Note that automated tests are powerful tool for quick quality control, but they don't replace the need for integration testing against real-life contexts. In other words, be sure to test your change with Battle.net API. :)
 
 ### Releases
 
