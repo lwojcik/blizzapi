@@ -1,29 +1,30 @@
 import query from '../../../../src/helpers/bnet/query';
+
 jest.mock('../../../../src/helpers/oauth');
 const oauth = require('../../../../src/helpers/oauth');
 
-// tslint:disable-next-line: no-object-mutation
+// eslint-disable-next-line jest/prefer-spy-on, no-empty-pattern
 oauth.validateAccessToken = jest.fn().mockImplementation(({}, accessToken: string) => {
   if (accessToken === 'invalid_access_token') return Promise.resolve(false);
   return Promise.resolve(true);
 });
 
-// tslint:disable-next-line: no-object-mutation
-oauth.getAccessToken = jest.fn().mockImplementation(() => {
-  return Promise.resolve('new_refreshed_access_token');
-});
+// eslint-disable-next-line jest/prefer-spy-on
+oauth.getAccessToken = jest.fn().mockImplementation(() =>
+  Promise.resolve('new_refreshed_access_token'));
 
 describe('query()', () => {
-  test('should be defined', () => {
+  it('should be defined', () => {
     expect(query).toBeDefined();
   });
 
-  test('should be function', () => {
+  it('should be function', () => {
     expect(query).toBeTruthy();
     expect(typeof query).toBe('function');
   });
 
-  test('returns correct response for GET request to a valid uri', async () => {
+  it('returns correct response for GET request to a valid uri', async () => {
+    expect.assertions(1);
     const response = await query({
       region: 'us',
       endpoint: '/sc2/sample/endpoint',
@@ -34,13 +35,14 @@ describe('query()', () => {
         validateAccessTokenOnEachQuery: false,
         refreshExpiredAccessToken: false,
         onAccessTokenExpired: undefined,
-        onAccessTokenRefresh:  undefined,
+        onAccessTokenRefresh: undefined,
       },
     });
     expect(response).toMatchSnapshot();
   });
 
-  test('returns correct response for GET request with params to a valid uri', async () => {
+  it('returns correct response for GET request with params to a valid uri', async () => {
+    expect.assertions(1);
     const response = await query({
       region: 'us',
       endpoint: '/sc2/sample/endpoint',
@@ -51,7 +53,7 @@ describe('query()', () => {
         validateAccessTokenOnEachQuery: false,
         refreshExpiredAccessToken: false,
         onAccessTokenExpired: undefined,
-        onAccessTokenRefresh:  undefined,
+        onAccessTokenRefresh: undefined,
         params: {
           data: 'test params',
         },
@@ -60,7 +62,9 @@ describe('query()', () => {
     expect(response).toMatchSnapshot();
   });
 
-  test('rejects and throws RangeError for invalid endpoint', async () => {
+  it('rejects and throws RangeError for invalid endpoint', async () => {
+    expect.assertions(1);
+    // eslint-disable-next-line jest/valid-expect
     expect(query({
       region: 'us',
       endpoint: 'invalidEndpoint',
@@ -71,12 +75,13 @@ describe('query()', () => {
         validateAccessTokenOnEachQuery: false,
         refreshExpiredAccessToken: false,
         onAccessTokenExpired: undefined,
-        onAccessTokenRefresh:  undefined,
+        onAccessTokenRefresh: undefined,
       },
     })).rejects.toThrow(RangeError);
   });
 
-  test('validates access token if validateAccessTokenOnEachQuery is set to true', async () => {
+  it('validates access token if validateAccessTokenOnEachQuery is set to true', async () => {
+    expect.assertions(1);
     const response = await query({
       region: 'us',
       endpoint: '/valid/endpoint',
@@ -87,16 +92,17 @@ describe('query()', () => {
         validateAccessTokenOnEachQuery: true,
         refreshExpiredAccessToken: false,
         onAccessTokenExpired: undefined,
-        onAccessTokenRefresh:  undefined,
+        onAccessTokenRefresh: undefined,
       },
     });
 
     expect(response).toMatchSnapshot();
   });
 
-  test(
+  it(
     'returns error if validateAccessTokenOnEachQuery is set to true and access token is invalid',
     async () => {
+      expect.assertions(1);
       const response = await query({
         region: 'us',
         endpoint: '/valid/endpoint',
@@ -107,15 +113,17 @@ describe('query()', () => {
           validateAccessTokenOnEachQuery: true,
           refreshExpiredAccessToken: false,
           onAccessTokenExpired: undefined,
-          onAccessTokenRefresh:  undefined,
+          onAccessTokenRefresh: undefined,
         },
       });
       expect(response).toMatchSnapshot();
-    });
+    },
+  );
 
-  test(
+  it(
     'returns error if validateAccessTokenOnEachQuery is set to false and access token is invalid',
     async () => {
+      expect.assertions(1);
       const response = await query({
         region: 'us',
         endpoint: '/valid/endpoint',
@@ -126,15 +134,17 @@ describe('query()', () => {
           validateAccessTokenOnEachQuery: false,
           refreshExpiredAccessToken: false,
           onAccessTokenExpired: undefined,
-          onAccessTokenRefresh:  undefined,
+          onAccessTokenRefresh: undefined,
         },
       });
       expect(response).toMatchSnapshot();
-    });
+    },
+  );
 
-  test(
+  it(
     'calls onAccessTokenExpired() if provided and access token is invalid',
     async () => {
+      expect.assertions(2);
       const onAccessTokenExpired = jest.fn();
       const response = await query({
         region: 'us',
@@ -150,12 +160,14 @@ describe('query()', () => {
         },
       });
       expect(response).toMatchSnapshot();
-      expect(onAccessTokenExpired).toHaveBeenCalled();
-    });
+      expect(onAccessTokenExpired).toHaveBeenCalledTimes(1);
+    },
+  );
 
-  test(
+  it(
     'refreshes access token if refreshExpiredAccessToken is set to true',
     async () => {
+      expect.assertions(1);
       const response = await query({
         region: 'us',
         endpoint: '/valid/endpoint',
@@ -170,11 +182,13 @@ describe('query()', () => {
         },
       });
       expect(response).toMatchSnapshot();
-    });
+    },
+  );
 
-  test(
+  it(
     'calls onAccessTokenRefresh() if provided and refreshExpiredAccessToken is set to true',
     async () => {
+      expect.assertions(2);
       const onAccessTokenRefresh = jest.fn();
 
       const response = await query({
@@ -191,6 +205,7 @@ describe('query()', () => {
         },
       });
       expect(response).toMatchSnapshot();
-      expect(onAccessTokenRefresh).toHaveBeenCalled();
-    });
+      expect(onAccessTokenRefresh).toHaveBeenCalledTimes(1);
+    },
+  );
 });

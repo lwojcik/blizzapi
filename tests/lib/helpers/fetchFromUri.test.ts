@@ -1,11 +1,11 @@
 import { fetchFromUri } from '../../../src/helpers/fetch';
 
 describe('fetchFromUri()', () => {
-  test('should be defined', () => {
+  it('should be defined', () => {
     expect(fetchFromUri).toBeDefined();
   });
 
-  test('should be function', () => {
+  it('should be function', () => {
     expect(fetchFromUri).toBeTruthy();
     expect(typeof fetchFromUri).toBe('function');
   });

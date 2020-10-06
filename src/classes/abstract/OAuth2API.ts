@@ -5,6 +5,7 @@ import {
 
 export default class OAuth2API {
   readonly clientId: ClientId;
+
   readonly clientSecret: ClientSecret;
 
   constructor(clientId: ClientId, clientSecret: ClientSecret) {

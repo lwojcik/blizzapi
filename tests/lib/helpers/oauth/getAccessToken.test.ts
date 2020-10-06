@@ -5,16 +5,17 @@ describe('getAccessToken()', () => {
   const clientId = 'sample client id';
   const clientSecret = 'sample client secret';
 
-  test('should be defined', () => {
+  it('should be defined', () => {
     expect(getAccessToken).toBeDefined();
   });
 
-  test('should be function', () => {
+  it('should be function', () => {
     expect(getAccessToken).toBeTruthy();
     expect(typeof getAccessToken).toBe('function');
   });
 
-  test('returns correct response for GET request to a valid uri', async () => {
+  it('returns correct response for GET request to a valid uri', async () => {
+    expect.assertions(1);
     const response = await getAccessToken({ region, clientId, clientSecret });
     expect(response).toMatchSnapshot();
   });

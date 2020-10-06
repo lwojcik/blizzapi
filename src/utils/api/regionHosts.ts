@@ -20,9 +20,10 @@ export const getAllApiHosts = () => constants.REGION_API_HOSTS;
  */
 export const getApiHostByRegion = (regionIdOrName: RegionIdOrName) => {
   const apiHost = <Uri | ReadonlyArray<Uri>>getConstantByRegion(regionIdOrName, 'REGION_API_HOSTS');
+  // eslint-disable-next-line no-nested-ternary
   return typeof regionIdOrName === 'string' && (regionIdOrName as string).toLowerCase() === 'kr'
     ? apiHost[0]
     : typeof regionIdOrName === 'string' && (regionIdOrName as string).toLowerCase() === 'tw'
-    ? apiHost[1]
-    : apiHost;
+      ? apiHost[1]
+      : apiHost;
 };

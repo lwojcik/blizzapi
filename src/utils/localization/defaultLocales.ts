@@ -64,7 +64,7 @@ export const getAllDefaultLocaleNames = () => {
 
   return <RegionIdProperties<Locale>>Object.assign(
     {},
-    ...allLocaleKeys.map(regionId => ({
+    ...allLocaleKeys.map((regionId) => ({
       [regionId]: getDefaultLocaleNameForRegionId(regionId),
     })),
   );

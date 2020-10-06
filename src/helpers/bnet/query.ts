@@ -72,10 +72,10 @@ export default async (queryOptions: BattleNetQueryOptions) => {
     return await queryWithAccessToken(queryOptions, accessToken);
   } catch (error) {
     if (error.response && error.response.status === 401) {
-      onAccessTokenExpired && onAccessTokenExpired();
+      onAccessTokenExpired?.();
       if (refreshExpiredAccessToken) {
         const newAccessToken = await getAccessToken(queryOptions);
-        onAccessTokenRefresh && onAccessTokenRefresh(newAccessToken);
+        onAccessTokenRefresh?.(newAccessToken);
         return queryWithAccessToken(queryOptions, newAccessToken);
       }
       return Promise.resolve({

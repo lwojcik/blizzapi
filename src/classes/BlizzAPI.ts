@@ -39,27 +39,47 @@ export default class BlizzAPI extends BattleNetAPI {
         ...this.options,
         ...options,
       },
-    })
+    });
 
   static getAllRegions = utils.getAllRegions;
+
   static getAllRegionIds = utils.getAllRegionIds;
+
   static getAllRegionNames = utils.getAllRegionNames;
+
   static getRegionNameById = utils.getRegionNameById;
+
   static validateRegionId = utils.validateRegionId;
+
   static getRegionIdByName = utils.getRegionIdByName;
+
   static validateRegionName = utils.validateRegionName;
+
   static getAllLocales = utils.getAllLocales;
+
   static getAllLocaleNames = utils.getAllLocaleNames;
+
   static getLocalesByRegionId = utils.getLocalesByRegionId;
+
   static checkIfLocaleLooksValid = utils.checkIfLocaleLooksValid;
+
   static validateLocale = utils.validateLocale;
+
   static isLocaleValidForRegionId = utils.isLocaleValidForRegionId;
+
   static getAllSc2Realms = utils.getAllSc2Realms;
+
   static getAllAvailableSc2Realms = utils.getAllAvailableSc2Realms;
+
   static getSc2RealmsByRegionId = utils.getSc2RealmsByRegionId;
+
   static checkIfSc2RealmLooksValid = utils.checkIfSc2RealmLooksValid;
+
   static validateSc2Realm = utils.validateSc2Realm;
+
   static isSc2RealmValidForRegionId = utils.isSc2RealmValidForRegionId;
+
   static getDefaultLocaleNameForRegionId = utils.getDefaultLocaleNameForRegionId;
+
   static getAllDefaultLocaleNames = utils.getAllDefaultLocaleNames;
 }

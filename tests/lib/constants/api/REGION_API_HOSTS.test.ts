@@ -3,15 +3,15 @@ import constants from '../../../../src/constants';
 const { REGION_API_HOSTS } = constants;
 
 describe('REGION_API_HOSTS', () => {
-  test('should be defined', () => {
+  it('should be defined', () => {
     expect(REGION_API_HOSTS).toBeDefined();
   });
 
-  test('should be frozen', () => {
+  it('should be frozen', () => {
     expect(Object.isFrozen(REGION_API_HOSTS)).toBe(true);
   });
 
-  test('should match snapshot', () => {
+  it('should match snapshot', () => {
     expect(REGION_API_HOSTS).toMatchSnapshot();
   });
 });
