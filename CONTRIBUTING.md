@@ -84,9 +84,9 @@ Testing is done via:
 * reusable data sets contained within `__testData__` directory
 * auto-generated Jest snapshots within `__snapshots__` directory which describe desired outcome of code being tested
 
-All test components are treated as an integral part of project code. All modifications to existing snapshots as well as adding new ones have to be committed before building the project.
+All test components and assertions are treated as an integral part of project code.
 
-It's possible to create new snapshots with help of [`toMatchSnapshot()`](https://jestjs.io/docs/en/snapshot-testing) directive. Jest will auto-generate new snapshots on next run of `npm test`. Resulting changes must be committed to Git.
+It's possible to create new snapshots in test assertions with help of [`toMatchSnapshot()`](https://jestjs.io/docs/en/snapshot-testing) method. Jest will auto-generate new snapshots on next run of `npm test`. Resulting changes must be committed to Git.
 
 If a code change modifies one or more existing snapshots or makes any of the existing snapshots obsolete, snapshot changes have to be reviewed and accepted manually before proceeding. Accepting snapshot changes is done by running `npm test -- -u`. Resulting changes must be committed to Git.
 
