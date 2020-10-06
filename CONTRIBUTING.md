@@ -25,7 +25,7 @@ There is no specific format you have to follow while filing your report. However
 
 You can use GitHub Issues section to suggest ideas or features you would like to be added to the project.
 
-There is no specific format you have to follow while filling your request. Just be sure to provide clear and concise description of the feature. Examples, test cases and any any additional context would be greatly appreciated.
+There is no specific format you have to follow while filling your request. Just be sure to provide clear and concise description of the feature. Examples, test cases and any additional context would be greatly appreciated.
 
 ## Documentation improvements
 
@@ -38,7 +38,7 @@ Feel free to submit any relevant fixes (typos, error corrections, improvements t
 
 ## Pull requests
 
-Code patches that add features or fix bugs (submitted or not) can be sent as [pull requests on GitHub](https://github.com/lukemnet/blizzapi/pulls).
+Code patches that add features or fix bugs can be sent as [pull requests on GitHub](https://github.com/lukemnet/blizzapi/pulls).
 
 To make the process of merging your pull request as quick as possible, be sure to read and follow the guidelines below:
 
@@ -56,7 +56,7 @@ To make the process of merging your pull request as quick as possible, be sure t
 
 ## Technical information
 
-This section intends to explain how the project works from the developer point of view. If you have any questions that weren't answered here, feel free to [submit an issue on GitHub](https://github.com/lukemnet/blizzapi/issues).
+This section intends to explain how the project works from the developer's point of view. If you have any questions that weren't answered here, feel free to [submit an issue on GitHub](https://github.com/lukemnet/blizzapi/issues).
 
 ### Development
 
@@ -81,14 +81,14 @@ For automated testing, BlizzAPI uses [Jest](https://jestjs.io/). All code relate
 Testing is done via:
 
 * manual and automatic mocks contained in `__mocks__` directory as well as within the test files,
-* sample data sets used for testing contained within `__testData__` directory
-* auto-generated Jest snapshots within `__snapshots__` directory which describe desired outcome of tested components
+* reusable data sets contained within `__testData__` directory
+* auto-generated Jest snapshots within `__snapshots__` directory which describe desired outcome of code being tested
 
 All test components are treated as an integral part of project code. All modifications to existing snapshots as well as adding new ones have to be committed before building the project.
 
-It's possible to create new snapshots with help of [`toMatchSnapshot()`](https://jestjs.io/docs/en/snapshot-testing) directive. Jest will auto-generate new snapshots on next `npm test`. Resulting changes must be committed to Git.
+It's possible to create new snapshots with help of [`toMatchSnapshot()`](https://jestjs.io/docs/en/snapshot-testing) directive. Jest will auto-generate new snapshots on next run of `npm test`. Resulting changes must be committed to Git.
 
-If a code change modifies one or more existing snapshots or makes any previously created snapshots obsolete, snapshot changes have to be reviewed and accepted manually before proceeding. Accepting snapshot changes is done by running `npm test -- -u`. Resulting changes must be committed to Git.
+If a code change modifies one or more existing snapshots or makes any of the existing snapshots obsolete, snapshot changes have to be reviewed and accepted manually before proceeding. Accepting snapshot changes is done by running `npm test -- -u`. Resulting changes must be committed to Git.
 
 Each run of `npm test` command generates human-readable coverage report which can be accessed locally in a web browser by opening `/path/to/blizzapi/coverage/lcov-report/index.html`. Those reports often provide useful hints on how to fill missing coverage gaps.
 
