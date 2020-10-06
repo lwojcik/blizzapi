@@ -64,7 +64,7 @@ Before contributing be sure to the [Contributing Guidelines](https://github.com/
 
 To all who contribute code, improve documentation, submit issues or feature requests - thank you for making BlizzAPI even better!
 
-We maintain an [AUTHORS](https://github.com/lukemnet/blizzapi/blob/master/AUTHORS.md) file where we keep a list of all project contributors. Please consider adding your name there with your next PR.
+We maintain an [AUTHORS](https://github.com/lukemnet/blizzapi/blob/master/AUTHORS) file where we keep a list of all project contributors. Please consider adding your name there with your next PR.
 
 ## License
 
