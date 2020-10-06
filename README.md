@@ -47,7 +47,7 @@ npm run build
 
 * [blizzapi-example](https://github.com/lukemnet/blizzapi-example) - sample Express.js REST API with usage examples
 
-* [List of repositories that depend on BlizzAPI](https://github.com/lukemnet/blizzapi/network/dependents)
+* [Repositories that depend on BlizzAPI](https://github.com/lukemnet/blizzapi/network/dependents)
 
 ## Contributions
 
