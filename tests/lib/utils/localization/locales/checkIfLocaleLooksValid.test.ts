@@ -1,12 +1,13 @@
 import * as utils from '../../../../../src/utils';
+
 const { checkIfLocaleLooksValid } = utils;
 
 describe('checkIfLocaleLooksValid()', () => {
-  test('should be defined', () => {
+  it('should be defined', () => {
     expect(checkIfLocaleLooksValid).toBeDefined();
   });
 
-  test('should be of type "function"', () => {
+  it('should be of type "function"', () => {
     expect(typeof checkIfLocaleLooksValid).toBe('function');
   });
 

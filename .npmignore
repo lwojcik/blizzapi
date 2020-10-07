@@ -12,3 +12,5 @@ setupJest.ts
 AUTHORS
 CODE_OF_CONDUCT.md
 CONTRIBUTING.md
+.eslintrc
+.eslintignore

@@ -8,4 +8,4 @@ const isLongEnough = (endpoint: Endpoint) => endpoint.length > 3;
 
 const validators = [startsWithSlash, isLongEnough] as ReadonlyArray<ValidatorFunction>;
 
-export default (endpoint: Endpoint) => validators.every(validator => validator(endpoint));
+export default (endpoint: Endpoint) => validators.every((validator) => validator(endpoint));

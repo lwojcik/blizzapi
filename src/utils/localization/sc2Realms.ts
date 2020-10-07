@@ -81,7 +81,6 @@ export const isSc2RealmValidForRegionId = (
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
-  /* tslint:disable no-if-statement */
   if (!doesSc2RealmLookValid) {
     throw new RangeError(
       `${sc2Realm} is not a valid sc2Realm parameter for isSc2RealmValidForRegionId()`,
@@ -93,7 +92,6 @@ export const isSc2RealmValidForRegionId = (
       `${regionId} is not a valid regionId parameter for isSc2RealmValidForRegionId()`,
     );
   }
-  /* tslint:enable no-if-statement */
 
   const sc2RealmsForRegionId = getSc2RealmsByRegionId(regionId);
   const sc2RealmAsNumber = typeof sc2Realm === 'number' ? sc2Realm : parseInt(sc2Realm, 10);

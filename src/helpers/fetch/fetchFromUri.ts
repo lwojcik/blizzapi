@@ -28,32 +28,28 @@ export default async (options: FetchFromUriOptions) => {
 
   const method = options.method || 'GET';
 
-  try {
-    if (!validateUri(uri)) {
-      throw new RangeError(`'${uri}' is not a valid parameter for fetchFromUri()`);
-    }
-
-    const requestOptions = {
-      method,
-      url: encodeURI(uri),
-      timeout: timeout || 10000,
-      ...headers && { headers },
-      ...params && { params },
-      ...auth && { auth },
-      ...data && { data },
-    };
-
-    const response = await axios.request(requestOptions);
-
-    const lastModified = response.headers['last-modified']
-      ? response.headers['last-modified']
-      : null;
-
-    return {
-      ...response.data,
-      ...lastModified && { lastModified },
-    };
-  } catch (error) {
-    throw error;
+  if (!validateUri(uri)) {
+    throw new RangeError(`'${uri}' is not a valid parameter for fetchFromUri()`);
   }
+
+  const requestOptions = {
+    method,
+    url: encodeURI(uri),
+    timeout: timeout || 10000,
+    ...headers && { headers },
+    ...params && { params },
+    ...auth && { auth },
+    ...data && { data },
+  };
+
+  const response = await axios.request(requestOptions);
+
+  const lastModified = response.headers['last-modified']
+    ? response.headers['last-modified']
+    : null;
+
+  return {
+    ...response.data,
+    ...lastModified && { lastModified },
+  };
 };

@@ -3,14 +3,14 @@ import constants from '../../../../src/constants';
 const { REGIONS } = constants;
 
 describe('REGIONS', () => {
-  test('should be defined', () => {
+  it('should be defined', () => {
     expect(REGIONS).toBeDefined();
   });
 
-  test('should be frozen', () => {
+  it('should be frozen', () => {
     expect(Object.isFrozen(REGIONS)).toBe(true);
   });
-  test('should match snapshot', () => {
+  it('should match snapshot', () => {
     expect(REGIONS).toMatchSnapshot();
   });
 });

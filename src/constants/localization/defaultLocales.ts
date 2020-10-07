@@ -13,7 +13,7 @@
 import {
   RegionIdProperties,
   DefaultLocaleIndex,
- } from '../../types';
+} from '../../types';
 
 const defaultLocales: RegionIdProperties<DefaultLocaleIndex> = {
   1: 0,

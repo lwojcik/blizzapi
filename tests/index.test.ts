@@ -1,11 +1,11 @@
 import BlizzAPI from '../src';
 
 describe('Index', () => {
-  test('should export BlizzAPI', () => {
+  it('should export BlizzAPI', () => {
     expect(BlizzAPI).toBeDefined();
   });
 
-  test('BlizzAPI should be a class', () => {
+  it('BlizzAPI should be a class', () => {
     const blizzapi = new BlizzAPI({ region: '', clientId: '', clientSecret: '' });
     expect(blizzapi instanceof BlizzAPI).toBe(true);
   });

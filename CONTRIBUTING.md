@@ -72,11 +72,11 @@ BlizzAPI uses [Airbnb style guide](https://github.com/airbnb/javascript) as a ba
 
 Internal project code is intended to follow basic principles of functional programming. Non-functional constructs, such as `BlizzAPI` class, are occasionally used for user interface.
 
-Linting is a part of build process. Unresolved lint errors fail the build. However, in justified situations it's acceptable to [supress lint errors with TSLint comment flags](https://palantir.github.io/tslint/usage/rule-flags/).
+Linting is a part of build process. Unresolved lint errors fail the build. However, in justified situations it's acceptable to [disable selected lint rules with inline comments](https://eslint.org/docs/user-guide/configuring#disabling-rules-with-inline-comments).
 
 ### Testing
 
-For automated testing, BlizzAPI uses [Jest](https://jestjs.io/). All code related to testing is contained in `tests` folder which mimicks the structure of `src` directory. Names of test files follow the following pattern: `nameOfRelevantSourceFile.test.ts`.
+For automated unit testing, BlizzAPI uses [Jest](https://jestjs.io/). All code related to testing is contained in `tests` folder which mimicks the structure of `src` directory. Names of test files follow the following pattern: `nameOfRelevantSourceFile.test.ts`.
 
 Testing is done via:
 
@@ -84,16 +84,16 @@ Testing is done via:
 * reusable data sets contained within `__testData__` directory
 * auto-generated Jest snapshots within `__snapshots__` directory which describe desired outcome of code being tested
 
-All test components are treated as an integral part of project code. All modifications to existing snapshots as well as adding new ones have to be committed before building the project.
+All test components and assertions are treated as an integral part of project code.
 
-It's possible to create new snapshots with help of [`toMatchSnapshot()`](https://jestjs.io/docs/en/snapshot-testing) directive. Jest will auto-generate new snapshots on next run of `npm test`. Resulting changes must be committed to Git.
+It's possible to create new snapshots in test assertions with help of [`toMatchSnapshot()`](https://jestjs.io/docs/en/snapshot-testing) method. Jest will auto-generate new snapshots on next run of `npm test`. Resulting changes must be committed to Git.
 
 If a code change modifies one or more existing snapshots or makes any of the existing snapshots obsolete, snapshot changes have to be reviewed and accepted manually before proceeding. Accepting snapshot changes is done by running `npm test -- -u`. Resulting changes must be committed to Git.
 
 Each run of `npm test` command generates human-readable coverage report which can be accessed locally in a web browser by opening `/path/to/blizzapi/coverage/lcov-report/index.html`. Those reports often provide useful hints on how to fill missing coverage gaps.
 
-Note that automated tests are powerful tool for quick quality control, but they don't replace the need for integration testing against real-life contexts. In other words, be sure to test your change with Battle.net API. :)
+Note that automated unit tests are powerful tool for quick quality control, but they don't replace the need for integration testing against real-life contexts. In other words, be sure to test your change with Battle.net API. :)
 
 ### Releases
 
-Whenever possible, BlizzAPI follows [semantic versioning](https://semver.org/) for any release available in [Releases section on GitHub](https://github.com/lukemnet/blizzapi/releases) and on [npm](https://www.npmjs.com/package/blizzapi). The project is considered production-ready and it doesn't follow any specific release schedule.
+Whenever possible, BlizzAPI follows [semantic versioning](https://semver.org/) for all releases available in [Releases section on GitHub](https://github.com/lukemnet/blizzapi/releases) and on [NPM package manager](https://www.npmjs.com/package/blizzapi). The project is considered production-ready and it doesn't follow any specific release schedule.

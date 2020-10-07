@@ -1,12 +1,13 @@
 import * as utils from '../../../../../src/utils';
+
 const { validateRegionId } = utils;
 
 describe('validateRegionId()', () => {
-  test('should be defined', () => {
+  it('should be defined', () => {
     expect(validateRegionId).toBeDefined();
   });
 
-  test('should be of type "function"', () => {
+  it('should be of type "function"', () => {
     expect(typeof validateRegionId).toBe('function');
   });
 
