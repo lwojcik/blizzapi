@@ -72,4 +72,6 @@ Licensed under MIT License. See [LICENSE](https://github.com/lukemnet/blizzapi/b
 
 ## Legal
 
+This project is not authored, affiliated or endorsed in any way by Blizzard Entertainment.
+
 Battle.net and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
