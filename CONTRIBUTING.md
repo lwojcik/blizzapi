@@ -23,7 +23,7 @@ There is no specific format you have to follow while filing your report. However
 
 ## Feature suggestions
 
-You can use GitHub Issues section to suggest ideas or features you would like to be added to the project.
+You can use [GitHub Issues section](https://github.com/lukemnet/blizzapi/issues) to suggest ideas or features you would like to be added to the project.
 
 There is no specific format you have to follow while filling your request. Just be sure to provide clear and concise description of the feature. Examples, test cases and any additional context would be greatly appreciated.
 
