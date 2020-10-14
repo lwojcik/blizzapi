@@ -3,15 +3,15 @@ import constants from '../../../../src/constants';
 const { DEFAULT_LOCALES } = constants;
 
 describe('DEFAULT_LOCALES', () => {
-  test('should be defined', () => {
+  it('should be defined', () => {
     expect(DEFAULT_LOCALES).toBeDefined();
   });
 
-  test('should be frozen', () => {
+  it('should be frozen', () => {
     expect(Object.isFrozen(DEFAULT_LOCALES)).toBe(true);
   });
 
-  test('should match snapshot', () => {
+  it('should match snapshot', () => {
     expect(DEFAULT_LOCALES).toMatchSnapshot();
   });
 });

@@ -4,20 +4,20 @@ import constants from '../../../../../src/constants';
 const { getAllLocales } = utils;
 
 describe('getAllLocales()', () => {
-  test('should be defined', () => {
+  it('should be defined', () => {
     expect(getAllLocales).toBeDefined();
   });
 
-  test('should be of type "function"', () => {
+  it('should be of type "function"', () => {
     expect(typeof getAllLocales).toBe('function');
   });
 
-  test('should return an object', () => {
+  it('should return an object', () => {
     expect(typeof getAllLocales()).toBeTruthy();
     expect(typeof getAllLocales()).toBe('object');
   });
 
-  test('returned object should match constants.LOCALES property', () => {
+  it('returned object should match constants.LOCALES property', () => {
     expect(getAllLocales()).toMatchObject(constants.LOCALES);
   });
 });

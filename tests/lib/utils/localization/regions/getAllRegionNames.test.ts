@@ -6,23 +6,23 @@ const { REGIONS } = constants;
 const { getAllRegionNames } = utils;
 
 describe('getAllRegionNames()', () => {
-  test('should be defined', () => {
+  it('should be defined', () => {
     expect(getAllRegionNames).toBeDefined();
   });
 
-  test('should be of type "function"', () => {
+  it('should be of type "function"', () => {
     expect(typeof getAllRegionNames).toBe('function');
   });
 
-  test('should return an array', () => {
+  it('should return an array', () => {
     expect(typeof getAllRegionNames).toBeTruthy();
     expect(getAllRegionNames().constructor === Array).toBe(true);
   });
 
-  test('number of returned elements should match length of constants.REGIONS values after flattening', () => {
+  it('number of returned elements should match length of constants.REGIONS values after flattening', () => {
     const flattenedRegionsLength = <number>(
       ([] as ReadonlyArray<string>).concat(...Object.values(REGIONS)).length
     );
-    expect(getAllRegionNames().length).toStrictEqual(flattenedRegionsLength);
+    expect(getAllRegionNames()).toHaveLength(flattenedRegionsLength);
   });
 });

@@ -62,8 +62,7 @@ export const validateLocale = (locale: Locale) => {
   }
 
   const lowerCaseLocaleList = getAllLocaleNames().map((localeName: string) =>
-    localeName.toLowerCase(),
-  );
+    localeName.toLowerCase());
   const lowerCaseLocale = locale.toLowerCase();
   return lowerCaseLocaleList.includes(lowerCaseLocale);
 };
@@ -94,7 +93,6 @@ export const isLocaleValidForRegionId = (locale: Locale, regionId: RegionIdAsNum
   }
 
   const localesForRegionId = getLocalesByRegionId(regionId).map((localeName: string) =>
-    localeName.toLowerCase(),
-  );
+    localeName.toLowerCase());
   return localesForRegionId.includes(lowerCaseLocale);
 };

@@ -1,5 +1,5 @@
 import { getCheckTokenUriByRegion } from '../../utils/oauth/checkTokenUris';
-import { fetchFromUri } from '../../helpers/fetch';
+import { fetchFromUri } from '../fetch';
 import {
   RegionIdOrName,
   AccessToken,

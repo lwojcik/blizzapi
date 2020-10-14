@@ -3,15 +3,15 @@ import constants from '../../../../src/constants';
 const { LOCALES } = constants;
 
 describe('LOCALES', () => {
-  test('should be defined', () => {
+  it('should be defined', () => {
     expect(LOCALES).toBeDefined();
   });
 
-  test('should be frozen', () => {
+  it('should be frozen', () => {
     expect(Object.isFrozen(LOCALES)).toBe(true);
   });
 
-  test('should match snapshot', () => {
+  it('should match snapshot', () => {
     expect(LOCALES).toMatchSnapshot();
   });
 });

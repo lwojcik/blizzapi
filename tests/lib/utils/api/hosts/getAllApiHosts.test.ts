@@ -4,20 +4,20 @@ import constants from '../../../../../src/constants';
 const { getAllApiHosts } = utils;
 
 describe('getApiHosts()', () => {
-  test('should be defined', () => {
+  it('should be defined', () => {
     expect(getAllApiHosts).toBeDefined();
   });
 
-  test('should be of type "function"', () => {
+  it('should be of type "function"', () => {
     expect(typeof getAllApiHosts).toBe('function');
   });
 
-  test('should return an object', () => {
+  it('should return an object', () => {
     expect(typeof getAllApiHosts()).toBeTruthy();
     expect(typeof getAllApiHosts()).toBe('object');
   });
 
-  test('returned object should match constants.REGION_API_HOSTS property', () => {
+  it('returned object should match constants.REGION_API_HOSTS property', () => {
     expect(getAllApiHosts()).toMatchObject(constants.REGION_API_HOSTS);
   });
 });

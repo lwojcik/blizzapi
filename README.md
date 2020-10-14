@@ -47,10 +47,32 @@ npm run build
 
 * [blizzapi-example](https://github.com/lukemnet/blizzapi-example) - sample Express.js REST API with usage examples
 
+* [Repositories that depend on BlizzAPI](https://github.com/lukemnet/blizzapi/network/dependents)
+
+## Contributions
+
+Contributions of any kind are welcome.
+
+You can contribute to BlizzAPI by:
+
+* submiting a bug report or a feature suggestion
+* improving documentation either within the project itself or in the [doc site repository](https://github.com/lukemnet/blizzapi-docs)
+* submitting pull requests
+
+Before contributing be sure to read [Contributing Guidelines](https://github.com/lukemnet/blizzapi/blob/master/CONTRIBUTING.md) and [Code of Conduct](https://github.com/lukemnet/blizzapi/blob/master/CODE_OF_CONDUCT.md).
+
+## Contributors
+
+To all who contribute code, improve documentation, submit issues or feature requests - thank you for making BlizzAPI even better!
+
+We maintain an [AUTHORS](https://github.com/lukemnet/blizzapi/blob/master/AUTHORS) file where we keep a list of all project contributors. Please consider adding your name there with your next PR.
+
 ## License
 
 Licensed under MIT License. See [LICENSE](https://github.com/lukemnet/blizzapi/blob/master/LICENSE) for more information.
 
 ## Legal
+
+This project is not authored, affiliated or endorsed in any way by Blizzard Entertainment.
 
 Battle.net and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.

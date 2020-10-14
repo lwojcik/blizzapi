@@ -26,7 +26,22 @@ Object {
 }
 `;
 
-exports[`fetchFromUri() returns correct response for GET request with headers to a valid uri  1`] = `
+exports[`fetchFromUri() returns correct response for GET request with "last-modified" header 1`] = `
+Object {
+  "access_token": "no_access_token_provided",
+  "headers": Object {
+    "data": "default sample headers",
+    "last-modified": "mocked_last_modified_date",
+  },
+  "lastModified": "mocked_last_modified_date",
+  "params": Object {
+    "data": "custom params",
+  },
+  "title": "sample mocked data for GET request to http://example.org/valid/endpoint/lastModified",
+}
+`;
+
+exports[`fetchFromUri() returns correct response for GET request with headers to a valid uri 1`] = `
 Object {
   "access_token": "no_access_token_provided",
   "headers": Object {
@@ -39,7 +54,7 @@ Object {
 }
 `;
 
-exports[`fetchFromUri() returns correct response for GET request with params to a valid uri  1`] = `
+exports[`fetchFromUri() returns correct response for GET request with params to a valid uri 1`] = `
 Object {
   "access_token": "no_access_token_provided",
   "headers": Object {
