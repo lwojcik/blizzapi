@@ -9,6 +9,7 @@ Object {
   "params": Object {
     "data": "default sample params",
   },
+  "timeout": 10000,
   "title": "sample mocked data for GET request to https://us.api.blizzard.com/sample/endpoint",
 }
 `;

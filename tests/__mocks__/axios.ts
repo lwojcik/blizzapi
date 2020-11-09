@@ -5,6 +5,7 @@ const axios = jest.createMockFromModule('axios');
   const accessToken = params.headers?.Authorization
     ? params.headers.Authorization.split(' ')[1]
     : 'no_access_token_provided';
+  const timeout = params.timeout;
 
   if (accessToken && accessToken === 'invalid_access_token') {
     return Promise.reject({
@@ -38,6 +39,7 @@ const axios = jest.createMockFromModule('axios');
       access_token: accessToken,
       headers: fetchHeaders,
       params: fetchParams,
+      timeout,
     },
   });
 };
