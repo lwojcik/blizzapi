@@ -208,4 +208,23 @@ describe('query()', () => {
       expect(onAccessTokenRefresh).toHaveBeenCalledTimes(1);
     },
   );
+
+  it(
+    'respects timeout option',
+    async () => {
+      expect.assertions(1);
+
+      const response = await query({
+        region: 'us',
+        endpoint: '/valid/endpoint',
+        clientId: 'valid_client_id',
+        clientSecret: 'valid_client_secret',
+        accessToken: 'valid_access_token',
+        options: {
+          timeout: 123456,
+        },
+      });
+      expect(response).toMatchSnapshot();
+    },
+  );
 });
