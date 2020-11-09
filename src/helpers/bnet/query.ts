@@ -27,6 +27,7 @@ const queryWithAccessToken = (queryOptions: BattleNetQueryOptions, accessToken: 
   const {
     headers,
     params,
+    timeout,
   } = options;
   const validEndpoint = validateEndpoint(endpoint);
   if (!validEndpoint) throw new RangeError(`${endpoint} is not a valid endpoint.`);
@@ -47,6 +48,7 @@ const queryWithAccessToken = (queryOptions: BattleNetQueryOptions, accessToken: 
     method: 'GET',
     headers: fetchHeaders,
     ...params && { params },
+    ...timeout && { timeout },
   });
 };
 
