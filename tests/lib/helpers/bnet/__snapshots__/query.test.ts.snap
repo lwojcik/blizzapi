@@ -15,6 +15,7 @@ Object {
   "params": Object {
     "data": "default sample params",
   },
+  "timeout": 10000,
   "title": "sample mocked data for GET request to https://us.api.blizzard.com/valid/endpoint",
 }
 `;
@@ -28,6 +29,21 @@ Object {
   "params": Object {
     "data": "default sample params",
   },
+  "timeout": 10000,
+  "title": "sample mocked data for GET request to https://us.api.blizzard.com/valid/endpoint",
+}
+`;
+
+exports[`query() respects timeout option 1`] = `
+Object {
+  "access_token": "valid_access_token",
+  "headers": Object {
+    "Authorization": "Bearer valid_access_token",
+  },
+  "params": Object {
+    "data": "default sample params",
+  },
+  "timeout": 123456,
   "title": "sample mocked data for GET request to https://us.api.blizzard.com/valid/endpoint",
 }
 `;
@@ -41,6 +57,7 @@ Object {
   "params": Object {
     "data": "default sample params",
   },
+  "timeout": 10000,
   "title": "sample mocked data for GET request to https://us.api.blizzard.com/sc2/sample/endpoint",
 }
 `;
@@ -54,6 +71,7 @@ Object {
   "params": Object {
     "data": "test params",
   },
+  "timeout": 10000,
   "title": "sample mocked data for GET request to https://us.api.blizzard.com/sc2/sample/endpoint",
 }
 `;
@@ -79,6 +97,7 @@ Object {
   "params": Object {
     "data": "default sample params",
   },
+  "timeout": 10000,
   "title": "sample mocked data for GET request to https://us.api.blizzard.com/valid/endpoint",
 }
 `;
