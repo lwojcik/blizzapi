@@ -3,9 +3,8 @@
 # BlizzAPI
 
 [![npm (latest)](https://img.shields.io/npm/v/blizzapi/latest.svg)](https://www.npmjs.com/package/blizzapi)
-[![Travis CI Build Status](https://travis-ci.com/lukemnet/blizzapi.svg?branch=master)](https://travis-ci.com/lukemnet/blizzapi)
-[![Maintainability](https://api.codeclimate.com/v1/badges/8c2b8e4efe8441ad055f/maintainability)](https://codeclimate.com/github/lukemnet/blizzapi/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/8c2b8e4efe8441ad055f/test_coverage)](https://codeclimate.com/github/lukemnet/blizzapi/test_coverage) 
+[![Build status](https://ci.appveyor.com/api/projects/status/r7pjg9an30d5dupk/branch/master?svg=true)](https://ci.appveyor.com/project/lwojcik/blizzapi/branch/master)
+[![codecov](https://codecov.io/gh/lukemnet/blizzapi/branch/master/graph/badge.svg?token=M3vY98GiIn)](https://codecov.io/gh/lukemnet/blizzapi)
 
 Flexible feature-rich library for easy access to [Battle.net API](https://develop.battle.net/).
 
