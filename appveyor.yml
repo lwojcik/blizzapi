@@ -1,11 +1,11 @@
 image: Ubuntu2004
 platform: x64
-stack:
+environment:
   matrix:
-    - node 10
-    - node 12
-    - node 14
-    - node 15
+    - stack: node 10
+    - stack: node 12
+    - stack: node 14
+    - stack: node 15
 
 install:
   - npm install
