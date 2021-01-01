@@ -2,13 +2,15 @@ image: Ubuntu2004
 platform: x64
 environment:
   matrix:
-    - stack: node 10
-    - stack: node 12
-    - stack: node 14
-    - stack: node 15
+    - nodejs_version: "10"
+    - nodejs_version: "12"
+    - nodejs_version: "14"
+    - nodejs_version: "15"
 
 install:
   - npm install
+  - npm install -g codecov
 
 build_script:
   - npm run build
+  - codecov
