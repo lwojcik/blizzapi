@@ -11,8 +11,9 @@ stack: "node $nodejs_version"
 
 install:
   - npm install
-  - npm install -g codecov
 
 build_script:
   - npm run build
-  - codecov
+  
+test_script:
+  - npx codecov
