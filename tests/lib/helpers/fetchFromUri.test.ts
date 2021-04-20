@@ -10,7 +10,7 @@ describe('fetchFromUri()', () => {
     expect(typeof fetchFromUri).toBe('function');
   });
 
-  test.each`
+  it.each`
     input                        | expectedResult
     ${'www.example.com'}         | ${RangeError}
     ${'htp://www.example.com'}   | ${RangeError}
