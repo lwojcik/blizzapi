@@ -1,19 +1,12 @@
 image: Ubuntu2004
 platform: x64
-environment:
-  matrix:
-    - nodejs_version: "10"
-    - nodejs_version: "12"
-    - nodejs_version: "14"
-    - nodejs_version: "15"
-
-stack: "node $nodejs_version"
+stack: node lts/*
 
 install:
   - npm install
 
 build_script:
   - npm run build
-  
+
 test_script:
   - npx codecov
