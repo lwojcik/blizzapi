@@ -7,9 +7,6 @@
   "module": "dist/blizzapi.mjs",
   "browser": "dist/blizzapi.umd.js",
   "typings": "dist/blizzapi.d.ts",
-  "engines": {
-    "node": ">=14.0.0"
-  },
   "author": {
     "name": "Łukasz Wójcik",
     "url": "https://www.lukem.net/"
