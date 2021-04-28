@@ -5,6 +5,7 @@
   "homepage": "https://blizzapi.lukem.net",
   "main": "dist/blizzapi.js",
   "module": "dist/blizzapi.mjs",
+  "browser": "dist/blizzapi.umd.js",
   "typings": "dist/blizzapi.d.ts",
   "author": {
     "name": "Łukasz Wójcik",

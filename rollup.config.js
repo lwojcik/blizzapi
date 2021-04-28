@@ -9,7 +9,7 @@ const bundle = config => ({
   ...config,
   input: 'src/index.ts',
   external: id => !/^[./]/.test(id),
-})
+});
 
 export default [
   bundle({
@@ -33,8 +33,15 @@ export default [
         exports: 'default',
       },
       {
-        file: `${name}.web.js`,
-        format: 'iife',
+        file: `${name}.umd.js`,
+        format: 'umd',
+        name: 'BlizzAPI',
+        sourcemap: true,
+        exports: 'default',
+      },
+      {
+        file: `${name}.umd.min.js`,
+        format: 'umd',
         name: 'BlizzAPI',
         sourcemap: true,
         exports: 'default',
@@ -49,4 +56,4 @@ export default [
       format: 'es',
     },
   }),
-]
+];
