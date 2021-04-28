@@ -3,12 +3,10 @@ import * as utils from '../utils';
 import BattleNetAPI from './abstract/BattleNetAPI';
 import {
   Endpoint,
-  BattleNetOptions,
+  BlizzAPIOptions,
   AccessTokenOptions,
   QueryOptions,
 } from '../types';
-
-export interface BlizzAPIOptions extends BattleNetOptions, AccessTokenOptions {}
 
 export default class BlizzAPI extends BattleNetAPI {
   readonly options: AccessTokenOptions;

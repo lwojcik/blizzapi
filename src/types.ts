@@ -90,3 +90,5 @@ export interface InitOptions {
 export interface RegionIdProperties<Value> {
   readonly [regionId: string]: Value;
 }
+
+export interface BlizzAPIOptions extends BattleNetOptions, AccessTokenOptions {}
