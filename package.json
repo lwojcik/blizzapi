@@ -7,6 +7,9 @@
   "module": "dist/blizzapi.mjs",
   "browser": "dist/blizzapi.umd.js",
   "typings": "dist/blizzapi.d.ts",
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "author": {
     "name": "Łukasz Wójcik",
     "url": "https://www.lukem.net/"
@@ -60,7 +63,6 @@
     "rollup-plugin-external-globals": "^0.6.1",
     "rollup-plugin-terser": "^7.0.2",
     "ts-jest": "^26.5.5",
-    "tslib": "^1.14.1",
     "typescript": "^4.2.4"
   },
   "keywords": [
