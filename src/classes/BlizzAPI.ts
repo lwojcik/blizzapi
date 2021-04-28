@@ -8,7 +8,7 @@ import {
   QueryOptions,
 } from '../types';
 
-export default class BlizzAPI extends BattleNetAPI {
+export class BlizzAPI extends BattleNetAPI {
   readonly options: AccessTokenOptions;
 
   constructor(options: BlizzAPIOptions) {

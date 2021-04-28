@@ -1,4 +1,2 @@
-import BlizzAPI from './classes/BlizzAPI';
-
 export * from './types';
-export default BlizzAPI;
+export { BlizzAPI } from './classes/BlizzAPI';
