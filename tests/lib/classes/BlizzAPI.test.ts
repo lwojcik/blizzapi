@@ -1,4 +1,4 @@
-import BlizzAPI from '../../../src/classes/BlizzAPI';
+import { BlizzAPI } from '../../../src/classes/BlizzAPI';
 
 describe('BlizzAPI class', () => {
   it('should be defined', () => {
