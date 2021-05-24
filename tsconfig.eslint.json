@@ -4,7 +4,8 @@
   },
   "include": [
     "**/src/**/*.ts",
-    "**/tests/**/*.ts"
+    "**/tests/**/*.ts",
+    "rollup.config.js"
   ],
   "exclude": [
     "node_modules",

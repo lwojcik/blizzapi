@@ -1,49 +1,45 @@
 import dts from 'rollup-plugin-dts';
 import esbuild from 'rollup-plugin-esbuild';
-import externalGlobals from "rollup-plugin-external-globals";
-import { terser } from "rollup-plugin-terser";
+import externalGlobals from 'rollup-plugin-external-globals';
+// import { terser } from "rollup-plugin-terser";
+// import typescript from '@rollup/plugin-typescript';
 
-const name = require('./package.json').main.replace(/\.js$/, '')
+const name = require('./package.json').main.replace(/\.js$/, '');
 
-const bundle = config => ({
+const bundle = (config) => ({
   ...config,
   input: 'src/index.ts',
-  external: id => !/^[./]/.test(id),
+  external: (id) => !/^[./]/.test(id),
 });
 
 export default [
   bundle({
     plugins: [
-      esbuild(),
+      esbuild({
+        sourceMap: false,
+        minify: true,
+      }),
       externalGlobals({
         axios: 'axios',
+        tslib: 'tslib',
       }),
     ],
     output: [
       {
         file: `${name}.js`,
         format: 'cjs',
-        sourcemap: true,
       },
       {
         file: `${name}.mjs`,
         format: 'es',
-        sourcemap: true,
       },
       {
         file: `${name}.umd.js`,
         format: 'umd',
         name: 'BlizzAPI',
-        sourcemap: true,
-      },
-      {
-        file: `${name}.umd.min.js`,
-        format: 'umd',
-        name: 'BlizzAPI',
-        sourcemap: true,
-        plugins: [terser()],
       },
     ],
+    context: 'this',
   }),
   bundle({
     plugins: [dts()],
