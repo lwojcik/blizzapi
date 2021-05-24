@@ -20,7 +20,7 @@ npm install blizzapi
 const { BlizzAPI } = require('blizzapi');
 
 /**
- * Or using Typescript
+ * Or using TypeScript:
  * import { BlizzAPI } from 'blizzapi';
  */
 
