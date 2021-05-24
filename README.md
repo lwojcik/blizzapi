@@ -17,7 +17,12 @@ npm install blizzapi
 ## Quick start
 
 ```javascript
-const BlizzAPI = require('blizzapi');
+const { BlizzAPI } = require('blizzapi');
+
+/**
+ * Or using TypeScript:
+ * import { BlizzAPI } from 'blizzapi';
+ */
 
 const api = new BlizzAPI({
   region: 'us',
