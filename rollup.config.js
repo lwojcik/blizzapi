@@ -1,5 +1,6 @@
 import dts from 'rollup-plugin-dts';
 import esbuild from 'rollup-plugin-esbuild';
+import externalGlobals from 'rollup-plugin-external-globals';
 
 const name = require('./package.json').main.replace(/\.js$/, '');
 
@@ -32,15 +33,27 @@ export default [
           axios: 'axios',
         },
       },
-      {
-        file: `${name}.umd.js`,
-        format: 'umd',
-        name: 'BlizzAPI',
-        globals: {
-          axios: 'axios',
-        },
-      },
     ],
+    context: 'this',
+  }),
+  bundle({
+    plugins: [
+      esbuild({
+        sourceMap: false,
+        minify: true,
+      }),
+      externalGlobals({
+        axios: 'axios',
+      }),
+    ],
+    output: {
+      file: `${name}.umd.js`,
+      format: 'umd',
+      name: 'BlizzAPI',
+      globals: {
+        axios: 'axios',
+      },
+    },
     context: 'this',
   }),
   bundle({
