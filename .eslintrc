@@ -23,6 +23,7 @@
         "onlyFunctionsWithAsyncKeyword": true
       }
     ],
-    "jest/no-hooks": "off"
+    "jest/no-hooks": "off",
+    "import/prefer-default-export": "off"
   }
 }

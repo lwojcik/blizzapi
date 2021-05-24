@@ -4,12 +4,12 @@
     "module": "commonjs",
     "rootDir": "src",
     "baseUrl": "src",
-    "outDir": "dist",
     "sourceMap": true,
     "lib": ["es2017", "dom"],
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "declarationMap": true,
+    "outDir": "dist/esm5",
     "removeComments": true,
     "strict": true,
     "noImplicitAny": true,
@@ -32,5 +32,8 @@
     "dist",
     "tests",
     "**/tests/*.test.ts"
-  ]
+  ],
+  "paths": {
+    "tslib" : ["path/to/node_modules/tslib/tslib.d.ts"]
+  }
 }
