@@ -1,8 +1,5 @@
 import dts from 'rollup-plugin-dts';
 import esbuild from 'rollup-plugin-esbuild';
-import externalGlobals from 'rollup-plugin-external-globals';
-// import { terser } from "rollup-plugin-terser";
-// import typescript from '@rollup/plugin-typescript';
 
 const name = require('./package.json').main.replace(/\.js$/, '');
 
@@ -19,24 +16,29 @@ export default [
         sourceMap: false,
         minify: true,
       }),
-      externalGlobals({
-        axios: 'axios',
-        tslib: 'tslib',
-      }),
     ],
     output: [
       {
         file: `${name}.js`,
         format: 'cjs',
+        globals: {
+          axios: 'axios',
+        },
       },
       {
         file: `${name}.mjs`,
         format: 'es',
+        globals: {
+          axios: 'axios',
+        },
       },
       {
         file: `${name}.umd.js`,
         format: 'umd',
         name: 'BlizzAPI',
+        globals: {
+          axios: 'axios',
+        },
       },
     ],
     context: 'this',
