@@ -17,8 +17,8 @@ describe('isSc2RealmValidForRegionId()', () => {
     expect(typeof isSc2RealmValidForRegionId).toBe('function');
   });
 
-  (regionIdsJson as ReadonlyArray<number | string>).forEach((regionId) =>
-    (sc2realmsJson as ReadonlyArray<number | string>).forEach((sc2realm) => {
+  (regionIdsJson as ReadonlyArray<number | string>).forEach(regionId =>
+    (sc2realmsJson as ReadonlyArray<number | string>).forEach(sc2realm => {
       it(
         `should return correct value for ${regionId} and ${sc2realm} as valid parameters`,
         () => {
@@ -27,8 +27,8 @@ describe('isSc2RealmValidForRegionId()', () => {
       );
     }));
 
-  (regionIdsJson as ReadonlyArray<number | string>).forEach((regionId) =>
-    (nonexistentSc2realmsJson as ReadonlyArray<number | string>).forEach((nonexistentSc2realm) => {
+  (regionIdsJson as ReadonlyArray<number | string>).forEach(regionId =>
+    (nonexistentSc2realmsJson as ReadonlyArray<number | string>).forEach(nonexistentSc2realm => {
       it(
         `should return false for ${regionId} as valid region id and ${nonexistentSc2realm} as non-existent SC2 realm`,
         () => {
@@ -37,22 +37,22 @@ describe('isSc2RealmValidForRegionId()', () => {
       );
     }));
 
-  (regionIdsJson as ReadonlyArray<number | string>).forEach((regionId) =>
-    (wrongSc2realmsJson as ReadonlyArray<number | string>).forEach((wrongSc2realm) => {
+  (regionIdsJson as ReadonlyArray<number | string>).forEach(regionId =>
+    (wrongSc2realmsJson as ReadonlyArray<number | string>).forEach(wrongSc2realm => {
       it(`should throw RangeError for ${regionId} as valid region id and ${wrongSc2realm} as invalid SC2 realm`, () => {
         expect(() => isSc2RealmValidForRegionId(wrongSc2realm, regionId)).toThrow(RangeError);
       });
     }));
 
-  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach((wrongRegionId) =>
-    (sc2realmsJson as ReadonlyArray<number | string>).forEach((sc2realm) => {
+  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach(wrongRegionId =>
+    (sc2realmsJson as ReadonlyArray<number | string>).forEach(sc2realm => {
       it(`should throw RangeError for ${wrongRegionId} as wrong region id and ${sc2realm} as valid SC2 realm`, () => {
         expect(() => isSc2RealmValidForRegionId(sc2realm, wrongRegionId)).toThrow(RangeError);
       });
     }));
 
-  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach((wrongRegionId) =>
-    (nonexistentSc2realmsJson as ReadonlyArray<number | string>).forEach((nonexistentSc2realm) => {
+  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach(wrongRegionId =>
+    (nonexistentSc2realmsJson as ReadonlyArray<number | string>).forEach(nonexistentSc2realm => {
       it(`should throw RangeError for ${wrongRegionId} as wrong region id and ${nonexistentSc2realm} as non-existent SC2 realm`, () => {
         expect(() => isSc2RealmValidForRegionId(nonexistentSc2realm, wrongRegionId)).toThrow(
           RangeError,
@@ -60,8 +60,8 @@ describe('isSc2RealmValidForRegionId()', () => {
       });
     }));
 
-  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach((wrongRegionId) =>
-    (wrongSc2realmsJson as ReadonlyArray<number | string>).forEach((wrongSc2realm) => {
+  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach(wrongRegionId =>
+    (wrongSc2realmsJson as ReadonlyArray<number | string>).forEach(wrongSc2realm => {
       it(`should throw RangeError for ${wrongRegionId} as wrong region id and ${wrongSc2realm} as invalid SC2 realm`, () => {
         expect(() => isSc2RealmValidForRegionId(wrongSc2realm, wrongRegionId)).toThrow(RangeError);
       });

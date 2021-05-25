@@ -1,4 +1,4 @@
-import BattleNetAPI from '../../../../src/classes/abstract/BattleNetAPI';
+import { BattleNetAPI } from '../../../../src/classes/abstract/BattleNetAPI';
 
 jest.createMockFromModule('../../../../src/classes/abstract/BattleNetAPI');
 

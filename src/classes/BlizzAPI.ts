@@ -1,6 +1,6 @@
 import * as helpers from '../helpers';
 import * as utils from '../utils';
-import BattleNetAPI from './abstract/BattleNetAPI';
+import { BattleNetAPI } from './abstract/BattleNetAPI';
 import {
   Endpoint,
   BlizzAPIOptions,

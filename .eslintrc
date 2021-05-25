@@ -17,6 +17,10 @@
     "prefer-promise-reject-errors": "off",
     "jest/lowercase-name": "off",
     "linebreak-style": "off",
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ],
     "jest/prefer-expect-assertions": [
       "error",
       {

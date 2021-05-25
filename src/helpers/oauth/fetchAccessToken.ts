@@ -11,7 +11,7 @@ interface FetchAccessTokenOptions {
   clientSecret: ClientSecret;
 }
 
-export default (options: FetchAccessTokenOptions) => {
+export const fetchAccessToken = (options: FetchAccessTokenOptions) => {
   const {
     oauthUri,
     clientId,

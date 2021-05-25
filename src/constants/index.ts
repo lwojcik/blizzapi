@@ -9,9 +9,9 @@
 
 import * as localization from './localization';
 import * as api from './api';
-import oauth from './oauth';
+import * as oauth from './oauth';
 
-const CONSTANTS = {
+export const constants = {
   REGIONS: localization.regions,
   LOCALES: localization.locales,
   DEFAULT_LOCALES: localization.defaultLocales,
@@ -21,5 +21,3 @@ const CONSTANTS = {
   OAUTH_TOKEN_URIS: oauth.tokenUris,
   OAUTH_CHECK_TOKEN_URIS: oauth.checkTokenUris,
 };
-
-export default CONSTANTS;

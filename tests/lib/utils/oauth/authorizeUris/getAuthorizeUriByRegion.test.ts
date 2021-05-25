@@ -16,25 +16,25 @@ describe('getAuthorizeUriByRegion()', () => {
     expect(typeof getAuthorizeUriByRegion).toBe('function');
   });
 
-  (regionIdsJson as ReadonlyArray<number | string>).forEach((regionId) => {
+  (regionIdsJson as ReadonlyArray<number | string>).forEach(regionId => {
     it(`should return correct value for ${regionId} as valid region id`, () => {
       expect(getAuthorizeUriByRegion(regionId)).toMatchSnapshot();
     });
   });
 
-  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach((wrongRegionId) => {
+  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach(wrongRegionId => {
     it(`should throw RangeError for ${wrongRegionId} as invalid region id`, () => {
       expect(() => getAuthorizeUriByRegion(wrongRegionId)).toThrow(RangeError);
     });
   });
 
-  (regionNamesJson as ReadonlyArray<string>).forEach((regionName) => {
+  (regionNamesJson as ReadonlyArray<string>).forEach(regionName => {
     it(`should return correct value for ${regionName} as valid region name`, () => {
       expect(getAuthorizeUriByRegion(regionName)).toMatchSnapshot();
     });
   });
 
-  (wrongRegionNamesJson as ReadonlyArray<string>).forEach((wrongRegionName) => {
+  (wrongRegionNamesJson as ReadonlyArray<string>).forEach(wrongRegionName => {
     it('should throw RangeError for invalid region name', () => {
       expect(() => getAuthorizeUriByRegion(wrongRegionName)).toThrow(RangeError);
     });

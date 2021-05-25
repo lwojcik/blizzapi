@@ -1,5 +1,5 @@
 import * as utils from '../../../../../src/utils';
-import constants from '../../../../../src/constants';
+import { constants } from '../../../../../src/constants';
 
 const { getAllRegions } = utils;
 

@@ -16,7 +16,7 @@ interface FetchFromUriOptions extends QueryOptions {
 /**
  * Performs basic fetch request from a given uri
  */
-export default async (options: FetchFromUriOptions) => {
+export const fetchFromUri = async (options: FetchFromUriOptions) => {
   const {
     uri,
     timeout,

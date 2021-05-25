@@ -1,4 +1,4 @@
-import constants from '../../constants';
+import { constants } from '../../constants';
 
 import {
   RegionName,
@@ -21,7 +21,7 @@ export const getAllRegions = () => constants.REGIONS;
  */
 export const getAllRegionIds = () => {
   const regionKeys = Object.keys(constants.REGIONS);
-  return <RegionIdArray>regionKeys.map((regionKey) => parseInt(regionKey, 10));
+  return <RegionIdArray>regionKeys.map(regionKey => parseInt(regionKey, 10));
 };
 
 /**
@@ -78,7 +78,7 @@ export const getRegionIdByName = (regionName: RegionName) => {
   const regionNameLowercase = regionName.toLowerCase();
   const regions = constants.REGIONS;
   const regionKeys = Object.keys(regions);
-  const regionIdArray = regionKeys.filter((key) => regions[key].includes(regionNameLowercase));
+  const regionIdArray = regionKeys.filter(key => regions[key].includes(regionNameLowercase));
   const regionId = Number(regionIdArray[0]) || false;
 
   if (!regionId) {

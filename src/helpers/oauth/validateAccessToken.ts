@@ -5,7 +5,10 @@ import {
   AccessToken,
 } from '../../types';
 
-export default async (regionIdOrName: RegionIdOrName, accessToken: AccessToken) => {
+export const validateAccessToken = async (
+  regionIdOrName: RegionIdOrName,
+  accessToken: AccessToken,
+) => {
   try {
     const checkTokenUri = getCheckTokenUriByRegion(regionIdOrName);
     const requestPath = `${checkTokenUri}${accessToken}`;

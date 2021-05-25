@@ -3,7 +3,7 @@ import {
   ClientSecret,
 } from '../../types';
 
-export default class OAuth2API {
+export abstract class OAuth2API {
   readonly clientId: ClientId;
 
   readonly clientSecret: ClientSecret;

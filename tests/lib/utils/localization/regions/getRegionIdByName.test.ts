@@ -14,12 +14,12 @@ describe('getRegionIdByName()', () => {
     expect(typeof getRegionIdByName).toBe('function');
   });
 
-  (regionNamesJson as ReadonlyArray<string>).forEach((regionName) =>
+  (regionNamesJson as ReadonlyArray<string>).forEach(regionName =>
     it(`should return correct value for ${regionName} as valid region name`, () => {
       expect(getRegionIdByName(regionName)).toMatchSnapshot();
     }));
 
-  (wrongRegionNamesJson as ReadonlyArray<string>).forEach((wrongRegionName) =>
+  (wrongRegionNamesJson as ReadonlyArray<string>).forEach(wrongRegionName =>
     it(`should throw RangeError for ${wrongRegionName} as invalid region name`, () => {
       expect(() => getRegionIdByName(wrongRegionName)).toThrow(RangeError);
     }));

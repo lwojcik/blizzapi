@@ -1,4 +1,4 @@
-import constants from '../../constants';
+import { constants } from '../../constants';
 import { getConstantByRegion } from '../common';
 import { RegionIdOrName, Uri } from '../../types';
 

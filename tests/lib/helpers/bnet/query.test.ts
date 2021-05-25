@@ -1,4 +1,4 @@
-import query from '../../../../src/helpers/bnet/query';
+import { query } from '../../../../src/helpers/bnet/query';
 
 jest.mock('../../../../src/helpers/oauth');
 const oauth = require('../../../../src/helpers/oauth');
