@@ -1,4 +1,4 @@
-import OAuth2API from './OAuth2API';
+import { OAuth2API } from './OAuth2API';
 import * as OAuthHelpers from '../../helpers/oauth';
 import {
   RegionIdOrName,
@@ -6,7 +6,7 @@ import {
   BattleNetOptions,
 } from '../../types';
 
-export default class BattleNetAPI extends OAuth2API {
+export abstract class BattleNetAPI extends OAuth2API {
   readonly region: RegionIdOrName;
 
   accessToken: AccessToken;

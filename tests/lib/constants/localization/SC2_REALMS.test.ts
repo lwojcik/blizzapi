@@ -1,4 +1,4 @@
-import constants from '../../../../src/constants';
+import { constants } from '../../../../src/constants';
 
 const { SC2_REALMS } = constants;
 

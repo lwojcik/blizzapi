@@ -1,26 +1,20 @@
-import OAuthHosts from './OAuthHosts';
+import { oAuthHosts } from './OAuthHosts';
 import {
   RegionIdProperties,
   Uri,
 } from '../../types';
 
-const getRegionPropertyArray = (endpoint: string): RegionIdProperties<Uri> => ({
-  1: `${OAuthHosts[1]}${endpoint}`,
-  2: `${OAuthHosts[2]}${endpoint}`,
-  3: `${OAuthHosts[3]}${endpoint}`,
-  5: `${OAuthHosts[5]}${endpoint}`,
+const getRegionPropertyArray = (endpoint: string): RegionIdProperties<Uri> => Object.freeze({
+  1: `${oAuthHosts[1]}${endpoint}`,
+  2: `${oAuthHosts[2]}${endpoint}`,
+  3: `${oAuthHosts[3]}${endpoint}`,
+  5: `${oAuthHosts[5]}${endpoint}`,
 });
 
 const authorizeEndpoint = '/oauth/authorize';
 const tokenEndpoint = '/oauth/token';
 const checkTokenEndpoint = '/oauth/check_token?token=';
 
-const authorizeUris = getRegionPropertyArray(authorizeEndpoint);
-const tokenUris = getRegionPropertyArray(tokenEndpoint);
-const checkTokenUris = getRegionPropertyArray(checkTokenEndpoint);
-
-export default {
-  authorizeUris: Object.freeze(authorizeUris),
-  tokenUris: Object.freeze(tokenUris),
-  checkTokenUris: Object.freeze(checkTokenUris),
-};
+export const authorizeUris = getRegionPropertyArray(authorizeEndpoint);
+export const tokenUris = getRegionPropertyArray(tokenEndpoint);
+export const checkTokenUris = getRegionPropertyArray(checkTokenEndpoint);

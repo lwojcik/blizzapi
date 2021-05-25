@@ -17,40 +17,40 @@ describe('isLocaleValidForRegionId()', () => {
     expect(typeof isLocaleValidForRegionId).toBe('function');
   });
 
-  (regionIdsJson as ReadonlyArray<string | number>).forEach((regionId) =>
-    (localesJson as ReadonlyArray<string>).forEach((locale) =>
+  (regionIdsJson as ReadonlyArray<string | number>).forEach(regionId =>
+    (localesJson as ReadonlyArray<string>).forEach(locale =>
       it(`should return true for ${locale} and ${regionId} as valid parameters`, () => {
         expect(isLocaleValidForRegionId(locale, regionId)).toMatchSnapshot();
       })));
 
-  (regionIdsJson as ReadonlyArray<string | number>).forEach((regionId) =>
-    (nonexistentLocalesJson as ReadonlyArray<string>).forEach((nonExistentLocale) =>
+  (regionIdsJson as ReadonlyArray<string | number>).forEach(regionId =>
+    (nonexistentLocalesJson as ReadonlyArray<string>).forEach(nonExistentLocale =>
       it(`should return true for ${nonExistentLocale} as non-existent locale and ${regionId} as valid region id`, () => {
         expect(() => isLocaleValidForRegionId(nonExistentLocale, regionId)).toThrow(RangeError);
       })));
 
-  (regionIdsJson as ReadonlyArray<string | number>).forEach((regionId) =>
-    (wrongLocalesJson as ReadonlyArray<string>).forEach((wrongLocale) =>
+  (regionIdsJson as ReadonlyArray<string | number>).forEach(regionId =>
+    (wrongLocalesJson as ReadonlyArray<string>).forEach(wrongLocale =>
       it(`should return true for ${wrongLocale} as wrong locale and ${regionId} as valid region id`, () => {
         expect(() => isLocaleValidForRegionId(wrongLocale, regionId)).toThrow(RangeError);
       })));
 
-  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach((wrongRegionId) =>
-    (localesJson as ReadonlyArray<string>).forEach((locale) =>
+  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach(wrongRegionId =>
+    (localesJson as ReadonlyArray<string>).forEach(locale =>
       it(`should throw RangeError for ${wrongRegionId} as invalid region id and ${locale} as valid locale`, () => {
         expect(() => isLocaleValidForRegionId(locale, wrongRegionId)).toThrow(RangeError);
       })));
 
-  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach((wrongRegionId) =>
-    (nonexistentLocalesJson as ReadonlyArray<string>).forEach((nonExistentLocale) =>
+  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach(wrongRegionId =>
+    (nonexistentLocalesJson as ReadonlyArray<string>).forEach(nonExistentLocale =>
       it(`should throw RangeError for ${wrongRegionId} as invalid region id and ${nonExistentLocale} as non-existent locale`, () => {
         expect(() => isLocaleValidForRegionId(nonExistentLocale, wrongRegionId)).toThrow(
           RangeError,
         );
       })));
 
-  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach((wrongRegionId) =>
-    (wrongLocalesJson as ReadonlyArray<string>).forEach((wrongLocale) =>
+  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach(wrongRegionId =>
+    (wrongLocalesJson as ReadonlyArray<string>).forEach(wrongLocale =>
       it(`should throw RangeError for ${wrongRegionId} as invalid region id and ${wrongLocale} as wrong locale`, () => {
         expect(() => isLocaleValidForRegionId(wrongLocale, wrongRegionId)).toThrow(RangeError);
       })));

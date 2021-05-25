@@ -16,8 +16,8 @@ describe('getUriByRegionId()', () => {
     expect(typeof getConstantByRegionId).toBe('function');
   });
 
-  (regionIdsJson as RegionIdArray).forEach((regionId) => {
-    (constantKeysJson as ConstantKeys).forEach((constantKey) => {
+  (regionIdsJson as RegionIdArray).forEach(regionId => {
+    (constantKeysJson as ConstantKeys).forEach(constantKey => {
       it(
         `should return correct value for ${regionId} and ${constantKey} as valid parameters`,
         () => {
@@ -27,8 +27,8 @@ describe('getUriByRegionId()', () => {
     });
   });
 
-  (wrongRegionIdsJson as RegionIdArray).forEach((wrongRegionId) => {
-    (constantKeysJson as ConstantKeys).forEach((constantKey) => {
+  (wrongRegionIdsJson as RegionIdArray).forEach(wrongRegionId => {
+    (constantKeysJson as ConstantKeys).forEach(constantKey => {
       it(`should throw RangeError for ${wrongRegionId} as invalid parameter`, () => {
         expect(() => getConstantByRegionId(wrongRegionId, constantKey)).toThrow(RangeError);
       });

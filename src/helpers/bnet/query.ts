@@ -52,7 +52,7 @@ const queryWithAccessToken = (queryOptions: BattleNetQueryOptions, accessToken: 
   });
 };
 
-export default async (queryOptions: BattleNetQueryOptions) => {
+export const query = async (queryOptions: BattleNetQueryOptions) => {
   const { region, accessToken } = queryOptions;
   const {
     validateAccessTokenOnEachQuery,

@@ -1,2 +1,2 @@
-export { default as endpoint } from './endpoint';
-export { default as uri } from './uri';
+export { endpointValidator as endpoint } from './endpoint';
+export { uriValidator as uri } from './uri';

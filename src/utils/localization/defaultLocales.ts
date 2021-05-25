@@ -1,4 +1,4 @@
-import constants from '../../constants';
+import { constants } from '../../constants';
 import { validateRegionId } from './regions';
 import { getAllLocales } from './locales';
 import {
@@ -64,7 +64,7 @@ export const getAllDefaultLocaleNames = () => {
 
   return <RegionIdProperties<Locale>>Object.assign(
     {},
-    ...allLocaleKeys.map((regionId) => ({
+    ...allLocaleKeys.map(regionId => ({
       [regionId]: getDefaultLocaleNameForRegionId(regionId),
     })),
   );

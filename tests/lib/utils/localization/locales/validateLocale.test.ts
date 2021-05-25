@@ -15,17 +15,17 @@ describe('validateLocale()', () => {
     expect(typeof validateLocale).toBe('function');
   });
 
-  (localesJson as ReadonlyArray<string>).forEach((locale) =>
+  (localesJson as ReadonlyArray<string>).forEach(locale =>
     it(`should return true for ${locale} as valid locale`, () => {
       expect(validateLocale(locale)).toBe(true);
     }));
 
-  (nonexistentLocalesJson as ReadonlyArray<string>).forEach((locale) =>
+  (nonexistentLocalesJson as ReadonlyArray<string>).forEach(locale =>
     it(`should return false for ${locale} as non-existent locale`, () => {
       expect(validateLocale(locale)).toBe(false);
     }));
 
-  (wrongLocalesJson as ReadonlyArray<string>).forEach((locale) =>
+  (wrongLocalesJson as ReadonlyArray<string>).forEach(locale =>
     it(`should throw RangeError for ${locale} as invalid locale`, () => {
       expect(() => validateLocale(locale)).toThrow(RangeError);
     }));

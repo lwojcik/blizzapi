@@ -1,4 +1,4 @@
-import constants from '../../../../src/constants';
+import { constants } from '../../../../src/constants';
 
 const { OAUTH_CHECK_TOKEN_URIS } = constants;
 

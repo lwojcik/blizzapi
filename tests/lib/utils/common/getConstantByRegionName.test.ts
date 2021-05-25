@@ -16,8 +16,8 @@ describe('getConstantByRegionName()', () => {
     expect(typeof getConstantByRegionName).toBe('function');
   });
 
-  (regionNamesJson as ReadonlyArray<string>).forEach((regionName) =>
-    (constantKeysJson as ConstantKeys).forEach((constantKey) => {
+  (regionNamesJson as ReadonlyArray<string>).forEach(regionName =>
+    (constantKeysJson as ConstantKeys).forEach(constantKey => {
       it(
         `should return correct value for ${regionName} and ${constantKey} as valid parameters`,
         () => {
@@ -26,8 +26,8 @@ describe('getConstantByRegionName()', () => {
       );
     }));
 
-  (wrongRegionNamesJson as ReadonlyArray<string>).forEach((wrongRegionName) =>
-    (constantKeysJson as ConstantKeys).forEach((constantKey) => {
+  (wrongRegionNamesJson as ReadonlyArray<string>).forEach(wrongRegionName =>
+    (constantKeysJson as ConstantKeys).forEach(constantKey => {
       it(`should throw RangeError for ${wrongRegionName} and ${constantKey}`, () => {
         expect(() => getConstantByRegionName(wrongRegionName, constantKey)).toThrow(RangeError);
       });

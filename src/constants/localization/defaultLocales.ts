@@ -15,11 +15,9 @@ import {
   DefaultLocaleIndex,
 } from '../../types';
 
-const defaultLocales: RegionIdProperties<DefaultLocaleIndex> = {
+export const defaultLocales: RegionIdProperties<DefaultLocaleIndex> = Object.freeze({
   1: 0,
   2: 0,
   3: 0,
   5: 0,
-};
-
-export default Object.freeze(defaultLocales);
+});

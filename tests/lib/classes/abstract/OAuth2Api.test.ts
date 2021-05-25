@@ -1,4 +1,4 @@
-import OAuth2API from '../../../../src/classes/abstract/OAuth2API';
+import { OAuth2API } from '../../../../src/classes/abstract/OAuth2API';
 
 class OAuth2APIMock extends OAuth2API {
   constructor() {

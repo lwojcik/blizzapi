@@ -15,17 +15,17 @@ describe('validateSc2Realm()', () => {
     expect(typeof validateSc2Realm).toBe('function');
   });
 
-  (sc2realmsJson as ReadonlyArray<string | number>).forEach((sc2realm) =>
+  (sc2realmsJson as ReadonlyArray<string | number>).forEach(sc2realm =>
     it(`should return true for ${sc2realm} as valid SC2 realm`, () => {
       expect(validateSc2Realm(sc2realm)).toBe(true);
     }));
 
-  (nonexistentSc2realmsJson as ReadonlyArray<string | number>).forEach((nonexistentSc2realmsJso) =>
+  (nonexistentSc2realmsJson as ReadonlyArray<string | number>).forEach(nonexistentSc2realmsJso =>
     it(`should return false for ${nonexistentSc2realmsJso} as non-existent SC2 realm`, () => {
       expect(validateSc2Realm(nonexistentSc2realmsJso)).toBe(false);
     }));
 
-  (wrongSc2realmsJson as ReadonlyArray<string | number>).forEach((wrongSc2realm) =>
+  (wrongSc2realmsJson as ReadonlyArray<string | number>).forEach(wrongSc2realm =>
     it(`should throw RangeError for ${wrongSc2realm} as invalid SC2 realm`, () => {
       expect(() => validateSc2Realm(wrongSc2realm)).toThrow(RangeError);
     }));

@@ -14,13 +14,13 @@ describe('validateUri()', () => {
     expect(typeof validateUri).toBe('function');
   });
 
-  (urisJson as ReadonlyArray<Uri>).forEach((uri) => {
+  (urisJson as ReadonlyArray<Uri>).forEach(uri => {
     it(`returns true for ${uri} as correct uri`, () => {
       expect(validateUri(uri)).toBe(true);
     });
   });
 
-  (invalidUrisJson as ReadonlyArray<Uri>).forEach((uri) => {
+  (invalidUrisJson as ReadonlyArray<Uri>).forEach(uri => {
     it(`returns false for ${uri} as invalid uri`, () => {
       expect(validateUri(uri)).toBe(false);
     });

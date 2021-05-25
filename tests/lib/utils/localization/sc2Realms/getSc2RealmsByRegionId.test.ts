@@ -1,5 +1,5 @@
 import * as utils from '../../../../../src/utils';
-import constants from '../../../../../src/constants';
+import { constants } from '../../../../../src/constants';
 
 import regionIdsJson from '../../../../__testData__/regionIds.json';
 import wrongRegionIdsJson from '../../../../__testData__/wrongRegionIds.json';
@@ -16,12 +16,12 @@ describe('getSc2RealmsByRegionId()', () => {
     expect(typeof getSc2RealmsByRegionId).toBe('function');
   });
 
-  (regionIdsJson as ReadonlyArray<number | string>).forEach((regionId) =>
+  (regionIdsJson as ReadonlyArray<number | string>).forEach(regionId =>
     it(`should return correct value for ${regionId} as valid region id`, () => {
       expect(getSc2RealmsByRegionId(regionId)).toBe(SC2_REALMS[regionId]);
     }));
 
-  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach((wrongRegionId) =>
+  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach(wrongRegionId =>
     it(`should throw RangeError for ${wrongRegionId} as invalid region id`, () => {
       expect(() => getSc2RealmsByRegionId(wrongRegionId)).toThrow(RangeError);
     }));
