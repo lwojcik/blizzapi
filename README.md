@@ -1,10 +1,10 @@
-<img src="https://raw.githubusercontent.com/lukemnet/blizzapi-docs/master/docs/.vuepress/public/logo.png" alt="BlizzAPI logo" width="200" height="200">
+<img src="https://raw.githubusercontent.com/blizzapi/blizzapi-docs/master/docs/.vuepress/public/logo.png" alt="BlizzAPI logo" width="200" height="200">
 
 # BlizzAPI
 
 [![npm (latest)](https://img.shields.io/npm/v/blizzapi/latest.svg)](https://www.npmjs.com/package/blizzapi)
 [![Build status](https://ci.appveyor.com/api/projects/status/r7pjg9an30d5dupk/branch/master?svg=true)](https://ci.appveyor.com/project/lwojcik/blizzapi/branch/master)
-[![codecov](https://codecov.io/gh/lukemnet/blizzapi/branch/master/graph/badge.svg?token=M3vY98GiIn)](https://codecov.io/gh/lukemnet/blizzapi)
+[![codecov](https://codecov.io/gh/blizzapi/blizzapi/branch/master/graph/badge.svg?token=M3vY98GiIn)](https://codecov.io/gh/blizzapi/blizzapi)
 
 Flexible feature-rich library for easy access to [Battle.net API](https://develop.battle.net/).
 
@@ -38,7 +38,7 @@ console.log(data);
 ## Manual build
 
 ```bash
-git clone https://github.com/lukemnet/blizzapi.git
+git clone https://github.com/blizzapi/blizzapi.git
 cd blizzapi
 npm install
 npm run build
@@ -47,11 +47,11 @@ npm run build
 ## Documentation & examples
 
 * [blizzapi.lukem.net](https://blizzapi.lukem.net) - documentation
-* [blizzapi-docs](https://github.com/lukemnet/blizzapi-docs) - documentation repo on GitHub
+* [blizzapi-docs](https://github.com/blizzapi/blizzapi-docs) - documentation repo on GitHub
 
-* [blizzapi-example](https://github.com/lukemnet/blizzapi-example) - sample Express.js REST API with usage examples
+* [blizzapi-example](https://github.com/blizzapi/blizzapi-example) - sample Express.js REST API with usage examples
 
-* [Repositories that depend on BlizzAPI](https://github.com/lukemnet/blizzapi/network/dependents)
+* [Repositories that depend on BlizzAPI](https://github.com/blizzapi/blizzapi/network/dependents)
 
 ## Contributions
 
@@ -60,20 +60,20 @@ Contributions of any kind are welcome.
 You can contribute to BlizzAPI by:
 
 * submiting a bug report or a feature suggestion
-* improving documentation either within the project itself or in the [doc site repository](https://github.com/lukemnet/blizzapi-docs)
+* improving documentation either within the project itself or in the [doc site repository](https://github.com/blizzapi/blizzapi-docs)
 * submitting pull requests
 
-Before contributing be sure to read [Contributing Guidelines](https://github.com/lukemnet/blizzapi/blob/master/CONTRIBUTING.md) and [Code of Conduct](https://github.com/lukemnet/blizzapi/blob/master/CODE_OF_CONDUCT.md).
+Before contributing be sure to read [Contributing Guidelines](https://github.com/blizzapi/blizzapi/blob/master/CONTRIBUTING.md) and [Code of Conduct](https://github.com/blizzapi/blizzapi/blob/master/CODE_OF_CONDUCT.md).
 
 ## Contributors
 
 To all who contribute code, improve documentation, submit issues or feature requests - thank you for making BlizzAPI even better!
 
-We maintain an [AUTHORS](https://github.com/lukemnet/blizzapi/blob/master/AUTHORS) file where we keep a list of all project contributors. Please consider adding your name there with your next PR.
+We maintain an [AUTHORS](https://github.com/blizzapi/blizzapi/blob/master/AUTHORS) file where we keep a list of all project contributors. Please consider adding your name there with your next PR.
 
 ## License
 
-Licensed under MIT License. See [LICENSE](https://github.com/lukemnet/blizzapi/blob/master/LICENSE) for more information.
+Licensed under MIT License. See [LICENSE](https://github.com/blizzapi/blizzapi/blob/master/LICENSE) for more information.
 
 ## Legal
 

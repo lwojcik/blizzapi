@@ -6,12 +6,12 @@ You can contribute to the project in many ways:
 
 * file a bug report
 * suggest a feature
-* improve documentation either within the project itself or the [doc site repository](https://github.com/lukemnet/blizzapi-docs)
+* improve documentation either within the project itself or the [doc site repository](https://github.com/blizzapi/blizzapi-docs)
 * submit a pull request
 
 ## Bug reports
 
-If you encounter unexpected behavior, design flaw or any other kind of error that needs to be fixed, feel free to file a bug report in [Issues section on GitHub](https://github.com/lukemnet/blizzapi/issues).
+If you encounter unexpected behavior, design flaw or any other kind of error that needs to be fixed, feel free to file a bug report in [Issues section on GitHub](https://github.com/blizzapi/blizzapi/issues).
 
 There is no specific format you have to follow while filing your report. However, it's highly advisable you include at least some of following information:
 
@@ -23,7 +23,7 @@ There is no specific format you have to follow while filing your report. However
 
 ## Feature suggestions
 
-You can use [GitHub Issues section](https://github.com/lukemnet/blizzapi/issues) to suggest ideas or features you would like to be added to the project.
+You can use [GitHub Issues section](https://github.com/blizzapi/blizzapi/issues) to suggest ideas or features you would like to be added to the project.
 
 There is no specific format you have to follow while filling your request. Just be sure to provide clear and concise description of the feature. Examples, test cases and any additional context would be greatly appreciated.
 
@@ -32,13 +32,13 @@ There is no specific format you have to follow while filling your request. Just 
 Documentation in BlizzAPI exists primarily in two forms:
 
 * Text files such as README.md that function alongside project code
-* Documentation site maintained at https://github.com/lukemnet/blizzapi-docs
+* Documentation site maintained at https://github.com/blizzapi/blizzapi-docs
 
 Feel free to submit any relevant fixes (typos, error corrections, improvements to code samples) regardless of how trivial they seem.
 
 ## Pull requests
 
-Code patches that add features or fix bugs can be sent as [pull requests on GitHub](https://github.com/lukemnet/blizzapi/pulls).
+Code patches that add features or fix bugs can be sent as [pull requests on GitHub](https://github.com/blizzapi/blizzapi/pulls).
 
 To make the process of merging your pull request as quick as possible, be sure to read and follow the guidelines below:
 
@@ -52,11 +52,11 @@ To make the process of merging your pull request as quick as possible, be sure t
 
 * Pull requests are merged to `master` branch via squash-and-merge strategy. There are no specific requirements about quality and quantity of commits within feature branches.
 
-* Feel free to add yourself to [AUTHORS](https://github.com/lukemnet/blizzapi/blob/master/AUTHORS) file if you haven't done so.
+* Feel free to add yourself to [AUTHORS](https://github.com/blizzapi/blizzapi/blob/master/AUTHORS) file if you haven't done so.
 
 ## Technical information
 
-This section intends to explain how the project works from the developer's point of view. If you have any questions that weren't answered here, feel free to [submit an issue on GitHub](https://github.com/lukemnet/blizzapi/issues).
+This section intends to explain how the project works from the developer's point of view. If you have any questions that weren't answered here, feel free to [submit an issue on GitHub](https://github.com/blizzapi/blizzapi/issues).
 
 ### Development
 
@@ -96,4 +96,4 @@ Note that automated unit tests are powerful tool for quick quality control, but 
 
 ### Releases
 
-Whenever possible, BlizzAPI follows [semantic versioning](https://semver.org/) for all releases available in [Releases section on GitHub](https://github.com/lukemnet/blizzapi/releases) and on [NPM package manager](https://www.npmjs.com/package/blizzapi). The project is considered production-ready and it doesn't follow any specific release schedule.
+Whenever possible, BlizzAPI follows [semantic versioning](https://semver.org/) for all releases available in [Releases section on GitHub](https://github.com/blizzapi/blizzapi/releases) and on [NPM package manager](https://www.npmjs.com/package/blizzapi). The project is considered production-ready and it doesn't follow any specific release schedule.
