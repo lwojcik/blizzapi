@@ -8,21 +8,21 @@
   "browser": "dist/blizzapi.umd.js",
   "typings": "dist/blizzapi.d.ts",
   "author": {
-    "name": "Łukasz Wójcik",
-    "url": "https://www.lukem.net/"
+    "name": "BlizzAPI + Contributors",
+    "url": "https://github.com/blizzapi"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/lukemnet/blizzapi.git"
+    "url": "git://github.com/blizzapi/blizzapi.git"
   },
   "bugs": {
-    "url": "https://github.com/lukemnet/blizzapi/issues"
+    "url": "https://github.com/blizzapi/blizzapi/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/lukemnet/blizzapi/blob/master/LICENSE"
+      "url": "https://github.com/blizzapi/blizzapi/blob/master/LICENSE"
     }
   ],
   "scripts": {
