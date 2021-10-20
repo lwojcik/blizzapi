@@ -28,6 +28,7 @@
       }
     ],
     "jest/no-hooks": "off",
+    "jest/require-hook": "off",
     "import/prefer-default-export": "off"
   }
 }
