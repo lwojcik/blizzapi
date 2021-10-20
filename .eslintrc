@@ -3,6 +3,7 @@
   "parser": "@typescript-eslint/parser",
   "plugins": [
     "@typescript-eslint",
+    "import",
     "jest"
   ],
   "extends": [
@@ -28,6 +29,8 @@
       }
     ],
     "jest/no-hooks": "off",
+    "jest/require-hook": "off",
+    "jest/prefer-lowercase-title": "off",    
     "require-hook": "off",
     "import/prefer-default-export": "off"
   }

@@ -1,4 +1,4 @@
-import axios, { AxiosBasicCredentials } from 'axios';
+import axios, { AxiosBasicCredentials, AxiosRequestConfig } from 'axios';
 import { uri as validateUri } from '../validators';
 import {
   Uri,
@@ -42,14 +42,14 @@ export const fetchFromUri = async (options: FetchFromUriOptions) => {
     ...data && { data },
   };
 
-  const response = await axios.request(requestOptions);
+  const response = await axios.request(requestOptions as AxiosRequestConfig<any>);
 
   const lastModified = response.headers['last-modified']
     ? response.headers['last-modified']
     : null;
 
   return {
-    ...response.data,
+    ...response.data as object,
     ...lastModified && { lastModified },
   };
 };
