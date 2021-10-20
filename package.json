@@ -36,9 +36,6 @@
     "dev": "tsc -w --project tsconfig.json",
     "prepublishOnly": "npm run build"
   },
-  "jest": {
-    "automock": false
-  },
   "dependencies": {
     "axios": "^0.23.0"
   },

@@ -11,7 +11,9 @@
     "plugin:jest/all"
   ],
   "parserOptions": {
-    "project": "./tsconfig.eslint.json"
+    "project": "./tsconfig.eslint.json",
+    "tsconfigRootDir": "./",
+    "sourceType": "module"
   },
   "rules": {
     "implicit-arrow-linebreak": "off",

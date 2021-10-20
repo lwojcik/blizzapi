@@ -49,7 +49,7 @@ export const fetchFromUri = async (options: FetchFromUriOptions) => {
     : null;
 
   return {
-    ...response.data as object,
+    ...response.data as any,
     ...lastModified && { lastModified },
   };
 };
