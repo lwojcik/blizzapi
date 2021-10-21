@@ -72,7 +72,7 @@ export const query = async (queryOptions: BattleNetQueryOptions) => {
 
   try {
     return await queryWithAccessToken(queryOptions, accessToken);
-  } catch (error) {
+  } catch (error: any) {
     if (error.response && error.response.status === 401) {
       onAccessTokenExpired?.();
       if (refreshExpiredAccessToken) {

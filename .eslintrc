@@ -3,6 +3,7 @@
   "parser": "@typescript-eslint/parser",
   "plugins": [
     "@typescript-eslint",
+    "import",
     "jest"
   ],
   "extends": [
@@ -10,7 +11,9 @@
     "plugin:jest/all"
   ],
   "parserOptions": {
-    "project": "./tsconfig.eslint.json"
+    "project": "./tsconfig.eslint.json",
+    "tsconfigRootDir": "./",
+    "sourceType": "module"
   },
   "rules": {
     "implicit-arrow-linebreak": "off",
@@ -28,6 +31,9 @@
       }
     ],
     "jest/no-hooks": "off",
+    "jest/require-hook": "off",
+    "jest/prefer-lowercase-title": "off",    
+    "require-hook": "off",
     "import/prefer-default-export": "off"
   }
 }
