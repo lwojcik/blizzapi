@@ -4,15 +4,16 @@ export type Uri = string;
 
 /** Generic */
 
-export type ConstantKey =
-  | "REGIONS"
-  | "LOCALES"
-  | "DEFAULT_LOCALES"
-  | "REGION_API_HOSTS"
-  | "SC2_REALMS"
-  | "OAUTH_AUTHORIZE_URIS"
-  | "OAUTH_TOKEN_URIS"
-  | "OAUTH_CHECK_TOKEN_URIS";
+export enum ConstantKey {
+  REGIONS = "REGIONS",
+  LOCALES = "LOCALES",
+  DEFAULT_LOCALES = "DEFAULT_LOCALES",
+  REGION_API_HOSTS = "REGION_API_HOSTS",
+  SC2_REALMS = "SC2_REALMS",
+  OAUTH_AUTHORIZE_URIS = "OAUTH_AUTHORIZE_URIS",
+  OAUTH_TOKEN_URIS = "OAUTH_TOKEN_URIS",
+  OAUTH_CHECK_TOKEN_URIS = "OAUTH_CHECK_TOKEN_URIS",
+}
 
 export type ConstantKeys = ReadonlyArray<ConstantKey>;
 

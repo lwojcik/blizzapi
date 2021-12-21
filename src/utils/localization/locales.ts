@@ -1,7 +1,12 @@
 import { constants } from "../../constants";
 import { validateRegionId } from "./regions";
 import { getConstantByRegionId } from "../common";
-import { Locale, LocaleArray, RegionIdAsNumberOrString } from "../../types";
+import {
+  Locale,
+  LocaleArray,
+  RegionIdAsNumberOrString,
+  ConstantKey,
+} from "../../types";
 
 /**
  * Returns a list of all locales indexed by region id
@@ -31,7 +36,7 @@ export const getAllLocaleNames = () => {
  * @return List of locales available in a specific region as array of strings
  */
 export const getLocalesByRegionId = (regionId: RegionIdAsNumberOrString) =>
-  <LocaleArray>getConstantByRegionId(regionId, "LOCALES");
+  <LocaleArray>getConstantByRegionId(regionId, ConstantKey.LOCALES);
 
 /**
  * Verifies whether locale matches the regex pattern

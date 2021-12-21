@@ -5,6 +5,7 @@ import {
   RegionIdAsNumberOrString,
   Sc2RealmAsNumberOrString,
   Sc2RealmList,
+  ConstantKey,
 } from "../../types";
 
 /**
@@ -32,7 +33,7 @@ export const getAllAvailableSc2Realms = (): Sc2RealmList => {
  * @return List of SC2 realms available in a specific region as array of integers
  */
 export const getSc2RealmsByRegionId = (regionId: RegionIdAsNumberOrString) =>
-  <Sc2RealmList>getConstantByRegionId(regionId, "SC2_REALMS");
+  <Sc2RealmList>getConstantByRegionId(regionId, ConstantKey.SC2_REALMS);
 
 /**
  * Verifies whether locale matches the regex pattern

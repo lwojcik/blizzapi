@@ -1,6 +1,6 @@
 import { constants } from "../../constants";
 import { getConstantByRegion } from "../common";
-import { RegionIdOrName, Uri } from "../../types";
+import { RegionIdOrName, Uri, ConstantKey } from "../../types";
 
 /**
  * Returns a list of all region API host uris
@@ -17,7 +17,7 @@ export const getAllApiHosts = () => constants.REGION_API_HOSTS;
  */
 export const getApiHostByRegion = (regionIdOrName: RegionIdOrName) => {
   const apiHost = <Uri | ReadonlyArray<Uri>>(
-    getConstantByRegion(regionIdOrName, "REGION_API_HOSTS")
+    getConstantByRegion(regionIdOrName, ConstantKey.REGION_API_HOSTS)
   );
   // eslint-disable-next-line no-nested-ternary
   return typeof regionIdOrName === "string" &&
