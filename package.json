@@ -4,7 +4,6 @@
   "description": "Flexible and feature-rich Node.js library for Blizzard Battle.net API",
   "homepage": "https://blizzapi.lukem.net",
   "main": "dist/blizzapi.js",
-  "module": "dist/blizzapi.mjs",
   "browser": "dist/blizzapi.umd.js",
   "typings": "dist/blizzapi.d.ts",
   "author": {
