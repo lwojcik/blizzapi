@@ -1,6 +1,6 @@
-import { constants } from '../../constants';
-import { getConstantByRegion } from '../common';
-import { RegionIdOrName, Uri } from '../../types';
+import { constants } from "../../constants";
+import { getConstantByRegion } from "../common";
+import { RegionIdOrName, Uri } from "../../types";
 
 /**
  * Returns a list of all OAuth token uris
@@ -16,4 +16,4 @@ export const getAllTokenUris = () => constants.OAUTH_TOKEN_URIS;
  * @return OAuth token uri as a string
  */
 export const getTokenUriByRegion = (regionIdOrName: RegionIdOrName): string =>
-  <Uri>getConstantByRegion(regionIdOrName, 'OAUTH_TOKEN_URIS');
+  <Uri>getConstantByRegion(regionIdOrName, "OAUTH_TOKEN_URIS");

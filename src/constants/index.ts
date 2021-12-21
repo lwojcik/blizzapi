@@ -7,9 +7,9 @@
  * https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
  */
 
-import * as localization from './localization';
-import * as api from './api';
-import * as oauth from './oauth';
+import * as localization from "./localization";
+import * as api from "./api";
+import * as oauth from "./oauth";
 
 export const constants = {
   REGIONS: localization.regions,

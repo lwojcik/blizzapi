@@ -1,11 +1,11 @@
-import { constants } from '../../constants';
-import { validateRegionId } from './regions';
-import { getConstantByRegionId } from '../common';
+import { constants } from "../../constants";
+import { validateRegionId } from "./regions";
+import { getConstantByRegionId } from "../common";
 import {
   RegionIdAsNumberOrString,
   Sc2RealmAsNumberOrString,
   Sc2RealmList,
-} from '../../types';
+} from "../../types";
 
 /**
  * Returns a list of all available StarCraft II realms
@@ -32,7 +32,7 @@ export const getAllAvailableSc2Realms = (): Sc2RealmList => {
  * @return List of SC2 realms available in a specific region as array of integers
  */
 export const getSc2RealmsByRegionId = (regionId: RegionIdAsNumberOrString) =>
-  <Sc2RealmList>getConstantByRegionId(regionId, 'SC2_REALMS');
+  <Sc2RealmList>getConstantByRegionId(regionId, "SC2_REALMS");
 
 /**
  * Verifies whether locale matches the regex pattern
@@ -40,7 +40,9 @@ export const getSc2RealmsByRegionId = (regionId: RegionIdAsNumberOrString) =>
  * @param locale Locale name
  * @return true if locale matches the pattern, false if not
  */
-export const checkIfSc2RealmLooksValid = (sc2Realm: Sc2RealmAsNumberOrString) => {
+export const checkIfSc2RealmLooksValid = (
+  sc2Realm: Sc2RealmAsNumberOrString
+) => {
   const sc2RealmAsString = sc2Realm.toString();
   const sc2RealmRegexPattern = /^([1-9]{1})$/gi;
   const doesSc2RealmLookValid = sc2RealmRegexPattern.test(sc2RealmAsString);
@@ -58,11 +60,14 @@ export const validateSc2Realm = (sc2Realm: Sc2RealmAsNumberOrString) => {
   const doesSc2RealmLookValid = checkIfSc2RealmLooksValid(sc2Realm);
 
   if (!doesSc2RealmLookValid) {
-    throw new RangeError(`${sc2Realm} is not a valid parameter for validateSc2Realm()`);
+    throw new RangeError(
+      `${sc2Realm} is not a valid parameter for validateSc2Realm()`
+    );
   }
 
   const sc2RealmList = getAllAvailableSc2Realms();
-  const sc2RealmAsNumber = typeof sc2Realm === 'number' ? sc2Realm : parseInt(sc2Realm, 10);
+  const sc2RealmAsNumber =
+    typeof sc2Realm === "number" ? sc2Realm : parseInt(sc2Realm, 10);
   return sc2RealmList.includes(sc2RealmAsNumber);
 };
 
@@ -75,7 +80,7 @@ export const validateSc2Realm = (sc2Realm: Sc2RealmAsNumberOrString) => {
  */
 export const isSc2RealmValidForRegionId = (
   sc2Realm: Sc2RealmAsNumberOrString,
-  regionId: RegionIdAsNumberOrString,
+  regionId: RegionIdAsNumberOrString
 ) => {
   const doesSc2RealmLookValid = checkIfSc2RealmLooksValid(sc2Realm);
   const regionIdAsString = regionId.toString();
@@ -83,18 +88,19 @@ export const isSc2RealmValidForRegionId = (
 
   if (!doesSc2RealmLookValid) {
     throw new RangeError(
-      `${sc2Realm} is not a valid sc2Realm parameter for isSc2RealmValidForRegionId()`,
+      `${sc2Realm} is not a valid sc2Realm parameter for isSc2RealmValidForRegionId()`
     );
   }
 
   if (!isRegionIdValid) {
     throw new RangeError(
-      `${regionId} is not a valid regionId parameter for isSc2RealmValidForRegionId()`,
+      `${regionId} is not a valid regionId parameter for isSc2RealmValidForRegionId()`
     );
   }
 
   const sc2RealmsForRegionId = getSc2RealmsByRegionId(regionId);
-  const sc2RealmAsNumber = typeof sc2Realm === 'number' ? sc2Realm : parseInt(sc2Realm, 10);
+  const sc2RealmAsNumber =
+    typeof sc2Realm === "number" ? sc2Realm : parseInt(sc2Realm, 10);
 
   return sc2RealmsForRegionId.includes(sc2RealmAsNumber);
 };

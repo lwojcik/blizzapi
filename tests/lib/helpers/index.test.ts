@@ -1,11 +1,11 @@
-import * as helpers from '../../../src/helpers';
+import * as helpers from "../../../src/helpers";
 
-describe('Helpers module', () => {
-  it('should be defined', () => {
+describe("Helpers module", () => {
+  it("should be defined", () => {
     expect(helpers).toBeDefined();
   });
 
-  it('should expose all modules', () => {
+  it("should expose all modules", () => {
     expect(helpers).toMatchSnapshot();
   });
 });

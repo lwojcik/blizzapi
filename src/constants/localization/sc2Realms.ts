@@ -3,10 +3,7 @@
  * via https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
  */
 
-import {
-  RegionIdProperties,
-  Sc2RealmArray,
-} from '../../types';
+import { RegionIdProperties, Sc2RealmArray } from "../../types";
 
 export const sc2Realms: RegionIdProperties<Sc2RealmArray> = Object.freeze({
   1: Object.freeze([1, 2]),

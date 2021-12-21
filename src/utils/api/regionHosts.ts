@@ -1,9 +1,6 @@
-import { constants } from '../../constants';
-import { getConstantByRegion } from '../common';
-import {
-  RegionIdOrName,
-  Uri,
-} from '../../types';
+import { constants } from "../../constants";
+import { getConstantByRegion } from "../common";
+import { RegionIdOrName, Uri } from "../../types";
 
 /**
  * Returns a list of all region API host uris
@@ -19,11 +16,15 @@ export const getAllApiHosts = () => constants.REGION_API_HOSTS;
  * @return Region API host uri as a string
  */
 export const getApiHostByRegion = (regionIdOrName: RegionIdOrName) => {
-  const apiHost = <Uri | ReadonlyArray<Uri>>getConstantByRegion(regionIdOrName, 'REGION_API_HOSTS');
+  const apiHost = <Uri | ReadonlyArray<Uri>>(
+    getConstantByRegion(regionIdOrName, "REGION_API_HOSTS")
+  );
   // eslint-disable-next-line no-nested-ternary
-  return typeof regionIdOrName === 'string' && (regionIdOrName as string).toLowerCase() === 'kr'
+  return typeof regionIdOrName === "string" &&
+    (regionIdOrName as string).toLowerCase() === "kr"
     ? apiHost[0]
-    : typeof regionIdOrName === 'string' && (regionIdOrName as string).toLowerCase() === 'tw'
-      ? apiHost[1]
-      : apiHost;
+    : typeof regionIdOrName === "string" &&
+      (regionIdOrName as string).toLowerCase() === "tw"
+    ? apiHost[1]
+    : apiHost;
 };

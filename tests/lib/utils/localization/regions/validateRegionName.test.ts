@@ -1,14 +1,14 @@
-import * as utils from '../../../../../src/utils';
+import * as utils from "../../../../../src/utils";
 
 const { validateRegionName } = utils;
 
-describe('validateRegionName()', () => {
-  it('should be defined', () => {
+describe("validateRegionName()", () => {
+  it("should be defined", () => {
     expect(validateRegionName).toBeDefined();
   });
 
   it('should be of type "function"', () => {
-    expect(typeof validateRegionName).toBe('function');
+    expect(typeof validateRegionName).toBe("function");
   });
 
   // test.each`

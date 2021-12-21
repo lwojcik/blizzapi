@@ -5,14 +5,14 @@ export type Uri = string;
 /** Generic */
 
 export type ConstantKey =
-  | 'REGIONS'
-  | 'LOCALES'
-  | 'DEFAULT_LOCALES'
-  | 'REGION_API_HOSTS'
-  | 'SC2_REALMS'
-  | 'OAUTH_AUTHORIZE_URIS'
-  | 'OAUTH_TOKEN_URIS'
-  | 'OAUTH_CHECK_TOKEN_URIS';
+  | "REGIONS"
+  | "LOCALES"
+  | "DEFAULT_LOCALES"
+  | "REGION_API_HOSTS"
+  | "SC2_REALMS"
+  | "OAUTH_AUTHORIZE_URIS"
+  | "OAUTH_TOKEN_URIS"
+  | "OAUTH_CHECK_TOKEN_URIS";
 
 export type ConstantKeys = ReadonlyArray<ConstantKey>;
 
@@ -50,7 +50,7 @@ export type ClientId = string;
 export type ClientSecret = string;
 export type AccessToken = string | undefined;
 export type Endpoint = string;
-export type HttpMethod = 'GET' | 'POST';
+export type HttpMethod = "GET" | "POST";
 
 export type ValidatorFunction = (endpoint: Endpoint) => boolean;
 
@@ -59,7 +59,9 @@ export type ValidatorFunction = (endpoint: Endpoint) => boolean;
 export interface AccessTokenOptions {
   validateAccessTokenOnEachQuery?: boolean;
   refreshExpiredAccessToken?: boolean;
+  // eslint-disable-next-line @typescript-eslint/ban-types
   onAccessTokenExpired?: Function | undefined;
+  // eslint-disable-next-line @typescript-eslint/ban-types
   onAccessTokenRefresh?: Function | undefined;
 }
 
@@ -83,7 +85,9 @@ export interface InitOptions {
   accessToken?: string;
   validateAccessTokenOnEachQuery?: boolean;
   revalidateAccessTokenIfExpired?: boolean;
+  // eslint-disable-next-line @typescript-eslint/ban-types
   onAccessTokenExpire?: Function | undefined;
+  // eslint-disable-next-line @typescript-eslint/ban-types
   onAccessTokenRevalidate?: Function | undefined;
 }
 

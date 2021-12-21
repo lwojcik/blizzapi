@@ -1,10 +1,6 @@
-import { fetchAccessToken } from './fetchAccessToken';
-import { getTokenUriByRegion } from '../../utils';
-import {
-  ClientId,
-  ClientSecret,
-  RegionIdOrName,
-} from '../../types';
+import { fetchAccessToken } from "./fetchAccessToken";
+import { getTokenUriByRegion } from "../../utils";
+import { ClientId, ClientSecret, RegionIdOrName } from "../../types";
 
 interface GetAccessTokenOptions {
   region: RegionIdOrName;
@@ -15,6 +11,10 @@ interface GetAccessTokenOptions {
 export const getAccessToken = async (options: GetAccessTokenOptions) => {
   const { region, clientId, clientSecret } = options;
   const oauthUri = getTokenUriByRegion(region);
-  const accessTokenObject = await fetchAccessToken({ oauthUri, clientId, clientSecret });
+  const accessTokenObject = await fetchAccessToken({
+    oauthUri,
+    clientId,
+    clientSecret,
+  });
   return <string>accessTokenObject.access_token;
 };

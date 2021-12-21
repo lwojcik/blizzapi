@@ -1,11 +1,11 @@
-import { constants } from '../../constants';
+import { constants } from "../../constants";
 
 import {
   RegionName,
   RegionIdArray,
   RegionNameArray,
   RegionIdAsNumberOrString,
-} from '../../types';
+} from "../../types";
 
 /**
  * Returns a list of all available regions
@@ -21,7 +21,7 @@ export const getAllRegions = () => constants.REGIONS;
  */
 export const getAllRegionIds = () => {
   const regionKeys = Object.keys(constants.REGIONS);
-  return <RegionIdArray>regionKeys.map(regionKey => parseInt(regionKey, 10));
+  return <RegionIdArray>regionKeys.map((regionKey) => parseInt(regionKey, 10));
 };
 
 /**
@@ -32,7 +32,9 @@ export const getAllRegionIds = () => {
 export const getAllRegionNames = () => {
   const regionNames = Object.values(constants.REGIONS);
   const flattenedRegionNames = ([] as RegionNameArray).concat(...regionNames);
-  return flattenedRegionNames.map((regionName: string) => regionName.toString());
+  return flattenedRegionNames.map((regionName: string) =>
+    regionName.toString()
+  );
 };
 
 /**
@@ -48,7 +50,9 @@ export const getRegionNameById = (regionId: RegionIdAsNumberOrString) => {
   const isRegionIdValid = regionIds.includes(regionIdAsString);
 
   if (!isRegionIdValid) {
-    throw new RangeError(`${regionIdAsString} is not a valid parameter for getRegionNameById()`);
+    throw new RangeError(
+      `${regionIdAsString} is not a valid parameter for getRegionNameById()`
+    );
   }
 
   return constants.REGIONS[regionIdAsString];
@@ -78,11 +82,15 @@ export const getRegionIdByName = (regionName: RegionName) => {
   const regionNameLowercase = regionName.toLowerCase();
   const regions = constants.REGIONS;
   const regionKeys = Object.keys(regions);
-  const regionIdArray = regionKeys.filter(key => regions[key].includes(regionNameLowercase));
+  const regionIdArray = regionKeys.filter((key) =>
+    regions[key].includes(regionNameLowercase)
+  );
   const regionId = Number(regionIdArray[0]) || false;
 
   if (!regionId) {
-    throw new RangeError(`"${regionName}" is not a valid parameter for getRegionIdByName()`);
+    throw new RangeError(
+      `"${regionName}" is not a valid parameter for getRegionIdByName()`
+    );
   }
 
   return regionId;
