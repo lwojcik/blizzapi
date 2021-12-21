@@ -1,11 +1,11 @@
-import { constants } from '../../constants';
-import { validateRegionId } from './regions';
-import { getAllLocales } from './locales';
+import { constants } from "../../constants";
+import { validateRegionId } from "./regions";
+import { getAllLocales } from "./locales";
 import {
   Locale,
   RegionIdAsNumberOrString,
   RegionIdProperties,
-} from '../../types';
+} from "../../types";
 
 /**
  * Returns a list of all available default locale indexes
@@ -20,13 +20,15 @@ export const getAllDefaultLocaleIndexes = () => constants.DEFAULT_LOCALES;
  * @param regionId Region id as number or string
  * @return Index of default locale for given region id
  */
-export const getDefaultLocaleIndexForRegionId = (regionId: RegionIdAsNumberOrString) => {
+export const getDefaultLocaleIndexForRegionId = (
+  regionId: RegionIdAsNumberOrString
+) => {
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
   if (!isRegionIdValid) {
     throw new RangeError(
-      `${regionIdAsString} is not a valid parameter for getDefaultLocaleIndexForRegionId()`,
+      `${regionIdAsString} is not a valid parameter for getDefaultLocaleIndexForRegionId()`
     );
   }
 
@@ -39,13 +41,15 @@ export const getDefaultLocaleIndexForRegionId = (regionId: RegionIdAsNumberOrStr
  * @param regionId Region id as number or string
  * @return Name of the default locale for given region id
  */
-export const getDefaultLocaleNameForRegionId = (regionId: RegionIdAsNumberOrString) => {
+export const getDefaultLocaleNameForRegionId = (
+  regionId: RegionIdAsNumberOrString
+) => {
   const regionIdAsString = regionId.toString();
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
   if (!isRegionIdValid) {
     throw new RangeError(
-      `${regionIdAsString} is not a valid parameter for getDefaultLocaleNameForRegionId()`,
+      `${regionIdAsString} is not a valid parameter for getDefaultLocaleNameForRegionId()`
     );
   }
 
@@ -64,8 +68,8 @@ export const getAllDefaultLocaleNames = () => {
 
   return <RegionIdProperties<Locale>>Object.assign(
     {},
-    ...allLocaleKeys.map(regionId => ({
+    ...allLocaleKeys.map((regionId) => ({
       [regionId]: getDefaultLocaleNameForRegionId(regionId),
-    })),
+    }))
   );
 };

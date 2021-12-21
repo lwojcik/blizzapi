@@ -1,7 +1,4 @@
-import {
-  ClientId,
-  ClientSecret,
-} from '../../types';
+import { ClientId, ClientSecret } from "../../types";
 
 export abstract class OAuth2API {
   readonly clientId: ClientId;

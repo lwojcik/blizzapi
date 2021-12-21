@@ -1,1 +1,1 @@
-export { fetchFromUri } from './fetchFromUri';
+export { fetchFromUri } from "./fetchFromUri";

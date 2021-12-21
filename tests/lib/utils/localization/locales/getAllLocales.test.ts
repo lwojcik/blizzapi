@@ -1,23 +1,23 @@
-import * as utils from '../../../../../src/utils';
-import { constants } from '../../../../../src/constants';
+import * as utils from "../../../../../src/utils";
+import { constants } from "../../../../../src/constants";
 
 const { getAllLocales } = utils;
 
-describe('getAllLocales()', () => {
-  it('should be defined', () => {
+describe("getAllLocales()", () => {
+  it("should be defined", () => {
     expect(getAllLocales).toBeDefined();
   });
 
   it('should be of type "function"', () => {
-    expect(typeof getAllLocales).toBe('function');
+    expect(typeof getAllLocales).toBe("function");
   });
 
-  it('should return an object', () => {
+  it("should return an object", () => {
     expect(typeof getAllLocales()).toBeTruthy();
-    expect(typeof getAllLocales()).toBe('object');
+    expect(typeof getAllLocales()).toBe("object");
   });
 
-  it('returned object should match constants.LOCALES property', () => {
+  it("returned object should match constants.LOCALES property", () => {
     expect(getAllLocales()).toMatchObject(constants.LOCALES);
   });
 });

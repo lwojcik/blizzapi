@@ -1,9 +1,5 @@
-import { fetchFromUri } from '../fetch';
-import {
-  Uri,
-  ClientId,
-  ClientSecret,
-} from '../../types';
+import { fetchFromUri } from "../fetch";
+import { Uri, ClientId, ClientSecret } from "../../types";
 
 interface FetchAccessTokenOptions {
   oauthUri: Uri;
@@ -12,23 +8,19 @@ interface FetchAccessTokenOptions {
 }
 
 export const fetchAccessToken = (options: FetchAccessTokenOptions) => {
-  const {
-    oauthUri,
-    clientId,
-    clientSecret,
-  } = options;
+  const { oauthUri, clientId, clientSecret } = options;
 
   const auth = {
     username: clientId,
     password: clientSecret,
   };
 
-  const data = 'grant_type=client_credentials';
+  const data = "grant_type=client_credentials";
 
   return fetchFromUri({
     data,
     auth,
     uri: oauthUri,
-    method: 'POST',
+    method: "POST",
   });
 };

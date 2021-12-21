@@ -1,13 +1,13 @@
-import { endpoint as validateEndpoint } from '../validators';
-import { getAccessToken, validateAccessToken } from '../oauth';
-import { getApiHostByRegion } from '../../utils/api';
-import { fetchFromUri } from '../fetch';
+import { endpoint as validateEndpoint } from "../validators";
+import { getAccessToken, validateAccessToken } from "../oauth";
+import { getApiHostByRegion } from "../../utils/api";
+import { fetchFromUri } from "../fetch";
 import {
   RegionIdOrName,
   AccessToken,
   AccessTokenOptions,
   QueryOptions,
-} from '../../types';
+} from "../../types";
 
 interface BattleNetQueryOptions {
   region: RegionIdOrName;
@@ -18,19 +18,15 @@ interface BattleNetQueryOptions {
   options: AccessTokenOptions & QueryOptions;
 }
 
-const queryWithAccessToken = (queryOptions: BattleNetQueryOptions, accessToken: AccessToken) => {
-  const {
-    region,
-    endpoint,
-    options,
-  } = queryOptions;
-  const {
-    headers,
-    params,
-    timeout,
-  } = options;
+const queryWithAccessToken = (
+  queryOptions: BattleNetQueryOptions,
+  accessToken: AccessToken
+) => {
+  const { region, endpoint, options } = queryOptions;
+  const { headers, params, timeout } = options;
   const validEndpoint = validateEndpoint(endpoint);
-  if (!validEndpoint) throw new RangeError(`${endpoint} is not a valid endpoint.`);
+  if (!validEndpoint)
+    throw new RangeError(`${endpoint} is not a valid endpoint.`);
 
   const apiHost = getApiHostByRegion(region);
   const requestUri = `${apiHost}${endpoint}`;
@@ -45,10 +41,10 @@ const queryWithAccessToken = (queryOptions: BattleNetQueryOptions, accessToken: 
 
   return fetchFromUri({
     uri: requestUri,
-    method: 'GET',
+    method: "GET",
     headers: fetchHeaders,
-    ...params && { params },
-    ...timeout && { timeout },
+    ...(params && { params }),
+    ...(timeout && { timeout }),
   });
 };
 
@@ -62,16 +58,20 @@ export const query = async (queryOptions: BattleNetQueryOptions) => {
   } = queryOptions.options;
 
   if (validateAccessTokenOnEachQuery) {
-    const invalidAccessToken = !(await validateAccessToken(region, accessToken));
+    const invalidAccessToken = !(await validateAccessToken(
+      region,
+      accessToken
+    ));
     if (invalidAccessToken) {
       return {
-        error: 'access_token_invalid',
+        error: "access_token_invalid",
       };
     }
   }
 
   try {
     return await queryWithAccessToken(queryOptions, accessToken);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     if (error.response && error.response.status === 401) {
       onAccessTokenExpired?.();
@@ -81,7 +81,7 @@ export const query = async (queryOptions: BattleNetQueryOptions) => {
         return queryWithAccessToken(queryOptions, newAccessToken);
       }
       return Promise.resolve({
-        error: 'access_token_invalid',
+        error: "access_token_invalid",
       });
     }
     throw error;

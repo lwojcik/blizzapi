@@ -1,12 +1,12 @@
-import * as helpers from '../helpers';
-import * as utils from '../utils';
-import { BattleNetAPI } from './abstract/BattleNetAPI';
+import * as helpers from "../helpers";
+import * as utils from "../utils";
+import { BattleNetAPI } from "./abstract/BattleNetAPI";
 import {
   Endpoint,
   BlizzAPIOptions,
   AccessTokenOptions,
   QueryOptions,
-} from '../types';
+} from "../types";
 
 export class BlizzAPI extends BattleNetAPI {
   readonly options: AccessTokenOptions;
@@ -19,7 +19,8 @@ export class BlizzAPI extends BattleNetAPI {
       accessToken: options.accessToken,
     });
     this.options = {
-      validateAccessTokenOnEachQuery: options.validateAccessTokenOnEachQuery || false,
+      validateAccessTokenOnEachQuery:
+        options.validateAccessTokenOnEachQuery || false,
       refreshExpiredAccessToken: options.refreshExpiredAccessToken || false,
       onAccessTokenExpired: options.onAccessTokenExpired || undefined,
       onAccessTokenRefresh: options.onAccessTokenRefresh || undefined,
@@ -77,7 +78,8 @@ export class BlizzAPI extends BattleNetAPI {
 
   static isSc2RealmValidForRegionId = utils.isSc2RealmValidForRegionId;
 
-  static getDefaultLocaleNameForRegionId = utils.getDefaultLocaleNameForRegionId;
+  static getDefaultLocaleNameForRegionId =
+    utils.getDefaultLocaleNameForRegionId;
 
   static getAllDefaultLocaleNames = utils.getAllDefaultLocaleNames;
 }

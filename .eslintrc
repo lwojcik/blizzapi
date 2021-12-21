@@ -1,39 +1,11 @@
 {
-  "root": true,
-  "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint",
-    "import",
-    "jest"
-  ],
-  "extends": [
-    "airbnb-typescript/base",
-    "plugin:jest/all"
-  ],
-  "parserOptions": {
-    "project": "./tsconfig.eslint.json",
-    "tsconfigRootDir": "./",
-    "sourceType": "module"
+  "extends": "airbnb-typescript-prettier",
+  "settings": {
+    "react": {
+      "version": "999.999.999"
+    }
   },
   "rules": {
-    "implicit-arrow-linebreak": "off",
-    "prefer-promise-reject-errors": "off",
-    "jest/lowercase-name": "off",
-    "linebreak-style": "off",
-    "arrow-parens": [
-      "error",
-      "as-needed"
-    ],
-    "jest/prefer-expect-assertions": [
-      "error",
-      {
-        "onlyFunctionsWithAsyncKeyword": true
-      }
-    ],
-    "jest/no-hooks": "off",
-    "jest/require-hook": "off",
-    "jest/prefer-lowercase-title": "off",    
-    "require-hook": "off",
     "import/prefer-default-export": "off"
   }
 }

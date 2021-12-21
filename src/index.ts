@@ -1,2 +1,2 @@
-export * from './types';
-export { BlizzAPI } from './classes/BlizzAPI';
+export * from "./types";
+export { BlizzAPI } from "./classes/BlizzAPI";

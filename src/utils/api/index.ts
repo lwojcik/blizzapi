@@ -1,1 +1,1 @@
-export * from './regionHosts';
+export * from "./regionHosts";

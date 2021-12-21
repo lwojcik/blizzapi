@@ -1,1 +1,1 @@
-export { hosts as regionHosts } from './regionHosts';
+export { hosts as regionHosts } from "./regionHosts";

@@ -1,134 +1,141 @@
-import { BlizzAPI } from '../../../src/classes/BlizzAPI';
+import { BlizzAPI } from "../../../src/classes/BlizzAPI";
 
-describe('BlizzAPI class', () => {
-  it('should be defined', () => {
+describe("BlizzAPI class", () => {
+  it("should be defined", () => {
     expect.assertions(1);
     expect(BlizzAPI).toBeDefined();
   });
 
-  it('should define query method', () => {
+  it("should define query method", () => {
     expect.assertions(1);
-    expect(new BlizzAPI({
-      region: '',
-      clientId: '',
-      clientSecret: '',
-    }).query).toBeDefined();
+    expect(
+      new BlizzAPI({
+        region: "",
+        clientId: "",
+        clientSecret: "",
+      }).query
+    ).toBeDefined();
   });
 
-  it('should define getAccessToken method', () => {
+  it("should define getAccessToken method", () => {
     expect.assertions(1);
-    expect(new BlizzAPI({
-      region: '',
-      clientId: '',
-      clientSecret: '',
-    }).getAccessToken).toBeDefined();
+    expect(
+      new BlizzAPI({
+        region: "",
+        clientId: "",
+        clientSecret: "",
+      }).getAccessToken
+    ).toBeDefined();
   });
 
-  it('should define validateAccessToken static method', () => {
+  it("should define validateAccessToken static method", () => {
     expect(BlizzAPI.validateAccessToken).toBeDefined();
   });
 
-  it('should define getAllRegions static method', () => {
+  it("should define getAllRegions static method", () => {
     expect(BlizzAPI.getAllRegions).toBeDefined();
   });
 
-  it('should define getAllRegionIds static method', () => {
+  it("should define getAllRegionIds static method", () => {
     expect(BlizzAPI.getAllRegionIds).toBeDefined();
   });
 
-  it('should define getAllRegionNames static method', () => {
+  it("should define getAllRegionNames static method", () => {
     expect.assertions(1);
     expect(BlizzAPI.getAllRegionNames).toBeDefined();
   });
 
-  it('should define getRegionNameById static method', () => {
+  it("should define getRegionNameById static method", () => {
     expect.assertions(1);
     expect(BlizzAPI.getRegionNameById).toBeDefined();
   });
 
-  it('should define validateRegionId static method', () => {
+  it("should define validateRegionId static method", () => {
     expect(BlizzAPI.validateRegionId).toBeDefined();
   });
 
-  it('should define getRegionIdByName static method', () => {
+  it("should define getRegionIdByName static method", () => {
     expect(BlizzAPI.getRegionIdByName).toBeDefined();
   });
 
-  it('should define validateRegionName static method', () => {
+  it("should define validateRegionName static method", () => {
     expect(BlizzAPI.validateRegionName).toBeDefined();
   });
 
-  it('should define getAllLocales static method', () => {
+  it("should define getAllLocales static method", () => {
     expect(BlizzAPI.getAllLocales).toBeDefined();
   });
 
-  it('should define getAllLocaleNames static method', () => {
+  it("should define getAllLocaleNames static method", () => {
     expect(BlizzAPI.getAllLocaleNames).toBeDefined();
   });
 
-  it('should define getLocalesByRegionId static method', () => {
+  it("should define getLocalesByRegionId static method", () => {
     expect(BlizzAPI.getLocalesByRegionId).toBeDefined();
   });
 
-  it('should define checkIfLocaleLooksValid static method', () => {
+  it("should define checkIfLocaleLooksValid static method", () => {
     expect(BlizzAPI.checkIfLocaleLooksValid).toBeDefined();
   });
 
-  it('should define validateLocale static method', () => {
+  it("should define validateLocale static method", () => {
     expect(BlizzAPI.validateLocale).toBeDefined();
   });
 
-  it('should define isLocaleValidForRegionId static method', () => {
+  it("should define isLocaleValidForRegionId static method", () => {
     expect(BlizzAPI.isLocaleValidForRegionId).toBeDefined();
   });
 
-  it('should define getAllSc2Realms static method', () => {
+  it("should define getAllSc2Realms static method", () => {
     expect(BlizzAPI.isLocaleValidForRegionId).toBeDefined();
   });
 
-  it('should define getAllAvailableSc2Realms static method', () => {
+  it("should define getAllAvailableSc2Realms static method", () => {
     expect(BlizzAPI.getAllAvailableSc2Realms).toBeDefined();
   });
 
-  it('should define getSc2RealmsByRegionId static method', () => {
+  it("should define getSc2RealmsByRegionId static method", () => {
     expect(BlizzAPI.getSc2RealmsByRegionId).toBeDefined();
   });
 
-  it('should define checkIfSc2RealmLooksValid static method', () => {
+  it("should define checkIfSc2RealmLooksValid static method", () => {
     expect(BlizzAPI.checkIfSc2RealmLooksValid).toBeDefined();
   });
 
-  it('should define validateSc2Realm static method', () => {
+  it("should define validateSc2Realm static method", () => {
     expect(BlizzAPI.validateSc2Realm).toBeDefined();
   });
 
-  it('should define isSc2RealmValidForRegionId static method', () => {
+  it("should define isSc2RealmValidForRegionId static method", () => {
     expect(BlizzAPI.isSc2RealmValidForRegionId).toBeDefined();
   });
 
-  it('should define getDefaultLocaleNameForRegionId static method', () => {
+  it("should define getDefaultLocaleNameForRegionId static method", () => {
     expect(BlizzAPI.getDefaultLocaleNameForRegionId).toBeDefined();
   });
 
-  it('should define getAllDefaultLocaleNames static method', () => {
+  it("should define getAllDefaultLocaleNames static method", () => {
     expect(BlizzAPI.getAllDefaultLocaleNames).toBeDefined();
   });
 
-  it('should query an endpoint', async () => {
+  it("should query an endpoint", async () => {
     expect.assertions(1);
     const bnetApi = new BlizzAPI({
-      region: 'us',
-      clientId: 'valid_client_id',
-      clientSecret: 'valid_client_secret',
+      region: "us",
+      clientId: "valid_client_id",
+      clientSecret: "valid_client_secret",
     });
 
-    const response = await bnetApi.query('/sample/endpoint');
+    const response = await bnetApi.query("/sample/endpoint");
     expect(response).toMatchSnapshot();
   });
 
-  it('should validate access token and return true', async () => {
+  it("should validate access token and return true", async () => {
     expect.assertions(1);
-    const response = await BlizzAPI.validateAccessToken('us', 'valid_access_token');
+    const response = await BlizzAPI.validateAccessToken(
+      "us",
+      "valid_access_token"
+    );
     expect(response).toMatchSnapshot();
   });
 });

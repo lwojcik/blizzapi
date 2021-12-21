@@ -1,6 +1,6 @@
-import { constants } from '../../constants';
-import { getConstantByRegion } from '../common';
-import { RegionIdOrName } from '../../types';
+import { constants } from "../../constants";
+import { getConstantByRegion } from "../common";
+import { RegionIdOrName } from "../../types";
 
 /**
  * Returns a list of all OAuth authorize uris
@@ -16,4 +16,4 @@ export const getAllAuthorizeUris = () => constants.OAUTH_AUTHORIZE_URIS;
  * @return OAuth authorize uri as a string
  */
 export const getAuthorizeUriByRegion = (regionIdOrName: RegionIdOrName) =>
-  getConstantByRegion(regionIdOrName, 'OAUTH_AUTHORIZE_URIS');
+  getConstantByRegion(regionIdOrName, "OAUTH_AUTHORIZE_URIS");
