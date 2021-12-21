@@ -5,7 +5,7 @@
     "rootDir": "src",
     "baseUrl": "src",
     "sourceMap": true,
-    "lib": ["es2017", "dom"],
+    "lib": ["es2017", "dom", "DOM.Iterable"],
     "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "declarationMap": true,
@@ -25,15 +25,10 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true,
+    "resolveJsonModule": true
   },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "tests",
-    "**/tests/*.test.ts"
-  ],
+  "exclude": ["node_modules", "dist", "tests", "**/tests/*.test.ts"],
   "paths": {
-    "tslib" : ["path/to/node_modules/tslib/tslib.d.ts"]
+    "tslib": ["path/to/node_modules/tslib/tslib.d.ts"]
   }
 }

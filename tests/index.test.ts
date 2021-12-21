@@ -1,4 +1,5 @@
 import { BlizzAPI } from "../src";
+import { RegionName } from "../src/types";
 
 describe("index", () => {
   it("should export BlizzAPI", () => {
@@ -7,7 +8,7 @@ describe("index", () => {
 
   it("BlizzAPI should be a class", () => {
     const blizzapi = new BlizzAPI({
-      region: "",
+      region: "" as RegionName,
       clientId: "",
       clientSecret: "",
     });

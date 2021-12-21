@@ -7,7 +7,8 @@ import { RegionIdOrName, ConstantKey } from "../../types";
  *
  * @return List of all OAuth authorize uris indexed by region id as array of strings.
  */
-export const getAllAuthorizeUris = () => constants.OAUTH_AUTHORIZE_URIS;
+export const getAllAuthorizeUris = () =>
+  constants[ConstantKey.OAUTH_AUTHORIZE_URIS];
 
 /**
  * Returns OAuth authorize uri for given region id or region name

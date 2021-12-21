@@ -4,15 +4,19 @@ import { getAllLocales } from "./locales";
 import {
   Locale,
   RegionIdAsNumberOrString,
+  RegionIdAsString,
   RegionIdProperties,
+  ConstantKey,
 } from "../../types";
+
+const defaultLocaleIndexes = constants[ConstantKey.DEFAULT_LOCALES];
 
 /**
  * Returns a list of all available default locale indexes
  *
  * @return List of all available default locale indexes indexed by region id.
  */
-export const getAllDefaultLocaleIndexes = () => constants.DEFAULT_LOCALES;
+export const getAllDefaultLocaleIndexes = () => defaultLocaleIndexes;
 
 /**
  * Returns a default locale index for given region id
@@ -23,7 +27,7 @@ export const getAllDefaultLocaleIndexes = () => constants.DEFAULT_LOCALES;
 export const getDefaultLocaleIndexForRegionId = (
   regionId: RegionIdAsNumberOrString
 ) => {
-  const regionIdAsString = regionId.toString();
+  const regionIdAsString = regionId.toString() as RegionIdAsString;
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
   if (!isRegionIdValid) {
@@ -32,7 +36,7 @@ export const getDefaultLocaleIndexForRegionId = (
     );
   }
 
-  return constants.DEFAULT_LOCALES[regionIdAsString];
+  return defaultLocaleIndexes[regionIdAsString];
 };
 
 /**
@@ -44,7 +48,7 @@ export const getDefaultLocaleIndexForRegionId = (
 export const getDefaultLocaleNameForRegionId = (
   regionId: RegionIdAsNumberOrString
 ) => {
-  const regionIdAsString = regionId.toString();
+  const regionIdAsString = regionId.toString() as RegionIdAsString;
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
   if (!isRegionIdValid) {
@@ -53,8 +57,8 @@ export const getDefaultLocaleNameForRegionId = (
     );
   }
 
-  const defaultLocaleIndex = constants.DEFAULT_LOCALES[regionIdAsString];
-  return constants.LOCALES[regionId][defaultLocaleIndex];
+  const defaultLocaleIndex = defaultLocaleIndexes[regionIdAsString];
+  return constants[ConstantKey.LOCALES][regionId][defaultLocaleIndex];
 };
 
 /**
@@ -64,7 +68,7 @@ export const getDefaultLocaleNameForRegionId = (
  */
 export const getAllDefaultLocaleNames = () => {
   const allLocales = getAllLocales();
-  const allLocaleKeys = Object.keys(allLocales);
+  const allLocaleKeys = Object.keys(allLocales) as RegionIdAsString[];
 
   return <RegionIdProperties<Locale>>Object.assign(
     {},

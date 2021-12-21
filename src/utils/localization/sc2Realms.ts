@@ -6,6 +6,7 @@ import {
   Sc2RealmAsNumberOrString,
   Sc2RealmList,
   ConstantKey,
+  RegionIdAsString,
 } from "../../types";
 
 /**
@@ -84,7 +85,7 @@ export const isSc2RealmValidForRegionId = (
   regionId: RegionIdAsNumberOrString
 ) => {
   const doesSc2RealmLookValid = checkIfSc2RealmLooksValid(sc2Realm);
-  const regionIdAsString = regionId.toString();
+  const regionIdAsString = regionId.toString() as RegionIdAsString;
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
   if (!doesSc2RealmLookValid) {

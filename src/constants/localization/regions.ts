@@ -3,11 +3,16 @@
  * via https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
  */
 
-import { RegionIdProperties, RegionNameArray } from "../../types";
+import {
+  RegionIdProperties,
+  RegionNameArray,
+  RegionId,
+  RegionName,
+} from "../../types";
 
 export const regions: RegionIdProperties<RegionNameArray> = Object.freeze({
-  1: Object.freeze(["us"]),
-  2: Object.freeze(["eu"]),
-  3: Object.freeze(["kr", "tw"]),
-  5: Object.freeze(["cn"]),
+  [RegionId.us]: Object.freeze([RegionName.us]),
+  [RegionId.eu]: Object.freeze([RegionName.eu]),
+  [RegionId.kr]: Object.freeze([RegionName.kr, RegionName.tw]),
+  [RegionId.cn]: Object.freeze([RegionName.cn]),
 });

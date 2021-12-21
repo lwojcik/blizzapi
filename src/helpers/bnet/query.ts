@@ -6,6 +6,7 @@ import {
   RegionIdOrName,
   AccessToken,
   AccessTokenOptions,
+  HttpMethod,
   QueryOptions,
 } from "../../types";
 
@@ -41,7 +42,7 @@ const queryWithAccessToken = (
 
   return fetchFromUri({
     uri: requestUri,
-    method: "GET",
+    method: HttpMethod.GET,
     headers: fetchHeaders,
     ...(params && { params }),
     ...(timeout && { timeout }),

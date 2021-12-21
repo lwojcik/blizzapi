@@ -3,12 +3,12 @@
  * via https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
  */
 
-import { RegionIdProperties } from "../../types";
+import { RegionId, RegionIdProperties, RegionHost } from "../../types";
 
 export const hosts: RegionIdProperties<string | ReadonlyArray<string>> =
   Object.freeze({
-    1: "https://us.api.blizzard.com",
-    2: "https://eu.api.blizzard.com",
-    3: ["https://kr.api.blizzard.com", "https://tw.api.blizzard.com/"],
-    5: "https://gateway.battlenet.com.cn/",
+    [RegionId.us]: RegionHost.us,
+    [RegionId.eu]: RegionHost.eu,
+    [RegionId.kr]: [RegionHost.kr, RegionHost.tw],
+    [RegionId.cn]: RegionHost.cn,
   });
