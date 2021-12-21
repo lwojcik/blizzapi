@@ -16,7 +16,6 @@ export default [
       esbuild({
         sourceMap: false,
         minify: true,
-        logLevel: "silent",
       }),
     ],
     output: [
