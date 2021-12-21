@@ -26,13 +26,6 @@ export default [
           axios: "axios",
         },
       },
-      {
-        file: `${name}.mjs`,
-        format: "es",
-        globals: {
-          axios: "axios",
-        },
-      },
     ],
     context: "this",
   }),
