@@ -1,12 +1,12 @@
-import dts from 'rollup-plugin-dts';
-import esbuild from 'rollup-plugin-esbuild';
+import dts from "rollup-plugin-dts";
+import esbuild from "rollup-plugin-esbuild";
 
-const name = require('./package.json').main.replace(/\.js$/, '');
+const name = require("./package.json").main.replace(/\.js$/, "");
 
-const bundle = config => ({
+const bundle = (config) => ({
   ...config,
-  input: 'src/index.ts',
-  external: id => !/^[./]/.test(id),
+  input: "src/index.ts",
+  external: (id) => !/^[./]/.test(id),
 });
 
 export default [
@@ -15,48 +15,49 @@ export default [
       esbuild({
         sourceMap: false,
         minify: true,
+        logLevel: "silent",
       }),
     ],
     output: [
       {
         file: `${name}.js`,
-        format: 'cjs',
+        format: "cjs",
         globals: {
-          axios: 'axios',
+          axios: "axios",
         },
       },
       {
         file: `${name}.mjs`,
-        format: 'es',
+        format: "es",
         globals: {
-          axios: 'axios',
+          axios: "axios",
         },
       },
     ],
-    context: 'this',
+    context: "this",
   }),
   bundle({
     plugins: [
       esbuild({
         sourceMap: false,
         minify: true,
-      })
+      }),
     ],
     output: {
       file: `${name}.umd.js`,
-      format: 'umd',
-      name: 'BlizzAPI',
+      format: "umd",
+      name: "BlizzAPI",
       globals: {
-        axios: 'axios',
+        axios: "axios",
       },
     },
-    context: 'this',
+    context: "this",
   }),
   bundle({
     plugins: [dts()],
     output: {
       file: `${name}.d.ts`,
-      format: 'es',
+      format: "es",
     },
   }),
 ];
