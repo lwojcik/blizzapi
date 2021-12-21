@@ -1,4 +1,5 @@
 import { fetchFromUri } from "../../../../src/helpers/fetch/fetchFromUri";
+import { HttpMethod } from "../../../../src/types";
 
 describe("fetchFromUri()", () => {
   it("should be defined", () => {
@@ -22,7 +23,7 @@ describe("fetchFromUri()", () => {
     expect.assertions(1);
     const response = await fetchFromUri({
       uri: "http://example.org/valid/endpoint",
-      method: "POST",
+      method: "POST" as HttpMethod,
     });
     expect(response).toMatchSnapshot();
   });
@@ -31,7 +32,7 @@ describe("fetchFromUri()", () => {
     expect.assertions(1);
     const response = await fetchFromUri({
       uri: "http://example.org/valid/endpoint",
-      method: "GET",
+      method: "GET" as HttpMethod,
       headers: {
         data: "sample headers",
       },
@@ -43,7 +44,7 @@ describe("fetchFromUri()", () => {
     expect.assertions(1);
     const response = await fetchFromUri({
       uri: "http://ęxąmple.org/zażółćgęśląjaźń/гордунни/좋은경기",
-      method: "GET",
+      method: "GET" as HttpMethod,
     });
     expect(response).toMatchSnapshot();
   });
@@ -52,7 +53,7 @@ describe("fetchFromUri()", () => {
     expect.assertions(1);
     const response = await fetchFromUri({
       uri: "http://example.org/valid/endpoint",
-      method: "GET",
+      method: "GET" as HttpMethod,
       params: {
         data: "custom params",
       },
@@ -64,7 +65,7 @@ describe("fetchFromUri()", () => {
     expect.assertions(1);
     const response = await fetchFromUri({
       uri: "http://example.org/valid/endpoint/lastModified",
-      method: "GET",
+      method: "GET" as HttpMethod,
       params: {
         data: "custom params",
       },

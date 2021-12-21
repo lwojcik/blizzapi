@@ -7,7 +7,8 @@ import { RegionIdOrName, ConstantKey } from "../../types";
  *
  * @return List of all OAuth check token uris indexed by region id as array of strings.
  */
-export const getAllCheckTokenUris = () => constants.OAUTH_CHECK_TOKEN_URIS;
+export const getAllCheckTokenUris = () =>
+  constants[ConstantKey.OAUTH_CHECK_TOKEN_URIS];
 
 /**
  * Returns OAuth check token uri for given region id or region name

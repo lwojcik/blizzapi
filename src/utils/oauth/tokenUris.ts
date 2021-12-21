@@ -7,7 +7,7 @@ import { RegionIdOrName, Uri, ConstantKey } from "../../types";
  *
  * @return List of all OAuth token uris indexed by region id as array of strings.
  */
-export const getAllTokenUris = () => constants.OAUTH_TOKEN_URIS;
+export const getAllTokenUris = () => constants[ConstantKey.OAUTH_TOKEN_URIS];
 
 /**
  * Returns OAuth token uri for given region id or region name

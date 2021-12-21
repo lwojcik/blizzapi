@@ -1,4 +1,5 @@
 import { query } from "../../../../src/helpers/bnet/query";
+import { RegionName } from "../../../../src/types";
 
 jest.mock("../../../../src/helpers/oauth");
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -29,7 +30,7 @@ describe("query()", () => {
   it("returns correct response for GET request to a valid uri", async () => {
     expect.assertions(1);
     const response = await query({
-      region: "us",
+      region: "us" as RegionName,
       endpoint: "/sc2/sample/endpoint",
       clientId: "valid_client_id",
       clientSecret: "valid_client_secret",
@@ -47,7 +48,7 @@ describe("query()", () => {
   it("returns correct response for GET request with params to a valid uri", async () => {
     expect.assertions(1);
     const response = await query({
-      region: "us",
+      region: "us" as RegionName,
       endpoint: "/sc2/sample/endpoint",
       clientId: "valid_client_id",
       clientSecret: "valid_client_secret",
@@ -69,7 +70,7 @@ describe("query()", () => {
     expect.assertions(1);
     expect(
       query({
-        region: "us",
+        region: "us" as RegionName,
         endpoint: "invalidEndpoint",
         clientId: "valid_client_id",
         clientSecret: "valid_client_secret",
@@ -87,7 +88,7 @@ describe("query()", () => {
   it("validates access token if validateAccessTokenOnEachQuery is set to true", async () => {
     expect.assertions(1);
     const response = await query({
-      region: "us",
+      region: "us" as RegionName,
       endpoint: "/valid/endpoint",
       clientId: "valid_client_id",
       clientSecret: "valid_client_secret",
@@ -106,7 +107,7 @@ describe("query()", () => {
   it("returns error if validateAccessTokenOnEachQuery is set to true and access token is invalid", async () => {
     expect.assertions(1);
     const response = await query({
-      region: "us",
+      region: "us" as RegionName,
       endpoint: "/valid/endpoint",
       clientId: "valid_client_id",
       clientSecret: "valid_client_secret",
@@ -124,7 +125,7 @@ describe("query()", () => {
   it("returns error if validateAccessTokenOnEachQuery is set to false and access token is invalid", async () => {
     expect.assertions(1);
     const response = await query({
-      region: "us",
+      region: "us" as RegionName,
       endpoint: "/valid/endpoint",
       clientId: "valid_client_id",
       clientSecret: "valid_client_secret",
@@ -143,7 +144,7 @@ describe("query()", () => {
     expect.assertions(2);
     const onAccessTokenExpired = jest.fn();
     const response = await query({
-      region: "us",
+      region: "us" as RegionName,
       endpoint: "/valid/endpoint",
       clientId: "valid_client_id",
       clientSecret: "valid_client_secret",
@@ -162,7 +163,7 @@ describe("query()", () => {
   it("refreshes access token if refreshExpiredAccessToken is set to true", async () => {
     expect.assertions(1);
     const response = await query({
-      region: "us",
+      region: "us" as RegionName,
       endpoint: "/valid/endpoint",
       clientId: "valid_client_id",
       clientSecret: "valid_client_secret",
@@ -182,7 +183,7 @@ describe("query()", () => {
     const onAccessTokenRefresh = jest.fn();
 
     const response = await query({
-      region: "us",
+      region: "us" as RegionName,
       endpoint: "/valid/endpoint",
       clientId: "valid_client_id",
       clientSecret: "valid_client_secret",
@@ -202,7 +203,7 @@ describe("query()", () => {
     expect.assertions(1);
 
     const response = await query({
-      region: "us",
+      region: "us" as RegionName,
       endpoint: "/valid/endpoint",
       clientId: "valid_client_id",
       clientSecret: "valid_client_secret",

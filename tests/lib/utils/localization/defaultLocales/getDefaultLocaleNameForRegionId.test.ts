@@ -1,5 +1,6 @@
 import * as utils from "../../../../../src/utils";
 import { constants } from "../../../../../src/constants";
+import { RegionId } from "../../../../../src/types";
 
 import regionIdsJson from "../../../../__testData__/regionIds.json";
 import wrongRegionIdsJson from "../../../../__testData__/wrongRegionIds.json";
@@ -16,7 +17,7 @@ describe("getDefaultLocaleNameForRegionId()", () => {
     expect(typeof getDefaultLocaleNameForRegionId).toBe("function");
   });
 
-  (regionIdsJson as ReadonlyArray<number | string>).forEach((regionId) =>
+  (regionIdsJson as ReadonlyArray<RegionId>).forEach((regionId) =>
     it(`should return correct value for ${regionId} as valid region id`, () => {
       expect(getDefaultLocaleNameForRegionId(regionId)).toBe(
         LOCALES[regionId][DEFAULT_LOCALES[regionId]]
@@ -24,12 +25,11 @@ describe("getDefaultLocaleNameForRegionId()", () => {
     })
   );
 
-  (wrongRegionIdsJson as ReadonlyArray<number | string>).forEach(
-    (wrongRegionId) =>
-      it(`should throw RangeError for ${wrongRegionId} as invalid parameter`, () => {
-        expect(() => getDefaultLocaleNameForRegionId(wrongRegionId)).toThrow(
-          RangeError
-        );
-      })
+  (wrongRegionIdsJson as ReadonlyArray<RegionId>).forEach((wrongRegionId) =>
+    it(`should throw RangeError for ${wrongRegionId} as invalid parameter`, () => {
+      expect(() => getDefaultLocaleNameForRegionId(wrongRegionId)).toThrow(
+        RangeError
+      );
+    })
   );
 });

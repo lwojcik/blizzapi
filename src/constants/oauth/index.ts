@@ -1,12 +1,12 @@
 import { oAuthHosts } from "./OAuthHosts";
-import { RegionIdProperties, Uri } from "../../types";
+import { RegionIdProperties, RegionId, Uri } from "../../types";
 
 const getRegionPropertyArray = (endpoint: string): RegionIdProperties<Uri> =>
   Object.freeze({
-    1: `${oAuthHosts[1]}${endpoint}`,
-    2: `${oAuthHosts[2]}${endpoint}`,
-    3: `${oAuthHosts[3]}${endpoint}`,
-    5: `${oAuthHosts[5]}${endpoint}`,
+    [RegionId.us]: `${oAuthHosts[RegionId.us]}${endpoint}`,
+    [RegionId.eu]: `${oAuthHosts[RegionId.eu]}${endpoint}`,
+    [RegionId.kr]: `${oAuthHosts[RegionId.kr]}${endpoint}`,
+    [RegionId.cn]: `${oAuthHosts[RegionId.cn]}${endpoint}`,
   });
 
 const authorizeEndpoint = "/oauth/authorize";

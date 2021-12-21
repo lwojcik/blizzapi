@@ -1,4 +1,4 @@
-import { RegionIdArray, ConstantKeys } from "../../../../src/types";
+import { RegionIdArray, ConstantKey } from "../../../../src/types";
 import * as utils from "../../../../src/utils/common";
 
 import regionIdsJson from "../../../__testData__/regionIds.json";
@@ -17,7 +17,7 @@ describe("getUriByRegionId()", () => {
   });
 
   (regionIdsJson as RegionIdArray).forEach((regionId) => {
-    (constantKeysJson as ConstantKeys).forEach((constantKey) => {
+    (constantKeysJson as ConstantKey[]).forEach((constantKey) => {
       it(`should return correct value for ${regionId} and ${constantKey} as valid parameters`, () => {
         expect(getConstantByRegionId(regionId, constantKey)).toMatchSnapshot();
       });
@@ -25,7 +25,7 @@ describe("getUriByRegionId()", () => {
   });
 
   (wrongRegionIdsJson as RegionIdArray).forEach((wrongRegionId) => {
-    (constantKeysJson as ConstantKeys).forEach((constantKey) => {
+    (constantKeysJson as ConstantKey[]).forEach((constantKey) => {
       it(`should throw RangeError for ${wrongRegionId} as invalid parameter`, () => {
         expect(() => getConstantByRegionId(wrongRegionId, constantKey)).toThrow(
           RangeError

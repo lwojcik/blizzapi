@@ -10,6 +10,7 @@ import {
 } from "../../types";
 
 const defaultLocaleIndexes = constants[ConstantKey.DEFAULT_LOCALES];
+const locales = constants[ConstantKey.LOCALES];
 
 /**
  * Returns a list of all available default locale indexes
@@ -58,7 +59,7 @@ export const getDefaultLocaleNameForRegionId = (
   }
 
   const defaultLocaleIndex = defaultLocaleIndexes[regionIdAsString];
-  return constants[ConstantKey.LOCALES][regionId][defaultLocaleIndex];
+  return locales[regionId][defaultLocaleIndex];
 };
 
 /**

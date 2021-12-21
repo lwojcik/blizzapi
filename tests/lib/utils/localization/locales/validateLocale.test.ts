@@ -1,4 +1,5 @@
 import * as utils from "../../../../../src/utils";
+import { Locale } from "../../../../../src/types";
 
 import localesJson from "../../../../__testData__/locales.json";
 import nonexistentLocalesJson from "../../../../__testData__/nonexistentLocales.json";
@@ -15,7 +16,7 @@ describe("validateLocale()", () => {
     expect(typeof validateLocale).toBe("function");
   });
 
-  (localesJson as ReadonlyArray<string>).forEach((locale) =>
+  (localesJson as ReadonlyArray<Locale>).forEach((locale) =>
     it(`should return true for ${locale} as valid locale`, () => {
       expect(validateLocale(locale)).toBe(true);
     })
@@ -23,11 +24,11 @@ describe("validateLocale()", () => {
 
   (nonexistentLocalesJson as ReadonlyArray<string>).forEach((locale) =>
     it(`should return false for ${locale} as non-existent locale`, () => {
-      expect(validateLocale(locale)).toBe(false);
+      expect(validateLocale(locale as Locale)).toBe(false);
     })
   );
 
-  (wrongLocalesJson as ReadonlyArray<string>).forEach((locale) =>
+  (wrongLocalesJson as ReadonlyArray<Locale>).forEach((locale) =>
     it(`should throw RangeError for ${locale} as invalid locale`, () => {
       expect(() => validateLocale(locale)).toThrow(RangeError);
     })
