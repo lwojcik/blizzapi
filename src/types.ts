@@ -157,6 +157,7 @@ export enum ErrorCode {
 }
 
 export enum ErrorResponseMessage {
+  InvalidToken = "invalid_token",
   AccessTokenInvalid = "access_token_invalid",
   AccessTokenExpired = "access_token_invalid",
 }
