@@ -144,6 +144,27 @@ export enum OAuthEndpoint {
   checkToken = "/oauth/check_token?token=",
 }
 
+/** Errors */
+
+export enum ErrorCode {
+  NotAuthorized = 401,
+}
+
+export enum ErrorResponseMessage {
+  AccessTokenInvalid = "access_token_invalid",
+  AccessTokenExpired = "access_token_invalid",
+}
+
+export type InvalidAccessTokenError = {
+  error: ErrorResponseMessage.AccessTokenInvalid;
+};
+
+export type ExpiredAccessTokenError = {
+  error: ErrorResponseMessage.AccessTokenExpired;
+};
+
+export type ResponseError = InvalidAccessTokenError | ExpiredAccessTokenError;
+
 /** Interfaces */
 
 export interface AccessTokenOptions {
@@ -175,6 +196,15 @@ export interface InitOptions {
   revalidateAccessTokenIfExpired?: boolean;
   onAccessTokenExpire?: () => void;
   onAccessTokenRevalidate?: () => void;
+}
+
+export interface BattleNetQueryOptions {
+  region: RegionIdOrName;
+  endpoint: string;
+  clientId: string;
+  clientSecret: string;
+  accessToken: AccessToken;
+  options: AccessTokenOptions & QueryOptions;
 }
 
 export type RegionIdProperties<Value> = {

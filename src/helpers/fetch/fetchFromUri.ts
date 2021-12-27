@@ -15,7 +15,7 @@ interface FetchFromUriOptions extends QueryOptions {
 export const fetchFromUri = async (options: FetchFromUriOptions) => {
   const { uri, timeout, headers, params, data, auth } = options;
 
-  const method = options.method || "GET";
+  const method = options.method || HttpMethod.GET;
 
   if (!validateUri(uri)) {
     throw new RangeError(

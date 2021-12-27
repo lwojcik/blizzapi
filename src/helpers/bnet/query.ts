@@ -3,33 +3,25 @@ import { getAccessToken, validateAccessToken } from "../oauth";
 import { getApiHostByRegion } from "../../utils/api";
 import { fetchFromUri } from "../fetch";
 import {
-  RegionIdOrName,
+  BattleNetQueryOptions,
   AccessToken,
-  AccessTokenOptions,
   HttpMethod,
-  QueryOptions,
+  ResponseError,
+  ErrorCode,
+  ErrorResponseMessage,
 } from "../../types";
 
-interface BattleNetQueryOptions {
-  region: RegionIdOrName;
-  endpoint: string;
-  clientId: string;
-  clientSecret: string;
-  accessToken: AccessToken;
-  options: AccessTokenOptions & QueryOptions;
-}
-
-const queryWithAccessToken = (
+const queryWithAccessToken = <T = unknown>(
   queryOptions: BattleNetQueryOptions,
   accessToken: AccessToken
-) => {
+): Promise<T> => {
   const { region, endpoint, options } = queryOptions;
   const { headers, params, timeout } = options;
   const validEndpoint = validateEndpoint(endpoint);
   if (!validEndpoint)
     throw new RangeError(`${endpoint} is not a valid endpoint.`);
 
-  const apiHost = getApiHostByRegion(region);
+  const apiHost = getApiHostByRegion(region) as string;
   const requestUri = `${apiHost}${endpoint}`;
   const authHeaders = {
     Authorization: `Bearer ${accessToken}`,
@@ -46,10 +38,12 @@ const queryWithAccessToken = (
     headers: fetchHeaders,
     ...(params && { params }),
     ...(timeout && { timeout }),
-  });
+  }) as Promise<T>;
 };
 
-export const query = async (queryOptions: BattleNetQueryOptions) => {
+export const query = async <T = unknown>(
+  queryOptions: BattleNetQueryOptions
+): Promise<T | ResponseError> => {
   const { region, accessToken } = queryOptions;
   const {
     validateAccessTokenOnEachQuery,
@@ -65,24 +59,24 @@ export const query = async (queryOptions: BattleNetQueryOptions) => {
     ));
     if (invalidAccessToken) {
       return {
-        error: "access_token_invalid",
+        error: ErrorResponseMessage.AccessTokenInvalid,
       };
     }
   }
 
   try {
-    return await queryWithAccessToken(queryOptions, accessToken);
+    return await queryWithAccessToken<T>(queryOptions, accessToken);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
-    if (error.response && error.response.status === 401) {
+    if (error.response?.status === ErrorCode.NotAuthorized) {
       onAccessTokenExpired?.();
       if (refreshExpiredAccessToken) {
         const newAccessToken = await getAccessToken(queryOptions);
         onAccessTokenRefresh?.(newAccessToken);
-        return queryWithAccessToken(queryOptions, newAccessToken);
+        return queryWithAccessToken<T>(queryOptions, newAccessToken);
       }
       return Promise.resolve({
-        error: "access_token_invalid",
+        error: ErrorResponseMessage.AccessTokenExpired,
       });
     }
     throw error;
