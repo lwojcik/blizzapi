@@ -5,7 +5,7 @@
 
 import { RegionId, RegionIdProperties, RegionHost } from "../../types";
 
-export const hosts: RegionIdProperties<string | ReadonlyArray<string>> =
+export const hosts: RegionIdProperties<RegionHost | ReadonlyArray<RegionHost>> =
   Object.freeze({
     [RegionId.us]: RegionHost.us,
     [RegionId.eu]: RegionHost.eu,

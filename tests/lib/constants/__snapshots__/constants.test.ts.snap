@@ -69,9 +69,9 @@ Object {
     "2": "https://eu.api.blizzard.com",
     "3": Array [
       "https://kr.api.blizzard.com",
-      "https://tw.api.blizzard.com/",
+      "https://tw.api.blizzard.com",
     ],
-    "5": "https://gateway.battlenet.com.cn/",
+    "5": "https://gateway.battlenet.com.cn",
   },
   "SC2_REALMS": Object {
     "1": Array [

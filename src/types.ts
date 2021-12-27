@@ -134,8 +134,14 @@ export enum RegionHost {
   us = "https://us.api.blizzard.com",
   eu = "https://eu.api.blizzard.com",
   kr = "https://kr.api.blizzard.com",
-  tw = "https://tw.api.blizzard.com/",
-  cn = "https://gateway.battlenet.com.cn/",
+  tw = "https://tw.api.blizzard.com",
+  cn = "https://gateway.battlenet.com.cn",
+}
+
+export enum OAuthEndpoint {
+  authorize = "/oauth/authorize",
+  token = "/oauth/token",
+  checkToken = "/oauth/check_token?token=",
 }
 
 /** Interfaces */

@@ -6,7 +6,7 @@ exports[`getConstantByRegionName() should return correct value for CN and OAUTH_
 
 exports[`getConstantByRegionName() should return correct value for CN and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for CN and REGION_API_HOSTS as valid parameters 1`] = `"https://gateway.battlenet.com.cn/"`;
+exports[`getConstantByRegionName() should return correct value for CN and REGION_API_HOSTS as valid parameters 1`] = `"https://gateway.battlenet.com.cn"`;
 
 exports[`getConstantByRegionName() should return correct value for Cn and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/authorize"`;
 
@@ -14,7 +14,7 @@ exports[`getConstantByRegionName() should return correct value for Cn and OAUTH_
 
 exports[`getConstantByRegionName() should return correct value for Cn and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for Cn and REGION_API_HOSTS as valid parameters 1`] = `"https://gateway.battlenet.com.cn/"`;
+exports[`getConstantByRegionName() should return correct value for Cn and REGION_API_HOSTS as valid parameters 1`] = `"https://gateway.battlenet.com.cn"`;
 
 exports[`getConstantByRegionName() should return correct value for EU and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://eu.battle.net/oauth/authorize"`;
 
@@ -41,7 +41,7 @@ exports[`getConstantByRegionName() should return correct value for KR and OAUTH_
 exports[`getConstantByRegionName() should return correct value for KR and REGION_API_HOSTS as valid parameters 1`] = `
 Array [
   "https://kr.api.blizzard.com",
-  "https://tw.api.blizzard.com/",
+  "https://tw.api.blizzard.com",
 ]
 `;
 
@@ -54,7 +54,7 @@ exports[`getConstantByRegionName() should return correct value for Kr and OAUTH_
 exports[`getConstantByRegionName() should return correct value for Kr and REGION_API_HOSTS as valid parameters 1`] = `
 Array [
   "https://kr.api.blizzard.com",
-  "https://tw.api.blizzard.com/",
+  "https://tw.api.blizzard.com",
 ]
 `;
 
@@ -67,7 +67,7 @@ exports[`getConstantByRegionName() should return correct value for TW and OAUTH_
 exports[`getConstantByRegionName() should return correct value for TW and REGION_API_HOSTS as valid parameters 1`] = `
 Array [
   "https://kr.api.blizzard.com",
-  "https://tw.api.blizzard.com/",
+  "https://tw.api.blizzard.com",
 ]
 `;
 
@@ -80,7 +80,7 @@ exports[`getConstantByRegionName() should return correct value for Tw and OAUTH_
 exports[`getConstantByRegionName() should return correct value for Tw and REGION_API_HOSTS as valid parameters 1`] = `
 Array [
   "https://kr.api.blizzard.com",
-  "https://tw.api.blizzard.com/",
+  "https://tw.api.blizzard.com",
 ]
 `;
 
@@ -98,7 +98,7 @@ exports[`getConstantByRegionName() should return correct value for cN and OAUTH_
 
 exports[`getConstantByRegionName() should return correct value for cN and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for cN and REGION_API_HOSTS as valid parameters 1`] = `"https://gateway.battlenet.com.cn/"`;
+exports[`getConstantByRegionName() should return correct value for cN and REGION_API_HOSTS as valid parameters 1`] = `"https://gateway.battlenet.com.cn"`;
 
 exports[`getConstantByRegionName() should return correct value for cn and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/authorize"`;
 
@@ -106,7 +106,7 @@ exports[`getConstantByRegionName() should return correct value for cn and OAUTH_
 
 exports[`getConstantByRegionName() should return correct value for cn and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://www.battlenet.com.cn/oauth/token"`;
 
-exports[`getConstantByRegionName() should return correct value for cn and REGION_API_HOSTS as valid parameters 1`] = `"https://gateway.battlenet.com.cn/"`;
+exports[`getConstantByRegionName() should return correct value for cn and REGION_API_HOSTS as valid parameters 1`] = `"https://gateway.battlenet.com.cn"`;
 
 exports[`getConstantByRegionName() should return correct value for eU and OAUTH_AUTHORIZE_URIS as valid parameters 1`] = `"https://eu.battle.net/oauth/authorize"`;
 
@@ -133,7 +133,7 @@ exports[`getConstantByRegionName() should return correct value for kR and OAUTH_
 exports[`getConstantByRegionName() should return correct value for kR and REGION_API_HOSTS as valid parameters 1`] = `
 Array [
   "https://kr.api.blizzard.com",
-  "https://tw.api.blizzard.com/",
+  "https://tw.api.blizzard.com",
 ]
 `;
 
@@ -146,7 +146,7 @@ exports[`getConstantByRegionName() should return correct value for kr and OAUTH_
 exports[`getConstantByRegionName() should return correct value for kr and REGION_API_HOSTS as valid parameters 1`] = `
 Array [
   "https://kr.api.blizzard.com",
-  "https://tw.api.blizzard.com/",
+  "https://tw.api.blizzard.com",
 ]
 `;
 
@@ -159,7 +159,7 @@ exports[`getConstantByRegionName() should return correct value for tW and OAUTH_
 exports[`getConstantByRegionName() should return correct value for tW and REGION_API_HOSTS as valid parameters 1`] = `
 Array [
   "https://kr.api.blizzard.com",
-  "https://tw.api.blizzard.com/",
+  "https://tw.api.blizzard.com",
 ]
 `;
 
@@ -172,7 +172,7 @@ exports[`getConstantByRegionName() should return correct value for tw and OAUTH_
 exports[`getConstantByRegionName() should return correct value for tw and REGION_API_HOSTS as valid parameters 1`] = `
 Array [
   "https://kr.api.blizzard.com",
-  "https://tw.api.blizzard.com/",
+  "https://tw.api.blizzard.com",
 ]
 `;
 
