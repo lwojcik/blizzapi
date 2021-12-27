@@ -144,6 +144,12 @@ export enum OAuthEndpoint {
   checkToken = "/oauth/check_token?token=",
 }
 
+/** API headers */
+
+export enum ApiHeaders {
+  LastModified = "last-modified",
+}
+
 /** Errors */
 
 export enum ErrorCode {

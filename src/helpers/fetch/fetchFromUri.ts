@@ -1,6 +1,6 @@
 import axios, { AxiosBasicCredentials, AxiosRequestConfig } from "axios";
 import { uri as validateUri } from "../validators";
-import { Uri, HttpMethod, QueryOptions } from "../../types";
+import { Uri, HttpMethod, QueryOptions, ApiHeaders } from "../../types";
 
 interface FetchFromUriOptions extends QueryOptions {
   uri: Uri;
@@ -38,8 +38,8 @@ export const fetchFromUri = async (options: FetchFromUriOptions) => {
     requestOptions as AxiosRequestConfig<any>
   );
 
-  const lastModified = response.headers["last-modified"]
-    ? response.headers["last-modified"]
+  const lastModified = response.headers[ApiHeaders.LastModified]
+    ? response.headers[ApiHeaders.LastModified]
     : null;
 
   return {
