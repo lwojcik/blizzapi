@@ -6,7 +6,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/r7pjg9an30d5dupk/branch/master?svg=true)](https://ci.appveyor.com/project/lwojcik/blizzapi/branch/master)
 [![codecov](https://codecov.io/gh/blizzapi/blizzapi/branch/master/graph/badge.svg?token=M3vY98GiIn)](https://codecov.io/gh/blizzapi/blizzapi)
 
-Flexible feature-rich library for easy access to [Battle.net API](https://develop.battle.net/).
+Flexible and feature-rich JavaScript / TypeScript library for easy access to [Blizzard Battle.net APIs](https://develop.battle.net/).
 
 ## Install
 
@@ -17,7 +17,7 @@ npm install blizzapi
 ## Quick start
 
 ```javascript
-const { BlizzAPI } = require('blizzapi');
+const { BlizzAPI } = require("blizzapi");
 
 /**
  * Or using TypeScript:
@@ -25,15 +25,15 @@ const { BlizzAPI } = require('blizzapi');
  */
 
 const api = new BlizzAPI({
-  region: 'us',
-  clientId: 'client id',
-  clientSecret: 'client secret'
+  region: "us",
+  clientId: "client id",
+  clientSecret: "client secret",
 });
 
-const data = await api.query('/path/to/endpoint');
+const data = await api.query("/path/to/endpoint");
 
 console.log(data);
-``` 
+```
 
 ## Manual build
 
@@ -46,12 +46,12 @@ npm run build
 
 ## Documentation & examples
 
-* [blizzapi.lukem.net](https://blizzapi.lukem.net) - documentation
-* [blizzapi-docs](https://github.com/blizzapi/blizzapi-docs) - documentation repo on GitHub
+- [blizzapi.lukem.net](https://blizzapi.lukem.net) - documentation
+- [blizzapi-docs](https://github.com/blizzapi/blizzapi-docs) - documentation repo on GitHub
 
-* [blizzapi-example](https://github.com/blizzapi/blizzapi-example) - sample Express.js REST API with usage examples
+- [blizzapi-example](https://github.com/blizzapi/blizzapi-example) - sample Express.js REST API with usage examples
 
-* [Repositories that depend on BlizzAPI](https://github.com/blizzapi/blizzapi/network/dependents)
+- [Repositories that depend on BlizzAPI](https://github.com/blizzapi/blizzapi/network/dependents)
 
 ## Contributions
 
@@ -59,9 +59,9 @@ Contributions of any kind are welcome.
 
 You can contribute to BlizzAPI by:
 
-* submiting a bug report or a feature suggestion
-* improving documentation either within the project itself or in the [doc site repository](https://github.com/blizzapi/blizzapi-docs)
-* submitting pull requests
+- submiting a bug report or a feature suggestion
+- improving documentation either within the project itself or in the [doc site repository](https://github.com/blizzapi/blizzapi-docs)
+- submitting pull requests
 
 Before contributing be sure to read [Contributing Guidelines](https://github.com/blizzapi/blizzapi/blob/master/CONTRIBUTING.md) and [Code of Conduct](https://github.com/blizzapi/blizzapi/blob/master/CODE_OF_CONDUCT.md).
 
