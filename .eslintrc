@@ -1,8 +1,16 @@
 {
-  "extends": "airbnb-typescript-prettier",
+  "extends": [
+    "airbnb-typescript-prettier",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
   "settings": {
     "react": {
       "version": "999.999.999"
+    },
+    "import/resolver": {
+      "typescript": {}
     }
   },
   "rules": {
