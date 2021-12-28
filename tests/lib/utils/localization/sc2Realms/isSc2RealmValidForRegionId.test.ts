@@ -1,4 +1,5 @@
 import * as utils from "../../../../../src/utils";
+import { Sc2Realm, RegionId } from "../../../../../src/types";
 
 import regionIdsJson from "../../../../__testData__/regionIds.json";
 import wrongRegionIdsJson from "../../../../__testData__/wrongRegionIds.json";
@@ -21,7 +22,7 @@ describe("isSc2RealmValidForRegionId()", () => {
     (sc2realmsJson as ReadonlyArray<number | string>).forEach((sc2realm) => {
       it(`should return correct value for ${regionId} and ${sc2realm} as valid parameters`, () => {
         expect(
-          isSc2RealmValidForRegionId(sc2realm, regionId)
+          isSc2RealmValidForRegionId(sc2realm as Sc2Realm, regionId as RegionId)
         ).toMatchSnapshot();
       });
     })
@@ -32,7 +33,10 @@ describe("isSc2RealmValidForRegionId()", () => {
       (nonexistentSc2realm) => {
         it(`should return false for ${regionId} as valid region id and ${nonexistentSc2realm} as non-existent SC2 realm`, () => {
           expect(
-            isSc2RealmValidForRegionId(nonexistentSc2realm, regionId)
+            isSc2RealmValidForRegionId(
+              nonexistentSc2realm as Sc2Realm,
+              regionId as RegionId
+            )
           ).toBe(false);
         });
       }
@@ -44,7 +48,10 @@ describe("isSc2RealmValidForRegionId()", () => {
       (wrongSc2realm) => {
         it(`should throw RangeError for ${regionId} as valid region id and ${wrongSc2realm} as invalid SC2 realm`, () => {
           expect(() =>
-            isSc2RealmValidForRegionId(wrongSc2realm, regionId)
+            isSc2RealmValidForRegionId(
+              wrongSc2realm as Sc2Realm,
+              regionId as RegionId
+            )
           ).toThrow(RangeError);
         });
       }
@@ -56,7 +63,10 @@ describe("isSc2RealmValidForRegionId()", () => {
       (sc2realmsJson as ReadonlyArray<number | string>).forEach((sc2realm) => {
         it(`should throw RangeError for ${wrongRegionId} as wrong region id and ${sc2realm} as valid SC2 realm`, () => {
           expect(() =>
-            isSc2RealmValidForRegionId(sc2realm, wrongRegionId)
+            isSc2RealmValidForRegionId(
+              sc2realm as Sc2Realm,
+              wrongRegionId as RegionId
+            )
           ).toThrow(RangeError);
         });
       })
@@ -68,7 +78,10 @@ describe("isSc2RealmValidForRegionId()", () => {
         (nonexistentSc2realm) => {
           it(`should throw RangeError for ${wrongRegionId} as wrong region id and ${nonexistentSc2realm} as non-existent SC2 realm`, () => {
             expect(() =>
-              isSc2RealmValidForRegionId(nonexistentSc2realm, wrongRegionId)
+              isSc2RealmValidForRegionId(
+                nonexistentSc2realm as Sc2Realm,
+                wrongRegionId as RegionId
+              )
             ).toThrow(RangeError);
           });
         }
@@ -81,7 +94,10 @@ describe("isSc2RealmValidForRegionId()", () => {
         (wrongSc2realm) => {
           it(`should throw RangeError for ${wrongRegionId} as wrong region id and ${wrongSc2realm} as invalid SC2 realm`, () => {
             expect(() =>
-              isSc2RealmValidForRegionId(wrongSc2realm, wrongRegionId)
+              isSc2RealmValidForRegionId(
+                wrongSc2realm as Sc2Realm,
+                wrongRegionId as RegionId
+              )
             ).toThrow(RangeError);
           });
         }

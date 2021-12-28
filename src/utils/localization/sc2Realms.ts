@@ -5,6 +5,8 @@ import {
   RegionIdAsNumberOrString,
   Sc2RealmAsNumberOrString,
   Sc2RealmList,
+  ConstantKey,
+  RegionIdAsString,
 } from "../../types";
 
 /**
@@ -32,7 +34,7 @@ export const getAllAvailableSc2Realms = (): Sc2RealmList => {
  * @return List of SC2 realms available in a specific region as array of integers
  */
 export const getSc2RealmsByRegionId = (regionId: RegionIdAsNumberOrString) =>
-  <Sc2RealmList>getConstantByRegionId(regionId, "SC2_REALMS");
+  <Sc2RealmList>getConstantByRegionId(regionId, ConstantKey.SC2_REALMS);
 
 /**
  * Verifies whether locale matches the regex pattern
@@ -83,7 +85,7 @@ export const isSc2RealmValidForRegionId = (
   regionId: RegionIdAsNumberOrString
 ) => {
   const doesSc2RealmLookValid = checkIfSc2RealmLooksValid(sc2Realm);
-  const regionIdAsString = regionId.toString();
+  const regionIdAsString = regionId.toString() as RegionIdAsString;
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
   if (!doesSc2RealmLookValid) {

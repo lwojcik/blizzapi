@@ -1,4 +1,4 @@
-import { ConstantKey } from "../../../../src/types";
+import { ConstantKey, RegionId, RegionName } from "../../../../src/types";
 import * as utils from "../../../../src/utils/common/index";
 
 import regionNamesJson from "../../../__testData__/regionNames.json";
@@ -21,7 +21,9 @@ describe("getConstantByRegion()", () => {
   (regionIdsJson as ReadonlyArray<number | string>).forEach((regionId) =>
     (constantKeysJson as ReadonlyArray<ConstantKey>).forEach((constantKey) => {
       it(`should return correct value for ${regionId} and ${constantKey} as valid parameters`, () => {
-        expect(getConstantByRegion(regionId, constantKey)).toMatchSnapshot();
+        expect(
+          getConstantByRegion(regionId as RegionId, constantKey)
+        ).toMatchSnapshot();
       });
     })
   );
@@ -32,7 +34,7 @@ describe("getConstantByRegion()", () => {
         (constantKey) => {
           it(`should throw RangeError for ${wrongRegionId} as invalid region id`, () => {
             expect(() =>
-              getConstantByRegion(wrongRegionId, constantKey)
+              getConstantByRegion(wrongRegionId as RegionId, constantKey)
             ).toThrow(RangeError);
           });
         }
@@ -42,7 +44,9 @@ describe("getConstantByRegion()", () => {
   (regionNamesJson as ReadonlyArray<string>).forEach((regionName) =>
     (constantKeysJson as ReadonlyArray<ConstantKey>).forEach((constantKey) => {
       it(`should return correct value for ${regionName} as valid region name`, () => {
-        expect(getConstantByRegion(regionName, constantKey)).toMatchSnapshot();
+        expect(
+          getConstantByRegion(regionName as RegionName, constantKey)
+        ).toMatchSnapshot();
       });
     })
   );
@@ -50,9 +54,9 @@ describe("getConstantByRegion()", () => {
   (wrongRegionNamesJson as ReadonlyArray<string>).forEach((wrongRegionName) =>
     (constantKeysJson as ReadonlyArray<ConstantKey>).forEach((constantKey) => {
       it(`should throw RangeError for ${wrongRegionName} as invalid region name`, () => {
-        expect(() => getConstantByRegion(wrongRegionName, constantKey)).toThrow(
-          RangeError
-        );
+        expect(() =>
+          getConstantByRegion(wrongRegionName as RegionName, constantKey)
+        ).toThrow(RangeError);
       });
     })
   );

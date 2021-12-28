@@ -11,24 +11,24 @@ exports[`getApiHostByRegion() should return correct value for 2 as valid region 
 exports[`getApiHostByRegion() should return correct value for 3 as valid region id 1`] = `
 Array [
   "https://kr.api.blizzard.com",
-  "https://tw.api.blizzard.com/",
+  "https://tw.api.blizzard.com",
 ]
 `;
 
 exports[`getApiHostByRegion() should return correct value for 3 as valid region id 2`] = `
 Array [
   "https://kr.api.blizzard.com",
-  "https://tw.api.blizzard.com/",
+  "https://tw.api.blizzard.com",
 ]
 `;
 
-exports[`getApiHostByRegion() should return correct value for 5 as valid region id 1`] = `"https://gateway.battlenet.com.cn/"`;
+exports[`getApiHostByRegion() should return correct value for 5 as valid region id 1`] = `"https://gateway.battlenet.com.cn"`;
 
-exports[`getApiHostByRegion() should return correct value for 5 as valid region id 2`] = `"https://gateway.battlenet.com.cn/"`;
+exports[`getApiHostByRegion() should return correct value for 5 as valid region id 2`] = `"https://gateway.battlenet.com.cn"`;
 
-exports[`getApiHostByRegion() should return correct value for CN as valid region name 1`] = `"https://gateway.battlenet.com.cn/"`;
+exports[`getApiHostByRegion() should return correct value for CN as valid region name 1`] = `"https://gateway.battlenet.com.cn"`;
 
-exports[`getApiHostByRegion() should return correct value for Cn as valid region name 1`] = `"https://gateway.battlenet.com.cn/"`;
+exports[`getApiHostByRegion() should return correct value for Cn as valid region name 1`] = `"https://gateway.battlenet.com.cn"`;
 
 exports[`getApiHostByRegion() should return correct value for EU as valid region name 1`] = `"https://eu.api.blizzard.com"`;
 
@@ -38,15 +38,15 @@ exports[`getApiHostByRegion() should return correct value for KR as valid region
 
 exports[`getApiHostByRegion() should return correct value for Kr as valid region name 1`] = `"https://kr.api.blizzard.com"`;
 
-exports[`getApiHostByRegion() should return correct value for TW as valid region name 1`] = `"https://tw.api.blizzard.com/"`;
+exports[`getApiHostByRegion() should return correct value for TW as valid region name 1`] = `"https://tw.api.blizzard.com"`;
 
-exports[`getApiHostByRegion() should return correct value for Tw as valid region name 1`] = `"https://tw.api.blizzard.com/"`;
+exports[`getApiHostByRegion() should return correct value for Tw as valid region name 1`] = `"https://tw.api.blizzard.com"`;
 
 exports[`getApiHostByRegion() should return correct value for Us as valid region name 1`] = `"https://us.api.blizzard.com"`;
 
-exports[`getApiHostByRegion() should return correct value for cN as valid region name 1`] = `"https://gateway.battlenet.com.cn/"`;
+exports[`getApiHostByRegion() should return correct value for cN as valid region name 1`] = `"https://gateway.battlenet.com.cn"`;
 
-exports[`getApiHostByRegion() should return correct value for cn as valid region name 1`] = `"https://gateway.battlenet.com.cn/"`;
+exports[`getApiHostByRegion() should return correct value for cn as valid region name 1`] = `"https://gateway.battlenet.com.cn"`;
 
 exports[`getApiHostByRegion() should return correct value for eU as valid region name 1`] = `"https://eu.api.blizzard.com"`;
 
@@ -56,9 +56,9 @@ exports[`getApiHostByRegion() should return correct value for kR as valid region
 
 exports[`getApiHostByRegion() should return correct value for kr as valid region name 1`] = `"https://kr.api.blizzard.com"`;
 
-exports[`getApiHostByRegion() should return correct value for tW as valid region name 1`] = `"https://tw.api.blizzard.com/"`;
+exports[`getApiHostByRegion() should return correct value for tW as valid region name 1`] = `"https://tw.api.blizzard.com"`;
 
-exports[`getApiHostByRegion() should return correct value for tw as valid region name 1`] = `"https://tw.api.blizzard.com/"`;
+exports[`getApiHostByRegion() should return correct value for tw as valid region name 1`] = `"https://tw.api.blizzard.com"`;
 
 exports[`getApiHostByRegion() should return correct value for uS as valid region name 1`] = `"https://us.api.blizzard.com"`;
 

@@ -1,5 +1,5 @@
 import { fetchFromUri } from "../fetch";
-import { Uri, ClientId, ClientSecret } from "../../types";
+import { Uri, ClientId, ClientSecret, HttpMethod } from "../../types";
 
 interface FetchAccessTokenOptions {
   oauthUri: Uri;
@@ -21,6 +21,6 @@ export const fetchAccessToken = (options: FetchAccessTokenOptions) => {
     data,
     auth,
     uri: oauthUri,
-    method: "POST",
+    method: HttpMethod.POST,
   });
 };

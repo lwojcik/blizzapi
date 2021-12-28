@@ -1,7 +1,8 @@
 import { getAccessToken } from "../../../../src/helpers/oauth";
+import { RegionName } from "../../../../src/types";
 
 describe("getAccessToken()", () => {
-  const region = "us";
+  const region = "us" as RegionName;
   const clientId = "sample client id";
   const clientSecret = "sample client secret";
 

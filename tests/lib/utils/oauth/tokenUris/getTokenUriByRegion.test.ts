@@ -1,4 +1,5 @@
 import * as utils from "../../../../../src/utils";
+import { RegionId, RegionName } from "../../../../../src/types";
 
 import regionNamesJson from "../../../../__testData__/regionNames.json";
 import wrongRegionNamesJson from "../../../../__testData__/wrongRegionNames.json";
@@ -18,19 +19,21 @@ describe("getTokenUriByRegion()", () => {
 
   (regionIdsJson as ReadonlyArray<string | number>).forEach((regionId) => {
     it(`should return correct value for ${regionId} as valid region id`, () => {
-      expect(getTokenUriByRegion(regionId)).toMatchSnapshot();
+      expect(getTokenUriByRegion(regionId as RegionId)).toMatchSnapshot();
     });
   });
 
   (wrongRegionIdsJson as ReadonlyArray<string | number>).forEach(
     (wrongRegionId) => {
       it(`should throw RangeError for ${wrongRegionId} as invalid parameter`, () => {
-        expect(() => getTokenUriByRegion(wrongRegionId)).toThrow(RangeError);
+        expect(() => getTokenUriByRegion(wrongRegionId as RegionId)).toThrow(
+          RangeError
+        );
       });
     }
   );
 
-  (regionNamesJson as ReadonlyArray<string>).forEach((regionName) => {
+  (regionNamesJson as ReadonlyArray<RegionName>).forEach((regionName) => {
     it(`should return correct value for ${regionName} as valid region name`, () => {
       expect(getTokenUriByRegion(regionName)).toMatchSnapshot();
     });
@@ -38,7 +41,9 @@ describe("getTokenUriByRegion()", () => {
 
   (wrongRegionNamesJson as ReadonlyArray<string>).forEach((wrongRegionName) => {
     it(`should throw RangeError for ${wrongRegionName} as invalid region name`, () => {
-      expect(() => getTokenUriByRegion(wrongRegionName)).toThrow(RangeError);
+      expect(() => getTokenUriByRegion(wrongRegionName as RegionName)).toThrow(
+        RangeError
+      );
     });
   });
 });

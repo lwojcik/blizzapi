@@ -1,14 +1,22 @@
 import { constants } from "../../constants";
 import { validateRegionId } from "./regions";
 import { getConstantByRegionId } from "../common";
-import { Locale, LocaleArray, RegionIdAsNumberOrString } from "../../types";
+import {
+  Locale,
+  LocaleArray,
+  RegionIdAsString,
+  RegionIdAsNumberOrString,
+  ConstantKey,
+} from "../../types";
+
+const locales = constants[ConstantKey.LOCALES];
 
 /**
  * Returns a list of all locales indexed by region id
  *
  * @return List of all available regions indexed by region id as array of strings.
  */
-export const getAllLocales = () => constants.LOCALES;
+export const getAllLocales = () => locales;
 
 /**
  * Returns a list of all available locale names
@@ -16,8 +24,10 @@ export const getAllLocales = () => constants.LOCALES;
  * @return List of all available locales as flat array of strings.
  */
 export const getAllLocaleNames = () => {
-  const locales = Object.values(constants.LOCALES);
-  const flattenedLocales = ([] as LocaleArray).concat(...locales);
+  const flattenedLocales = Object.keys(Locale).filter((item) =>
+    Number.isNaN(Number(item))
+  );
+  // const flattenedLocales = ([] as LocaleArray).concat(Object.values(locales));
   const localesAsStrings = flattenedLocales.map((locale: string) =>
     locale.toString()
   );
@@ -31,7 +41,7 @@ export const getAllLocaleNames = () => {
  * @return List of locales available in a specific region as array of strings
  */
 export const getLocalesByRegionId = (regionId: RegionIdAsNumberOrString) =>
-  <LocaleArray>getConstantByRegionId(regionId, "LOCALES");
+  <LocaleArray>getConstantByRegionId(regionId, ConstantKey.LOCALES);
 
 /**
  * Verifies whether locale matches the regex pattern
@@ -79,9 +89,9 @@ export const isLocaleValidForRegionId = (
   locale: Locale,
   regionId: RegionIdAsNumberOrString
 ) => {
-  const lowerCaseLocale = locale.toLowerCase();
+  const lowerCaseLocale = locale.toLowerCase() as Locale;
   const doesLocaleLookValid = validateLocale(lowerCaseLocale) || false;
-  const regionIdAsString = regionId.toString();
+  const regionIdAsString = regionId.toString() as RegionIdAsString;
   const isRegionIdValid = validateRegionId(regionIdAsString);
 
   if (!doesLocaleLookValid) {

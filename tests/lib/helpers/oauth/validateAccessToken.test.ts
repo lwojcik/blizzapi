@@ -1,4 +1,5 @@
 import { validateAccessToken } from "../../../../src/helpers/oauth";
+import { RegionName } from "../../../../src/types";
 
 jest.mock("../../../../src/helpers/fetch");
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -21,7 +22,7 @@ fetch.fetchFromUri = jest
   });
 
 describe("validateAccessToken()", () => {
-  const region = "us";
+  const region = "us" as RegionName;
   const validAccessToken = "valid_access_token";
   const invalidAccessToken = "invalid_access_token";
   const accessTokenWithApiError = "access_token_with_api_error";

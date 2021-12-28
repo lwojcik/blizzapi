@@ -3,11 +3,11 @@
  * via https://develop.battle.net/documentation/guides/using-oauth
  */
 
-import { RegionIdProperties, Uri } from "../../types";
+import { RegionIdProperties, RegionId, OAuthHost } from "../../types";
 
-export const oAuthHosts: RegionIdProperties<Uri> = Object.freeze({
-  1: "https://us.battle.net",
-  2: "https://eu.battle.net",
-  3: "https://apac.battle.net",
-  5: "https://www.battlenet.com.cn",
+export const oAuthHosts: RegionIdProperties<OAuthHost> = Object.freeze({
+  [RegionId.us]: OAuthHost.us,
+  [RegionId.eu]: OAuthHost.eu,
+  [RegionId.kr]: OAuthHost.kr,
+  [RegionId.cn]: OAuthHost.cn,
 });

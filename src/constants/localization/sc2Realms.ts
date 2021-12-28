@@ -1,13 +1,18 @@
 /**
  * List of all available StarCraft II realm IDs for each region
- * via https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
+ * via https://develop.battle.net/documentation/guides/regionality-and-apis
  */
 
-import { RegionIdProperties, Sc2RealmArray } from "../../types";
+import {
+  RegionIdProperties,
+  Sc2RealmArray,
+  Sc2Realm,
+  RegionId,
+} from "../../types";
 
 export const sc2Realms: RegionIdProperties<Sc2RealmArray> = Object.freeze({
-  1: Object.freeze([1, 2]),
-  2: Object.freeze([1, 2]),
-  3: Object.freeze([1, 2]),
-  5: Object.freeze([1]),
+  [RegionId.us]: Object.freeze([Sc2Realm.US, Sc2Realm.LatAm]),
+  [RegionId.eu]: Object.freeze([Sc2Realm.Europe, Sc2Realm.Russia]),
+  [RegionId.kr]: Object.freeze([Sc2Realm.Korea, Sc2Realm.Taiwan]),
+  [RegionId.cn]: Object.freeze([Sc2Realm.China]),
 });

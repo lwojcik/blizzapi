@@ -1,4 +1,5 @@
 import { BlizzAPI } from "../../../src/classes/BlizzAPI";
+import { RegionName } from "../../../src/types";
 
 describe("BlizzAPI class", () => {
   it("should be defined", () => {
@@ -10,7 +11,7 @@ describe("BlizzAPI class", () => {
     expect.assertions(1);
     expect(
       new BlizzAPI({
-        region: "",
+        region: "" as RegionName,
         clientId: "",
         clientSecret: "",
       }).query
@@ -21,7 +22,7 @@ describe("BlizzAPI class", () => {
     expect.assertions(1);
     expect(
       new BlizzAPI({
-        region: "",
+        region: "" as RegionName,
         clientId: "",
         clientSecret: "",
       }).getAccessToken
@@ -121,7 +122,7 @@ describe("BlizzAPI class", () => {
   it("should query an endpoint", async () => {
     expect.assertions(1);
     const bnetApi = new BlizzAPI({
-      region: "us",
+      region: "us" as RegionName,
       clientId: "valid_client_id",
       clientSecret: "valid_client_secret",
     });
@@ -133,7 +134,7 @@ describe("BlizzAPI class", () => {
   it("should validate access token and return true", async () => {
     expect.assertions(1);
     const response = await BlizzAPI.validateAccessToken(
-      "us",
+      "us" as RegionName,
       "valid_access_token"
     );
     expect(response).toMatchSnapshot();

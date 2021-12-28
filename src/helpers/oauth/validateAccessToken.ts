@@ -1,9 +1,9 @@
 import { getCheckTokenUriByRegion } from "../../utils/oauth/checkTokenUris";
 import { fetchFromUri } from "../fetch";
-import { RegionIdOrName, AccessToken } from "../../types";
+import { RegionIdOrName, AccessToken, ErrorResponseMessage } from "../../types";
 
 interface InvalidTokenResponse {
-  error: "invalid_token";
+  error: ErrorResponseMessage.InvalidToken;
 }
 
 export const validateAccessToken = async (
@@ -16,8 +16,8 @@ export const validateAccessToken = async (
     const response = (await fetchFromUri({
       uri: requestPath,
     })) as any | InvalidTokenResponse; // eslint-disable-line @typescript-eslint/no-explicit-any
-    return !(response.error && response.error === "invalid_token");
-  } catch (error) {
+    return !(response.error === ErrorResponseMessage.InvalidToken);
+  } catch {
     return false;
   }
 };

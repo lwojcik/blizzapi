@@ -4,15 +4,20 @@ import {
   RegionName,
   RegionIdArray,
   RegionNameArray,
+  ConstantKey,
   RegionIdAsNumberOrString,
+  RegionIdAsString,
+  RegionId,
 } from "../../types";
+
+const regions = constants[ConstantKey.REGIONS];
 
 /**
  * Returns a list of all available regions
  *
  * @return List of all available regions indexed by region id.
  */
-export const getAllRegions = () => constants.REGIONS;
+export const getAllRegions = () => regions;
 
 /**
  * Returns a list of all available region ids
@@ -20,7 +25,7 @@ export const getAllRegions = () => constants.REGIONS;
  * @return List of all available regions as flat array of numbers.
  */
 export const getAllRegionIds = () => {
-  const regionKeys = Object.keys(constants.REGIONS);
+  const regionKeys = Object.keys(regions);
   return <RegionIdArray>regionKeys.map((regionKey) => parseInt(regionKey, 10));
 };
 
@@ -30,7 +35,7 @@ export const getAllRegionIds = () => {
  * @return {Array} List of all available regions as flat array of strings.
  */
 export const getAllRegionNames = () => {
-  const regionNames = Object.values(constants.REGIONS);
+  const regionNames = Object.values(regions);
   const flattenedRegionNames = ([] as RegionNameArray).concat(...regionNames);
   return flattenedRegionNames.map((regionName: string) =>
     regionName.toString()
@@ -45,8 +50,8 @@ export const getAllRegionNames = () => {
  * or an array of regions if more than one is specified for a given region id
  */
 export const getRegionNameById = (regionId: RegionIdAsNumberOrString) => {
-  const regionIds = Object.keys(constants.REGIONS);
-  const regionIdAsString = regionId.toString();
+  const regionIds = Object.keys(regions);
+  const regionIdAsString = regionId.toString() as RegionIdAsString;
   const isRegionIdValid = regionIds.includes(regionIdAsString);
 
   if (!isRegionIdValid) {
@@ -55,7 +60,7 @@ export const getRegionNameById = (regionId: RegionIdAsNumberOrString) => {
     );
   }
 
-  return constants.REGIONS[regionIdAsString];
+  return regions[regionIdAsString];
 };
 
 /**
@@ -67,7 +72,7 @@ export const getRegionNameById = (regionId: RegionIdAsNumberOrString) => {
 export const validateRegionId = (regionId: RegionIdAsNumberOrString) => {
   try {
     return Boolean(getRegionNameById(regionId));
-  } catch (error) {
+  } catch {
     return false;
   }
 };
@@ -79,13 +84,12 @@ export const validateRegionId = (regionId: RegionIdAsNumberOrString) => {
  * @return Region id as number
  */
 export const getRegionIdByName = (regionName: RegionName) => {
-  const regionNameLowercase = regionName.toLowerCase();
-  const regions = constants.REGIONS;
+  const regionNameLowercase = regionName.toLowerCase() as RegionName;
   const regionKeys = Object.keys(regions);
-  const regionIdArray = regionKeys.filter((key) =>
-    regions[key].includes(regionNameLowercase)
+  const regionIdArray = regionKeys.filter((key: string) =>
+    regions[key as RegionIdAsString].includes(regionNameLowercase)
   );
-  const regionId = Number(regionIdArray[0]) || false;
+  const regionId = (Number(regionIdArray[0]) as RegionId) || false;
 
   if (!regionId) {
     throw new RangeError(
@@ -105,7 +109,7 @@ export const getRegionIdByName = (regionName: RegionName) => {
 export const validateRegionName = (regionName: RegionName) => {
   try {
     return Boolean(getRegionIdByName(regionName));
-  } catch (error) {
+  } catch {
     return false;
   }
 };

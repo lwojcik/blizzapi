@@ -1,4 +1,5 @@
 import { BattleNetAPI } from "../../../../src/classes/abstract/BattleNetAPI";
+import { RegionName } from "../../../../src/types";
 
 jest.createMockFromModule("../../../../src/classes/abstract/BattleNetAPI");
 
@@ -12,7 +13,7 @@ class BattleNetAPIMock extends BattleNetAPI {
   constructor(accessToken?: string) {
     super({
       accessToken,
-      region: "us",
+      region: "us" as RegionName,
       clientId: "valid_client_id_from_BattleNetAPIMock",
       clientSecret: "valid_client_secret_from_BattleNetAPIMock",
     });
@@ -70,7 +71,7 @@ describe("BattleNetAPI class", () => {
   it("should validate access token and return true", async () => {
     expect.assertions(1);
     const response = await BattleNetAPIMock.validateAccessToken(
-      "us",
+      "us" as RegionName,
       "valid_access_token"
     );
     expect(response).toMatchSnapshot();

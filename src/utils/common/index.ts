@@ -16,15 +16,17 @@ export const getConstantByRegionId = (
   constantKey: ConstantKey
 ) => {
   const regionIdAsString =
-    typeof regionId !== "string" ? regionId : regionId.toString();
-  const isRegionIdValid = validateRegionId(regionIdAsString);
+    typeof regionId === "string" ? regionId : regionId.toString();
+  const isRegionIdValid = validateRegionId(
+    regionIdAsString as RegionIdAsNumberOrString
+  );
 
   if (!isRegionIdValid) {
     throw new RangeError(
       `${regionIdAsString} is not a valid parameter for getConstantByRegionId(${regionId}, '${constantKey}')`
     );
   }
-  return constants[constantKey][regionIdAsString];
+  return constants[constantKey][regionId];
 };
 
 /**
@@ -55,6 +57,12 @@ export const getConstantByRegion = (
   regionIdOrName: RegionIdOrName,
   constantKey: ConstantKey
 ) =>
-  validateRegionId(regionIdOrName)
-    ? getConstantByRegionId(regionIdOrName, constantKey)
-    : getConstantByRegionName(regionIdOrName.toString(), constantKey);
+  validateRegionId(regionIdOrName as RegionIdAsNumberOrString)
+    ? getConstantByRegionId(
+        regionIdOrName as RegionIdAsNumberOrString,
+        constantKey
+      )
+    : getConstantByRegionName(
+        regionIdOrName.toString() as RegionName,
+        constantKey
+      );
