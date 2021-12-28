@@ -16,7 +16,7 @@ export const validateAccessToken = async (
     const response = (await fetchFromUri({
       uri: requestPath,
     })) as any | InvalidTokenResponse; // eslint-disable-line @typescript-eslint/no-explicit-any
-    return !(response?.error === ErrorResponseMessage.InvalidToken);
+    return !(response.error === ErrorResponseMessage.InvalidToken);
   } catch {
     return false;
   }
