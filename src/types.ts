@@ -194,17 +194,6 @@ export interface BattleNetOptions {
   accessToken?: AccessToken;
 }
 
-export interface InitOptions {
-  region: string | number;
-  clientId?: string;
-  clientSecret?: string;
-  accessToken?: string;
-  validateAccessTokenOnEachQuery?: boolean;
-  revalidateAccessTokenIfExpired?: boolean;
-  onAccessTokenExpire?: () => void;
-  onAccessTokenRevalidate?: () => void;
-}
-
 export interface BattleNetQueryOptions {
   region: RegionIdOrName;
   endpoint: string;
