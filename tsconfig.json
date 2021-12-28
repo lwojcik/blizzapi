@@ -27,8 +27,5 @@
     "esModuleInterop": true,
     "resolveJsonModule": true
   },
-  "exclude": ["node_modules", "dist", "tests", "**/tests/*.test.ts"],
-  "paths": {
-    "tslib": ["path/to/node_modules/tslib/tslib.d.ts"]
-  }
+  "exclude": ["node_modules", "dist", "tests", "**/tests/*.test.ts"]
 }
