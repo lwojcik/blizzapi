@@ -9,4 +9,4 @@ build_script:
   - npm run build
 
 test_script:
-  - npx codecov
+  - npx codecov --disable=gcov
