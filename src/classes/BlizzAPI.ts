@@ -27,8 +27,8 @@ export class BlizzAPI extends BattleNetAPI {
     };
   }
 
-  query = async (endpoint: Endpoint, options?: QueryOptions) =>
-    helpers.query({
+  query = async <T = unknown>(endpoint: Endpoint, options?: QueryOptions) =>
+    helpers.query<T>({
       endpoint,
       region: this.region,
       clientId: this.clientId,

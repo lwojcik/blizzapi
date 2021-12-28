@@ -204,7 +204,7 @@ export interface BattleNetQueryOptions {
 }
 
 export type RegionIdProperties<Value> = {
-  [key in RegionId]: Value;
+  readonly [key in RegionId]: Value;
 };
 
 export interface BlizzAPIOptions extends BattleNetOptions, AccessTokenOptions {}
