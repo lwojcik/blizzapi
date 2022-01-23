@@ -4,7 +4,7 @@
   "description": "Flexible and feature-rich library for easy access to Blizzard Battle.net APIs",
   "homepage": "https://blizzapi.lukem.net",
   "main": "dist/blizzapi.js",
-  "browser": "dist/blizzapi.umd.js",
+  "browser": "dist/blizzapi.js",
   "typings": "dist/blizzapi.d.ts",
   "author": {
     "name": "BlizzAPI + Contributors",
