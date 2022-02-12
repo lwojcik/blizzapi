@@ -35,11 +35,12 @@
   "typings": "dist/blizzapi.d.ts",
   "scripts": {
     "build": "npm run lint && npm run test && npm run clean && npm run compile",
+    "checkFormat": "prettier --check .",
     "clean": "rimraf dist/*",
     "clearTestCache": "jest --clearCache",
     "compile": "rollup -c",
     "dev": "tsc -w --project tsconfig.json",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "format": "prettier --write .",
     "lint": "eslint . --ext .ts",
     "prepare": "husky install",
     "prepublishOnly": "npm run build",
