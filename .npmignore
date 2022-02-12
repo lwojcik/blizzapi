@@ -1,8 +1,8 @@
 src
 tsconfig.json
-tsconfig.eslint.json
 tslint.json
 .prettierrc
+.prettierignore
 tests
 coverage
 appveyor.yml

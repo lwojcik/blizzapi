@@ -1,7 +1,0 @@
-{
-  "compilerOptions": {
-    "strict": true
-  },
-  "include": ["**/src/**/*.ts", "**/tests/**/*.ts", "rollup.config.js"],
-  "exclude": ["node_modules", "dist"]
-}
