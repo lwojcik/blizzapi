@@ -2,60 +2,6 @@
   "name": "blizzapi",
   "version": "2.1.1",
   "description": "Flexible and feature-rich library for easy access to Blizzard Battle.net APIs",
-  "homepage": "https://blizzapi.lukem.net",
-  "main": "dist/blizzapi.js",
-  "browser": "dist/blizzapi.js",
-  "typings": "dist/blizzapi.d.ts",
-  "author": {
-    "name": "BlizzAPI + Contributors",
-    "url": "https://github.com/blizzapi"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/blizzapi/blizzapi.git"
-  },
-  "bugs": {
-    "url": "https://github.com/blizzapi/blizzapi/issues"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/blizzapi/blizzapi/blob/master/LICENSE"
-    }
-  ],
-  "scripts": {
-    "test": "jest",
-    "clearTestCache": "jest --clearCache",
-    "clean": "rimraf dist/*",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "eslint . --ext .ts",
-    "compile": "rollup -c",
-    "build": "npm run lint && npm run test && npm run clean && npm run compile",
-    "dev": "tsc -w --project tsconfig.json",
-    "prepublishOnly": "npm run build"
-  },
-  "dependencies": {
-    "axios": "^0.25.0"
-  },
-  "devDependencies": {
-    "@types/jest": "^27.0.3",
-    "@types/node": "^17.0.5",
-    "esbuild": "^0.14.8",
-    "eslint": "^8.5.0",
-    "eslint-config-airbnb-typescript": "^16.1.0",
-    "eslint-config-airbnb-typescript-prettier": "^5.0.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jest": "^25.3.2",
-    "jest": "^27.4.5",
-    "prettier": "^2.5.1",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.62.0",
-    "rollup-plugin-dts": "^4.1.0",
-    "rollup-plugin-esbuild": "^4.8.1",
-    "ts-jest": "^27.1.2",
-    "typescript": "^4.5.4"
-  },
   "keywords": [
     "blizzard",
     "battlenet",
@@ -70,5 +16,66 @@
     "world-of-warcraft",
     "d3",
     "diablo3"
+  ],
+  "homepage": "https://blizzapi.lukem.net",
+  "bugs": {
+    "url": "https://github.com/blizzapi/blizzapi/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blizzapi/blizzapi.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "BlizzAPI + Contributors",
+    "url": "https://github.com/blizzapi"
+  },
+  "main": "dist/blizzapi.js",
+  "browser": "dist/blizzapi.js",
+  "typings": "dist/blizzapi.d.ts",
+  "scripts": {
+    "build": "npm run lint && npm run checkFormat && npm run test && npm run clean && npm run compile",
+    "checkFormat": "prettier --check .",
+    "clean": "rimraf dist/*",
+    "clearTestCache": "jest --clearCache",
+    "compile": "rollup -c",
+    "dev": "tsc -w --project tsconfig.json",
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .ts",
+    "prepare": "husky install",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "package.json": "sort-package-json",
+    "*.ts": "eslint --fix",
+    "*.js": "prettier --write"
+  },
+  "dependencies": {
+    "axios": "^0.25.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@types/node": "^17.0.5",
+    "esbuild": "^0.14.8",
+    "eslint": "^8.5.0",
+    "eslint-config-lukemnet": "^1.0.1",
+    "husky": "^7.0.4",
+    "jest": "^27.4.5",
+    "lint-staged": "^12.3.3",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.62.0",
+    "rollup-plugin-dts": "^4.1.0",
+    "rollup-plugin-esbuild": "^4.8.1",
+    "sort-package-json": "^1.54.0",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.5.4"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/blizzapi/blizzapi/blob/master/LICENSE"
+    }
   ]
 }
