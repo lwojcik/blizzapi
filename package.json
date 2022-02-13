@@ -48,8 +48,8 @@
   },
   "lint-staged": {
     "package.json": "sort-package-json",
-    "*.ts": "eslint --fix",
-    "*.js": "prettier --write"
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "*.{js,jsx,ts,tsx,md,html,css}": "prettier --write"
   },
   "dependencies": {
     "axios": "^0.25.0"
