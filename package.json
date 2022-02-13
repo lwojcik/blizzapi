@@ -35,21 +35,23 @@
   "typings": "dist/blizzapi.d.ts",
   "scripts": {
     "build": "npm run lint && npm run checkFormat && npm run test && npm run clean && npm run compile",
-    "checkFormat": "prettier --check .",
+    "checkFormat": "prettier --check",
     "clean": "rimraf dist/*",
     "clearTestCache": "jest --clearCache",
     "compile": "rollup -c",
     "dev": "tsc -w --project tsconfig.json",
-    "format": "prettier --write .",
-    "lint": "eslint . --ext .ts",
+    "format": "prettier --write",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "lint:fixCached": "eslint --cache --fix",
     "prepare": "husky install",
     "prepublishOnly": "npm run build",
     "test": "jest"
   },
   "lint-staged": {
     "package.json": "sort-package-json",
-    "*.ts": "eslint --fix",
-    "*.js": "prettier --write"
+    "*.{js,jsx,ts,tsx}": "npm run lint:fixCached",
+    "*.{js,jsx,ts,tsx,md,html,css}": "npm run format"
   },
   "dependencies": {
     "axios": "^0.25.0"
