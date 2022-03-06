@@ -54,7 +54,7 @@
     "*.{js,jsx,ts,tsx,md,html,css}": "npm run format"
   },
   "dependencies": {
-    "axios": "^0.25.0"
+    "axios": "^0.26.0"
   },
   "devDependencies": {
     "@types/jest": "^27.0.3",
