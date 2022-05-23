@@ -54,7 +54,7 @@
     "*.{js,jsx,ts,tsx,md,html,css}": "npm run format"
   },
   "dependencies": {
-    "axios": "^0.26.0"
+    "axios": "^0.27.2"
   },
   "devDependencies": {
     "@types/jest": "^27.0.3",
@@ -71,7 +71,7 @@
     "rollup-plugin-dts": "^4.1.0",
     "rollup-plugin-esbuild": "^4.8.1",
     "sort-package-json": "^1.54.0",
-    "ts-jest": "^27.1.2",
+    "ts-jest": "^28.0.2",
     "typescript": "^4.5.4"
   },
   "licenses": [
