@@ -46,7 +46,8 @@
     "lint:fixCached": "eslint --cache --fix",
     "prepare": "husky install",
     "prepublishOnly": "npm run build",
-    "test": "jest"
+    "test": "jest",
+    "test:cov": "jest --coverage"
   },
   "lint-staged": {
     "package.json": "sort-package-json",
