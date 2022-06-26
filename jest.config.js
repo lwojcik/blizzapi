@@ -7,7 +7,6 @@ module.exports = {
     "^.+\\.ts?$": "ts-jest",
   },
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
-  collectCoverage: true,
   collectCoverageFrom: [
     "**/src/**",
     "!**/tests/**.{js,ts}",
@@ -16,12 +15,4 @@ module.exports = {
     "!**/dist/**",
     "!**/src/types.d.ts",
   ],
-  // "coverageThreshold": {
-  //   "global": {
-  //     "branches": 100,
-  //     "functions": 100,
-  //     "lines": 100,
-  //     "statements": 100
-  //   }
-  // }
 };
