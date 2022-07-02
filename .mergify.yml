@@ -45,8 +45,8 @@ pull_request_rules:
         message: This pull request is now in conflicts. Could you fix it @{{author}}? 🙏 cc @lwojcik
   - name: Automatic merge for master when CI passes and owner approves
     conditions:
-      - 'status-success=continuous-integration/appveyor/branch'
-      - 'status-success=continuous-integration/appveyor/pr'
+      - "status-success=continuous-integration/appveyor/branch"
+      - "status-success=continuous-integration/appveyor/pr"
       - base=master
       - label!=work-in-progress
       - approved-reviews-by=lwojcik
