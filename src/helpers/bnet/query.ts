@@ -9,6 +9,7 @@ import {
   ResponseError,
   ErrorCode,
   ErrorResponseMessage,
+  RegionIdOrName,
 } from "../../types";
 
 const queryWithAccessToken = <T = unknown>(
@@ -21,7 +22,7 @@ const queryWithAccessToken = <T = unknown>(
   if (!validEndpoint)
     throw new RangeError(`${endpoint} is not a valid endpoint.`);
 
-  const apiHost = getApiHostByRegion(region) as string;
+  const apiHost = getApiHostByRegion(region as RegionIdOrName) as string;
   const requestUri = `${apiHost}${endpoint}`;
   const authHeaders = {
     Authorization: `Bearer ${accessToken}`,

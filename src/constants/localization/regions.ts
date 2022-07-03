@@ -6,13 +6,13 @@
 import {
   RegionIdProperties,
   RegionNameArray,
-  RegionId,
-  RegionName,
+  RegionIdEnum,
+  RegionNameEnum,
 } from "../../types";
 
 export const regions: RegionIdProperties<RegionNameArray> = Object.freeze({
-  [RegionId.us]: Object.freeze([RegionName.us]),
-  [RegionId.eu]: Object.freeze([RegionName.eu]),
-  [RegionId.kr]: Object.freeze([RegionName.kr, RegionName.tw]),
-  [RegionId.cn]: Object.freeze([RegionName.cn]),
+  [RegionIdEnum.us]: Object.freeze([RegionNameEnum.us]),
+  [RegionIdEnum.eu]: Object.freeze([RegionNameEnum.eu]),
+  [RegionIdEnum.kr]: Object.freeze([RegionNameEnum.kr, RegionNameEnum.tw]),
+  [RegionIdEnum.cn]: Object.freeze([RegionNameEnum.cn]),
 });

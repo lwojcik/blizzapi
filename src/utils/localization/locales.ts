@@ -83,7 +83,7 @@ export const validateLocale = (locale: Locale) => {
  *
  * @param locale Locale name
  * @param regionId Region id as integer or string
- * @return List of locales available in a specific region as array of strings
+ * @return true or false
  */
 export const isLocaleValidForRegionId = (
   locale: Locale,
