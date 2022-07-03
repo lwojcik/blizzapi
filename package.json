@@ -1,6 +1,6 @@
 {
   "name": "blizzapi",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Flexible and feature-rich library for easy access to Blizzard Battle.net APIs",
   "keywords": [
     "blizzard",
