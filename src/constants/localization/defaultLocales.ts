@@ -10,12 +10,16 @@
  * based on https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
  */
 
-import { RegionIdProperties, DefaultLocaleIndex, RegionId } from "../../types";
+import {
+  RegionIdProperties,
+  DefaultLocaleIndex,
+  RegionIdEnum,
+} from "../../types";
 
 export const defaultLocales: RegionIdProperties<DefaultLocaleIndex> =
   Object.freeze({
-    [RegionId.us]: DefaultLocaleIndex.us,
-    [RegionId.eu]: DefaultLocaleIndex.eu,
-    [RegionId.kr]: DefaultLocaleIndex.kr,
-    [RegionId.cn]: DefaultLocaleIndex.cn,
+    [RegionIdEnum.us]: DefaultLocaleIndex.us,
+    [RegionIdEnum.eu]: DefaultLocaleIndex.eu,
+    [RegionIdEnum.kr]: DefaultLocaleIndex.kr,
+    [RegionIdEnum.cn]: DefaultLocaleIndex.cn,
   });
