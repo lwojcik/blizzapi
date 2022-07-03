@@ -49,7 +49,9 @@ pull_request_rules:
       - status-success=continuous-integration/appveyor/pr
       - author=lwojcik
       - base=master
+      - -conflict
       - label!=work-in-progress
+      - label=ready-to-merge
     actions:
       queue:
         method: squash
@@ -58,6 +60,10 @@ pull_request_rules:
     conditions:
       - status-success=continuous-integration/appveyor/branch
       - status-success=continuous-integration/appveyor/pr
+      - author!=lwojcik
+      - author!=snyk-bot
+      - author!=dependabot[bot]
+      - -conflict
       - base=master
       - label!=work-in-progress
       - approved-reviews-by=lwojcik
