@@ -17,7 +17,7 @@ export enum ConstantKey {
 
 /** Regions */
 
-export enum RegionName {
+export enum RegionNameEnum {
   us = "us",
   eu = "eu",
   kr = "kr",
@@ -25,7 +25,7 @@ export enum RegionName {
   cn = "cn",
 }
 
-export enum RegionId {
+export enum RegionIdEnum {
   us = 1,
   eu = 2,
   kr = 3,
@@ -33,13 +33,19 @@ export enum RegionId {
   cn = 5,
 }
 
-export enum RegionIdAsString {
+export enum RegionIdAsStringEnum {
   us = "1",
   eu = "2",
   kr = "3",
   tw = "3",
   cn = "5",
 }
+
+export type RegionId = 1 | 2 | 3 | 5;
+
+export type RegionIdAsString = "1" | "2" | "3" | "5";
+
+export type RegionName = "us" | "eu" | "kr" | "tw" | "cn";
 
 export type RegionIdKey = string;
 export type RegionIdAsNumberOrString = RegionId | RegionIdAsString;
