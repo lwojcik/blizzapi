@@ -163,7 +163,7 @@ describe("query()", () => {
   it("refreshes access token if refreshExpiredAccessToken is set to true", async () => {
     expect.assertions(1);
     const response = await query({
-      region: "us" as RegionName,
+      region: "us",
       endpoint: "/valid/endpoint",
       clientId: "valid_client_id",
       clientSecret: "valid_client_secret",
