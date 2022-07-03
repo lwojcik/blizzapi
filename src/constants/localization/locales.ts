@@ -3,11 +3,16 @@
  * via https://develop.battle.net/documentation/guides/regionality-partitions-and-localization
  */
 
-import { RegionIdProperties, LocaleArray, RegionId, Locale } from "../../types";
+import {
+  RegionIdProperties,
+  LocaleArray,
+  Locale,
+  RegionIdEnum,
+} from "../../types";
 
 export const locales: RegionIdProperties<LocaleArray> = Object.freeze({
-  [RegionId.us]: Object.freeze([Locale.en_US, Locale.es_MX, Locale.pt_BR]),
-  [RegionId.eu]: Object.freeze([
+  [RegionIdEnum.us]: Object.freeze([Locale.en_US, Locale.es_MX, Locale.pt_BR]),
+  [RegionIdEnum.eu]: Object.freeze([
     Locale.en_GB,
     Locale.es_ES,
     Locale.fr_FR,
@@ -16,6 +21,6 @@ export const locales: RegionIdProperties<LocaleArray> = Object.freeze({
     Locale.pt_PT,
     Locale.it_IT,
   ]),
-  [RegionId.kr]: Object.freeze([Locale.ko_KR, Locale.zh_TW]),
-  [RegionId.cn]: Object.freeze([Locale.zh_CN]),
+  [RegionIdEnum.kr]: Object.freeze([Locale.ko_KR, Locale.zh_TW]),
+  [RegionIdEnum.cn]: Object.freeze([Locale.zh_CN]),
 });
