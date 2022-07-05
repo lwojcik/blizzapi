@@ -195,17 +195,17 @@ export interface QueryOptions {
 
 export interface BattleNetOptions {
   region: RegionIdOrName;
-  clientId: ClientId;
-  clientSecret: ClientSecret;
+  clientId?: ClientId;
+  clientSecret?: ClientSecret;
   accessToken?: AccessToken;
 }
 
 export interface BattleNetQueryOptions {
   region: RegionIdOrName;
   endpoint: string;
-  clientId: string;
-  clientSecret: string;
-  accessToken: AccessToken;
+  clientId?: string;
+  clientSecret?: string;
+  accessToken?: AccessToken;
   options: AccessTokenOptions & QueryOptions;
 }
 

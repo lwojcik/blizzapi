@@ -16,6 +16,17 @@ export abstract class BattleNetAPI extends OAuth2API {
   getAccessToken = () => this.accessToken || this.setAccessToken();
 
   setAccessToken = async () => {
+    if (!this.clientId) {
+      throw new Error(
+        "Cannot get access token because no Battle.net client id was provided"
+      );
+    }
+    if (!this.clientSecret) {
+      throw new Error(
+        "Cannot get access token because no Battle.net client secret was provided"
+      );
+    }
+
     this.accessToken = await OAuthHelpers.getAccessToken({
       region: this.region,
       clientId: this.clientId,
