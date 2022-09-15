@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`REGIONS should match snapshot 1`] = `
-Object {
-  "1": Array [
+{
+  "1": [
     "us",
   ],
-  "2": Array [
+  "2": [
     "eu",
   ],
-  "3": Array [
+  "3": [
     "kr",
     "tw",
   ],
-  "5": Array [
+  "5": [
     "cn",
   ],
 }

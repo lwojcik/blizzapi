@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`fetchFromUri() returns correct response for GET request to a valid uri 1`] = `
-Object {
+{
   "access_token": "no_access_token_provided",
-  "headers": Object {
+  "headers": {
     "data": "default sample headers",
   },
-  "params": Object {
+  "params": {
     "data": "default sample params",
   },
   "timeout": 10000,
@@ -15,12 +15,12 @@ Object {
 `;
 
 exports[`fetchFromUri() returns correct response for GET request to uri containing regional characters 1`] = `
-Object {
+{
   "access_token": "no_access_token_provided",
-  "headers": Object {
+  "headers": {
     "data": "default sample headers",
   },
-  "params": Object {
+  "params": {
     "data": "default sample params",
   },
   "timeout": 10000,
@@ -29,14 +29,14 @@ Object {
 `;
 
 exports[`fetchFromUri() returns correct response for GET request with "last-modified" header 1`] = `
-Object {
+{
   "access_token": "no_access_token_provided",
-  "headers": Object {
+  "headers": {
     "data": "default sample headers",
     "last-modified": "mocked_last_modified_date",
   },
   "lastModified": "mocked_last_modified_date",
-  "params": Object {
+  "params": {
     "data": "custom params",
   },
   "timeout": 10000,
@@ -45,12 +45,12 @@ Object {
 `;
 
 exports[`fetchFromUri() returns correct response for GET request with headers to a valid uri 1`] = `
-Object {
+{
   "access_token": "no_access_token_provided",
-  "headers": Object {
+  "headers": {
     "data": "sample headers",
   },
-  "params": Object {
+  "params": {
     "data": "default sample params",
   },
   "timeout": 10000,
@@ -59,12 +59,12 @@ Object {
 `;
 
 exports[`fetchFromUri() returns correct response for GET request with params to a valid uri 1`] = `
-Object {
+{
   "access_token": "no_access_token_provided",
-  "headers": Object {
+  "headers": {
     "data": "default sample headers",
   },
-  "params": Object {
+  "params": {
     "data": "custom params",
   },
   "timeout": 10000,
@@ -73,12 +73,12 @@ Object {
 `;
 
 exports[`fetchFromUri() returns correct response for POST request to a valid uri 1`] = `
-Object {
+{
   "access_token": "no_access_token_provided",
-  "headers": Object {
+  "headers": {
     "data": "default sample headers",
   },
-  "params": Object {
+  "params": {
     "data": "default sample params",
   },
   "timeout": 10000,
