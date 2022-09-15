@@ -9,14 +9,14 @@ exports[`getApiHostByRegion() should return correct value for 2 as valid region 
 exports[`getApiHostByRegion() should return correct value for 2 as valid region id 2`] = `"https://eu.api.blizzard.com"`;
 
 exports[`getApiHostByRegion() should return correct value for 3 as valid region id 1`] = `
-Array [
+[
   "https://kr.api.blizzard.com",
   "https://tw.api.blizzard.com",
 ]
 `;
 
 exports[`getApiHostByRegion() should return correct value for 3 as valid region id 2`] = `
-Array [
+[
   "https://kr.api.blizzard.com",
   "https://tw.api.blizzard.com",
 ]

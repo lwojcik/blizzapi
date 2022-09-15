@@ -39,7 +39,7 @@ exports[`getConstantByRegionName() should return correct value for KR and OAUTH_
 exports[`getConstantByRegionName() should return correct value for KR and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/token"`;
 
 exports[`getConstantByRegionName() should return correct value for KR and REGION_API_HOSTS as valid parameters 1`] = `
-Array [
+[
   "https://kr.api.blizzard.com",
   "https://tw.api.blizzard.com",
 ]
@@ -52,7 +52,7 @@ exports[`getConstantByRegionName() should return correct value for Kr and OAUTH_
 exports[`getConstantByRegionName() should return correct value for Kr and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/token"`;
 
 exports[`getConstantByRegionName() should return correct value for Kr and REGION_API_HOSTS as valid parameters 1`] = `
-Array [
+[
   "https://kr.api.blizzard.com",
   "https://tw.api.blizzard.com",
 ]
@@ -65,7 +65,7 @@ exports[`getConstantByRegionName() should return correct value for TW and OAUTH_
 exports[`getConstantByRegionName() should return correct value for TW and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/token"`;
 
 exports[`getConstantByRegionName() should return correct value for TW and REGION_API_HOSTS as valid parameters 1`] = `
-Array [
+[
   "https://kr.api.blizzard.com",
   "https://tw.api.blizzard.com",
 ]
@@ -78,7 +78,7 @@ exports[`getConstantByRegionName() should return correct value for Tw and OAUTH_
 exports[`getConstantByRegionName() should return correct value for Tw and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/token"`;
 
 exports[`getConstantByRegionName() should return correct value for Tw and REGION_API_HOSTS as valid parameters 1`] = `
-Array [
+[
   "https://kr.api.blizzard.com",
   "https://tw.api.blizzard.com",
 ]
@@ -131,7 +131,7 @@ exports[`getConstantByRegionName() should return correct value for kR and OAUTH_
 exports[`getConstantByRegionName() should return correct value for kR and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/token"`;
 
 exports[`getConstantByRegionName() should return correct value for kR and REGION_API_HOSTS as valid parameters 1`] = `
-Array [
+[
   "https://kr.api.blizzard.com",
   "https://tw.api.blizzard.com",
 ]
@@ -144,7 +144,7 @@ exports[`getConstantByRegionName() should return correct value for kr and OAUTH_
 exports[`getConstantByRegionName() should return correct value for kr and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/token"`;
 
 exports[`getConstantByRegionName() should return correct value for kr and REGION_API_HOSTS as valid parameters 1`] = `
-Array [
+[
   "https://kr.api.blizzard.com",
   "https://tw.api.blizzard.com",
 ]
@@ -157,7 +157,7 @@ exports[`getConstantByRegionName() should return correct value for tW and OAUTH_
 exports[`getConstantByRegionName() should return correct value for tW and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/token"`;
 
 exports[`getConstantByRegionName() should return correct value for tW and REGION_API_HOSTS as valid parameters 1`] = `
-Array [
+[
   "https://kr.api.blizzard.com",
   "https://tw.api.blizzard.com",
 ]
@@ -170,7 +170,7 @@ exports[`getConstantByRegionName() should return correct value for tw and OAUTH_
 exports[`getConstantByRegionName() should return correct value for tw and OAUTH_TOKEN_URIS as valid parameters 1`] = `"https://apac.battle.net/oauth/token"`;
 
 exports[`getConstantByRegionName() should return correct value for tw and REGION_API_HOSTS as valid parameters 1`] = `
-Array [
+[
   "https://kr.api.blizzard.com",
   "https://tw.api.blizzard.com",
 ]

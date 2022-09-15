@@ -45,14 +45,14 @@ exports[`getUriByRegionId() should return correct value for 3 and OAUTH_TOKEN_UR
 exports[`getUriByRegionId() should return correct value for 3 and OAUTH_TOKEN_URIS as valid parameters 2`] = `"https://apac.battle.net/oauth/token"`;
 
 exports[`getUriByRegionId() should return correct value for 3 and REGION_API_HOSTS as valid parameters 1`] = `
-Array [
+[
   "https://kr.api.blizzard.com",
   "https://tw.api.blizzard.com",
 ]
 `;
 
 exports[`getUriByRegionId() should return correct value for 3 and REGION_API_HOSTS as valid parameters 2`] = `
-Array [
+[
   "https://kr.api.blizzard.com",
   "https://tw.api.blizzard.com",
 ]

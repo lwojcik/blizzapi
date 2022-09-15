@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LOCALES should match snapshot 1`] = `
-Object {
-  "1": Array [
+{
+  "1": [
     "en_US",
     "es_MX",
     "pt_BR",
   ],
-  "2": Array [
+  "2": [
     "en_GB",
     "es_ES",
     "fr_FR",
@@ -16,11 +16,11 @@ Object {
     "pt_PT",
     "it_IT",
   ],
-  "3": Array [
+  "3": [
     "ko_KR",
     "zh_TW",
   ],
-  "5": Array [
+  "5": [
     "zh_CN",
   ],
 }

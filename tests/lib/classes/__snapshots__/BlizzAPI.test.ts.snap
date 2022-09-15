@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BlizzAPI class should query an endpoint 1`] = `
-Object {
+{
   "access_token": "no_access_token_provided",
-  "headers": Object {
+  "headers": {
     "Authorization": "Bearer no_access_token_provided",
   },
-  "params": Object {
+  "params": {
     "data": "default sample params",
   },
   "timeout": 10000,
