@@ -1,4 +1,5 @@
 src
+.github
 tsconfig.json
 tslint.json
 .prettierrc
