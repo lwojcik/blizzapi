@@ -1,8 +1,10 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import dts from "rollup-plugin-dts";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import esbuild from "rollup-plugin-esbuild";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const name = require("./package.json").main.replace(/\.js$/, "");
+const name = "dist/blizzapi";
 
 const bundle = (config) => ({
   ...config,
@@ -10,6 +12,7 @@ const bundle = (config) => ({
   external: (id) => !/^[./]/.test(id),
 });
 
+// eslint-disable-next-line import/no-default-export
 export default [
   bundle({
     plugins: [
