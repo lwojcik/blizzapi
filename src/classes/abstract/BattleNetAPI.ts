@@ -3,7 +3,7 @@ import * as OAuthHelpers from "../../helpers/oauth";
 import { RegionIdOrName, AccessToken, BattleNetOptions } from "../../types";
 
 export abstract class BattleNetAPI extends OAuth2API {
-  readonly region: RegionIdOrName;
+  region: RegionIdOrName;
 
   accessToken: AccessToken;
 

@@ -6,6 +6,7 @@ import {
   BlizzAPIOptions,
   AccessTokenOptions,
   QueryOptions,
+  RegionIdOrName,
 } from "../types";
 
 export class BlizzAPI extends BattleNetAPI {
@@ -30,7 +31,7 @@ export class BlizzAPI extends BattleNetAPI {
   query = async <T = unknown>(endpoint: Endpoint, options?: QueryOptions) =>
     helpers.query<T>({
       endpoint,
-      region: this.region,
+      region: options?.region || this.region,
       clientId: this.clientId,
       clientSecret: this.clientSecret,
       accessToken: await this.getAccessToken(),
@@ -39,6 +40,10 @@ export class BlizzAPI extends BattleNetAPI {
         ...options,
       },
     });
+
+  setRegion(region: RegionIdOrName) {
+    this.region = region;
+  }
 
   static getAllRegions = utils.getAllRegions;
 
