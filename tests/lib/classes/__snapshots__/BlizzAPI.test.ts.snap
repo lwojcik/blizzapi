@@ -14,4 +14,32 @@ exports[`BlizzAPI class should query an endpoint 1`] = `
 }
 `;
 
+exports[`BlizzAPI class should query from a different region 1`] = `
+{
+  "access_token": "no_access_token_provided",
+  "headers": {
+    "Authorization": "Bearer no_access_token_provided",
+  },
+  "params": {
+    "data": "default sample params",
+  },
+  "timeout": 10000,
+  "title": "sample mocked data for GET request to https://eu.api.blizzard.com/sample/endpoint",
+}
+`;
+
+exports[`BlizzAPI class should set region 1`] = `
+{
+  "access_token": "no_access_token_provided",
+  "headers": {
+    "Authorization": "Bearer no_access_token_provided",
+  },
+  "params": {
+    "data": "default sample params",
+  },
+  "timeout": 10000,
+  "title": "sample mocked data for GET request to https://eu.api.blizzard.com/sample/endpoint",
+}
+`;
+
 exports[`BlizzAPI class should validate access token and return true 1`] = `true`;
