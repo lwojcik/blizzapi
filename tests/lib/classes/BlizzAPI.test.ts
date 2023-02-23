@@ -131,12 +131,40 @@ describe("BlizzAPI class", () => {
     expect(response).toMatchSnapshot();
   });
 
+  it("should query from a different region", async () => {
+    expect.assertions(1);
+    const bnetApi = new BlizzAPI({
+      region: "us" as RegionName,
+      clientId: "valid_client_id",
+      clientSecret: "valid_client_secret",
+    });
+
+    const response = await bnetApi.query("/sample/endpoint", {
+      region: "eu" as RegionName,
+    });
+    expect(response).toMatchSnapshot();
+  });
+
   it("should validate access token and return true", async () => {
     expect.assertions(1);
     const response = await BlizzAPI.validateAccessToken(
       "us" as RegionName,
       "valid_access_token"
     );
+    expect(response).toMatchSnapshot();
+  });
+
+  it("should set region", async () => {
+    expect.assertions(1);
+    const bnetApi = new BlizzAPI({
+      region: "us" as RegionName,
+      clientId: "valid_client_id",
+      clientSecret: "valid_client_secret",
+    });
+
+    bnetApi.setRegion("eu");
+
+    const response = await bnetApi.query("/sample/endpoint");
     expect(response).toMatchSnapshot();
   });
 });
