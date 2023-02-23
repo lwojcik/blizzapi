@@ -48,7 +48,7 @@ pull_request_rules:
       - status-success=continuous-integration/appveyor/branch
       - status-success=continuous-integration/appveyor/pr
       - author=lwojcik
-      - base=master
+      - base=main
       - -conflict
       - label!=work-in-progress
       - label=ready-to-merge
@@ -64,7 +64,7 @@ pull_request_rules:
       - author!=snyk-bot
       - author!=dependabot[bot]
       - -conflict
-      - base=master
+      - base=main
       - label!=work-in-progress
       - approved-reviews-by=lwojcik
       - label=ready-to-merge
