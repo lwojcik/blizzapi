@@ -34,7 +34,8 @@
   "browser": "dist/blizzapi.js",
   "typings": "dist/blizzapi.d.ts",
   "scripts": {
-    "build":  "npm run compile",
+    "prebuild": "npm run lint && npm run checkFormat && npm run test && npm run clean",
+    "build": "npm run compile",
     "checkFormat": "prettier --check .",
     "clean": "rimraf dist/*",
     "clearTestCache": "jest --clearCache",
@@ -44,7 +45,6 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "lint:fixCached": "eslint --cache --fix",
-    "prebuild": "npm run lint && npm run checkFormat && npm run test && npm run clean", 
     "prepare": "husky install",
     "prepublishOnly": "npm run build",
     "test": "jest",
