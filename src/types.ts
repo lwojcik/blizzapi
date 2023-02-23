@@ -189,6 +189,7 @@ export interface AccessTokenOptions {
 
 export interface QueryOptions {
   timeout?: number;
+  region?: RegionIdOrName;
   headers?: object | Headers;
   params?: object | URLSearchParams;
 }
