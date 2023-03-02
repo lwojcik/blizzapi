@@ -3,9 +3,8 @@
 exports[`Helpers module should expose all modules 1`] = `
 {
   "endpoint": [Function],
-  "fetchAccessToken": [Function],
   "fetchFromUri": [Function],
-  "getAccessToken": [Function],
+  "getAccessTokenObject": [Function],
   "query": [Function],
   "uri": [Function],
   "validateAccessToken": [Function],

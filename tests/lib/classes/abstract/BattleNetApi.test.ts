@@ -4,12 +4,6 @@ import { RegionName } from "../../../../src/types";
 
 jest.createMockFromModule("../../../../src/classes/abstract/BattleNetAPI");
 
-BattleNetAPI.prototype.getAccessToken = jest
-  .fn()
-  .mockImplementation(() =>
-    Promise.resolve("valid_access_token_from_BattleNetAPIMock")
-  );
-
 class BattleNetAPIMock extends BattleNetAPI {
   constructor(accessToken?: string) {
     super({
@@ -75,14 +69,14 @@ describe("BattleNetAPI class", () => {
     expect(new BattleNetAPIMock().clientSecret).toMatchSnapshot();
   });
 
-  it("should save accessToken as undefined", () => {
-    expect(new BattleNetAPIMock().accessToken).toMatchSnapshot();
+  it("should save accessTokenObject as undefined", () => {
+    expect(new BattleNetAPIMock().accessTokenObject).toMatchSnapshot();
   });
 
   it("should set access token", async () => {
     expect.assertions(1);
     const bnetApi = new BattleNetAPIMock();
-    const response = await bnetApi.setAccessToken();
+    const response = await bnetApi.setAccessTokenObject();
     expect(response).toMatchSnapshot();
   });
 
@@ -91,7 +85,7 @@ describe("BattleNetAPI class", () => {
     const bnetApi = new BattleNetAPIMockWithoutClientId();
 
     expect(async () => {
-      await bnetApi.setAccessToken();
+      await bnetApi.setAccessTokenObject();
     }).rejects.toThrowError(
       "Cannot get access token because no Battle.net client id was provided"
     );
@@ -102,7 +96,7 @@ describe("BattleNetAPI class", () => {
     const bnetApi = new BattleNetAPIMockWithoutClientSecret();
 
     expect(async () => {
-      await bnetApi.setAccessToken();
+      await bnetApi.setAccessTokenObject();
     }).rejects.toThrowError(
       "Cannot get access token because no Battle.net client secret was provided"
     );
@@ -112,6 +106,27 @@ describe("BattleNetAPI class", () => {
     expect.assertions(1);
     const bnetApi = new BattleNetAPIMock();
     const response = await bnetApi.getAccessToken();
+    expect(response).toMatchSnapshot();
+  });
+
+  it("should get access token object", async () => {
+    expect.assertions(1);
+    const bnetApi = new BattleNetAPIMock();
+    const response = await bnetApi.getAccessTokenObject();
+    expect(response).toMatchSnapshot();
+  });
+
+  it("should set access token", async () => {
+    expect.assertions(1);
+    const bnetApi = new BattleNetAPIMock();
+    const response = await bnetApi.setAccessToken();
+    expect(response).toMatchSnapshot();
+  });
+
+  it("should set access token object", async () => {
+    expect.assertions(1);
+    const bnetApi = new BattleNetAPIMock();
+    const response = await bnetApi.setAccessTokenObject();
     expect(response).toMatchSnapshot();
   });
 

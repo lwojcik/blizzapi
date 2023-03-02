@@ -13,9 +13,11 @@ oauth.validateAccessToken = jest
     return Promise.resolve(true);
   });
 
-oauth.getAccessToken = jest
-  .fn()
-  .mockImplementation(() => Promise.resolve("new_refreshed_access_token"));
+oauth.getAccessTokenObject = jest.fn().mockImplementation(() =>
+  Promise.resolve({
+    access_token: "new_refreshed_access_token",
+  })
+);
 
 describe("query()", () => {
   it("should be defined", () => {
