@@ -116,7 +116,6 @@ export type RegionIdOrName = RegionId | RegionName;
 export type MaybeRegion = RegionIdOrName | undefined;
 export type ClientId = string;
 export type ClientSecret = string;
-export type AccessToken = string | undefined;
 export type Endpoint = string;
 
 export enum HttpMethod {
@@ -125,6 +124,15 @@ export enum HttpMethod {
 }
 
 export type ValidatorFunction = (endpoint: Endpoint) => boolean;
+
+export type AccessTokenObject = {
+  access_token: string;
+  token_type?: string;
+  expires_in?: number;
+  scope?: string;
+};
+
+export type AccessToken = AccessTokenObject["access_token"] | undefined;
 
 /* OAuth flow URIs */
 
@@ -203,10 +211,10 @@ export interface BattleNetOptions {
 
 export interface BattleNetQueryOptions {
   region: RegionIdOrName;
-  endpoint: string;
   clientId?: string;
   clientSecret?: string;
   accessToken?: AccessToken;
+  endpoint: string;
   options: AccessTokenOptions & QueryOptions;
 }
 

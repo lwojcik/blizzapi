@@ -1,3 +1,2 @@
-export { fetchAccessToken } from "./fetchAccessToken";
-export { getAccessToken } from "./getAccessToken";
+export { getAccessTokenObject } from "./getAccessTokenObject";
 export { validateAccessToken } from "./validateAccessToken";

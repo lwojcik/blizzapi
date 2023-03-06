@@ -8,7 +8,7 @@ interface InvalidTokenResponse {
 
 export const validateAccessToken = async (
   regionIdOrName: RegionIdOrName,
-  accessToken: AccessToken
+  accessToken?: AccessToken
 ) => {
   try {
     const checkTokenUri = getCheckTokenUriByRegion(regionIdOrName);

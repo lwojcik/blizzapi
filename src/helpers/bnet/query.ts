@@ -1,5 +1,5 @@
 import { endpoint as validateEndpoint } from "../validators";
-import { getAccessToken, validateAccessToken } from "../oauth";
+import { getAccessTokenObject, validateAccessToken } from "../oauth";
 import { getApiHostByRegion } from "../../utils/api";
 import { fetchFromUri } from "../fetch";
 import {
@@ -19,6 +19,7 @@ const queryWithAccessToken = <T = unknown>(
   const { region, endpoint, options } = queryOptions;
   const { headers, params, timeout } = options;
   const validEndpoint = validateEndpoint(endpoint);
+
   if (!validEndpoint)
     throw new RangeError(`${endpoint} is not a valid endpoint.`);
 
@@ -33,19 +34,20 @@ const queryWithAccessToken = <T = unknown>(
     ...authHeaders,
   };
 
-  return fetchFromUri({
+  return fetchFromUri<T>({
     uri: requestUri,
     method: HttpMethod.GET,
     headers: fetchHeaders,
     ...(params && { params }),
     ...(timeout && { timeout }),
-  }) as Promise<T>;
+  });
 };
 
 export const query = async <T = unknown>(
   queryOptions: BattleNetQueryOptions
 ): Promise<T | ResponseError> => {
   const { region, accessToken } = queryOptions;
+
   const {
     validateAccessTokenOnEachQuery,
     refreshExpiredAccessToken,
@@ -58,6 +60,7 @@ export const query = async <T = unknown>(
       region,
       accessToken
     ));
+
     if (invalidAccessToken) {
       return {
         error: ErrorResponseMessage.AccessTokenInvalid,
@@ -72,7 +75,8 @@ export const query = async <T = unknown>(
     if (error.response?.status === ErrorCode.NotAuthorized) {
       onAccessTokenExpired?.();
       if (refreshExpiredAccessToken) {
-        const newAccessToken = await getAccessToken(queryOptions);
+        const newAccessToken = (await getAccessTokenObject(queryOptions))
+          .access_token;
         onAccessTokenRefresh?.(newAccessToken);
         return queryWithAccessToken<T>(queryOptions, newAccessToken);
       }

@@ -8,10 +8,64 @@ exports[`BattleNetAPI class should define region property 1`] = `"us"`;
 
 exports[`BattleNetAPI class should get access token 1`] = `"no_access_token_provided"`;
 
+exports[`BattleNetAPI class should get access token object 1`] = `
+{
+  "access_token": "no_access_token_provided",
+  "headers": {
+    "data": "default sample headers",
+  },
+  "params": {
+    "data": "default sample params",
+  },
+  "timeout": 10000,
+  "title": "sample mocked data for POST request to https://us.battle.net/oauth/token",
+}
+`;
+
 exports[`BattleNetAPI class should get access token when provided by user 1`] = `"valid_access_token"`;
 
-exports[`BattleNetAPI class should save accessToken as undefined 1`] = `undefined`;
+exports[`BattleNetAPI class should save accessTokenObject as undefined 1`] = `undefined`;
 
-exports[`BattleNetAPI class should set access token 1`] = `"no_access_token_provided"`;
+exports[`BattleNetAPI class should set access token 1`] = `
+{
+  "access_token": "no_access_token_provided",
+  "headers": {
+    "data": "default sample headers",
+  },
+  "params": {
+    "data": "default sample params",
+  },
+  "timeout": 10000,
+  "title": "sample mocked data for POST request to https://us.battle.net/oauth/token",
+}
+`;
+
+exports[`BattleNetAPI class should set access token 2`] = `
+{
+  "access_token": "no_access_token_provided",
+  "headers": {
+    "data": "default sample headers",
+  },
+  "params": {
+    "data": "default sample params",
+  },
+  "timeout": 10000,
+  "title": "sample mocked data for POST request to https://us.battle.net/oauth/token",
+}
+`;
+
+exports[`BattleNetAPI class should set access token object 1`] = `
+{
+  "access_token": "no_access_token_provided",
+  "headers": {
+    "data": "default sample headers",
+  },
+  "params": {
+    "data": "default sample params",
+  },
+  "timeout": 10000,
+  "title": "sample mocked data for POST request to https://us.battle.net/oauth/token",
+}
+`;
 
 exports[`BattleNetAPI class should validate access token and return true 1`] = `true`;
