@@ -34,6 +34,20 @@ exports[`query() refreshes access token if refreshExpiredAccessToken is set to t
 }
 `;
 
+exports[`query() refreshes expired access token if validateAccessTokenOnEachQuery is set to true and refreshExpiredAccessToken is set to true 1`] = `
+{
+  "access_token": "new_refreshed_access_token",
+  "headers": {
+    "Authorization": "Bearer new_refreshed_access_token",
+  },
+  "params": {
+    "data": "default sample params",
+  },
+  "timeout": 10000,
+  "title": "sample mocked data for GET request to https://us.api.blizzard.com/valid/endpoint",
+}
+`;
+
 exports[`query() respects timeout option 1`] = `
 {
   "access_token": "valid_access_token",

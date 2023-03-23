@@ -124,6 +124,44 @@ describe("query()", () => {
     expect(response).toMatchSnapshot();
   });
 
+  it("refreshes expired access token if validateAccessTokenOnEachQuery is set to true and refreshExpiredAccessToken is set to true", async () => {
+    expect.assertions(1);
+    const response = await query({
+      region: "us" as RegionName,
+      endpoint: "/valid/endpoint",
+      clientId: "valid_client_id",
+      clientSecret: "valid_client_secret",
+      accessToken: "invalid_access_token",
+      options: {
+        validateAccessTokenOnEachQuery: true,
+        refreshExpiredAccessToken: true,
+        onAccessTokenExpired: undefined,
+        onAccessTokenRefresh: undefined,
+      },
+    });
+    expect(response).toMatchSnapshot();
+  });
+
+  it("calls onAccessTokenExpired if validateAccessTokenOnEachQuery is set to true and onAccessTokenExpired is provided", async () => {
+    expect.assertions(1);
+    const onAccessTokenExpired = jest.fn();
+
+    await query({
+      region: "us" as RegionName,
+      endpoint: "/valid/endpoint",
+      clientId: "valid_client_id",
+      clientSecret: "valid_client_secret",
+      accessToken: "invalid_access_token",
+      options: {
+        validateAccessTokenOnEachQuery: true,
+        refreshExpiredAccessToken: true,
+        onAccessTokenExpired,
+        onAccessTokenRefresh: undefined,
+      },
+    });
+    expect(onAccessTokenExpired).toHaveBeenCalledTimes(1);
+  });
+
   it("returns error if validateAccessTokenOnEachQuery is set to false and access token is invalid", async () => {
     expect.assertions(1);
     const response = await query({

@@ -35,15 +35,14 @@ export const fetchFromUri = async <T = any>(options: FetchFromUriOptions) => {
     ...(data && { data }),
   } as AxiosRequestConfig;
 
-  const response = await axios.request(requestOptions);
+  const response = await axios.request<T>(requestOptions);
 
   const lastModified = response.headers[ApiHeaders.LastModified]
     ? response.headers[ApiHeaders.LastModified]
     : null;
 
   return {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ...(response.data as any),
+    ...response.data,
     ...(lastModified && { lastModified }),
   } as T;
 };
