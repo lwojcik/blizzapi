@@ -43,6 +43,17 @@ const queryWithAccessToken = <T = unknown>(
   });
 };
 
+const handleExpiredAccessToken = async <T = unknown>(
+  queryOptions: BattleNetQueryOptions
+) => {
+  const { onAccessTokenRefresh } = queryOptions.options;
+
+  const newAccessToken = (await getAccessTokenObject(queryOptions))
+    .access_token;
+  onAccessTokenRefresh?.(newAccessToken);
+  return queryWithAccessToken<T>(queryOptions, newAccessToken);
+};
+
 export const query = async <T = unknown>(
   queryOptions: BattleNetQueryOptions
 ): Promise<T | ResponseError> => {
@@ -52,7 +63,6 @@ export const query = async <T = unknown>(
     validateAccessTokenOnEachQuery,
     refreshExpiredAccessToken,
     onAccessTokenExpired,
-    onAccessTokenRefresh,
   } = queryOptions.options;
 
   if (validateAccessTokenOnEachQuery) {
@@ -62,6 +72,12 @@ export const query = async <T = unknown>(
     ));
 
     if (invalidAccessToken) {
+      onAccessTokenExpired?.();
+
+      if (refreshExpiredAccessToken) {
+        return handleExpiredAccessToken<T>(queryOptions);
+      }
+
       return {
         error: ErrorResponseMessage.AccessTokenInvalid,
       };
@@ -75,10 +91,7 @@ export const query = async <T = unknown>(
     if (error.response?.status === ErrorCode.NotAuthorized) {
       onAccessTokenExpired?.();
       if (refreshExpiredAccessToken) {
-        const newAccessToken = (await getAccessTokenObject(queryOptions))
-          .access_token;
-        onAccessTokenRefresh?.(newAccessToken);
-        return queryWithAccessToken<T>(queryOptions, newAccessToken);
+        return handleExpiredAccessToken<T>(queryOptions);
       }
       return Promise.resolve({
         error: ErrorResponseMessage.AccessTokenExpired,
