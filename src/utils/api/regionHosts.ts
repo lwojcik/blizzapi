@@ -24,7 +24,7 @@ export const getApiHostByRegion = (regionIdOrName: RegionIdOrName) => {
     (regionIdOrName as string).toLowerCase() === RegionNameEnum.kr
     ? apiHost[0]
     : typeof regionIdOrName === "string" &&
-      (regionIdOrName as string).toLowerCase() === RegionNameEnum.tw
-    ? apiHost[1]
-    : apiHost;
+        (regionIdOrName as string).toLowerCase() === RegionNameEnum.tw
+      ? apiHost[1]
+      : apiHost;
 };
