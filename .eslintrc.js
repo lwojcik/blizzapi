@@ -7,8 +7,6 @@ module.exports = {
     es6: true,
   },
   extends: [
-    "airbnb",
-    "airbnb/hooks",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "prettier",
@@ -24,7 +22,6 @@ module.exports = {
   globals: {},
   rules: {
     "prettier/prettier": ["error"],
-    "react/destructuring-assignment": ["error", "always"],
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/no-object-literal-type-assertion": "off",
@@ -37,7 +34,6 @@ module.exports = {
     "import/prefer-default-export": "off",
     "import/no-default-export": "error",
     "@typescript-eslint/explicit-function-return-type": "off",
-    "react/jsx-filename-extension": "off",
     "prefer-arrow-callback": "error",
     "arrow-body-style": ["error", "as-needed"],
     "import/extensions": [
