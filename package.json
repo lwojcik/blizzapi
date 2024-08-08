@@ -2,34 +2,6 @@
   "name": "blizzapi",
   "version": "2.6.4",
   "description": "Flexible and feature-rich library for easy access to Blizzard Battle.net APIs",
-  "keywords": [
-    "blizzard",
-    "battlenet",
-    "battle-net",
-    "battle-net-api",
-    "blizzapi",
-    "api",
-    "starcraft2",
-    "sc2",
-    "wow",
-    "worldofwarcraft",
-    "world-of-warcraft",
-    "d3",
-    "diablo3"
-  ],
-  "homepage": "https://blizzapi.lukem.net",
-  "bugs": {
-    "url": "https://github.com/blizzapi/blizzapi/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/blizzapi/blizzapi.git"
-  },
-  "license": "MIT",
-  "author": {
-    "name": "BlizzAPI + Contributors",
-    "url": "https://github.com/blizzapi"
-  },
   "main": "dist/blizzapi.js",
   "browser": "dist/blizzapi.js",
   "typings": "dist/blizzapi.d.ts",
@@ -83,11 +55,5 @@
     "sort-package-json": "^2.10.0",
     "ts-jest": "^29.2.4",
     "typescript": "^5.5.4"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/blizzapi/blizzapi/blob/master/LICENSE"
-    }
-  ]
+  }
 }
